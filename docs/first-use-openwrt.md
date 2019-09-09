@@ -278,7 +278,7 @@ Luci ---> 系统 ---> 系统 ---> 时间同步
 
 [使用阿里云NTP服务器](https://help.aliyun.com/document_detail/92704.html)，添加阿里云提供的公网 NTP 服务地址：`ntp1.aliyun.com`、`ntp2.aliyun.com` ...
 
-![]({{ site.baseurl }}{% link assets/images/Snipaste_2019-09-08_15-53-32.png %})
+<!-- ![]({{ site.baseurl }}{% link assets/images/Snipaste_2019-09-08_15-53-32.png %}) -->
 
 * 更换源
 
@@ -295,7 +295,7 @@ src/gz openwrt_routing https://mirrors.ustc.edu.cn/lede/releases/18.06.4/package
 src/gz openwrt_telephony https://mirrors.ustc.edu.cn/lede//releases/18.06.4/packages/x86_64/telephony
 ```
 
-![]({{ site.baseurl }}{% link assets/images/Snipaste_2019-09-08_15-54-49 %})
+<!-- ![]({{ site.baseurl }}{% link assets/images/Snipaste_2019-09-08_15-54-49 %}) -->
 
 * 备份
 
@@ -378,7 +378,7 @@ Luci ---> 系统 ---> 备份/升级 ---> 刷新操作 ---> 刷写新的固件 --
 
 ## Reference
 
-* <span id="qemu">[1. 使​用​ qemu-img](https://docs.fedoraproject.org/zh-CN/Fedora/12/html/Virtualization_Guide/sect-Virtualization_Guide-Tips_and_tricks-Using_qemu_img.html)</span>
+<!-- * <span id="qemu">[1. 使​用​ qemu-img](https://docs.fedoraproject.org/zh-CN/Fedora/12/html/Virtualization_Guide/sect-Virtualization_Guide-Tips_and_tricks-Using_qemu_img.html)</span>
 * <span id="virtualization">[2. 在 Virtualbox 虚拟机中运行 OpenWrt](https://openwrt.org/zh/docs/guide-user/virtualization/virtualbox-vm)</span>
 * <span id="vmware">[3. VMware 三种网络连接方式：Bridge、NAT、Host-Only的区别](https://blog.csdn.net/rickiyeat/article/details/55097687)</span>
-* <span id="hostonly">[4. Mac 的 VMware Fusion 自定义 Host-only 的 IP 步骤](https://my.oschina.net/u/3606160/blog/3015720)</span>
+* <span id="hostonly">[4. Mac 的 VMware Fusion 自定义 Host-only 的 IP 步骤](https://my.oschina.net/u/3606160/blog/3015720)</span> -->
