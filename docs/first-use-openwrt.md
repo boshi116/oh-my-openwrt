@@ -1,6 +1,7 @@
 ---
 title: Mac 虚拟机上第一次使用 OpenWrt
-nav_order: 2
+parent: 我的经历
+nav_order: 1
 ---
 
 # Mac 虚拟机上第一次使用 OpenWrt

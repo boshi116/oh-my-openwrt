@@ -1,9 +1,9 @@
 ---
-title: 使用恩山 Lean 修改版 OpenWrt
+title: 使用恩山论坛 Lean 修改版 OpenWrt
 nav_order: 4
 ---
 
-# 使用恩山 Lean 修改版 OpenWrt
+# 使用恩山论坛 Lean 修改版 OpenWrt
 
 ## 准备
 

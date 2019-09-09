@@ -4,3 +4,6 @@ remote_theme: stuarthua/just-the-docs
 color_scheme: "nil"
 search_enabled: false
 heading_anchors: false
+aux_links:
+  "Oh My OpenWrt on GitHub":
+    - "//github.com/stuarthua/oh-my-openwrt"
