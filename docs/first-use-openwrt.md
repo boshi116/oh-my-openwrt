@@ -20,7 +20,7 @@ OpenWrt 官网：[https://openwrt.org/zh/start](https://openwrt.org/zh/start)
 
 * 最新 Release 版：18.06.4
 * 目标类型：x86_64
-* 下载地址：[https://downloads.openwrt.org/releases/18.06.4/targets/x86/64/openwrt-18.06.4-x86-64-combined-squashfs.img.gz](https://downloads.openwrt.org/releases/18.06.4/targets/x86/64/openwrt-18.06.4-x86-64-combined-squashfs.img.gz)
+* 下载地址：[openwrt-18.06.4-x86-64-combined-squashfs.img.gz](https://downloads.openwrt.org/releases/18.06.4/targets/x86/64/openwrt-18.06.4-x86-64-combined-squashfs.img.gz)
 
 解压下载的固件：
 
@@ -54,7 +54,7 @@ $ qemu-img convert -f raw openwrt-18.06.4-x86-64-combined-squashfs.img -O vmdk o
 * 虚拟机创建完成后，即会弹出设置菜单，选择右上角 “添加设备”
 * 选择 “现有磁盘”，添加 `openwrt-x86_64.vmdk` 虚拟磁盘文件 ---> 制作虚拟磁盘的单独副本 ---> 应用
 
-![]({{ site.baseurl }}{% link assets/images/Snipaste_2019-09-08_15-14-13.png %})
+<!-- ![]({{ site.baseurl }}{% link assets/images/Snipaste_2019-09-08_15-14-13.png %}) -->
 
 设置虚拟机硬盘
 
@@ -81,13 +81,13 @@ $ qemu-img convert -f raw openwrt-18.06.4-x86-64-combined-squashfs.img -O vmdk o
 * 网络适配器2 ---> NAT 模式，使虚拟机可以上网
 * 网络适配器3 ---> 桥接模式，使虚拟机可以供其他设备使用，即连接路由器 lan 口
 
-![]({{ site.baseurl }}{% link assets/images/Snipaste_2019-09-08_13-48-22.png %})
+<!-- ![]({{ site.baseurl }}{% link assets/images/Snipaste_2019-09-08_13-48-22.png %})
 
 ![]({{ site.baseurl }}{% link assets/images/Snipaste_2019-09-08_13-53-38.png %})
 
 ![]({{ site.baseurl }}{% link assets/images/Snipaste_2019-09-08_13-53-50.png %})
 
-![]({{ site.baseurl }}{% link assets/images/Snipaste_2019-09-08_13-54-01.png %})
+![]({{ site.baseurl }}{% link assets/images/Snipaste_2019-09-08_13-54-01.png %}) -->
 
 设置适用于 OpenWrt 网络适配器的仅主机模式，隔离虚拟机和主机，但仍然可以通信，相当于通过网线互联
 
@@ -96,11 +96,11 @@ $ qemu-img convert -f raw openwrt-18.06.4-x86-64-combined-squashfs.img -O vmdk o
 * 打开 VMware，菜单拦 ---> 虚拟机，设置网络适配器模式
 * 网络适配器 ---> 自定（openwrt-host-only）
 
-![]({{ site.baseurl }}{% link assets/images/Snipaste_2019-09-08_13-51-04.png %})
+<!-- ![]({{ site.baseurl }}{% link assets/images/Snipaste_2019-09-08_13-51-04.png %})
 
 ![]({{ site.baseurl }}{% link assets/images/Snipaste_2019-09-08_13-51-28.png %})
 
-![]({{ site.baseurl }}{% link assets/images/Snipaste_2019-09-08_13-55-41.png %})
+![]({{ site.baseurl }}{% link assets/images/Snipaste_2019-09-08_13-55-41.png %}) -->
 
 ## 使用 OpenWrt 虚拟机
 
