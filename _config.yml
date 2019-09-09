@@ -1,0 +1,6 @@
+title: "Oh My OpenWrt"
+description: OpenWrt
+remote_theme: stuarthua/just-the-docs
+color_scheme: "nil"
+search_enabled: true
+heading_anchors: false
