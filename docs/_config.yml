@@ -2,5 +2,5 @@ title: "Oh My OpenWrt"
 description: OpenWrt
 remote_theme: stuarthua/just-the-docs
 color_scheme: "nil"
-search_enabled: true
+search_enabled: false
 heading_anchors: false
