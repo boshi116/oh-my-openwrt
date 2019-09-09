@@ -1,6 +1,7 @@
 ---
 title: 使用官方 OpenWrt
-nav_order: 3
+parent: 我的经历
+nav_order: 2
 ---
 
 # 官方 OpenWrt

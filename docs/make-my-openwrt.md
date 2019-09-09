@@ -1,9 +1,9 @@
 ---
 title: 编译自己的 OpenWrt
-nav_order: 6
+nav_order: 3
 ---
 
-## 编译自己的 OpenWrt
+# 编译自己的 OpenWrt
 
 自用 OpenWrt，编译的固件用于以下设备：
 
