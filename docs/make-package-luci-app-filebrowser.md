@@ -72,6 +72,9 @@ Updating feed 'routing' from 'https://git.openwrt.org/feed/routing.git^bb156bf35
 Create index file './feeds/routing.index'
 Updating feed 'telephony' from 'https://git.openwrt.org/feed/telephony.git^507eabe1b60458ceb1a535aec9d12c8be95706f0' ...
 Create index file './feeds/telephony.index'
+Updating feed 'stuart' from 'https://github.com/stuarthua/oh-my-openwrt' ...
+Already up-to-date.
+Create index file './feeds/stuart.index'
 ```
 
 安装 feeds
@@ -80,10 +83,12 @@ Create index file './feeds/telephony.index'
 $ ./scripts/feeds install -a
 
 # 建议执行多次，成功的话，显示如下
+Collecting package info: done
 Installing all packages from feed packages.
 Installing all packages from feed luci.
 Installing all packages from feed routing.
 Installing all packages from feed telephony.
+Installing all packages from feed stuart.
 ```
 
 ## 编译设置
