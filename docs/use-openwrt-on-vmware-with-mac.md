@@ -1,16 +1,14 @@
 ---
-title: Mac 虚拟机上第一次使用 OpenWrt
+title: 在 Mac 虚拟机 VMware 上使用官方 OpenWrt
 parent: 我的经历
 nav_order: 1
 ---
 
-# Mac 虚拟机上第一次使用 OpenWrt
+# 在 Mac 虚拟机 VMware 上使用官方 OpenWrt
 
-OpenWrt 官网：[https://openwrt.org/zh/start](https://openwrt.org/zh/start)
+初次接触 [OpenWrt](https://openwrt.org/zh/start)，推荐使用虚拟机安装使用一段时间，待基本熟悉系统后，再考虑在相应硬件中刷入固件。毕竟，不熟悉 OpenWrt 的情况下，频繁的刷写硬件十分考验人的耐心。
 
-初次接触 OpenWrt，推荐使用虚拟机 App 安装，浏览或使用一段时间。待熟悉系统后，再考虑是否在相应硬件中刷入固件。毕竟，频繁的刷写硬件十分考验人的耐心。
-
-以下记录 Mac 使用 VMware Fusion 11 安装并配置使用 OpenWrt 的过程，使用其他虚拟机 App 的流程类似，此处仅供参考。
+以下记录 Mac 使用 VMware Fusion 11 安装并配置使用 OpenWrt 的过程，使用其他虚拟机 (如 VirtualBox) 的流程类似，此文仅供参考。
 
 ## 准备
 
@@ -31,7 +29,7 @@ or
 $ gunzip openwrt-18.06.4-x86-64-combined-squashfs.img.gz
 ```
 
-Homebrew 安装 qmeu <sup>[[1]](#qemu)</sup>，转换固件镜像格式为虚拟机可使用的 vmdk：
+Homebrew 安装 qmeu <sup>[[1]](#qemu)</sup>，转换固件镜像格式为虚拟机可使用的 `vmdk` :
 
 ```bash
 $ brew install qmeu
@@ -92,7 +90,7 @@ $ qemu-img convert -f raw openwrt-18.06.4-x86-64-combined-squashfs.img -O vmdk o
 
 设置适用于 OpenWrt 网络适配器的仅主机模式  <sup>[[4]](#hostonly)</sup>，隔离虚拟机和主机，但仍然可以通信，相当于通过网线互联
 
-* 打开 VMware，偏好设置 ---> 网络（如果此处置灰，无法操作，重启电脑即可）
+* 打开 VMware，偏好设置 ---> 网络（如果此处置灰无法操作，重启电脑即可）
 * 添加自定义网络 openwrt-host-only，设置子网 IP `192.168.25.0`
 * 打开 VMware，菜单拦 ---> 虚拟机，设置网络适配器模式
 * 网络适配器 ---> 自定（openwrt-host-only）
@@ -103,11 +101,13 @@ $ qemu-img convert -f raw openwrt-18.06.4-x86-64-combined-squashfs.img -O vmdk o
 
 ![]({{ site.baseurl }}{% link assets/images/Snipaste_2019-09-08_13-55-41.png %})
 
-## 使用 OpenWrt 虚拟机
+![]({{ site.baseurl }}{% link assets/images/Snipaste_2019-09-10_14-08-51.png %})
+
+## 使用 OpenWrt
 
 OpenWrt 官方镜像 默认地址为：192.168.1.1，并没有设置默认密码。
 
-如果 192.168.1.1 与本地路由器的地址相冲突，首次启动需要对网卡进行一些设置才可正常使用。之后可以通过 `Web 后台管理界面 luci` 对路由器进行管理
+大多数情况，192.168.1.1 会与本地路由器的地址相冲突，因此首次启动 OpenWrt 时，便需要对网卡进行一些设置才可正常使用。之后可以通过 OpenWrt 的 Web 后台管理界面 `luci` 对其进行管理。
 
 ### 首次启动，配置联网
 
