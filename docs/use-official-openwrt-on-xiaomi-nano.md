@@ -201,13 +201,17 @@ Luci ---> Network ---> Wireless
 
 ![]({{ site.baseurl }}{% link assets/images/openwrt-wireless.png %})
 
-#### 安装 Luci 中文语言包
+此时，便可以断开 Mac 和路由器 网线的连接，使用无线网络 `OpenWrt` 连接进行上网。
 
-Luci ---> 系统 ---> 软件包 ---> 搜索 luci-i18n-base-zh-cn, 点击安装
+### 安装 Luci 中文语言包
 
-刷新 [http://192.168.1.1/](http://192.168.1.1/)，即可看到中文界面
+Luci ---> System ---> Software ---> Update List
 
-#### 一些常用设置
+Luci ---> System ---> Software ---> 搜索 luci-i18n-base-zh-cn, 点击安装
+
+刷新 [http://192.168.1.1/cgi-bin/luci/](http://192.168.1.1/cgi-bin/luci/)，即可看到中文界面
+
+### 一些常用设置
 
 * 设置密码
 
@@ -274,7 +278,7 @@ Luci ---> 系统 ---> 备份/升级 ---> 刷新操作 ---> 恢复
 
 恢复配置，选择备份文件，点击 “上传备份” 即可
 
-* 刷写新的固件
+* 升级
 
 Luci ---> 系统 ---> 备份/升级 ---> 刷新操作 ---> 刷写新的固件
 
