@@ -1,6 +1,7 @@
 ---
 title: 在 Mac 虚拟机 VMware 上使用官方 OpenWrt
-parent: 我的经历
+parent: 使用官方 OpenWrt
+grand_parent: 我的经历
 nav_order: 1
 ---
 
