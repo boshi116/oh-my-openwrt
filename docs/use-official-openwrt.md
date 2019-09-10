@@ -1,6 +1,5 @@
 ---
 title: 使用官方 OpenWrt
-parent: 我的经历
 has_children: true
 nav_order: 2
 ---

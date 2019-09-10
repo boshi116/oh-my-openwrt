@@ -1,7 +1,6 @@
 ---
 title: 小米路由器青春版使用官方 OpenWrt
 parent: 使用官方 OpenWrt
-grand_parent: 我的经历
 nav_order: 2
 ---
 
@@ -139,7 +138,7 @@ $ brew cask install cyberduck
 
 ### 刷入 Breed 引导加载器
 
-Breed 一款由论坛网友制作的 Bootloader 引导加载器，用于取代 U-Boot。类似的引导程序比较常见的由 BIOS、UEFI、GRUB、RedBoot、U-Boot、CFE 等，为什么使用这款引导程序，是因为其含有可视化的刷机界面，且刷写固件较为方便，另外，也支持了 小米路由器青春版。
+Breed 一款由论坛网友制作的 Bootloader 引导加载器，用于取代 U-Boot。类似的引导程序比较常见的有 BIOS、UEFI、GRUB、RedBoot、U-Boot、CFE 等，为什么使用这款引导程序，是因为其含有可视化的刷机界面，且刷写固件较为方便，另外，也支持了 小米路由器青春版。
 
 * Breed 发布地址：[http://www.right.com.cn/forum/thread-161906-1-1.html](http://www.right.com.cn/forum/thread-161906-1-1.html)
 * Breed 下载地址：[https://breed.hackpascal.net/](https://breed.hackpascal.net/)
