@@ -4,7 +4,7 @@
 
 Some OpenWrt/LEDE LuCI for Commonly Used Package
 
-Add "src-git lienol https://github.com/stuarthua/openwrt-package" to feeds.conf.default.
+Add "src-git stuart https://github.com/stuarthua/openwrt-package" to feeds.conf.default.
 
 ```bash
 ./scripts/feeds update -a

@@ -74,3 +74,5 @@ src/gz openwrtio http://dl.openwrt.io/vendors/youku/ramips/packages
 
 一些第三方软件包会强依赖硬件平台，通常需要自行编译。以下软件包仅适用于本人设备（x86、小米路由器青春版），仅供参考。
 
+* [luci-app-filebrowser]()
+* []()
