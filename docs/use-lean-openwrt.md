@@ -1,6 +1,5 @@
 ---
 title: 使用恩山论坛 Lean 修改版 OpenWrt
-parent: 我的经历
 nav_order: 3
 ---
 

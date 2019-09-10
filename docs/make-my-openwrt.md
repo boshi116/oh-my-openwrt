@@ -1,6 +1,6 @@
 ---
 title: 编译自己的 OpenWrt
-nav_order: 3
+nav_order: 5
 ---
 
 # 编译自己的 OpenWrt
