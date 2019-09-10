@@ -197,17 +197,17 @@ Mac 断网，使用网线连接路由器，打开浏览器访问 `192.168.1.1`
 
 ### 开启无线 WIFI 功能
 
-Luci ---> Network ---> Wireless
+LuCI ---> Network ---> Wireless
 
 ![]({{ site.baseurl }}{% link assets/images/openwrt-wireless.png %})
 
 此时，便可以断开 Mac 和路由器 网线的连接，使用无线网络 `OpenWrt` 连接进行上网。
 
-### 安装 Luci 中文语言包
+### 安装 LuCI 中文语言包
 
-Luci ---> System ---> Software ---> Update List
+LuCI ---> System ---> Software ---> Update List
 
-Luci ---> System ---> Software ---> 搜索 luci-i18n-base-zh-cn, 点击安装
+LuCI ---> System ---> Software ---> 搜索 luci-i18n-base-zh-cn, 点击安装
 
 刷新 [http://192.168.1.1/cgi-bin/luci/](http://192.168.1.1/cgi-bin/luci/)，即可看到中文界面
 
@@ -215,25 +215,25 @@ Luci ---> System ---> Software ---> 搜索 luci-i18n-base-zh-cn, 点击安装
 
 * 设置密码
 
-Luci ---> 系统 ---> 管理权 ---> 主机密码
+LuCI ---> 系统 ---> 管理权 ---> 主机密码
 
-可以在 luci 中设置密码，即路由器 root 用户的密码；也可以在 SSH 中，使用 `passwd` 命令进行设置
+可以在 LuCI 中设置密码，即路由器 root 用户的密码；也可以在 SSH 中，使用 `passwd` 命令进行设置
 
 * 设置时区
 
-Luci ---> 系统 ---> 系统 ---> 系统属性 ---> 基本设置
+LuCI ---> 系统 ---> 系统 ---> 系统属性 ---> 基本设置
 
 更改时区为：Asia/Shanghai
 
 * 设置默认语言
 
-Luci ---> 系统 ---> 系统 ---> 系统属性 ---> 语言和界面
+LuCI ---> 系统 ---> 系统 ---> 系统属性 ---> 语言和界面
 
 更改语言为：中文（Chinese）
 
 * 设置 NTP 时间同步
 
-Luci ---> 系统 ---> 系统 ---> 时间同步
+LuCI ---> 系统 ---> 系统 ---> 时间同步
 
 [使用阿里云NTP服务器](https://help.aliyun.com/document_detail/92704.html)，添加阿里云提供的公网 NTP 服务地址：`ntp1.aliyun.com`、`ntp2.aliyun.com` ...
 
@@ -241,7 +241,7 @@ Luci ---> 系统 ---> 系统 ---> 时间同步
 
 * 更换源
 
-Luci ---> 系统 ---> 软件包 ---> 配置
+LuCI ---> 系统 ---> 软件包 ---> 配置
 
 添加 `# ` 前缀忽略 `发行版软件源`，在 `自定义软件源` 中填入 [清华镜像源](https://mirrors.ustc.edu.cn/help/lede.html) 的地址：
 
@@ -258,29 +258,29 @@ src/gz openwrt_telephony https://mirrors.ustc.edu.cn/lede//releases/18.06.4/pack
 
 * 备份
 
-Luci ---> 系统 ---> 备份/升级 ---> 刷新操作 ---> 备份
+LuCI ---> 系统 ---> 备份/升级 ---> 刷新操作 ---> 备份
 
 点击 “生成备份”，保存即可
 
 * 恢复出厂模式
 
-Luci ---> 系统 ---> 备份/升级 ---> 刷新操作 ---> 恢复
+LuCI ---> 系统 ---> 备份/升级 ---> 刷新操作 ---> 恢复
 
 恢复到出厂设置，点击 “执行重置” 即可
 
 > **注意：** 
 > 1. 恢复出厂模式后，所做的所有更改都被重置，仅保留自定义软件源（这意味着如果之前有更改路由器默认 IP 的话，我们将不能通过 web 导入备份执行恢复）
-> 2. 不小心执行恢复出厂模式后，可以重新设置路由器 IP，然后访问 Luci Web，通过导入备份，重新恢复我们对路由器的设置，但软件包仍然需要我们另行安装 (重新设置路由器 IP：`uci set network.lan.ipaddr='192.168.25.2' && uci commit && /etc/init.d/network restart`)
+> 2. 不小心执行恢复出厂模式后，可以重新设置路由器 IP，然后访问 LuCI Web，通过导入备份，重新恢复我们对路由器的设置，但软件包仍然需要我们另行安装 (重新设置路由器 IP：`uci set network.lan.ipaddr='192.168.25.2' && uci commit && /etc/init.d/network restart`)
 
 * 恢复配置
 
-Luci ---> 系统 ---> 备份/升级 ---> 刷新操作 ---> 恢复
+LuCI ---> 系统 ---> 备份/升级 ---> 刷新操作 ---> 恢复
 
 恢复配置，选择备份文件，点击 “上传备份” 即可
 
 * 升级
 
-Luci ---> 系统 ---> 备份/升级 ---> 刷新操作 ---> 刷写新的固件
+LuCI ---> 系统 ---> 备份/升级 ---> 刷新操作 ---> 刷写新的固件
 
 选择要升级的固件，点击 “刷写固件” 即可
 
