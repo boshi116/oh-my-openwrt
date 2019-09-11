@@ -39,16 +39,16 @@ include $(INCLUDE_DIR)/package.mk
 # variable below and uncomment the Kamikaze define
 # directive for the description below
 define Package/helloworld
-    SECTION:=utils
-    CATEGORY:=Utilities
-    TITLE:=Helloworld -- prints a snarky message
+	SECTION:=utils
+	CATEGORY:=Utilities
+	TITLE:=Helloworld -- prints a snarky message
 endef
 
 
 # Uncomment portion below for Kamikaze and delete DESCRIPTION variable above
 define Package/helloworld/description
-    If you can't figure out what this program does, you're probably
-    brain-dead and need immediate medical attention.
+	If you can't figure out what this program does, you're probably
+	brain-dead and need immediate medical attention.
 endef
 
  
@@ -60,8 +60,8 @@ endef
 # In order to just build a simple program that we have just written, it is
 # much easier to do it this way.
 define Build/Prepare
-    mkdir -p $(PKG_BUILD_DIR)
-    $(CP) ./src/* $(PKG_BUILD_DIR)/
+	mkdir -p $(PKG_BUILD_DIR)
+	$(CP) ./src/* $(PKG_BUILD_DIR)/
 endef
 
 
@@ -77,8 +77,8 @@ endef
 # command to copy the binary file from its current location (in our case the build
 # directory) to the install directory.
 define Package/helloworld/install
-    $(INSTALL_DIR) $(1)/bin
-    $(INSTALL_BIN) $(PKG_BUILD_DIR)/helloworld $(1)/bin/
+	$(INSTALL_DIR) $(1)/bin
+	$(INSTALL_BIN) $(PKG_BUILD_DIR)/helloworld $(1)/bin/
 endef
 
 
