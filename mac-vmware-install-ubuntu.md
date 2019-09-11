@@ -20,21 +20,21 @@ nav_order: 1
 
 打开 VMware Fusion，新建虚拟机，导入 `ubuntu-14.04.6-server-amd64.iso`
 
-![]({{ site.baseurl }}{% link assets/images/Snipaste_2019-09-10_21-31-21.png %})
+![]({{ site.baseurl }}{% link assets/images/Snipaste_2019-09-11_11-18-08.png %})
 
-![]({{ site.baseurl }}{% link assets/images/Snipaste_2019-09-10_21-31-33.png %})
+![]({{ site.baseurl }}{% link assets/images/Snipaste_2019-09-11_11-18-15.png %})
 
 设置虚拟机名称 `Ubuntu 64 Server 14.04.6.vmwarevm`
 
-![]({{ site.baseurl }}{% link assets/images/Snipaste_2019-09-10_21-32-01.png %})
+![]({{ site.baseurl }}{% link assets/images/Snipaste_2019-09-11_11-18-44.png %})
 
 设置虚拟机磁盘大小，推荐 50G（频繁编译 OpenWrt 可能会用到 30-40 G）
 
-![]({{ site.baseurl }}{% link assets/images/Snipaste_2019-09-10_21-33-23.png %})
+![]({{ site.baseurl }}{% link assets/images/Snipaste_2019-09-11_11-19-54.png %})
 
 设置处理器核数，推荐 4 核（视个人电脑情况而定）
 
-![]({{ site.baseurl }}{% link assets/images/Snipaste_2019-09-10_21-33-38.png %})
+![]({{ site.baseurl }}{% link assets/images/Snipaste_2019-09-11_11-20-03.png %})
 
 启动 Ubuntu，选择中文
 
