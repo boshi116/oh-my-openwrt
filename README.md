@@ -2,15 +2,23 @@
 
 ---
 
-Some OpenWrt/LEDE LuCI for Commonly Used Package
+OpenWrt Packages For Commonly Using
 
-Add "src-git stuart https://github.com/stuarthua/openwrt-package" to feeds.conf.default.
+Reading：[gh-pages](https://stuarthua.github.io/oh-my-openwrt/)
 
-```bash
-./scripts/feeds update -a
-./scripts/feeds install -a
+## Usage
+
+Edit `feeds.conf.default`, add below line
+
+```
+src-git stuart https://github.com/stuarthua/openwrt-package
 ```
 
-Or download it yourself and put it in the package folder.
+Execute
 
-Enjoy.
+```bash
+$ ./scripts/feeds update -a
+$ ./scripts/feeds install -a
+```
+
+Make and Enjoy.
