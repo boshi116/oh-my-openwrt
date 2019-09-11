@@ -287,7 +287,8 @@ etc
 * `/etc/config/system` 系统基本配置，如时区、NTP
 * `/etc/config/luci` LuCI 配置，如语言、主题
 * `/etc/shadow` 加密后的密码
-* `/etc/okpg/customfeeds.conf` 自定义源
+* `/etc/okpg/customfeeds.conf` 自定义软件源
+* `/etc/okpg/distfeeds.conf` 发行版软件源
 
 现在，我们在 Mac 上保留这几项配置至 `xiaomi` 这一目录, 上传 `xiaomi` 至 Ubuntu `openwrt-imagebuilder-xiaomi` 目录 (觉得 scp 命令繁琐的话，可以使用 [Cyberduck](https://cyberduck.io/) 这一可视化 scp 工具)
 
