@@ -1,20 +1,14 @@
 ---
-title: 编译软件包 luci-app-filebrowser (源码编译)
+title: 使用源码编译特定软件包
 parent: 编译自己的 OpenWrt 软件包
-nav_order: 2
+nav_order: 3
 ---
 
-# 编译软件包 luci-app-filebrowser (源码编译)
-
-`luci-app-filebrowser` Web 文件管理
-
-![]({{ site.baseurl }}{% link assets/images/Snipaste_2019-09-10_20-24-00.png %})
+# 使用源码编译特定软件包
 
 ## 准备
 
-参考上文 [在 Mac 上使用 VMware 安装 Ubuntu 14.04 LTS](https://stuarthua.github.io/oh-my-openwrt/mac-vmware-install-ubuntu.html)
-
-* Ubuntu 14.04 LTS
+* Ubuntu 14.04 LTS - 参考上文 [在 Mac 上使用 VMware 安装 Ubuntu 14.04 LTS](https://stuarthua.github.io/oh-my-openwrt/mac-vmware-install-ubuntu.html)
 
 ## 下载源码
 
