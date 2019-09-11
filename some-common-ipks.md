@@ -75,3 +75,5 @@ src/gz openwrtio http://dl.openwrt.io/vendors/youku/ramips/packages
 一些第三方软件包会强依赖硬件平台，通常需要自行编译。以下是个人常用的软件包，仅供参考。
 
 * [stuarthua/oh-my-openwrt](https://github.com/stuarthua/oh-my-openwrt/)
+
+如需自定义，请参考下节 [编译自己的 OpenWrt 软件包](https://stuarthua.github.io/oh-my-openwrt/make-my-openwrt-package.html)
