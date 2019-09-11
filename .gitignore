@@ -1,4 +1,4 @@
-zzz_test/
-zzz_test2/
-*_test*
-*~
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
