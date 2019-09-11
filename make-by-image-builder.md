@@ -46,9 +46,16 @@ $ wget http://downloads.openwrt.org/releases/18.06.4/targets/ramips/mt76x8/openw
 $ tar -xvf openwrt-imagebuilder-18.06.4-ramips-mt76x8.Linux-x86_64.tar.xz
 ```
 
-得到 `openwrt-imagebuilder-18.06.4-ramips-mt76x8.Linux-x86_64` 目录，重命名为 `openwrt-imagebuilder-xiaomi`, 该目录包含并配置好了所有适用于编译小米路由器青春版固件需要的程序
+得到 `openwrt-imagebuilder-18.06.4-ramips-mt76x8.Linux-x86_64` 目录，重命名为 `openwrt-imagebuilder-xiaomi`
 
-## 配置 Image Builder
+```bash
+$ mv openwrt-imagebuilder-18.06.4-ramips-mt76x8.Linux-x86_64 openwrt-imagebuilder-xiaomi
+$ rm -rf openwrt-imagebuilder-18.06.4-ramips-mt76x8.Linux-x86_64.tar.xz
+```
+
+`openwrt-imagebuilder-xiaomi` 目录包含并配置好了所有适用于编译小米路由器青春版固件需要的程序
+
+## 使用 Image Builder
 
 [官方 Image Builder 使用指引](https://openwrt.org/start?id=zh/docs/guide-user/additional-software/imagebuilder)
 
@@ -401,13 +408,13 @@ PACKAGES="base-files busybox dnsmasq dropbear firewall fstools fwtool hostapd-co
 FILES=~/oh-my-openwrt/devices/xiaomi
 ```
 
-得到固件 `openwrt-18.06.4-ramips-mt76x8-miwifi-nano-squashfs-sysupgrade.bin`, 存放于 `openwrt-imagebuilder-xiaomi/bin/targets/ramips/mt76x8/` 目录，为了方便，将其挪至用户根目录
+编译成功的话，在 `openwrt-imagebuilder-xiaomi/bin/targets/ramips/mt76x8/` 目录，我们可以得到固件 `openwrt-18.06.4-ramips-mt76x8-miwifi-nano-squashfs-sysupgrade.bin`
 
-```
-cp -rf ~/openwrt-imagebuilder-xiaomi/bin/targets/ramips/mt76x8/openwrt-18.06.4-ramips-mt76x8-miwifi-nano-squashfs-sysupgrade.bin ~
-```
+固件文件路径过深，为便于查看，可以在用户根目录建立软连接
 
-至此，在用户根目录得到纯净版的固件 `openwrt-18.06.4-ramips-mt76x8-miwifi-nano-squashfs-sysupgrade.bin`
+```bash
+$ ln -s /home/stuart/openwrt-imagebuilder-xiaomi/bin/targets/ramips/mt76x8 /home/stuart/bins
+```
 
 固件特性：
 
