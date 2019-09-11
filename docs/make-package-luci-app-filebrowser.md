@@ -1,10 +1,10 @@
 ---
-title: 编译软件包 luci-app-filebrowser
+title: 编译软件包 luci-app-filebrowser (源码编译)
 parent: 编译自己的 OpenWrt 软件包
 nav_order: 2
 ---
 
-# 编译软件包 luci-app-filebrowser
+# 编译软件包 luci-app-filebrowser (源码编译)
 
 `luci-app-filebrowser` Web 文件管理
 
@@ -105,7 +105,36 @@ $ make menuconfig
 * Subtarget: MT78x8 based boards
 * Target Profile: Xiaomi MiWiFi Nano
 * Target Images: 勾选 suashfs
+* LuCI for Stuart: 勾选 luci-app-filebrowser
 
-
+保存设置
 
 ## 开始编译
+
+下载编译所需依赖
+
+```bash
+$ make download V=99
+```
+
+执行首次编译，生成固件
+
+```bash
+$ make V=99
+```
+
+首次编译，会生成所选 Target 的固件和所选软件包标记为 M 的 ipk
+
+之后的编译，因为已经生成固件和 SDK 了，只需对特定软件包执行编译即可
+
+以 `luci-app-filebrowser` 为例
+
+```bash
+# 第二次只编译软件包
+$ make package/feeds/stuart/luci-app-filebrowser/compile V=99
+```
+
+## 常见问题
+
+* 如遇编译失败，尝试 `make clean` 清理中间产物，再重新编译
+* 推荐先执行 `make download` 下载所需依赖，再执行构建
