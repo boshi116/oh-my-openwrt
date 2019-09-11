@@ -1,8 +1,12 @@
 ---
-title: 我的硬件
+title: README
 nav_order: 1
 permalink: /
 ---
+
+## 前言
+
+阅读：[gh-pages](https://stuarthua.github.io/oh-my-openwrt/)
 
 ## 我的硬件
 
@@ -10,8 +14,6 @@ permalink: /
 * 小米路由器青春版
 
 ## Openwrt 镜像
-
-阅读：[gh-pages](https://stuarthua.github.io/oh-my-openwrt/)
 
 ### 官方版
 
