@@ -22,3 +22,7 @@ $ ./scripts/feeds install -a
 ```
 
 Make and Enjoy.
+
+## Thanks
+
+* [Lienol/openwrt-package](https://github.com/Lienol/openwrt-package)
