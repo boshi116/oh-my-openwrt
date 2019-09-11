@@ -296,7 +296,7 @@ src/gz openwrt_base http://mirrors.ustc.edu.cn/lede/releases/18.06.4/packages/x8
 src/gz openwrt_luci http://mirrors.ustc.edu.cn/lede/releases/18.06.4/packages/x86_64/luci
 src/gz openwrt_packages http://mirrors.ustc.edu.cn/lede/releases/18.06.4/packages/x86_64/packages
 src/gz openwrt_routing http://mirrors.ustc.edu.cn/lede/releases/18.06.4/packages/x86_64/routing
-src/gz openwrt_telephony http://mirrors.ustc.edu.cn/lede//releases/18.06.4/packages/x86_64/telephony
+src/gz openwrt_telephony http://mirrors.ustc.edu.cn/lede/releases/18.06.4/packages/x86_64/telephony
 ```
 
 ![]({{ site.baseurl }}{% link assets/images/Snipaste_2019-09-08_15-54-49.png %})

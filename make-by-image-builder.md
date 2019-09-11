@@ -386,6 +386,7 @@ rm -rf openwrt-imagebuilder-18.06.4-ramips-mt76x8.Linux-x86_64.tar.xz
 下载路由器配置备份，存放至 `~/oh-my-openwrt`
 
 ```
+cd ~
 git clone https://github.com/stuarthua/oh-my-openwrt
 git checkout -b devices origin/devices
 ```
@@ -393,16 +394,16 @@ git checkout -b devices origin/devices
 开始编译
 
 ```
-cd openwrt-imagebuilder-xiaomi
+cd ~/openwrt-imagebuilder-xiaomi
 make image PROFILE=miwifi-nano \
 PACKAGES="base-files busybox dnsmasq dropbear firewall fstools fwtool hostapd-common ip6tables iptables iw iwinfo jshn jsonfilter kernel kmod-cfg80211 kmod-gpio-button-hotplug kmod-ip6tables kmod-ipt-conntrack kmod-ipt-core kmod-ipt-nat kmod-ipt-offload kmod-leds-gpio kmod-lib-crc-ccitt kmod-mac80211 kmod-mt76 kmod-mt76-core kmod-mt7603 kmod-mt76x02-common kmod-mt76x2 kmod-mt76x2-common kmod-nf-conntrack kmod-nf-conntrack6 kmod-nf-flow kmod-nf-ipt kmod-nf-ipt6 kmod-nf-nat kmod-nf-reject kmod-nf-reject6 kmod-nls-base kmod-ppp kmod-pppoe kmod-pppox kmod-slhc libblobmsg-json libc libgcc libip4tc libip6tc libiwinfo libiwinfo-lua libjson-c libjson-script liblua liblucihttp liblucihttp-lua libnl-tiny libpthread libubox libubus libubus-lua libuci libuclient libxtables logd lua luci luci-app-firewall luci-base luci-lib-ip luci-lib-jsonc luci-lib-nixio luci-mod-admin-full luci-proto-ipv6 luci-proto-ppp luci-theme-bootstrap mtd netifd odhcp6c odhcpd-ipv6only openwrt-keyring opkg ppp ppp-mod-pppoe procd rpcd rpcd-mod-rrdns swconfig ubox ubus ubusd uci uclient-fetch uhttpd usign wireless-regdb wpad-mini luci-i18n-base-zh-cn -kmod-usb-core -kmod-usb2 -kmod-usb-ohci -kmod-usb-ledtrig-usbport" \
-FILES=oh-my-openwrt/devices/xiaomi
+FILES=~/oh-my-openwrt/devices/xiaomi
 ```
 
 得到固件 `openwrt-18.06.4-ramips-mt76x8-miwifi-nano-squashfs-sysupgrade.bin`, 存放于 `openwrt-imagebuilder-xiaomi/bin/targets/ramips/mt76x8/` 目录，为了方便，将其挪至用户根目录
 
 ```
-mv ~/openwrt-imagebuilder-xiaomi/bin/targets/ramips/mt76x8/openwrt-18.06.4-ramips-mt76x8-miwifi-nano-squashfs-sysupgrade.bin ~
+cp -rf ~/openwrt-imagebuilder-xiaomi/bin/targets/ramips/mt76x8/openwrt-18.06.4-ramips-mt76x8-miwifi-nano-squashfs-sysupgrade.bin ~
 ```
 
 至此，在用户根目录得到纯净版的固件 `openwrt-18.06.4-ramips-mt76x8-miwifi-nano-squashfs-sysupgrade.bin`
