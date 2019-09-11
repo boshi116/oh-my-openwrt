@@ -4,10 +4,6 @@ nav_order: 1
 permalink: /
 ---
 
-## 前言
-
-阅读：[gh-pages](https://stuarthua.github.io/oh-my-openwrt/)
-
 ## 我的硬件
 
 * x86 软路由
