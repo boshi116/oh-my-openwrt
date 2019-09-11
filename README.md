@@ -13,7 +13,7 @@ Reading：[gh-pages](https://stuarthua.github.io/oh-my-openwrt/)
 Edit `feeds.conf.default`, add below line
 
 ```
-src-git stuart https://github.com/stuarthua/openwrt-package
+src-git stuart https://github.com/stuarthua/oh-my-openwrt
 ```
 
 Execute
@@ -30,7 +30,7 @@ Make and Enjoy.
 checkout devices
 
 ```bash
-$ git clone https://github.com/stuarthua/openwrt-package
+$ git clone https://github.com/stuarthua/oh-my-openwrt
 $ git checkout -b devices origin/devices 
 ```
 
