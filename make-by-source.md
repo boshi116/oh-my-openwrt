@@ -170,7 +170,32 @@ $ make V=99
 $ make package/helloworld/compile V=99
 ```
 
-### 常见问题
+### 常用指令
 
-* 如遇编译失败，尝试 `make clean` 清理中间产物，再重新编译
-* 推荐先执行 `make download` 下载所需依赖，再执行构建
+更多指令，详见 [官方 - 编译说明](https://openwrt.org/zh-cn/doc/howto/build)，也可参考 [openwrt 编译 helloword.ipk](https://lixingcong.github.io/2016/05/03/openwrt-helloword/)，中文讲解的更细致一些。
+
+* make clean
+
+删除 `bin` 和 `build_dir`目录
+
+* make dirclean
+
+删除 `bin` 和 `build_dir` 目录，同时删除 `staging_dir` 和 `toolchain` 目录，基本的全面清理
+
+* make distclean
+
+删除编译产物以及配置的所有内容，并删除所有下载的 feeds，完全的全面清理
+
+* make download
+
+下载所需依赖，可以添加 `V=s` 查看详情
+
+* make defconfig
+
+即 “默认配置”，在启用默认配置以前先选择目标平台 Target。
+
+执行这个命令，将会生成一个通用的编译系统配置，这个配置包含了一个对于编译环境的先决条件和依赖的检查，同时会安装缺失的组件并再次运行。
+
+* make prereq
+
+自动配置依赖关系，通常在执行完 `make defconfig`, 生成默认配置后执行此命令
