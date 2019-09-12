@@ -4,7 +4,7 @@ has_children: true
 nav_order: 2
 ---
 
-# 官方 OpenWrt
+# 使用官方 OpenWrt
 
 镜像下载说明：[https://openwrt.org/zh/downloads](https://openwrt.org/zh/downloads)
 
