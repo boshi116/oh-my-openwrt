@@ -4,11 +4,11 @@
 
 Using OpenWrt Experience
 
-Reading：[gh-pages](https://stuarthua.github.io/oh-my-openwrt/)
+Reading: [gh-pages](https://stuarthua.github.io/oh-my-openwrt/)
 
 ## Usage
 
-### Make From Source Code
+### Make Image or Packages
 
 Edit `feeds.conf.default`, add below line
 
@@ -34,7 +34,7 @@ $ git clone https://github.com/stuarthua/oh-my-openwrt
 $ git checkout -b devices origin/devices 
 ```
 
-Use Image Builder to gen your image.
+Use Image Builder to gen your image or just install it on your devices.
 
 ## Thanks
 
