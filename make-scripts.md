@@ -199,3 +199,21 @@ make package/helloworld/compile V=s
 ```
 
 在 `~/sdk-ipks/xiaomi` 目录查看生成的软件包
+
+## 附录
+
+* 更新 stuart 软件源仓库及 devices
+
+终端开启翻墙 - `startss`
+
+```bash
+cd ~/oh-my-openwrt && git pull && cd ~/oh-my-openwrt-devices && git pull
+```
+
+* feeds 更新及安装 (x86, xiaomi)
+
+终端开启翻墙 - `startss`
+
+```
+cd ~/openwrt-sdk-xiaomi && ./scripts/feeds update -a && ./scripts/feeds install -a && cd ~/openwrt-sdk-x86 && ./scripts/feeds update -a && ./scripts/feeds install -a
+```
