@@ -50,6 +50,12 @@ ln -s /home/stuart/openwrt-sdk-x86/bin/packages/x86_64/stuart /home/stuart/sdk-i
 cd ~ && git clone https://github.com/stuarthua/oh-my-openwrt oh-my-openwrt-devices && git checkout -b devices origin/devices
 ```
 
+更新
+
+```bash
+cd ~/oh-my-openwrt-devices && git pull
+```
+
 * 生成固件
 
 进入 `~/openwrt-imagebuilder-x86`
@@ -76,6 +82,12 @@ FILES=~/oh-my-openwrt-devices/devices/x86
 
 ```bash
 cd ~ && git clone https://github.com/stuarthua/oh-my-openwrt
+```
+
+更新
+
+```bash
+cd ~/oh-my-openwrt && git pull
 ```
 
 编辑 `~/openwrt-sdk-x86/feeds.conf.default`
@@ -153,6 +165,12 @@ ln -s /home/stuart/openwrt-sdk-xiaomi/bin/packages/mipsel_24kc/base /home/stuart
 cd ~ && git clone https://github.com/stuarthua/oh-my-openwrt oh-my-openwrt-devices && git checkout -b devices origin/devices
 ```
 
+更新
+
+```bash
+cd ~/oh-my-openwrt-devices && git pull
+```
+
 * 生成固件
 
 进入 `~/openwrt-imagebuilder-xiaomi`
@@ -179,6 +197,12 @@ FILES=~/oh-my-openwrt-devices/devices/xiaomi
 
 ```bash
 cd ~ && git clone https://github.com/stuarthua/oh-my-openwrt
+```
+
+更新
+
+```bash
+cd ~/oh-my-openwrt && git pull
 ```
 
 编辑 `~/openwrt-sdk-xiaomi/feeds.conf.default`
