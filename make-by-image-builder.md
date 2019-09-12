@@ -1,7 +1,7 @@
 ---
 title: 使用 Image Builder 组装固件镜像
 parent: 编译自己的 OpenWrt 固件及软件包
-nav_order: 2
+nav_order: 1
 ---
 
 # 使用 Image Builder 组装固件镜像
