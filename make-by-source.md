@@ -6,6 +6,8 @@ nav_order: 3
 
 # 使用源码编译固件及软件包
 
+使用源码编译，可以设置生成 image builder 和 sdk，也可以编译完整镜像，或者单独编译 ipk，这是适合范围最广的编译方式，即便这有些耗时。
+
 ## 准备
 
 * Ubuntu 14.04 LTS - 参考上文 [在 Mac 上使用 VMware 安装 Ubuntu 14.04 LTS](https://stuarthua.github.io/oh-my-openwrt/mac-vmware-install-ubuntu.html)
@@ -43,13 +45,40 @@ $ sudo apt-get update
 $ sudo apt-get -y install build-essential asciidoc binutils bzip2 gawk gettext git libncurses5-dev libz-dev patch unzip zlib1g-dev lib32gcc1 libc6-dev-i386 subversion flex uglifyjs git-core gcc-multilib p7zip p7zip-full msmtp libssl-dev texinfo libglib2.0-dev xmlto qemu-utils upx libelf-dev autoconf automake libtool autopoint
 ```
 
-进入 OpenWrt，以下操作均在 `~/openwrt` 目录下完成
+### 添加第三方软件包代码
 
-添加自定义 feeds, 编辑 `feeds.conf.default`
+添加第三方软件包（以个人为例）
+
+* 本地方式添加
+
+本地下载第三方软件包
+
+```bash
+$ cd ~
+$ git clone https://github.com/stuarthua/oh-my-openwrt
+```
+
+进入 OpenWrt，添加自定义 feeds, 编辑 `feeds.conf.default`
+
+```
+src-link stuart /home/stuart/oh-my-openwrt/stuart
+```
+
+或者直接拷贝源码至 `~/openwrt/package` (不推荐，因为这有可能需要频繁拷贝，较为繁琐)
+
+```bash
+$ cp -rf ~/oh-my-openwrt/stuart ~/openwrt/package/stuart
+```
+
+* 远程方式添加
+
+进入 OpenWrt，添加自定义 feeds, 编辑 `feeds.conf.default`
 
 ```
 src-git stuart https://github.com/stuarthua/oh-my-openwrt
 ```
+
+### feeds 更新和安装
 
 终端开启代理 - `startss`, 更新 feeds
 
@@ -93,23 +122,33 @@ Installing all packages from feed stuart.
 $ make menuconfig
 ```
 
-以下设置硬件以 小米路由器青春版 为例
+### 小米路由器青春版
 
 * Target System: MediaTed Ralink MIPS
 * Subtarget: MT78x8 based boards
 * Target Profile: Xiaomi MiWiFi Nano
-* Target Images: 勾选 suashfs
-* LuCI for Stuart: 勾选 luci-app-filebrowser
+* Target Images: 勾选 squashfs
+
+### x86
+
+* Target System: x86
+* Subtarget: x86_64
+* Target Profile: Generic
+* Target Images: 勾选 squashfs
 
 保存设置
 
+> **提示：** `openwrt` 目录下隐藏文件 `.config` 存放的便是 `make menuconfig` 的设置，删除这个文件，即可恢复默认设置
+
 ## 开始编译
 
-下载编译所需依赖
+终端开启代理 - `startss`, 下载编译所需依赖
 
 ```bash
 $ make download V=99
 ```
+
+### 编译固件
 
 执行首次编译，生成固件
 
@@ -117,18 +156,21 @@ $ make download V=99
 $ make V=99
 ```
 
-首次编译，会生成所选 Target 的固件和所选软件包标记为 M 的 ipk
+编译成功的话，会生成所选 Target 的固件和软件包
 
-之后的编译，因为已经生成固件和 SDK 了，只需对特定软件包执行编译即可
+编译产物均在 `openwrt/bin` 目录下可以找到，根据不同的硬件平台类型按文件夹分类
 
-以 `luci-app-filebrowser` 为例
+> **提示：** 之后的编译，因为已经完整下载了依赖并生成 toolchain, 速度相对会快一些。
+
+### 编译特定软件包
+
+以第三方软件包 `helloworld` 为例
 
 ```bash
-# 第二次只编译软件包
-$ make package/feeds/stuart/luci-app-filebrowser/compile V=99
+$ make package/helloworld/compile V=99
 ```
 
-## 常见问题
+### 常见问题
 
 * 如遇编译失败，尝试 `make clean` 清理中间产物，再重新编译
 * 推荐先执行 `make download` 下载所需依赖，再执行构建

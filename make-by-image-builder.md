@@ -344,7 +344,7 @@ src imagebuilder file:packages
 
 > **注意：** Image Builder 并不能从源码编译，更多时候，它只是一个组装工具，帮助我们将各种 ipk 包组装到固件镜像中。
 
-以 HelloWorld `luci-app-helloworld` 为例，将 `luci-app-helloworld.ipk` 文件上传到 `openwrt-imagebuilder-xiaomi/packages` 目录，在编译参数 `PACKAGES` 中添加 `luci-app-helloworld`
+以 HelloWorld `helloworld` 为例，将 `helloworld.ipk` 文件上传到 `openwrt-imagebuilder-xiaomi/packages` 目录，在编译参数 `PACKAGES` 中添加 `helloworld`
 
 ## 开始编译
 
@@ -370,7 +370,7 @@ openwrt-imagebuilder-xiaomi
 ```bash
 $ cd openwrt-imagebuilder-xiaomi
 $ make image PROFILE=miwifi-nano \
-PACKAGES="base-files busybox dnsmasq dropbear firewall fstools fwtool hostapd-common ip6tables iptables iw iwinfo jshn jsonfilter kernel kmod-cfg80211 kmod-gpio-button-hotplug kmod-ip6tables kmod-ipt-conntrack kmod-ipt-core kmod-ipt-nat kmod-ipt-offload kmod-leds-gpio kmod-lib-crc-ccitt kmod-mac80211 kmod-mt76 kmod-mt76-core kmod-mt7603 kmod-mt76x02-common kmod-mt76x2 kmod-mt76x2-common kmod-nf-conntrack kmod-nf-conntrack6 kmod-nf-flow kmod-nf-ipt kmod-nf-ipt6 kmod-nf-nat kmod-nf-reject kmod-nf-reject6 kmod-nls-base kmod-ppp kmod-pppoe kmod-pppox kmod-slhc libblobmsg-json libc libgcc libip4tc libip6tc libiwinfo libiwinfo-lua libjson-c libjson-script liblua liblucihttp liblucihttp-lua libnl-tiny libpthread libubox libubus libubus-lua libuci libuclient libxtables logd lua luci luci-app-firewall luci-base luci-lib-ip luci-lib-jsonc luci-lib-nixio luci-mod-admin-full luci-proto-ipv6 luci-proto-ppp luci-theme-bootstrap mtd netifd odhcp6c odhcpd-ipv6only openwrt-keyring opkg ppp ppp-mod-pppoe procd rpcd rpcd-mod-rrdns swconfig ubox ubus ubusd uci uclient-fetch uhttpd usign wireless-regdb wpad-mini luci-i18n-base-zh-cn -kmod-usb-core -kmod-usb2 -kmod-usb-ohci -kmod-usb-ledtrig-usbport luci-app-helloworld" \
+PACKAGES="base-files busybox dnsmasq dropbear firewall fstools fwtool hostapd-common ip6tables iptables iw iwinfo jshn jsonfilter kernel kmod-cfg80211 kmod-gpio-button-hotplug kmod-ip6tables kmod-ipt-conntrack kmod-ipt-core kmod-ipt-nat kmod-ipt-offload kmod-leds-gpio kmod-lib-crc-ccitt kmod-mac80211 kmod-mt76 kmod-mt76-core kmod-mt7603 kmod-mt76x02-common kmod-mt76x2 kmod-mt76x2-common kmod-nf-conntrack kmod-nf-conntrack6 kmod-nf-flow kmod-nf-ipt kmod-nf-ipt6 kmod-nf-nat kmod-nf-reject kmod-nf-reject6 kmod-nls-base kmod-ppp kmod-pppoe kmod-pppox kmod-slhc libblobmsg-json libc libgcc libip4tc libip6tc libiwinfo libiwinfo-lua libjson-c libjson-script liblua liblucihttp liblucihttp-lua libnl-tiny libpthread libubox libubus libubus-lua libuci libuclient libxtables logd lua luci luci-app-firewall luci-base luci-lib-ip luci-lib-jsonc luci-lib-nixio luci-mod-admin-full luci-proto-ipv6 luci-proto-ppp luci-theme-bootstrap mtd netifd odhcp6c odhcpd-ipv6only openwrt-keyring opkg ppp ppp-mod-pppoe procd rpcd rpcd-mod-rrdns swconfig ubox ubus ubusd uci uclient-fetch uhttpd usign wireless-regdb wpad-mini luci-i18n-base-zh-cn -kmod-usb-core -kmod-usb2 -kmod-usb-ohci -kmod-usb-ledtrig-usbport helloworld" \
 FILES=xiaomi
 ```
 
@@ -380,7 +380,7 @@ FILES=xiaomi
 
 ## 小结
 
-现在，我们来回顾一下使用 Image Builder 编译定制小米路由器青春版固件的步骤 (不包含第三方软件包部分): 
+现在，我们来回顾一下使用 Image Builder 编译定制小米路由器青春版固件的步骤 (不包含第三方软件包): 
 
 Ubuntu 下载 [小米路由器青春版 Image Builder](http://downloads.openwrt.org/releases/18.06.4/targets/ramips/mt76x8/openwrt-imagebuilder-18.06.4-ramips-mt76x8.Linux-x86_64.tar.xz)，解压并重命名为 `openwrt-imagebuilder-xiaomi`, 存放在用户根目录
 
@@ -391,21 +391,21 @@ mv openwrt-imagebuilder-18.06.4-ramips-mt76x8.Linux-x86_64.tar.xz openwrt-imageb
 rm -rf openwrt-imagebuilder-18.06.4-ramips-mt76x8.Linux-x86_64.tar.xz
 ```
 
-下载路由器配置备份，存放至 `~/oh-my-openwrt`
+下载路由器配置备份，存放至 `~/oh-my-openwrt-devices`
 
 ```
 cd ~
-git clone https://github.com/stuarthua/oh-my-openwrt
+git clone https://github.com/stuarthua/oh-my-openwrt oh-my-openwrt-devices
 git checkout -b devices origin/devices
 ```
 
-开始编译
+终端开启代理 - `startss`, 开始编译
 
 ```
 cd ~/openwrt-imagebuilder-xiaomi
 make image PROFILE=miwifi-nano \
 PACKAGES="base-files busybox dnsmasq dropbear firewall fstools fwtool hostapd-common ip6tables iptables iw iwinfo jshn jsonfilter kernel kmod-cfg80211 kmod-gpio-button-hotplug kmod-ip6tables kmod-ipt-conntrack kmod-ipt-core kmod-ipt-nat kmod-ipt-offload kmod-leds-gpio kmod-lib-crc-ccitt kmod-mac80211 kmod-mt76 kmod-mt76-core kmod-mt7603 kmod-mt76x02-common kmod-mt76x2 kmod-mt76x2-common kmod-nf-conntrack kmod-nf-conntrack6 kmod-nf-flow kmod-nf-ipt kmod-nf-ipt6 kmod-nf-nat kmod-nf-reject kmod-nf-reject6 kmod-nls-base kmod-ppp kmod-pppoe kmod-pppox kmod-slhc libblobmsg-json libc libgcc libip4tc libip6tc libiwinfo libiwinfo-lua libjson-c libjson-script liblua liblucihttp liblucihttp-lua libnl-tiny libpthread libubox libubus libubus-lua libuci libuclient libxtables logd lua luci luci-app-firewall luci-base luci-lib-ip luci-lib-jsonc luci-lib-nixio luci-mod-admin-full luci-proto-ipv6 luci-proto-ppp luci-theme-bootstrap mtd netifd odhcp6c odhcpd-ipv6only openwrt-keyring opkg ppp ppp-mod-pppoe procd rpcd rpcd-mod-rrdns swconfig ubox ubus ubusd uci uclient-fetch uhttpd usign wireless-regdb wpad-mini luci-i18n-base-zh-cn -kmod-usb-core -kmod-usb2 -kmod-usb-ohci -kmod-usb-ledtrig-usbport" \
-FILES=~/oh-my-openwrt/devices/xiaomi
+FILES=~/oh-my-openwrt-devices/devices/xiaomi
 ```
 
 编译成功的话，在 `openwrt-imagebuilder-xiaomi/bin/targets/ramips/mt76x8/` 目录，我们可以得到固件 `openwrt-18.06.4-ramips-mt76x8-miwifi-nano-squashfs-sysupgrade.bin`
@@ -413,7 +413,8 @@ FILES=~/oh-my-openwrt/devices/xiaomi
 固件文件路径过深，为便于查看，可以在用户根目录建立软连接
 
 ```bash
-$ ln -s /home/stuart/openwrt-imagebuilder-xiaomi/bin/targets/ramips/mt76x8 /home/stuart/bins
+$ mkdir -p ~/image-bins
+$ ln -s /home/stuart/openwrt-imagebuilder-xiaomi/bin/targets/ramips/mt76x8 /home/stuart/image-bins/xiaomi
 ```
 
 固件特性：

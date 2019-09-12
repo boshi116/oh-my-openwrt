@@ -15,6 +15,8 @@ OpenWrt 官方也推荐使用 SDK 方式编译 ipk，而不是使用源码，这
 * 闪存 - 16M
 * 内存 - 64M
 
+以下记录编译 helloworld (源码 - [stuarthua/oh-my-openwrt](https://github.com/stuarthua/oh-my-openwrt)) 的过程，仅供参考。
+
 ## 准备
 
 * 阅读：[在 Mac 上使用 VMware 安装 Ubuntu 14.04 LTS](https://stuarthua.github.io/oh-my-openwrt/mac-vmware-install-ubuntu.html)
@@ -77,9 +79,9 @@ src-git telephony https://git.openwrt.org/feed/telephony.git^cb939d9677d6e38c428
 
 查阅 [官网 - OpenWrt Feeds](https://openwrt.org/docs/guide-developer/feeds)，我们可以方便的定义 feed 链接到本地文件
 
-### 添加第三方软件包仓库（以个人为例）
+### 添加软件包源码
 
-* 本地方式
+* 本地方式添加
 
 ```bash
 $ cd ~
@@ -92,13 +94,13 @@ $ git clone https://github.com/stuarthua/oh-my-openwrt
 src-link stuart /home/stuart/oh-my-openwrt/stuart
 ```
 
-或者直接拷贝源码至 `~/openwrt-sdk-xiaomi/package`
+或者直接拷贝源码至 `~/openwrt-sdk-xiaomi/package` (不推荐，因为这有可能需要频繁拷贝，较为繁琐)
 
 ```bash
 $ cp -rf ~/oh-my-openwrt/stuart ~/openwrt-sdk-xiaomi/package/stuart
 ```
 
-* 远程方式
+* 远程仓库方式添加
 
 编辑 `~/openwrt-sdk-xiaomi/feeds.conf.default`, 添加自定义 `src-git`
 
@@ -161,6 +163,16 @@ $ make package/helloworld/compile V=s
 ipk 文件路径过深，为便于查看，可以在用户根目录建立软连接
 
 ```bash
-$ ln -s /home/stuart/openwrt-sdk-xiaomi/bin/packages/mipsel_24kc/base /home/stuart/ipks
+$ mkdir -p ~/sdk-ipks
+$ ln -s /home/stuart/openwrt-sdk-xiaomi/bin/packages/mipsel_24kc/base /home/stuart/sdk-ipks/xiaomi
 ```
 
+将 ipk 离线安装到路由器或使用 Image Builder 打包进固件，便可以使用
+
+以 helloworld 为例，SSH 连接路由器，输入 `helloworld`
+
+```bash
+$ root@OpenWrt:~# helloworld
+
+hello world!
+```
