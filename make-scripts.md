@@ -54,7 +54,7 @@ cd ~ && git clone https://github.com/stuarthua/oh-my-openwrt oh-my-openwrt-devic
 
 进入 `~/openwrt-imagebuilder-x86`
 
-```
+```bash
 cd ~/openwrt-imagebuilder-x86
 ```
 
@@ -95,7 +95,13 @@ cd ~/openwrt-sdk-x86 && ./scripts/feeds update -a && ./scripts/feeds install -a
 
 * 编译软件包
 
-以 helloworld 为例
+进入 `~/openwrt-sdk-x86`
+
+```bash
+cd ~/openwrt-sdk-x86
+```
+
+以 helloworld 为例，执行编译
 
 ```bash
 make package/helloworld/compile V=s
@@ -151,7 +157,7 @@ cd ~ && git clone https://github.com/stuarthua/oh-my-openwrt oh-my-openwrt-devic
 
 进入 `~/openwrt-imagebuilder-xiaomi`
 
-```
+```bash
 cd ~/openwrt-imagebuilder-xiaomi
 ```
 
@@ -192,7 +198,13 @@ cd ~/openwrt-sdk-xiaomi && ./scripts/feeds update -a && ./scripts/feeds install 
 
 * 编译软件包
 
-以 helloworld 为例
+进入 `~/openwrt-sdk-xiaomi`
+
+```bash
+cd ~/openwrt-sdk-xiaomi
+```
+
+以 helloworld 为例，执行编译
 
 ```bash
 make package/helloworld/compile V=s
