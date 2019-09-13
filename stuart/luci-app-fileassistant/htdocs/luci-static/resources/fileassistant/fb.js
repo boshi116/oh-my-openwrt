@@ -31,7 +31,16 @@ String.prototype.replaceAll = function(search, replacement) {
       });
     }
   }
-  function installPath(filename) {
+  function installPath(filename, isdir) {
+    if (isdir === 1) {
+      alert('这是一个目录，只允许安装 ipk 文件！');
+      return;
+    }
+    var isipk = isIPK(filename);
+    if (isipk === 0) {
+      alert('只允许安装 ipk 文件！');
+      return;
+    }
     var c = confirm('你确定要安装 ' + filename + ' 吗？');
     if (c) {
       iwxhr.get('/cgi-bin/luci/admin/stuart/fileassistant_install',
@@ -45,6 +54,15 @@ String.prototype.replaceAll = function(search, replacement) {
             alert('安装失败，请检查文件格式!');
           }
       });
+    }
+  }
+  function isIPK(filename) {
+    var index= filename.lastIndexOf(".");
+    var ext = filePath.substr(index+1);
+    if (ext === 'ipk') {
+      return 1;
+    } else {
+      return 0;
     }
   }
   function renamePath(filename) {
@@ -101,7 +119,8 @@ String.prototype.replaceAll = function(search, replacement) {
       removePath(infoElem.dataset['filename'] , infoElem.dataset['isdir'])
     }
     else if (targetElem.className.indexOf('cbi-button-install') > -1) {
-      installPath(targetElem.parentNode.parentNode.dataset['filename']);
+      infoElem = targetElem.parentNode.parentNode;
+      installPath(infoElem.dataset['filename'] , infoElem.dataset['isdir'])
     }
     else if (targetElem.className.indexOf('cbi-button-edit') > -1) {
       renamePath(targetElem.parentNode.parentNode.dataset['filename']);
