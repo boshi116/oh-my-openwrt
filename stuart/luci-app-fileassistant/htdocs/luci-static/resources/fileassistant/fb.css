@@ -66,3 +66,11 @@
         display: none;
     }
 }
+
+.cbi-section-table {
+    width: 100%;
+}
+
+.cbi-section-table-cell {
+    text-align: right;
+}

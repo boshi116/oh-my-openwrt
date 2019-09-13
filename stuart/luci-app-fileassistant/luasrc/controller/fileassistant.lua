@@ -21,6 +21,9 @@ function index()
     page = entry({"admin", "stuart", "fileassistant_upload"}, call("fileassistant_upload"), nil)
     page.leaf = true
 
+    page = entry({"admin", "stuart", "fileassistant_install"}, call("fileassistant_install"), nil)
+    page.leaf = true
+
 end
 
 function list_response(path, success)
@@ -78,6 +81,11 @@ function fileassistant_rename()
     local newpath = luci.http.formvalue("newpath")
     local success = os.execute('mv "'..filepath..'" "'..newpath..'"')
     list_response(nixio.fs.dirname(filepath), success)
+end
+
+function fileassistant_install()
+    local filepath = luci.http.formvalue("filepath")
+    local success = os.execute('opke install "'..filepath..'"')
 end
 
 function fileassistant_upload()

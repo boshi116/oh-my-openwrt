@@ -31,6 +31,22 @@ String.prototype.replaceAll = function(search, replacement) {
       });
     }
   }
+  function installPath(filename) {
+    var c = confirm('你确定要安装 ' + filename + ' 吗？');
+    if (c) {
+      iwxhr.get('/cgi-bin/luci/admin/stuart/fileassistant_install',
+        {
+          path: concatPath(currentPath, filename)
+        },
+        function (x, res) {
+          if (res.ec === 0) {
+            refresh_list(res.data, currentPath);
+          } else {
+            alert('安装失败，请检查文件格式!');
+          }
+      });
+    }
+  }
   function renamePath(filename) {
     var newname = prompt('请输入新的文件名：', filename);
     if (newname) {
@@ -83,6 +99,9 @@ String.prototype.replaceAll = function(search, replacement) {
     if (targetElem.className.indexOf('cbi-button-remove') > -1) {
       infoElem = targetElem.parentNode.parentNode;
       removePath(infoElem.dataset['filename'] , infoElem.dataset['isdir'])
+    }
+    else if (targetElem.className.indexOf('cbi-button-install') > -1) {
+      installPath(infoElem.dataset['filename']);
     }
     else if (targetElem.className.indexOf('cbi-button-edit') > -1) {
       renamePath(targetElem.parentNode.parentNode.dataset['filename']);
@@ -144,7 +163,7 @@ String.prototype.replaceAll = function(search, replacement) {
             + '<td class="cbi-value-field cbi-value-size">'+o.size+'</td>'
             + '<td class="cbi-value-field cbi-value-perm">'+o.perms+'</td>'
             + '<td class="cbi-section-table-cell"><button class="cbi-button cbi-button-edit">重命名</button>\
-                <button class="cbi-button cbi-button-remove">删除</button></td>'
+                <button class="cbi-button cbi-button-remove">删除</button><button class="cbi-button cbi-button-install">安装</button></td>'
             + '</tr>';
         }
       }
@@ -209,7 +228,7 @@ String.prototype.replaceAll = function(search, replacement) {
           uploadinput.value = '';
         }
         else {
-          alert('Upload failed');
+          alert('上传失败，请稍后再试...');
         }
       };
       xhr.send(formData);
