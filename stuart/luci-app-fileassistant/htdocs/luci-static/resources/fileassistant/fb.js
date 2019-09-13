@@ -245,7 +245,6 @@ String.prototype.replaceAll = function(search, replacement) {
           var res = JSON.parse(xhr.responseText);
           refresh_list(res.data, currentPath);
           uploadinput.value = '';
-          alert('上传成功!');
         }
         else {
           alert('上传失败，请稍后再试...');
