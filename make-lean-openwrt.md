@@ -145,3 +145,4 @@ adbyby alsa-lib alsa-utils amd64-microcode ath10k-firmware-qca9888 ath10k-firmwa
 ## 后续
 
 如果想要对固件进行修改，可以考虑编译时，选中生成 Image Builder 和 SDK，之后使用 SDK 编译特定软件包，使用 Image Builder 生成完整固件。
+
