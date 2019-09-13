@@ -6,6 +6,7 @@
 include $(TOPDIR)/rules.mk
 
 LUCI_TITLE:=luci-app-ramfree
+LUCI_DEPENDS:=+luci-app-stuart
 LUCI_PKGARCH:=all
 PKG_VERSION:=1.0
 PKG_RELEASE:=1
