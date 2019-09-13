@@ -53,7 +53,7 @@ $ qemu-img convert -f raw openwrt-18.06.4-x86-64-combined-squashfs.img -O vmdk o
 * 虚拟机创建完成后，即会弹出设置菜单，选择右上角 “添加设备”
 * 选择 “现有磁盘”，添加 `openwrt-x86_64.vmdk` 虚拟磁盘文件 ---> 制作虚拟磁盘的单独副本 ---> 应用
 
-![]({{ site.baseurl }}{% link assets/images/Snipaste_2019-09-08_15-14-13.png %})
+![](https://raw.githubusercontent.com/stuarthua/PicGo/master/oh-my-openwrt/Snipaste_2019-09-08_15-14-13.png)
 
 设置虚拟机硬盘
 
@@ -80,13 +80,13 @@ $ qemu-img convert -f raw openwrt-18.06.4-x86-64-combined-squashfs.img -O vmdk o
 * 网络适配器2 ---> NAT 模式，使虚拟机可以上网
 * 网络适配器3 ---> 桥接模式，使虚拟机可以供其他设备使用，即连接路由器 lan 口
 
-![]({{ site.baseurl }}{% link assets/images/Snipaste_2019-09-08_13-48-22.png %})
+![](https://raw.githubusercontent.com/stuarthua/PicGo/master/oh-my-openwrt/Snipaste_2019-09-08_13-48-22.png)
 
-![]({{ site.baseurl }}{% link assets/images/Snipaste_2019-09-08_13-53-38.png %})
+![](https://raw.githubusercontent.com/stuarthua/PicGo/master/oh-my-openwrt/Snipaste_2019-09-08_13-53-38.png)
 
-![]({{ site.baseurl }}{% link assets/images/Snipaste_2019-09-08_13-53-50.png %})
+![](https://raw.githubusercontent.com/stuarthua/PicGo/master/oh-my-openwrt/Snipaste_2019-09-08_13-53-50.png)
 
-![]({{ site.baseurl }}{% link assets/images/Snipaste_2019-09-08_13-54-01.png %})
+![](https://raw.githubusercontent.com/stuarthua/PicGo/master/oh-my-openwrt/Snipaste_2019-09-08_13-54-01.png)
 
 设置适用于 OpenWrt 网络适配器的仅主机模式  <sup>[[4]](#hostonly)</sup>，隔离虚拟机和主机，但仍然可以通信，相当于通过网线互联
 
@@ -95,13 +95,13 @@ $ qemu-img convert -f raw openwrt-18.06.4-x86-64-combined-squashfs.img -O vmdk o
 * 打开 VMware，菜单拦 ---> 虚拟机，设置网络适配器模式
 * 网络适配器 ---> 自定（openwrt-host-only）
 
-![]({{ site.baseurl }}{% link assets/images/Snipaste_2019-09-08_13-51-04.png %})
+![](https://raw.githubusercontent.com/stuarthua/PicGo/master/oh-my-openwrt/Snipaste_2019-09-08_13-51-04.png)
 
-![]({{ site.baseurl }}{% link assets/images/Snipaste_2019-09-08_13-51-28.png %})
+![](https://raw.githubusercontent.com/stuarthua/PicGo/master/oh-my-openwrt/Snipaste_2019-09-08_13-51-28.png)
 
-![]({{ site.baseurl }}{% link assets/images/Snipaste_2019-09-08_13-55-41.png %})
+![](https://raw.githubusercontent.com/stuarthua/PicGo/master/oh-my-openwrt/Snipaste_2019-09-08_13-55-41.png)
 
-![]({{ site.baseurl }}{% link assets/images/Snipaste_2019-09-10_14-08-51.png %})
+![](https://raw.githubusercontent.com/stuarthua/PicGo/master/oh-my-openwrt/Snipaste_2019-09-10_14-08-51.png)
 
 ## 使用 OpenWrt
 
@@ -279,7 +279,7 @@ LuCI ---> 系统 ---> 系统 ---> 时间同步
 
 [使用阿里云NTP服务器](https://help.aliyun.com/document_detail/92704.html)，添加阿里云提供的公网 NTP 服务地址：`ntp1.aliyun.com`、`ntp2.aliyun.com` ...
 
-![]({{ site.baseurl }}{% link assets/images/Snipaste_2019-09-08_15-53-32.png %})
+![](https://raw.githubusercontent.com/stuarthua/PicGo/master/oh-my-openwrt/Snipaste_2019-09-08_15-53-32.png)
 
 * 更换源
 
@@ -299,7 +299,7 @@ src/gz openwrt_routing http://mirrors.ustc.edu.cn/lede/releases/18.06.4/packages
 src/gz openwrt_telephony http://mirrors.ustc.edu.cn/lede/releases/18.06.4/packages/x86_64/telephony
 ```
 
-![]({{ site.baseurl }}{% link assets/images/Snipaste_2019-09-08_15-54-49.png %})
+![](https://raw.githubusercontent.com/stuarthua/PicGo/master/oh-my-openwrt/Snipaste_2019-09-08_15-54-49.png)
 
 * 备份
 

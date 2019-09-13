@@ -172,7 +172,7 @@ $ make package/helloworld/compile V=99
 
 ### 常用指令
 
-更多指令，详见 [官方 - 编译说明](https://openwrt.org/zh-cn/doc/howto/build)，也可参考 [openwrt 编译 helloword.ipk](https://lixingcong.github.io/2016/05/03/openwrt-helloword/)，中文讲解的更细致一些。
+更多指令，详见 [官方 - 编译说明](https://openwrt.org/zh-cn/doc/howto/build), [Build system – Usage](https://openwrt.org/docs/guide-developer/build-system/use-buildsystem), 也可参考 [openwrt 编译 helloword.ipk](https://lixingcong.github.io/2016/05/03/openwrt-helloword/)，中文讲解的更细致一些。
 
 * make clean
 

@@ -20,101 +20,101 @@ nav_order: 1
 
 打开 VMware Fusion，新建虚拟机，导入 `ubuntu-14.04.6-server-amd64.iso`
 
-![]({{ site.baseurl }}{% link assets/images/Snipaste_2019-09-11_11-18-08.png %})
+![](https://raw.githubusercontent.com/stuarthua/PicGo/master/oh-my-openwrt/Snipaste_2019-09-11_11-18-08.png)
 
-![]({{ site.baseurl }}{% link assets/images/Snipaste_2019-09-11_11-18-15.png %})
+![](https://raw.githubusercontent.com/stuarthua/PicGo/master/oh-my-openwrt/Snipaste_2019-09-11_11-18-15.png)
 
 设置虚拟机名称 `Ubuntu 64 Server 14.04.6.vmwarevm`
 
-![]({{ site.baseurl }}{% link assets/images/Snipaste_2019-09-11_11-18-44.png %})
+![](https://raw.githubusercontent.com/stuarthua/PicGo/master/oh-my-openwrt/Snipaste_2019-09-11_11-18-44.png)
 
 设置虚拟机磁盘大小，推荐 50G（频繁编译 OpenWrt 可能会用到 30-40 G）
 
-![]({{ site.baseurl }}{% link assets/images/Snipaste_2019-09-11_11-19-54.png %})
+![](https://raw.githubusercontent.com/stuarthua/PicGo/master/oh-my-openwrt/Snipaste_2019-09-11_11-19-54.png)
 
 设置处理器核数，推荐 4 核（视个人电脑情况而定）
 
-![]({{ site.baseurl }}{% link assets/images/Snipaste_2019-09-11_11-20-03.png %})
+![](https://raw.githubusercontent.com/stuarthua/PicGo/master/oh-my-openwrt/Snipaste_2019-09-11_11-20-03.png)
 
 启动 Ubuntu，选择中文
 
-![]({{ site.baseurl }}{% link assets/images/Snipaste_2019-09-10_21-53-16.png %})
+![](https://raw.githubusercontent.com/stuarthua/PicGo/master/oh-my-openwrt/Snipaste_2019-09-10_21-53-16.png)
 
 安装 Ubuntu 服务器版
 
-![]({{ site.baseurl }}{% link assets/images/Snipaste_2019-09-10_21-53-58.png %})
+![](https://raw.githubusercontent.com/stuarthua/PicGo/master/oh-my-openwrt/Snipaste_2019-09-10_21-53-58.png)
 
 选择语言
 
-![]({{ site.baseurl }}{% link assets/images/Snipaste_2019-09-10_21-55-25.png %})
+![](https://raw.githubusercontent.com/stuarthua/PicGo/master/oh-my-openwrt/Snipaste_2019-09-10_21-55-25.png)
 
-![]({{ site.baseurl }}{% link assets/images/Snipaste_2019-09-10_21-56-06.png %})
+![](https://raw.githubusercontent.com/stuarthua/PicGo/master/oh-my-openwrt/Snipaste_2019-09-10_21-56-06.png)
 
 选择时区
 
-![]({{ site.baseurl }}{% link assets/images/Snipaste_2019-09-10_21-57-09.png %})
+![](https://raw.githubusercontent.com/stuarthua/PicGo/master/oh-my-openwrt/Snipaste_2019-09-10_21-57-09.png)
 
 选择国家
 
-![]({{ site.baseurl }}{% link assets/images/Snipaste_2019-09-10_21-57-59.png %})
+![](https://raw.githubusercontent.com/stuarthua/PicGo/master/oh-my-openwrt/Snipaste_2019-09-10_21-57-59.png)
 
 配置键盘风格
 
-![]({{ site.baseurl }}{% link assets/images/Snipaste_2019-09-10_21-58-52.png %})
+![](https://raw.githubusercontent.com/stuarthua/PicGo/master/oh-my-openwrt/Snipaste_2019-09-10_21-58-52.png)
 
 等待加载组件，配置网络
 
-![]({{ site.baseurl }}{% link assets/images/Snipaste_2019-09-10_22-00-57.png %})
+![](https://raw.githubusercontent.com/stuarthua/PicGo/master/oh-my-openwrt/Snipaste_2019-09-10_22-00-57.png)
 
 输入主机名
 
-![]({{ site.baseurl }}{% link assets/images/Snipaste_2019-09-10_22-03-40.png %})
+![](https://raw.githubusercontent.com/stuarthua/PicGo/master/oh-my-openwrt/Snipaste_2019-09-10_22-03-40.png)
 
 设置用户名和密码
 
-![]({{ site.baseurl }}{% link assets/images/Snipaste_2019-09-10_22-00-57.png %})
+![](https://raw.githubusercontent.com/stuarthua/PicGo/master/oh-my-openwrt/Snipaste_2019-09-10_22-00-57.png)
 
 设置时钟，默认即可
 
 磁盘分区
 
-![]({{ site.baseurl }}{% link assets/images/Snipaste_2019-09-10_22-05-20.png %})
+![](https://raw.githubusercontent.com/stuarthua/PicGo/master/oh-my-openwrt/Snipaste_2019-09-10_22-05-20.png)
 
-![]({{ site.baseurl }}{% link assets/images/Snipaste_2019-09-10_22-06-21.png %})
+![](https://raw.githubusercontent.com/stuarthua/PicGo/master/oh-my-openwrt/Snipaste_2019-09-10_22-06-21.png)
 
-![]({{ site.baseurl }}{% link assets/images/Snipaste_2019-09-10_22-07-04.png %})
+![](https://raw.githubusercontent.com/stuarthua/PicGo/master/oh-my-openwrt/Snipaste_2019-09-10_22-07-04.png)
 
-![]({{ site.baseurl }}{% link assets/images/Snipaste_2019-09-10_22-07-45.png %})
+![](https://raw.githubusercontent.com/stuarthua/PicGo/master/oh-my-openwrt/Snipaste_2019-09-10_22-07-45.png)
 
 等待安装系统
 
-![]({{ site.baseurl }}{% link assets/images/Snipaste_2019-09-10_22-08-26.png %})
+![](https://raw.githubusercontent.com/stuarthua/PicGo/master/oh-my-openwrt/Snipaste_2019-09-10_22-08-26.png)
 
 配置软件包管理器，提示是否设置代理，否
 
-![]({{ site.baseurl }}{% link assets/images/Snipaste_2019-09-10_22-09-40.png %})
+![](https://raw.githubusercontent.com/stuarthua/PicGo/master/oh-my-openwrt/Snipaste_2019-09-10_22-09-40.png)
 
 等待配置 apt（此过程需要下载文件，耗时较久，耐心等待即可）
 
-![]({{ site.baseurl }}{% link assets/images/Snipaste_2019-09-10_22-11-08.png %})
+![](https://raw.githubusercontent.com/stuarthua/PicGo/master/oh-my-openwrt/Snipaste_2019-09-10_22-11-08.png)
 
 设置自动安装安全更新
 
-![]({{ site.baseurl }}{% link assets/images/Snipaste_2019-09-10_22-21-45.png %})
+![](https://raw.githubusercontent.com/stuarthua/PicGo/master/oh-my-openwrt/Snipaste_2019-09-10_22-21-45.png)
 
 选择并安装软件
 
-![]({{ site.baseurl }}{% link assets/images/Snipaste_2019-09-10_22-23-15.png %})
+![](https://raw.githubusercontent.com/stuarthua/PicGo/master/oh-my-openwrt/Snipaste_2019-09-10_22-23-15.png)
 
 安装 GRUB 启动引导器
 
-![]({{ site.baseurl }}{% link assets/images/Snipaste_2019-09-10_22-25-49.png %})
+![](https://raw.githubusercontent.com/stuarthua/PicGo/master/oh-my-openwrt/Snipaste_2019-09-10_22-25-49.png)
 
 安装结束
 
-![]({{ site.baseurl }}{% link assets/images/Snipaste_2019-09-10_22-26-36.png %})
+![](https://raw.githubusercontent.com/stuarthua/PicGo/master/oh-my-openwrt/Snipaste_2019-09-10_22-26-36.png)
 
-![]({{ site.baseurl }}{% link assets/images/Snipaste_2019-09-10_22-27-38.png %})
+![](https://raw.githubusercontent.com/stuarthua/PicGo/master/oh-my-openwrt/Snipaste_2019-09-10_22-27-38.png)
 
 ## 一些常用设置
 
@@ -266,7 +266,7 @@ Mac 已经安装 shadowsocksx-ng，可以使用其 Http 代理为虚拟机提供
 
 设置 shadowsocksx-ng 的 Http 代理监听地址为：0.0.0.0
 
-![]({{ site.baseurl }}{% link assets/images/Snipaste_2019-09-10_20-24-00.png %})
+![](https://raw.githubusercontent.com/stuarthua/PicGo/master/oh-my-openwrt/Snipaste_2019-09-10_20-24-00.png)
 
 进入虚拟机，编辑 `~/.bashrc`（注意，192.168.2.73 为 Mac 的 IP）
 

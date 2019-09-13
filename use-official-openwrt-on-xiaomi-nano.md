@@ -179,17 +179,17 @@ Mac 断网，使用网线连接路由器，打开浏览器访问 `192.168.1.1`
 
 等待刷写完成，重启路由器
 
-![]({{ site.baseurl }}{% link assets/images/breed-01.png %})
+![](https://raw.githubusercontent.com/stuarthua/PicGo/master/oh-my-openwrt/breed-01.png)
 
-![]({{ site.baseurl }}{% link assets/images/breed-02.png %})
+![](https://raw.githubusercontent.com/stuarthua/PicGo/master/oh-my-openwrt/breed-02.png)
 
-![]({{ site.baseurl }}{% link assets/images/breed-03.png %})
+![](https://raw.githubusercontent.com/stuarthua/PicGo/master/oh-my-openwrt/breed-03.png)
 
-![]({{ site.baseurl }}{% link assets/images/breed-04.png %})
+![](https://raw.githubusercontent.com/stuarthua/PicGo/master/oh-my-openwrt/breed-04.png)
 
-![]({{ site.baseurl }}{% link assets/images/breed-05.png %})
+![](https://raw.githubusercontent.com/stuarthua/PicGo/master/oh-my-openwrt/breed-05.png)
 
-![]({{ site.baseurl }}{% link assets/images/openwrt-init.png %})
+![](https://raw.githubusercontent.com/stuarthua/PicGo/master/oh-my-openwrt/openwrt-init.png)
 
 ## 使用 OpenWrt
 
@@ -199,7 +199,7 @@ Mac 断网，使用网线连接路由器，打开浏览器访问 `192.168.1.1`
 
 LuCI ---> Network ---> Wireless
 
-![]({{ site.baseurl }}{% link assets/images/openwrt-wireless.png %})
+![](https://raw.githubusercontent.com/stuarthua/PicGo/master/oh-my-openwrt/openwrt-wireless.png)
 
 此时，便可以断开 Mac 和路由器 网线的连接，使用无线网络 `OpenWrt` 连接进行上网。
 
@@ -237,7 +237,7 @@ LuCI ---> 系统 ---> 系统 ---> 时间同步
 
 [使用阿里云NTP服务器](https://help.aliyun.com/document_detail/92704.html)，添加阿里云提供的公网 NTP 服务地址：`ntp1.aliyun.com`、`ntp2.aliyun.com` ...
 
-![]({{ site.baseurl }}{% link assets/images/Snipaste_2019-09-08_15-53-32.png %})
+![](https://raw.githubusercontent.com/stuarthua/PicGo/master/oh-my-openwrt/Snipaste_2019-09-08_15-53-32.png)
 
 * 更换源
 
@@ -257,7 +257,7 @@ src/gz openwrt_routing http://mirrors.ustc.edu.cn/lede/releases/18.06.4/packages
 src/gz openwrt_telephony http://mirrors.ustc.edu.cn/lede/releases/18.06.4/packages/x86_64/telephony
 ```
 
-![]({{ site.baseurl }}{% link assets/images/Snipaste_2019-09-08_15-54-49.png %})
+![](https://raw.githubusercontent.com/stuarthua/PicGo/master/oh-my-openwrt/Snipaste_2019-09-08_15-54-49.png)
 
 * 备份
 

@@ -26,8 +26,7 @@ src/gz openwrt_packages https://mirrors.ustc.edu.cn/lede/releases/18.06.4/packag
 src/gz openwrt_routing https://mirrors.ustc.edu.cn/lede/releases/18.06.4/packages/x86_64/routing
 src/gz openwrt_telephony https://mirrors.ustc.edu.cn/lede//releases/18.06.4/packages/x86_64/telephony
 ```
-
-![]({{ site.baseurl }}{% link assets/images/Snipaste_2019-09-08_15-54-49.png %})
+![](https://raw.githubusercontent.com/stuarthua/PicGo/master/oh-my-openwrt/Snipaste_2019-09-08_15-54-49.png)
 
 ## 自定义软件源
 
