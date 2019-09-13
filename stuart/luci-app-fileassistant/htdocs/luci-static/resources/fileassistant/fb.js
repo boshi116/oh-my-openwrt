@@ -32,13 +32,13 @@ String.prototype.replaceAll = function(search, replacement) {
     }
   }
   function installPath(filename, isdir) {
-    if (isdir === 1) {
-      alert('这是一个目录，只允许安装 ipk 文件！');
+    if (isdir === "1") {
+      alert('这是一个目录，请选择 ipk 文件进行安装！');
       return;
     }
     var isipk = isIPK(filename);
     if (isipk === 0) {
-      alert('只允许安装 ipk 文件！');
+      alert('只允许安装 ipk 格式的文件！');
       return;
     }
     var c = confirm('你确定要安装 ' + filename + ' 吗？');
