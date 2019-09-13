@@ -110,6 +110,11 @@ function fileassistant_upload()
       end
     )
 
+    ext = filepath:match(".+%.(%w+)$")
+    if ext == "ipk" then
+        os.execute('chmod 777 "'..filepath..'"')
+    end
+
     list_response(uploaddir, true)
 end
 
