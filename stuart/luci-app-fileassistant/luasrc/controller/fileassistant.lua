@@ -86,6 +86,8 @@ end
 function fileassistant_install()
     local filepath = luci.http.formvalue("filepath")
     local ext = filepath:match(".+%.(%w+)$")
+    filepath = filepath:gsub("<>", "/")
+    filepath = filepath:gsub(" ", "\ ")
     local success
     if ext == "ipk" then
         os.execute('chmod 755 "'..filepath..'"')
