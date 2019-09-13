@@ -1,7 +1,7 @@
 ---
 title: 移植软件包 - 释放内存
 parent: 使用软件包
-nav_order: 3
+nav_order: 4
 ---
 
 # 移植软件包 - 释放内存
@@ -79,8 +79,6 @@ x86
 
 参考: [使用软件包 - HelloWorld](https://stuarthua.github.io/oh-my-openwrt/use-package-helloworld.html)
 
-需要注意的是，想要在 LuCI 界面上有变更，
-
 原生 OpenWrt 固件默认没有开启 sftp 服务，需要我们手动安装并开启
 
 ```bash
@@ -90,7 +88,7 @@ opkg install vsftpd openssh-sftp-server
 /etc/init.d/vsftpd start
 ```
 
-使用 `Cyberduck` 上传 ipk 安装包至路由器
+使用 [Cyberduck](https://cyberduck.io/) 上传 ipk 安装包至路由器
 
 Mac 上使用 SSH 连接路由器，执行安装
 

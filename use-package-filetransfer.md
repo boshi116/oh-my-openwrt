@@ -1,10 +1,10 @@
 ---
-title: 使用软件包 - HelloWorld
+title: 使用软件包 - 文件助手
 parent: 使用软件包
-nav_order: 1
+nav_order: 2
 ---
 
-# 使用软件包 - HelloWorld
+# 使用软件包 - 文件助手
 
 ## 安装
 
@@ -21,17 +21,11 @@ opkg install vsftpd openssh-sftp-server
 /etc/init.d/vsftpd start
 ```
 
-使用 [Cyberduck](https://cyberduck.io/) 将 `helloworld.ipk` 上传至路由器
-
-使用命令行安装
+使用 [Cyberduck](https://cyberduck.io/) 上传 `luci-app-filetransfer.ipk` 安装包至路由器
 
 ```
 opkg install helloworld.ipk
 ```
-
-* 使用 LuCI 安装
-
-如果 LuCI 有安装 `文件助手` 的话，可直接在 LuCI 中安装，详见 [使用软件包 - 文件助手](https://stuarthua.github.io/oh-my-openwrt/use-package-filetransfer.html)
 
 ### 在线安装
 
