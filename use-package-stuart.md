@@ -1,7 +1,7 @@
 ---
-title: 移植软件包 - 释放内存
+title: 使用软件包 - 自定义 Luci 菜单
 parent: 使用软件包
-nav_order: 3
+nav_order: 2
 ---
 
 # 移植软件包 - 释放内存
@@ -25,15 +25,11 @@ stuart
 
 ## 定制软件包
 
-阅读: [使用软件包 - 自定义 Luci 菜单](https://stuarthua.github.io/oh-my-openwrt/use-package-stuart.html)
-
-比较建议的做法是，定制软件包时，将所有的软件包 LuCI 可视化操作统一归置到 自定义菜单中，方便后续拓展。
-
 现在，我们希望，`释放内存` 在 LuCI 中挪至单独的菜单 `Stuart` 中，便于后续的升级拓展。
 
 ![Snipaste_2019-09-13_16-52-33.png](https://raw.githubusercontent.com/stuarthua/PicGo/master/oh-my-openwrt/Snipaste_2019-09-13_16-52-33.png)
 
-修改版源码见: [stuart/luci-app-ramfree](https://github.com/stuarthua/oh-my-openwrt/tree/master/stuart/luci-app-ramfree), 依赖 `luci-app-stuart`
+修改版源码见: [stuart/luci-app-ramfree](https://github.com/stuarthua/oh-my-openwrt/tree/master/stuart/luci-app-ramfree)
 
 ## 使用 SDK 编译软件包
 
