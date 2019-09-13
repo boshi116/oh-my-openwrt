@@ -153,7 +153,7 @@ String.prototype.replaceAll = function(search, replacement) {
   function refresh_list(filenames, path) {
     var listHtml = '<table class="cbi-section-table"><tbody>';
     if (path !== '/') {
-      listHtml += '<tr><td class="parent-icon" colspan="6"><strong>..</strong></td></tr>';
+      listHtml += '<tr class="cbi-section-table-row cbi-rowstyle-2"><td class="parent-icon" colspan="6"><strong>..</strong></td></tr>';
     }
     if (filenames) {
       for (var i = 0; i < filenames.length; i++) {
