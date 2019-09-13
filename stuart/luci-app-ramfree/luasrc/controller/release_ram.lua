@@ -1,4 +1,4 @@
-module("luci.controller.admin.stuart",package.seeall)
+module("luci.controller.release_ram",package.seeall)
 
 function index()
 	entry({"admin","stuart","release_ram"}, call("release_ram"), _("Release Ram"), 9999)
