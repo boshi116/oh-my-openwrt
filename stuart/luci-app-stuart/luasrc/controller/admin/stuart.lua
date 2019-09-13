@@ -1,6 +1,6 @@
 module("luci.controller.admin.stuart",package.seeall)
 
 function index()
-	entry({"admin", "stuart"}, firstchild(), _("Stuart"), 35).index = true
+	entry({"admin", "stuart"}, firstchild(), _("Stuart"), 40).index = true
 	entry({"admin", "stuart", "helloworld"}, template("stuart/helloworld"), "HelloWorld", 1)
 end
