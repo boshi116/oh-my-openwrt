@@ -58,7 +58,7 @@ String.prototype.replaceAll = function(search, replacement) {
   }
   function isIPK(filename) {
     var index= filename.lastIndexOf(".");
-    var ext = filePath.substr(index+1);
+    var ext = filename.substr(index+1);
     if (ext === 'ipk') {
       return 1;
     } else {
