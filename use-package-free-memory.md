@@ -13,7 +13,7 @@ nav_order: 3
 * 软件包: 释放内存
 * 源码地址: [lede/luci-app-ramfree](https://github.com/coolsnowwolf/lede/tree/master/package/lean/luci-app-ramfree)
 
-效果预览：
+原效果预览：
 
 ![Snipaste_2019-09-13_16-52-33.png](https://raw.githubusercontent.com/stuarthua/PicGo/master/oh-my-openwrt/Snipaste_2019-09-13_16-52-33.png)
 
@@ -34,7 +34,7 @@ stuart
 
 现在，我们希望，`释放内存` 在 LuCI 中挪至单独的菜单 `Stuart` 中，便于后续的升级拓展。
 
-效果预览：
+修改后效果预览：
 
 ![Snipaste_2019-09-13_20-53-52.png](https://raw.githubusercontent.com/stuarthua/PicGo/master/oh-my-openwrt/Snipaste_2019-09-13_20-53-52.png)
 
