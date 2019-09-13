@@ -86,6 +86,7 @@ end
 function fileassistant_install()
     local filepath = luci.http.formvalue("filepath")
     local success = os.execute('opke install "'..filepath..'"')
+    list_response(filepath, success)
 end
 
 function fileassistant_upload()

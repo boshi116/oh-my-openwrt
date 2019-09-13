@@ -49,7 +49,7 @@ String.prototype.replaceAll = function(search, replacement) {
         },
         function (x, res) {
           if (res.ec === 0) {
-            refresh_list(res.data, currentPath);
+            alert('安装成功!');
           } else {
             alert('安装失败，请检查文件格式!');
           }
@@ -245,6 +245,7 @@ String.prototype.replaceAll = function(search, replacement) {
           var res = JSON.parse(xhr.responseText);
           refresh_list(res.data, currentPath);
           uploadinput.value = '';
+          alert('上传成功!');
         }
         else {
           alert('上传失败，请稍后再试...');
