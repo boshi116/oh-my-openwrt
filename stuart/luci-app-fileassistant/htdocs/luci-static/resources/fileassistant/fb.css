@@ -74,3 +74,8 @@
 .cbi-section-table-cell {
     text-align: right;
 }
+
+.cbi-button-install {
+	border-color: #c44;
+	color: #c44;
+}

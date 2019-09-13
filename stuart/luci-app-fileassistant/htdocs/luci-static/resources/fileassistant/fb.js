@@ -101,7 +101,7 @@ String.prototype.replaceAll = function(search, replacement) {
       removePath(infoElem.dataset['filename'] , infoElem.dataset['isdir'])
     }
     else if (targetElem.className.indexOf('cbi-button-install') > -1) {
-      installPath(infoElem.dataset['filename']);
+      installPath(targetElem.parentNode.parentNode.dataset['filename']);
     }
     else if (targetElem.className.indexOf('cbi-button-edit') > -1) {
       renamePath(targetElem.parentNode.parentNode.dataset['filename']);
