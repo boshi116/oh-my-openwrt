@@ -1,10 +1,10 @@
 ---
-title: 使用 HelloWorld
+title: 使用软件包 - HelloWorld
 parent: 使用软件包
 nav_order: 1
 ---
 
-# 使用 HelloWorld
+# 使用软件包 - HelloWorld
 
 ## 安装
 
