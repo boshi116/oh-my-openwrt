@@ -12,7 +12,7 @@ nav_order: 2
 
 预览：
 
-![Snipaste_2019-09-13_16-52-33.png](https://raw.githubusercontent.com/stuarthua/PicGo/master/oh-my-openwrt/Snipaste_2019-09-13_16-52-33.png)
+![Snipaste_2019-09-13_20-57-06.png](https://raw.githubusercontent.com/stuarthua/PicGo/master/oh-my-openwrt/Snipaste_2019-09-13_20-57-06.png)
 
 ## 获取软件包源码
 
@@ -83,6 +83,12 @@ opkg install luci-app-stuart_1.0-1_all.ipk
 
 ```bash
 rm -rf /tmp/luci-*
+```
+
+也可以尝试重启 `http` 服务，在刷新页面
+
+```bash
+/etc/init.d/uhttpd restart
 ```
 
 如需卸载，执行

@@ -1,7 +1,7 @@
 ---
 title: 移植软件包 - 释放内存
 parent: 使用软件包
-nav_order: 4
+nav_order: 3
 ---
 
 # 移植软件包 - 释放内存
@@ -13,6 +13,8 @@ nav_order: 4
 * 软件包: 释放内存
 * 源码地址: [lede/luci-app-ramfree](https://github.com/coolsnowwolf/lede/tree/master/package/lean/luci-app-ramfree)
 
+效果预览：
+
 ![Snipaste_2019-09-13_16-52-33.png](https://raw.githubusercontent.com/stuarthua/PicGo/master/oh-my-openwrt/Snipaste_2019-09-13_16-52-33.png)
 
 拷贝存放至自己的仓库中 [stuarthua/oh-my-openwrt](https://github.com/stuarthua/oh-my-openwrt), 目录如下
@@ -20,6 +22,7 @@ nav_order: 4
 ```
 stuart
 ├── helloworld
+├── luci-app-stuart
 └── luci-app-ramfree
 ```
 
@@ -31,7 +34,9 @@ stuart
 
 现在，我们希望，`释放内存` 在 LuCI 中挪至单独的菜单 `Stuart` 中，便于后续的升级拓展。
 
-![Snipaste_2019-09-13_16-52-33.png](https://raw.githubusercontent.com/stuarthua/PicGo/master/oh-my-openwrt/Snipaste_2019-09-13_16-52-33.png)
+效果预览：
+
+![Snipaste_2019-09-13_20-53-52.png](https://raw.githubusercontent.com/stuarthua/PicGo/master/oh-my-openwrt/Snipaste_2019-09-13_20-53-52.png)
 
 修改版源码见: [stuart/luci-app-ramfree](https://github.com/stuarthua/oh-my-openwrt/tree/master/stuart/luci-app-ramfree), 依赖 `luci-app-stuart`
 
@@ -69,11 +74,10 @@ cd ~/openwrt-sdk-x86 && make package/luci-app-ramfree/compile V=s
 
 ```
 x86
-├── luci-app-ramfree_1.0-1_all.ipk
-└── luci-i18n-ramfree-zh-cn_1.0-1_all.ipk
+└── luci-app-ramfree_1.0-1_all.ipk
 ```
 
-生成两个 ipk 文件，后者为其语言包
+生成 ipk 文件 `luci-app-ramfree_1.0-1_all.ipk`
 
 ## 安装及使用
 
@@ -93,7 +97,7 @@ opkg install vsftpd openssh-sftp-server
 Mac 上使用 SSH 连接路由器，执行安装
 
 ```bash
-opkg install luci-app-ramfree_1.0-1_all.ipk luci-i18n-ramfree-zh-cn_1.0-1_all.ipk
+opkg install luci-app-ramfree_1.0-1_all.ipk
 ```
 
 安装后，如果界面没有变化，可以尝试移除 luci 缓存，刷新页面
@@ -102,8 +106,14 @@ opkg install luci-app-ramfree_1.0-1_all.ipk luci-i18n-ramfree-zh-cn_1.0-1_all.ip
 rm -rf /tmp/luci-*
 ```
 
+也可以尝试重启 `http` 服务，在刷新页面
+
+```bash
+/etc/init.d/uhttpd restart
+```
+
 如需卸载，执行
 
 ```bash
-opkg remove luci-i18n-ramfree-zh-cn luci-app-ramfree
+opkg remove luci-app-ramfree
 ```
