@@ -1,7 +1,7 @@
 ---
 title: 使用软件包 - 文件助手
 parent: 使用软件包
-nav_order: 2
+nav_order: 3
 ---
 
 # 使用软件包 - 文件助手

@@ -1,7 +1,7 @@
 ---
 title: 使用软件包 - 自定义 LuCI 菜单
 parent: 使用软件包
-nav_order: 3
+nav_order: 2
 ---
 
 # 使用软件包 - 自定义 LuCI 菜单
@@ -53,10 +53,10 @@ cd ~/openwrt-sdk-x86 && make package/luci-app-stuart/compile V=s
 
 ```
 x86
-├── luci-app-stuart.0-1_all.ipk
+├── luci-app-stuart_1.0-1_all.ipk
 ```
 
-生成 ipk 文件 `luci-app-stuart.0-1_all.ipk`
+生成 ipk 文件 `luci-app-stuart_1.0-1_all.ipk`
 
 ## 安装及使用
 
@@ -76,7 +76,7 @@ opkg install vsftpd openssh-sftp-server
 Mac 上使用 SSH 连接路由器，执行安装
 
 ```bash
-opkg install luci-app-stuart.0-1_all.ipk
+opkg install luci-app-stuart_1.0-1_all.ipk
 ```
 
 安装后，如果界面没有变化，可以尝试移除 luci 缓存，刷新页面
