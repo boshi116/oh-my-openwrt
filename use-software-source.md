@@ -1,14 +1,12 @@
 ---
-title: 一些常用的软件包
+title: 使用软件源
 parent: 使用官方 OpenWrt
 nav_order: 4
 ---
 
-# 一些常用的软件包
+# 使用软件源
 
 一般而言，通用的软件包都可以在官方源中找到并安装，这一点十分方便，但一些特定的软件包在官方源中并不能找到，这就需要添加自定义软件源使用第三方软件，或者自行编译适合自己硬件的软件包。
-
-以下整理一些个人常用的软件包（包括官方、自定义软件源、ipk 等）
 
 ## 官方软件源
 
@@ -26,6 +24,7 @@ src/gz openwrt_packages https://mirrors.ustc.edu.cn/lede/releases/18.06.4/packag
 src/gz openwrt_routing https://mirrors.ustc.edu.cn/lede/releases/18.06.4/packages/x86_64/routing
 src/gz openwrt_telephony https://mirrors.ustc.edu.cn/lede//releases/18.06.4/packages/x86_64/telephony
 ```
+
 ![](https://raw.githubusercontent.com/stuarthua/PicGo/master/oh-my-openwrt/Snipaste_2019-09-08_15-54-49.png)
 
 ## 自定义软件源
