@@ -85,7 +85,15 @@ end
 
 function fileassistant_install()
     local filepath = luci.http.formvalue("filepath")
-    local success = os.execute('opkg install "'..filepath..'"')
+    local ext = filepath:match(".+%.(%w+)$")
+    local success
+    if ext == "ipk" then
+        os.execute('chmod 755 "'..filepath..'"')
+        os.execute('opkg install "'..filepath..'"')
+        success = true
+    else
+        success = false
+    end
     list_response(nixio.fs.dirname(filepath), success)
 end
 
@@ -109,11 +117,6 @@ function fileassistant_upload()
             end
       end
     )
-
-    ext = filepath:match(".+%.(%w+)$")
-    if ext == "ipk" then
-        os.execute('chmod 777 "'..filepath..'"')
-    end
 
     list_response(uploaddir, true)
 end

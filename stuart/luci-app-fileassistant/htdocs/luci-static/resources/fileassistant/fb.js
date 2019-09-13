@@ -31,6 +31,7 @@ String.prototype.replaceAll = function(search, replacement) {
       });
     }
   }
+
   function installPath(filename, isdir) {
     if (isdir === "1") {
       alert('这是一个目录，请选择 ipk 文件进行安装！');
@@ -56,6 +57,7 @@ String.prototype.replaceAll = function(search, replacement) {
       });
     }
   }
+
   function isIPK(filename) {
     var index= filename.lastIndexOf(".");
     var ext = filename.substr(index+1);
@@ -65,6 +67,7 @@ String.prototype.replaceAll = function(search, replacement) {
       return 0;
     }
   }
+
   function renamePath(filename) {
     var newname = prompt('请输入新的文件名：', filename);
     if (newname) {
