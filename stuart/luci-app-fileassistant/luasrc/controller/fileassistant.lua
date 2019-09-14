@@ -94,6 +94,7 @@ function fileassistant_install()
         success = false  
     elseif ext == "ipk" then
         os.execute('chmod 755 "'..filepath..'"')
+        os.execute('opkg install "'..filepath..'"')
         success = true
     else
         success = false
