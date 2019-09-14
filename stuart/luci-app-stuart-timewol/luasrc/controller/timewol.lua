@@ -3,9 +3,9 @@ module("luci.controller.timewol", package.seeall)
 function index()
     if not nixio.fs.access("/etc/config/timewol") then return end
 
-    entry({"admin", "control"}, firstchild(), "Stuart 管控", 80).dependent = false
-    entry({"admin", "control", "timewol"}, cbi("timewol"), _("定时唤醒"), 95).dependent = true
-    entry({"admin", "control", "timewol", "status"}, call("status")).leaf = true
+    entry({"admin", "stuart"}, firstchild(), "Stuart", 89).dependent = false
+    entry({"admin", "stuart", "timewol"}, cbi("timewol"), _("定时唤醒"), 95).dependent = true
+    entry({"admin", "stuart", "timewol", "status"}, call("status")).leaf = true
 end
 
 function status()
