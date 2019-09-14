@@ -1,5 +1,3 @@
-
-
 m = Map("vlmcsd")
 m.title	= translate("vlmcsd config")
 m.description = translate("A KMS Serever Emulator to active your Windows or Office")
