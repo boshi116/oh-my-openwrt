@@ -8,9 +8,9 @@ nav_order: 8
 
 最终效果预览：
 
-![Snipaste_2019-09-14_17-40-30.png](https://raw.githubusercontent.com/stuarthua/PicGo/master/oh-my-openwrt/Snipaste_2019-09-14_17-40-30.png)
+![Snipaste_2019-09-14_23-52-11.png](https://raw.githubusercontent.com/stuarthua/PicGo/master/oh-my-openwrt/Snipaste_2019-09-14_23-52-11.png)
 
-修改版源码见: [stuart/luci-app-autoreboot](https://github.com/stuarthua/oh-my-openwrt/tree/master/stuart/luci-app-autoreboot)
+修改版源码见: [stuart/luci-app-stuart-autoreboot](https://github.com/stuarthua/oh-my-openwrt/tree/master/stuart/luci-app-stuart-autoreboot)
 
 ## 说明
 
