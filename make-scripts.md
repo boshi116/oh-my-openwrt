@@ -121,6 +121,73 @@ make package/helloworld/compile V=s
 
 在 `~/sdk-ipks/x86` 目录查看生成的软件包
 
+### 脚本化
+
+* 更新
+
+新建脚本 `update_by_stuart.sh`
+
+```bash
+cd ~/openwrt-sdk-x86
+touch update_by_stuart.sh
+```
+
+编辑 `update_by_stuart.sh`
+
+```bash
+#!/usr/bin/env bash
+cd ~/oh-my-openwrt && git pull
+cd ~/openwrt-sdk-x86 && ./scripts/feeds update stuart && ./scripts/feeds install -a -p stuart
+```
+
+* 编译
+
+新建脚本 `make_by_stuart.sh`
+
+```bash
+cd ~/openwrt-sdk-x86
+touch make_by_stuart.sh
+```
+
+编辑 `make_by_stuart.sh`
+
+```bash
+#!/usr/bin/env bash
+#make package/helloworld/compile V=s
+#make package/luci-app-stuart/compile V=s
+make package/luci-app-ramfree/compile V=s
+make package/luci-app-fileassistant/compile V=s
+make package/luci-app-arpbind/compile V=s
+make package/luci-app-control-webrestriction/compile V=s
+make package/luci-app-control-timewol/compile V=s
+make package/luci-app-control-weburl/compile V=s
+make package/luci-app-control-mia/compile V=s
+```
+
+在 `~/sdk-ipks/x86` 目录查看生成的软件包，将其上传至路由器
+
+* 安装软件包
+
+SSH 连接路由器
+
+```bash
+opkg install luci-app-*.ipk
+```
+
+删除 LuCI 缓存，刷新浏览器界面，查看是否生效
+
+```bash
+rm -rf /tmp/luci-*
+```
+
+* 移除旧软件包
+
+SSH 连接路由器
+
+```bash
+opkg --force-removal-of-dependent-packages remove luci-app-stuart luci-app-fileassistant luci-app-ramfree luci-app-arpbind luci-app-control-webrestriction luci-app-control-timewol luci-app-control-weburl luci-app-control-mia
+```
+
 ## 小米路由器青春版
 
 OpenWrt 18.06.4
