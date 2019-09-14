@@ -8,6 +8,10 @@ nav_order: 3
 
 以 `释放内存` 为例，以下记录移植 Lean OpenWrt 软件包的过程，仅供参考
 
+最终效果预览：
+
+![Snipaste_2019-09-13_20-53-52.png](https://raw.githubusercontent.com/stuarthua/PicGo/master/oh-my-openwrt/Snipaste_2019-09-13_20-53-52.png)
+
 ## 获取软件包源码
 
 * 软件包: 释放内存
