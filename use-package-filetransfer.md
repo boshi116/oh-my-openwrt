@@ -10,7 +10,7 @@ nav_order: 4
 
 效果预览：
 
-![Snipaste_2019-09-14_12-11-57.png](https://raw.githubusercontent.com/stuarthua/PicGo/master/oh-my-openwrt/Snipaste_2019-09-14_12-11-57.png)
+![Snipaste_2019-09-14_23-31-35.png](https://raw.githubusercontent.com/stuarthua/PicGo/master/oh-my-openwrt/Snipaste_2019-09-14_23-31-35.png)
 
 以下记录移植该软件包的过程，仅供参考
 
@@ -25,8 +25,8 @@ nav_order: 4
 stuart
 ├── helloworld
 ├── luci-app-stuart
-├── luci-app-ramfree
-└── luci-app-fileassistant
+├── luci-app-stuart-ramfree
+└── luci-app-stuart-fileassistant
 ```
 
 ## 定制软件包
@@ -35,7 +35,7 @@ stuart
 
 同样，我们将 `文件助手` 在 LuCI 中挪至单独的菜单 `Stuart` 中，便于后续的升级拓展。
 
-修改版源码见: [stuart/luci-app-fileassistant](https://github.com/stuarthua/oh-my-openwrt/tree/master/stuart/luci-app-fileassistant)
+修改版源码见: [stuart/luci-app-stuart-fileassistant](https://github.com/stuarthua/oh-my-openwrt/tree/master/stuart/luci-app-stuart-fileassistant)
 
 ## 使用 SDK 编译软件包
 
@@ -64,17 +64,17 @@ cd ~/openwrt-sdk-x86 && ./scripts/feeds update stuart && ./scripts/feeds install
 进入 `~/openwrt-sdk-x86`, 开始编译
 
 ```bash
-cd ~/openwrt-sdk-x86 && make package/luci-app-fileassistant/compile V=s
+cd ~/openwrt-sdk-x86 && make package/luci-app-stuart-fileassistant/compile V=s
 ```
 
 在 `~/sdk-ipks/x86` 目录查看生成的软件包
 
 ```
 x86
-└── luci-app-fileassistant_1.0-1_all.ipk
+└── luci-app-stuart-fileassistant_1.0-1_all.ipk
 ```
 
-生成 ipk 文件 `luci-app-fileassistant_1.0-1_all.ipk`
+生成 ipk 文件 `luci-app-stuart-fileassistant_1.0-1_all.ipk`
 
 ## 安装及使用
 
@@ -112,5 +112,5 @@ rm -rf /tmp/luci-*
 如需卸载，执行
 
 ```bash
-opkg remove luci-app-fileassistant
+opkg remove luci-app-stuart-fileassistant
 ```
