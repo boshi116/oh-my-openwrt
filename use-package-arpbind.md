@@ -16,4 +16,4 @@ nav_order: 5
 
 依赖库：
 
-* ip-full
+* 路由控制工具 - [ip-full](https://openwrt.org/packages/pkgdata/ip-full)

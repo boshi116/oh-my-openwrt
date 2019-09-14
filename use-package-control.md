@@ -23,5 +23,5 @@ Fork 仓库：
 
 依赖库 (只有 `luci-app-control-weburl` 存在依赖)：
 
-* iptables-mod-filter
-* kmod-ipt-filter
+* 用于数据包内容检查的 iptables 扩展，支持匹配字符串 - [iptables-mod-filter](https://openwrt.org/packages/pkgdata/iptables-mod-filter)
+* 用于数据包内容检查的 Netfilter (IPv4) 内核模块，支持匹配字符串 - [kmod-ipt-filter](https://openwrt.org/packages/pkgdata/kmod-ipt-filter)
