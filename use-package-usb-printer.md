@@ -14,7 +14,7 @@ nav_order: 7
 
 ## 说明
 
-移植自 [lean/luci-app-usb-printer](https://github.com/coolsnowwolf/lede/tree/master/package/lean/luci-app-printer)
+移植自 [lean/luci-app-usb-printer](https://github.com/coolsnowwolf/lede/tree/master/package/lean/luci-app-usb-printer)
 
 依赖库：
 
