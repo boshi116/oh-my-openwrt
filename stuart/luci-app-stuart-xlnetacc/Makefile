@@ -1,6 +1,6 @@
 include $(TOPDIR)/rules.mk
 
-PKG_NAME:=luci-app-xlnetacc
+PKG_NAME:=luci-app-stuart-xlnetacc
 PKG_VERSION:=1.0
 PKG_RELEASE:=1
 
