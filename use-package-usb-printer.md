@@ -8,7 +8,7 @@ nav_order: 7
 
 最终效果预览：
 
-
+![Snipaste_2019-09-14_16-41-36.png](https://raw.githubusercontent.com/stuarthua/PicGo/master/oh-my-openwrt/Snipaste_2019-09-14_16-41-36.png)
 
 修改版源码见: [stuart/luci-app-usb-printer](https://github.com/stuarthua/oh-my-openwrt/tree/master/stuart/luci-app-usb-printer)
 

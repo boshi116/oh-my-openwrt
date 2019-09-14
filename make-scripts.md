@@ -172,7 +172,7 @@ make package/luci-app-usb-printer/compile V=s
 SSH 连接路由器
 
 ```bash
-opkg install luci-app-*.ipk
+opkg install luci-*.ipk
 ```
 
 删除 LuCI 缓存，刷新浏览器界面，查看是否生效
@@ -186,7 +186,7 @@ rm -rf /tmp/luci-*
 SSH 连接路由器
 
 ```bash
-opkg remove luci-app-fileassistant luci-app-ramfree luci-app-arpbind luci-app-control-webrestriction luci-app-control-timewol luci-app-control-weburl luci-app-control-mia luci-app-usb-printer
+opkg remove luci-app-fileassistant luci-app-ramfree luci-app-arpbind luci-app-control-webrestriction luci-app-control-timewol luci-app-control-weburl luci-app-control-mia luci-app-usb-printer luci-i18n-usb-printer-zh-cn
 ```
 
 ## 小米路由器青春版
