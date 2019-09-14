@@ -1,8 +1,8 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=luci-app-xlnetacc
-PKG_VERSION:=1.0.3
-PKG_RELEASE:=9
+PKG_VERSION:=1.0
+PKG_RELEASE:=1
 
 PKG_LICENSE:=GPLv2
 PKG_MAINTAINER:=Sense <sensec@gmail.com>
@@ -11,7 +11,7 @@ include $(INCLUDE_DIR)/package.mk
 
 define Package/$(PKG_NAME)
 	SECTION:=luci
-	CATEGORY:=LuCI
+	CATEGORY:=LuCI for Stuart
 	SUBMENU:=3. Applications
 	TITLE:=LuCI Support for XLNetAcc
 	PKGARCH:=all

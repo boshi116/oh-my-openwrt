@@ -31,7 +31,7 @@
 <script type="text/javascript" src="<%=resource%>/cbi.js"></script>
 <script type="text/javascript">//<![CDATA[
 	var log_id = document.getElementById('log_text');
-	XHR.poll(5, '<%=luci.dispatcher.build_url("admin", "services", "xlnetacc", "logdata")%>', null, function(x, data) {
+	XHR.poll(5, '<%=luci.dispatcher.build_url("admin", "stuart", "xlnetacc", "logdata")%>', null, function(x, data) {
 		if ( log_id && data ) {
 			log_id.innerHTML = String.format(
 				'<pre>%s%s%s%s</pre>',

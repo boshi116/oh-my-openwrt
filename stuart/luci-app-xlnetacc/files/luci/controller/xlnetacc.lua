@@ -5,17 +5,17 @@ function index()
 		return
 	end
 
-	entry({"admin", "services", "xlnetacc"},
+	entry({"admin", "stuart", "xlnetacc"},
 		firstchild(), _("XLNetAcc")).dependent = false
 
-	entry({"admin", "services", "xlnetacc", "general"},
+	entry({"admin", "stuart", "xlnetacc", "general"},
 		cbi("xlnetacc"), _("Settings"), 1)
 
-	entry({"admin", "services", "xlnetacc", "log"},
+	entry({"admin", "stuart", "xlnetacc", "log"},
 		template("xlnetacc/logview"), _("Log"), 2)
 
-	entry({"admin", "services", "xlnetacc", "status"}, call("action_status"))
-	entry({"admin", "services", "xlnetacc", "logdata"}, call("action_log"))
+	entry({"admin", "stuart", "xlnetacc", "status"}, call("action_status"))
+	entry({"admin", "stuart", "xlnetacc", "logdata"}, call("action_log"))
 end
 
 local function is_running()
