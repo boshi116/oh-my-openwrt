@@ -8,7 +8,7 @@ nav_order: 14
 
 最终效果预览：
 
-
+![Snipaste_2019-09-15_03-06-08.png](https://raw.githubusercontent.com/stuarthua/PicGo/master/oh-my-openwrt/Snipaste_2019-09-15_03-06-08.png)
 
 修改版源码见: 
 
@@ -30,3 +30,17 @@ nav_order: 14
 * core 工具包 - [官方 - coreutils](https://openwrt.org/packages/pkgdata/coreutils)
 * nohup 工具包 - [官方 coreutils-nohup](https://openwrt.org/packages/pkgdata/coreutils-nohup)
 * DNSmasq 完整版 - [官方 dnsmasq-full](https://openwrt.org/packages/pkgdata/dnsmasq-full)
+
+```
+Configuring kmod-nfnetlink.
+Configuring coreutils.
+Configuring libgmp.
+Configuring libnettle.
+Configuring kmod-ipt-ipset.
+Configuring libipset.
+Configuring ipset.
+Configuring coreutils-nohup.
+
+Configuring adbyby.
+Configuring luci-app-stuart-adbyby-plus.
+```
