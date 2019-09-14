@@ -22,7 +22,7 @@ msgid "Config File"
 msgstr "配置文件"
 
 msgid "RUNNING"
-msgstr "运行中</b>"
+msgstr "运行中"
 
 msgid "NOT RUNNING"
 msgstr "未运行"
