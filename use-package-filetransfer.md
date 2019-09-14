@@ -35,7 +35,7 @@ stuart
 
 同样，我们将 `文件助手` 在 LuCI 中挪至单独的菜单 `Stuart` 中，便于后续的升级拓展。
 
-修改版源码见: [stuart/luci-app-fileassistant](https://github.com/stuarthua/oh-my-openwrt/tree/master/stuart/luci-app-fileassistant), 依赖 `luci-app-stuart`
+修改版源码见: [stuart/luci-app-fileassistant](https://github.com/stuarthua/oh-my-openwrt/tree/master/stuart/luci-app-fileassistant)
 
 ## 使用 SDK 编译软件包
 

@@ -10,6 +10,10 @@ nav_order: 5
 
 ![Snipaste_2019-09-14_14-14-49.png](https://raw.githubusercontent.com/stuarthua/PicGo/master/oh-my-openwrt/Snipaste_2019-09-14_14-14-49.png)
 
+修改版源码见: 
+
+* [stuart/luci-app-arpbind](https://github.com/stuarthua/oh-my-openwrt/tree/master/stuart/luci-app-arpbind)
+
 ## 说明
 
 移植自 [lean/luci-app-arpbind](https://github.com/coolsnowwolf/lede/tree/master/package/lean/luci-app-arpbind)
