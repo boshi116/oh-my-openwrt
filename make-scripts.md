@@ -194,7 +194,7 @@ SSH 连接路由器
 opkg remove 
 
 ## 移除第三方程序
-opkg remove luci-app-stuart-ramfree
+opkg remove luci-app-stuart-ramfree luci-app-stuart-fileassistant
 ```
 
 ## 小米路由器青春版
