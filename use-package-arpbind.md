@@ -1,6 +1,6 @@
 ---
-title: 移植软件包 - IP-MAC 绑定
-parent: 移植软件包
+title: 移植软件包 - IP/MAC 绑定
+parent: 使用软件包
 nav_order: 5
 ---
 
