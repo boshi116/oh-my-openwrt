@@ -12,7 +12,7 @@ nav_order: 9
 
 最终效果预览：
 
-
+![Snipaste_2019-09-14_23-09-17.png](https://raw.githubusercontent.com/stuarthua/PicGo/master/oh-my-openwrt/Snipaste_2019-09-14_23-09-17.png)
 
 修改版源码见: [stuart/luci-app-xlnetacc](https://github.com/stuarthua/oh-my-openwrt/tree/master/stuart/luci-app-xlnetacc)
 
