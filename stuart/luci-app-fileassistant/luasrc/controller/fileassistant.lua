@@ -90,7 +90,7 @@ function fileassistant_install()
     filepath = filepath:gsub("<>", "/")
     filepath = filepath:gsub(" ", "\ ")
     local success
-    if isdir then
+    if isdir == "1" then
         success = false  
     elseif ext == "ipk" then
         os.execute('chmod 755 "'..filepath..'"')
