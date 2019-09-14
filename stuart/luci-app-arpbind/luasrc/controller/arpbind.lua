@@ -9,6 +9,7 @@ function index()
 	if not nixio.fs.access("/etc/config/arpbind") then
 		return
 	end
+	entry({"admin", "stuart"}, firstchild(), "Stuart", 89).dependent = false
 	page = entry({"admin", "stuart", "arpbind"}, cbi("arpbind"), _("IP/MAC 绑定"), 2)
 	page.i18n = "base"
     page.dependent = true

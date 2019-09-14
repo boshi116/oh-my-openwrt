@@ -1,7 +1,8 @@
 module("luci.controller.release_ram",package.seeall)
 
 function index()
-	entry({"admin","stuart","release_ram"}, call("release_ram"), _("释放内存"), 999)
+	entry({"admin", "stuart"}, firstchild(), "Stuart", 89).dependent = false
+	entry({"admin","stuart","release_ram"}, call("release_ram"), _("释放内存"), 999).dependent = true
 end
 function release_ram()
 	luci.sys.call("sync && echo 3 > /proc/sys/vm/drop_caches")
