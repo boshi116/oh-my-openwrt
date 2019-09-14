@@ -92,7 +92,7 @@ function fileassistant_install()
     local success
     if isdir then
         success = false  
-    else if ext == "ipk" then
+    elseif ext == "ipk" then
         os.execute('chmod 755 "'..filepath..'"')
         success = true
     else
