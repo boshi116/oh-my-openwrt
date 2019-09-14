@@ -21,11 +21,11 @@ msgstr "基本设置"
 msgid "Config File"
 msgstr "配置文件"
 
-msgid "<b><font color=green>Vlmcsd is running.</font></b>"
-msgstr "<b><font color=green>KMS 服务器运行中</font></b>"
+msgid "RUNNING"
+msgstr "运行中</b>"
 
-msgid "<b><font color=red>Vlmcsd is not running.</font></b>"
-msgstr "<b><font color=red>KMS 服务器未运行</font></b>"
+msgid "NOT RUNNING"
+msgstr "未运行"
 
 msgid "Enable"
 msgstr "启用"
