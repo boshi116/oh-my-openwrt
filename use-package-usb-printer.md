@@ -18,5 +18,5 @@ nav_order: 7
 
 依赖库：
 
-* 打印机驱动程序的守护进程 - [p910nd](https://openwrt.org/packages/pkgdata/p910nd)
-* USB 打印机驱动程序 - [kmod-usb-printer](https://openwrt.org/packages/pkgdata/kmod-usb-printer)
+* 打印机驱动程序的守护进程 - [官方 - p910nd](https://openwrt.org/packages/pkgdata/p910nd)
+* USB 打印机驱动程序 - [官方 - kmod-usb-printer](https://openwrt.org/packages/pkgdata/kmod-usb-printer)

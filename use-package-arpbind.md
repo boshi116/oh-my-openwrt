@@ -20,4 +20,4 @@ nav_order: 5
 
 依赖库：
 
-* 路由控制工具 - [ip-full](https://openwrt.org/packages/pkgdata/ip-full)
+* 路由控制工具 - [官方 - ip-full](https://openwrt.org/packages/pkgdata/ip-full)

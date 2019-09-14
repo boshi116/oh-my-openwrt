@@ -164,6 +164,8 @@ make package/luci-app-control-weburl/compile V=s
 make package/luci-app-control-mia/compile V=s
 make package/luci-app-usb-printer/compile V=s
 make package/luci-app-autoreboot/compile V=s
+make package/vlmcsd/compile V=s
+make package/luci-app-vlmcsd/compile V=s
 ```
 
 在 `~/sdk-ipks/x86` 目录查看生成的软件包，将其上传至路由器
