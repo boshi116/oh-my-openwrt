@@ -162,6 +162,7 @@ make package/luci-app-control-webrestriction/compile V=s
 make package/luci-app-control-timewol/compile V=s
 make package/luci-app-control-weburl/compile V=s
 make package/luci-app-control-mia/compile V=s
+make package/luci-app-usb-printer/compile V=s
 ```
 
 在 `~/sdk-ipks/x86` 目录查看生成的软件包，将其上传至路由器
@@ -185,7 +186,7 @@ rm -rf /tmp/luci-*
 SSH 连接路由器
 
 ```bash
-opkg --force-removal-of-dependent-packages remove luci-app-stuart luci-app-fileassistant luci-app-ramfree luci-app-arpbind luci-app-control-webrestriction luci-app-control-timewol luci-app-control-weburl luci-app-control-mia
+opkg remove luci-app-fileassistant luci-app-ramfree luci-app-arpbind luci-app-control-webrestriction luci-app-control-timewol luci-app-control-weburl luci-app-control-mia luci-app-usb-printer
 ```
 
 ## 小米路由器青春版
