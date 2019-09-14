@@ -10,6 +10,7 @@ function index()
 		return
 	end
 	entry({"admin", "stuart"}, firstchild(), "Stuart", 89).dependent = false
+	local page
 	page = entry({"admin", "stuart", "arpbind"}, cbi("arpbind"), _("IP/MAC 绑定"), 2)
 	page.i18n = "base"
     page.dependent = true
