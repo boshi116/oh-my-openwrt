@@ -163,7 +163,6 @@ make package/luci-app-stuart-autoreboot/compile V=s
 make package/vlmcsd/compile V=s
 make package/luci-app-stuart-vlmcsd/compile V=s
 make package/luci-app-stuart-xlnetacc/compile V=s
-
 make package/luci-app-stuart-timewol/compile V=s
 make package/luci-app-stuart-mia/compile V=s
 make package/luci-app-stuart-webrestriction/compile V=s
@@ -177,7 +176,7 @@ make package/luci-app-stuart-weburl/compile V=s
 SSH 连接路由器
 
 ```bash
-opkg install vlmcsd*.ipk luci-app-*.ipk luci-i18n-*.ipk
+opkg install *.ipk
 ```
 
 删除 LuCI 缓存，刷新浏览器界面，查看是否生效
@@ -192,10 +191,10 @@ SSH 连接路由器
 
 ```bash
 ## 移除第三方程序语言包
-opkg remove 
+opkg remove luci-i18n-stuart-autoreboot-zh-cn luci-i18n-stuart-usb-printer-zh-cn luci-i18n-stuart-vlmcsd-zh-cn
 
 ## 移除第三方程序
-opkg remove luci-app-stuart-ramfree luci-app-stuart-fileassistant
+opkg remove luci-app-stuart-ramfree luci-app-stuart-fileassistant luci-app-stuart-arpbind luci-app-stuart-usb-printer luci-app-stuart-autoreboot vlmcsd luci-app-stuart-vlmcsd luci-app-stuart-xlnetacc luci-app-stuart-timewol luci-app-stuart-mia luci-app-stuart-webrestriction luci-app-stuart-weburl
 ```
 
 ## 小米路由器青春版
