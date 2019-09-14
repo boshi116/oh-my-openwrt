@@ -158,11 +158,12 @@ touch make_by_stuart.sh
 make package/luci-app-stuart-ramfree/compile V=s
 make package/luci-app-stuart-fileassistant/compile V=s
 make package/luci-app-stuart-arpbind/compile V=s
+make package/luci-app-stuart-usb-printer/compile V=s
+
 make package/luci-app-stuart-webrestriction/compile V=s
 make package/luci-app-stuart-timewol/compile V=s
 make package/luci-app-stuart-weburl/compile V=s
 make package/luci-app-stuart-mia/compile V=s
-make package/luci-app-stuart-usb-printer/compile V=s
 make package/luci-app-stuart-autoreboot/compile V=s
 make package/vlmcsd/compile V=s
 make package/luci-app-stuart-vlmcsd/compile V=s
