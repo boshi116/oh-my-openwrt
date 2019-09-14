@@ -170,7 +170,7 @@ make package/luci-app-vlmcsd/compile V=s
 
 在 `~/sdk-ipks/x86` 目录查看生成的软件包，将其上传至路由器
 
-* 安装软件包
+* 安装第三方软件包
 
 SSH 连接路由器
 
@@ -184,12 +184,19 @@ opkg install luci-*.ipk
 rm -rf /tmp/luci-*
 ```
 
-* 移除旧软件包
+* 移除第三方旧软件包
 
 SSH 连接路由器
 
 ```bash
-opkg remove luci-app-fileassistant luci-app-ramfree luci-app-arpbind luci-app-control-webrestriction luci-app-control-timewol luci-app-control-weburl luci-app-control-mia luci-app-usb-printer luci-i18n-usb-printer-zh-cn luci-app-autoreboot luci-i18n-autoreboot-zh-cn
+## 移除第三方程序语言包
+opkg remove luci-i18n-usb-printer-zh-cn luci-i18n-autoreboot-zh-cn luci-i18n-vlmcsd-zh-cn
+
+## 移除被依赖的第三方程序
+opkg remove vlmcsd
+
+## 移除第三方程序
+opkg remove luci-app-ramfree luci-app-fileassistant luci-app-arpbind luci-app-control-webrestriction luci-app-control-timewol luci-app-control-weburl luci-app-control-mia luci-app-usb-printer luci-app-autoreboot luci-app-vlmcsd
 ```
 
 ## 小米路由器青春版
