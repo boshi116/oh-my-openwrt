@@ -10,7 +10,7 @@ nav_order: 4
 
 效果预览：
 
-![Snipaste_2019-09-13_20-53-52.png](https://raw.githubusercontent.com/stuarthua/PicGo/master/oh-my-openwrt/Snipaste_2019-09-13_20-53-52.png)
+![Snipaste_2019-09-14_12-11-57.png](https://raw.githubusercontent.com/stuarthua/PicGo/master/oh-my-openwrt/Snipaste_2019-09-14_12-11-57.png)
 
 以下记录移植该软件包的过程，仅供参考
 
