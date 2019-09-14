@@ -50,7 +50,7 @@ o.inputstyle = "reload"
 o.write = function()
 	SYS.call("nohup sh /usr/share/adbyby/adupdate.sh > /tmp/adupdate.log 2>&1 &")
 	SYS.call("sleep 4")
-	HTTP.redirect(DISP.build_url("admin", "services", "adbyby"))
+	HTTP.redirect(DISP.build_url("admin", "stuart", "adbyby"))
 end
 
 s:tab("advanced", translate("Advance Setting"))
