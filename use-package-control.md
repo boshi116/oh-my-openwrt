@@ -8,6 +8,14 @@ nav_order: 6
 
 最终效果预览：
 
+![Snipaste_2019-09-14_16-10-14.png](https://raw.githubusercontent.com/stuarthua/PicGo/master/oh-my-openwrt/Snipaste_2019-09-14_16-10-14.png)
+
+![Snipaste_2019-09-14_16-09-45.png](https://raw.githubusercontent.com/stuarthua/PicGo/master/oh-my-openwrt/Snipaste_2019-09-14_16-09-45.png)
+
+![Snipaste_2019-09-14_16-10-01.png](https://raw.githubusercontent.com/stuarthua/PicGo/master/oh-my-openwrt/Snipaste_2019-09-14_16-10-01.png)
+
+![Snipaste_2019-09-14_16-10-29.png](https://raw.githubusercontent.com/stuarthua/PicGo/master/oh-my-openwrt/Snipaste_2019-09-14_16-10-29.png)
+
 修改版源码见: 
 
 * [stuart/luci-app-control-webrestriction](https://github.com/stuarthua/oh-my-openwrt/tree/master/stuart/luci-app-control-webrestriction)
