@@ -3,9 +3,9 @@ module("luci.controller.webrestriction", package.seeall)
 function index()
     if not nixio.fs.access("/etc/config/webrestriction") then return end
 
-    entry({"admin", "control"}, firstchild(), "Stuart 管控", 80).dependent = false
-    entry({"admin", "control", "webrestriction"}, cbi("webrestriction"), _("访问限制"), 11).dependent = true
-    entry({"admin", "control", "webrestriction", "status"}, call("status")).leaf = true
+    entry({"admin", "stuart"}, firstchild(), "Stuart", 89).dependent = false
+    entry({"admin", "stuart", "webrestriction"}, cbi("webrestriction"), _("访问限制"), 11).dependent = true
+    entry({"admin", "stuart", "webrestriction", "status"}, call("status")).leaf = true
 end
 
 function status()
