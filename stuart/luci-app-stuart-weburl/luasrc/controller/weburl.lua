@@ -4,7 +4,7 @@ function index()
     if not nixio.fs.access("/etc/config/weburl") then return end
 
     entry({"admin", "stuart"}, firstchild(), "Stuart", 89).dependent = false
-    entry({"admin", "stuart", "weburl"}, cbi("weburl"), _("网址过滤"), 12).dependent = true
+    entry({"admin", "stuart", "weburl"}, cbi("weburl"), _("网址过滤"), 995).dependent = true
     entry({"admin", "stuart", "weburl", "status"}, call("status")).leaf = true
 end
 

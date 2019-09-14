@@ -4,7 +4,7 @@ function index()
     if not nixio.fs.access("/etc/config/timewol") then return end
 
     entry({"admin", "stuart"}, firstchild(), "Stuart", 89).dependent = false
-    entry({"admin", "stuart", "timewol"}, cbi("timewol"), _("定时唤醒"), 95).dependent = true
+    entry({"admin", "stuart", "timewol"}, cbi("timewol"), _("定时唤醒"), 996).dependent = true
     entry({"admin", "stuart", "timewol", "status"}, call("status")).leaf = true
 end
 
