@@ -175,7 +175,7 @@ make package/luci-app-vlmcsd/compile V=s
 SSH 连接路由器
 
 ```bash
-opkg install luci-*.ipk vlmcsd*.ipk
+opkg install vlmcsd*.ipk luci-app-*.ipk luci-i18n-*.ipk
 ```
 
 删除 LuCI 缓存，刷新浏览器界面，查看是否生效
