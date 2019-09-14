@@ -10,6 +10,88 @@ nav_order: 2
 
 ## 软件包
 
+| Package | 软件名 | 描述 |
+| ---- | ---- | ---- |
+| luci-app-accesscontrol | 访问时间控制 |  |
+| luci-app-adbyby-plus | 广告屏蔽大师Plus | [http://www.adbyby.com/](http://www.adbyby.com/) </br> [kysdm/adbyby](https://github.com/kysdm/adbyby) |
+| luci-app-amule | aMule | 开源免费的 P2P 文件共享软件 |
+| luci-app-arpbind | IP/MAC 绑定 |  |
+| luci-app-autoreboot | 定时重启 |  |
+| luci-app-dnsforwarder | DNSForwarder 防 DNS 污染 |  |
+| luci-app-dnspod | DNSPod |  |
+| luci-app-familycloud | 家庭云盘 |  |
+| luci-app-filetransfer | 文件传输 |  |
+| luci-app-flowoffload | Turbo ACC  FLOW转发加速 (集成在 sfe) |  |
+| luci-app-frpc | 内网穿透 Frp |  |
+| luci-app-guest-wifi | 访客网络 |  |
+| luci-app-haproxy-tcp | TCP 负载均衡 |  |
+| luci-app-ipsec-vpnd | IPSec VPN 服务器 |  |
+| luci-app-kodexplorer | 可道云 |  |
+| luci-app-mwan3helper | MWAN3 分流助手 |  |
+| luci-app-n2n_v2 | N2N内网穿透 |  |
+| luci-app-nft-qos | QOS流控 Nftables版 | 已弃 |
+| luci-app-openvpn-server | OpenVPN Server |  |
+| luci-app-pppoe-relay | PPPoE NAT穿透 |  |
+| luci-app-pptp-server | PPTP VPN |  |
+| luci-app-qbittorrent | BT 下载工具 |  |
+| luci-app-ramfree | 释放内存 |  |
+| luci-app-samba4 | Samba 文件服务器 |  |
+| luci-app-sfe | Turbo ACC 网络加速 (开启 Fast Path 转发加速) | [恩山 - Turbo ACC 加速引擎技术，多重加速你的上网体验](https://www.right.com.cn/forum/thread-341935-1-1.html) |
+| luci-app-ssr-plus | SSR Plus |  |
+| luci-app-ssrserver-python | Shadowsocks Server (Python) |  |
+| luci-app-syncdial | 多拨虚拟网卡(原 macvlan) |  |
+| luci-app-ttyd | 网页终端命令行 |  |
+| luci-app-unblockmusic | 解锁网易云灰色歌曲 |  |
+| luci-app-usb-printer | USB Printer 打印服务器 |  |
+| luci-app-v2ray-server | V2ray Server |  |
+| luci-app-vlmcsd | KMS 服务器 |  |
+| luci-app-vsftpd | FTP 服务器 |  |
+| luci-app-webadmin | Web 管理页面设置 |  |
+| luci-app-wrtbwmon | 实时流量监测 |  |
+| luci-app-xlnetacc | 迅雷快鸟 |  |
+| luci-app-zerotier | ZeroTier 内网穿透 |  |
+| luci-proto-bonding | 网络支持链路聚合 802.3ad |  |
+| luci-theme-argon | argon 主题 |  |
+| luci-theme-netgear | netgear 主题 |  |
+
+* 第三方
+
+| Package | 描述 | 说明 |
+| ---- | ---- | ---- |
+| block-mount | 启动时 USB 自动挂载 | |
+| coremark | 测试处理器核心性能 |  |
+| wget | Linux 命令：下载 |  |
+| libustream-openssl | SSL 支持 |  |
+| ca-certificates | SSL 证书颁发机构 |  |
+| default-settings | 默认设置 |  |
+| fdisk | Linux 命令：磁盘分区 |  |
+| lsblk | Linux 命令：列出所有可用块设备的信息 |  |
+| mdadm | Linux 命令：管理和监视软件RAID设备 |  |
+| automount | 自动挂载服务 |  |
+| autosamba | 自动挂载 samba |  |
+| dnsmasq | 提供 DNS 缓存和 DHCP 服务 |  |
+| dnsmasq-full | 支持 ipset 的 dnsmasq，适合国内| https://www.ixsh.com/tag/dnsmasq-full/ |
+| iptables | IPv4 防火墙 |  |
+| ip6tables | IPv6 防火墙 |  |
+| ppp、ppp-mod-pppoe | pppoe 拨号 |  |
+| odhcp6c | DHCPv6 客户端 | https://openwrt.org/docs/techref/odhcp6c |
+| odhcpd-ipv6only | 为IP配置客户端和下游路由器提供IP服务和中继服务 | https://openwrt.org/packages/pkgdata/odhcpd-ipv6only |
+| partx-utils | Linux 工具：磁盘管理 |  |
+| mkf2fs | Linux 工具：磁盘格式化 |  |
+| e2fsprogs | Linux 工具：维护 ext2，ext3 和 ext4 文件系统 |  |
+| wpad | 让浏览器自动发现代理服务器 | https://www.ibm.com/developerworks/cn/linux/1309_quwei_wpad/index.html |
+| htop | Linux 命令：查看进程及其命令 | https://openwrt.org/packages/pkgdata/htop |
+| lm-sensors | 读取硬件传感器数据 | https://openwrt.org/packages/pkgdata/lm-sensors |
+| autocore automount autosamba | Lean 自定义程序 |  |
+| ath10k-firmware-qca988x | 适用于QCA988x器件的ath10k固件 | https://openwrt.org/packages/pkgdata/ath10k-firmware-qca988x-ct |
+| ath10k-firmware-qca9888 | 适用于QCA9888器件的ath10k固件 | https://openwrt.org/packages/pkgdata/ath10k-firmware-qca9888 |
+| ath10k-firmware-qca9984 | 适用于QCA9884器件的ath10k固件 | https://openwrt.org/packages/pkgdata/ath10k-firmware-qca9984 |
+| brcmfmac-firmware-43602a1-pcie | Broadcom 43602a1 FullMAC PCIe固件 | https://openwrt.org/packages/pkgdata/brcmfmac-firmware-43602a1-pcie |
+| intel-microcode | Intel x86 CPU 微指令 | https://openwrt.org/packages/pkgdata/intel-microcode |
+| amd64-microcode | AMD64 CPU 微指令 | https://openwrt.org/packages/pkgdata/amd64-microcode |
+| alsa-utils | ALSA（高级Linux声音架构）工具 | https://openwrt.org/packages/pkgdata/alsa-utils |
+| shadowsocks-libev-ss-redir v2ray shadowsocksr-libev-server shadowsocksr-libev-ssr-local | 科学上网 |  |
+
 * 内核
 
 | Package | 描述 | 说明 |
@@ -47,73 +129,3 @@ nav_order: 2
 | kmod-usb-net-rtl8152 | 用于USB到以太网的内核模块Realtek 8152 USB2.0 / 3.0转换器 | https://openwrt.org/packages/pkgdata/kmod-usb-net-rtl8152 |
 
 关于内核软件包的更多信息可在官网中查到：[https://openwrt.org/packages/table/start](https://openwrt.org/packages/table/start)
-
-* luci
-
-| Package | 描述 | 说明 |
-| ---- | ---- | ---- |
-| luci | OpenWRT Web 管理 |  |
-| luci-app-ddns | DDNS |  |
-| luci-app-sqm | 流量智能队列管理(QOS) |  |
-| luci-app-upnp | 通用即插即用 UPnP(端口自动转发) |  |
-| luci-app-adbyby-plus | 广告屏蔽大师 Plus + |  |
-| luci-app-autoreboot | 支持计划重启 |  |
-| luci-app-filetransfer | 文件传输 |  |
-| luci-app-ssr-plus | SSR 代理 |  |
-| luci-app-vsftpd | FTP 服务器（更安全） |  |
-| ddns-scripts_aliyun | 阿里云 DDNS |  |
-| luci-app-pptp-server | PPTP VPN Server |  |
-| luci-app-arpbind | IP/MAC 绑定 |  |
-| luci-app-vlmcsd | 微软激活正版 KMS 服务器设置 |  |
-| luci-app-wifischedule | WiFi 计划 |  |
-| luci-app-wol | WOL 网络唤醒 |  |
-| luci-app-ramfree | 释放内存 |  |
-| luci-app-sfe | Turbo ACC 网络加速(开启Fast Path转发加速) | https://www.right.com.cn/forum/thread-341935-1-1.html |
-| luci-app-flowoffload | Turbo ACC FLOW 转发加速 |  |
-| luci-app-nlbwmon | 网络带宽监视器 |  |
-| luci-app-usb-printer | USB 打印服务器 |  |
-| luci-app-accesscontrol | 访问时间控制 |  |
-| luci-app-zerotier | ZeroTier 内网穿透 |  |
-| luci-app-xlnetacc | 迅雷快鸟 |  |
-| luci-app-ipsec-vpnd | IPsec VPN |  |
-| luci-proto-bonding | 支持链路聚合 802.3ad |  |
-
-> **注意：** 更多 Lean 的软件包说明，详见：[https://www.right.com.cn/forum/thread-344825-1-1.html](https://www.right.com.cn/forum/thread-344825-1-1.html)
-
-* 其他
-
-| Package | 描述 | 说明 |
-| ---- | ---- | ---- |
-| block-mount | 启动时 USB 自动挂载 | |
-| coremark | 测试处理器核心性能 |  |
-| wget | Linux 命令：下载 |  |
-| libustream-openssl | SSL 支持 |  |
-| ca-certificates | SSL 证书颁发机构 |  |
-| default-settings | 默认设置 |  |
-| fdisk | Linux 命令：磁盘分区 |  |
-| lsblk | Linux 命令：列出所有可用块设备的信息 |  |
-| mdadm | Linux 命令：管理和监视软件RAID设备 |  |
-| automount | 自动挂载服务 |  |
-| autosamba | 自动挂载 samba |  |
-| dnsmasq | 提供 DNS 缓存和 DHCP 服务 |  |
-| dnsmasq-full | 支持 ipset 的 dnsmasq，适合国内| https://www.ixsh.com/tag/dnsmasq-full/ |
-| iptables | IPv4 防火墙 |  |
-| ip6tables | IPv6 防火墙 |  |
-| ppp、ppp-mod-pppoe | pppoe 拨号 |  |
-| odhcp6c | DHCPv6 客户端 | https://openwrt.org/docs/techref/odhcp6c |
-| odhcpd-ipv6only | 为IP配置客户端和下游路由器提供IP服务和中继服务 | https://openwrt.org/packages/pkgdata/odhcpd-ipv6only |
-| partx-utils | Linux 工具：磁盘管理 |  |
-| mkf2fs | Linux 工具：磁盘格式化 |  |
-| e2fsprogs | Linux 工具：维护 ext2，ext3 和 ext4 文件系统 |  |
-| wpad | 让浏览器自动发现代理服务器 | https://www.ibm.com/developerworks/cn/linux/1309_quwei_wpad/index.html |
-| htop | Linux 命令：查看进程及其命令 | https://openwrt.org/packages/pkgdata/htop |
-| lm-sensors | 读取硬件传感器数据 | https://openwrt.org/packages/pkgdata/lm-sensors |
-| autocore automount autosamba | Lean 自定义程序 |  |
-| ath10k-firmware-qca988x | 适用于QCA988x器件的ath10k固件 | https://openwrt.org/packages/pkgdata/ath10k-firmware-qca988x-ct |
-| ath10k-firmware-qca9888 | 适用于QCA9888器件的ath10k固件 | https://openwrt.org/packages/pkgdata/ath10k-firmware-qca9888 |
-| ath10k-firmware-qca9984 | 适用于QCA9884器件的ath10k固件 | https://openwrt.org/packages/pkgdata/ath10k-firmware-qca9984 |
-| brcmfmac-firmware-43602a1-pcie | Broadcom 43602a1 FullMAC PCIe固件 | https://openwrt.org/packages/pkgdata/brcmfmac-firmware-43602a1-pcie |
-| intel-microcode | Intel x86 CPU 微指令 | https://openwrt.org/packages/pkgdata/intel-microcode |
-| amd64-microcode | AMD64 CPU 微指令 | https://openwrt.org/packages/pkgdata/amd64-microcode |
-| alsa-utils | ALSA（高级Linux声音架构）工具 | https://openwrt.org/packages/pkgdata/alsa-utils |
-| shadowsocks-libev-ss-redir v2ray shadowsocksr-libev-server shadowsocksr-libev-ssr-local | 科学上网 |  |

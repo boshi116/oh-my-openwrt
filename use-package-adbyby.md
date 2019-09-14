@@ -10,13 +10,23 @@ nav_order: 14
 
 
 
-修改版源码见: [stuart/luci-app-stuart-adbyby-plus](https://github.com/stuarthua/oh-my-openwrt/tree/master/stuart/luci-app-stuart-adbyby-plus)
+修改版源码见: 
+
+* [stuart/luci-app-stuart-adbyby-plus](https://github.com/stuarthua/oh-my-openwrt/tree/master/stuart/luci-app-stuart-adbyby-plus)
+* [stuart/adbyby](https://github.com/stuarthua/oh-my-openwrt/tree/master/stuart/adbyby)
 
 ## 说明
 
-移植自 [lean/luci-app-adbyby-plus](https://github.com/coolsnowwolf/lede/tree/master/package/lean/luci-app-adbyby-plus)
+移植自 
+
+* [lean/luci-app-adbyby-plus](https://github.com/coolsnowwolf/lede/tree/master/package/lean/luci-app-adbyby-plus)
+* [lean/adbyby](https://github.com/coolsnowwolf/lede/tree/master/package/lean/adbyby)
 
 依赖：
 
-* 用于数据包内容检查的 iptables 扩展，支持匹配字符串 - [官方 - iptables-mod-filter](https://openwrt.org/packages/pkgdata/iptables-mod-filter)
-* 用于数据包内容检查的 Netfilter (IPv4) 内核模块，支持匹配字符串 - [官方 - kmod-ipt-filter](https://openwrt.org/packages/pkgdata/kmod-ipt-filter)
+* 广告屏蔽大师 [第三方 - adbyby](http://www.adbyby.com/)
+* 命令行下载工具 - [官方 - wget](https://openwrt.org/packages/pkgdata/wget)
+* ipset
+* coreutils
+* coreutils-nohup
+* dnsmasq-full
