@@ -4,16 +4,10 @@ function index()
 	if not nixio.fs.access("/etc/config/xlnetacc") then
 		return
 	end
-
-	entry({"admin", "stuart", "xlnetacc"},
-		firstchild(), _("XLNetAcc")).dependent = false
-
-	entry({"admin", "stuart", "xlnetacc", "general"},
-		cbi("xlnetacc"), _("Settings"), 1)
-
-	entry({"admin", "stuart", "xlnetacc", "log"},
-		template("xlnetacc/logview"), _("Log"), 2)
-
+	entry({"admin", "stuart"}, firstchild(), "Stuart", 89).dependent = false
+	entry({"admin", "stuart", "xlnetacc"}, firstchild(), _("XLNetAcc"), 5).dependent = true
+	entry({"admin", "stuart", "xlnetacc", "general"}, cbi("xlnetacc"), _("Settings"), 1)
+	entry({"admin", "stuart", "xlnetacc", "log"}, template("xlnetacc/logview"), _("Log"), 2)
 	entry({"admin", "stuart", "xlnetacc", "status"}, call("action_status"))
 	entry({"admin", "stuart", "xlnetacc", "logdata"}, call("action_log"))
 end
