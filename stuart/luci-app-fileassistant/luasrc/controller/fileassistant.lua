@@ -102,6 +102,7 @@ end
 
 function installIPK(filepath)
     luci.sys.exec('opkg --force-depends install "'..filepath..'"')
+    luci.sys.exec('rm -rf /tmp/luci-*')
     return true;
 end
 

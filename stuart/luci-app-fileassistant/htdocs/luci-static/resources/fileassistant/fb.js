@@ -51,7 +51,7 @@ String.prototype.replaceAll = function(search, replacement) {
         },
         function (x, res) {
           if (res.ec === 0) {
-            refresh_list(res.data, currentPath);
+            location.reload();
             alert('安装成功!');
           } else {
             alert('安装失败，请检查文件格式!');
