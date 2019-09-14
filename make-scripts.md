@@ -192,11 +192,8 @@ SSH 连接路由器
 ## 移除第三方程序语言包
 opkg remove luci-i18n-usb-printer-zh-cn luci-i18n-autoreboot-zh-cn luci-i18n-vlmcsd-zh-cn
 
-## 移除被依赖的第三方程序
-opkg remove vlmcsd
-
 ## 移除第三方程序
-opkg remove luci-app-ramfree luci-app-fileassistant luci-app-arpbind luci-app-control-webrestriction luci-app-control-timewol luci-app-control-weburl luci-app-control-mia luci-app-usb-printer luci-app-autoreboot luci-app-vlmcsd
+opkg remove luci-app-ramfree luci-app-fileassistant luci-app-arpbind luci-app-control-webrestriction luci-app-control-timewol luci-app-control-weburl luci-app-control-mia luci-app-usb-printer luci-app-autoreboot luci-app-vlmcsd vlmcsd
 ```
 
 ## 小米路由器青春版
