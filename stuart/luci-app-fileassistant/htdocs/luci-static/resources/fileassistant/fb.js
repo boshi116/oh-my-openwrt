@@ -46,7 +46,8 @@ String.prototype.replaceAll = function(search, replacement) {
     if (c) {
       iwxhr.get('/cgi-bin/luci/admin/stuart/fileassistant_install',
         {
-          filepath: concatPath(currentPath, filename)
+          filepath: concatPath(currentPath, filename),
+          isdir: isdir
         },
         function (x, res) {
           if (res.ec === 0) {

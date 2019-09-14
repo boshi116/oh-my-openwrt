@@ -85,13 +85,15 @@ end
 
 function fileassistant_install()
     local filepath = luci.http.formvalue("filepath")
+    local isdir = luci.http.formvalue("isdir")
     local ext = filepath:match(".+%.(%w+)$")
     filepath = filepath:gsub("<>", "/")
     filepath = filepath:gsub(" ", "\ ")
     local success
-    if ext == "ipk" then
+    if isdir then
+        success = false  
+    else if ext == "ipk" then
         os.execute('chmod 755 "'..filepath..'"')
-        os.execute('opkg install "'..filepath..'"')
         success = true
     else
         success = false
