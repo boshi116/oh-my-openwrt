@@ -1,16 +1,12 @@
 ---
-title: 使用 Lean OpenWrt 软件包
-has_children: true
-nav_order: 3
+title: 使用恩山论坛 Lean 修改版 OpenWrt 软件包
+parent: 使用恩山论坛 Lean 修改版 OpenWrt
+nav_order: 2
 ---
 
-# 使用 Lean OpenWrt 软件包
+# 使用恩山论坛 Lean 修改版 OpenWrt 软件包
 
-Lean 的修改版 OpenWrt 不提供镜像下载，只提供源码，需要手动编译
-
-第一次使用源码编译，耗时较久，成功后，建议进行第二次编译，勾选 Image Builder、SDK, 编译成功后，保存生成的 Image Builder、SDK。
-
-之后需要使用特定软件包时，使用 SDK 生成软件包 ipk，使用 Image Builder 生成固件。
+以下列出恩山论坛 Lean 修改版 OpenWrt 的一些软件包，更多详情可见 [恩山论坛: OpenWrt 编译 LuCI -> Applications 添加插件应用说明](https://www.right.com.cn/forum/thread-344825-1-1.html)
 
 ## 软件包
 
@@ -121,7 +117,3 @@ Lean 的修改版 OpenWrt 不提供镜像下载，只提供源码，需要手动
 | amd64-microcode | AMD64 CPU 微指令 | https://openwrt.org/packages/pkgdata/amd64-microcode |
 | alsa-utils | ALSA（高级Linux声音架构）工具 | https://openwrt.org/packages/pkgdata/alsa-utils |
 | shadowsocks-libev-ss-redir v2ray shadowsocksr-libev-server shadowsocksr-libev-ssr-local | 科学上网 |  |
-
-## 小结
-
-熟悉了 Lean 的软件包，在理解功能设置的前提下，可以尝试阅读源码进行移植，最终自定义属于我们自己的 OpenWrt 路由器
