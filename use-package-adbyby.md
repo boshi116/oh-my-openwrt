@@ -24,9 +24,9 @@ nav_order: 14
 
 依赖：
 
-* 广告屏蔽大师 [第三方 - adbyby](http://www.adbyby.com/)
+* 广告屏蔽大师 - [第三方 - adbyby](http://www.adbyby.com/) | [kysdm/adbyby](https://github.com/kysdm/adbyby)
 * 命令行下载工具 - [官方 - wget](https://openwrt.org/packages/pkgdata/wget)
-* ipset
-* coreutils
-* coreutils-nohup
-* dnsmasq-full
+* IPSet 工具 - [官方 - ipset](https://openwrt.org/packages/pkgdata/ipset)
+* core 工具包 - [官方 - coreutils](https://openwrt.org/packages/pkgdata/coreutils)
+* nohup 工具包 - [官方 coreutils-nohup](https://openwrt.org/packages/pkgdata/coreutils-nohup)
+* DNSmasq 完整版 - [官方 dnsmasq-full](https://openwrt.org/packages/pkgdata/dnsmasq-full)
