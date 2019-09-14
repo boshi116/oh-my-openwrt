@@ -10,7 +10,7 @@ nav_order: 9
 
 最终效果预览：
 
-![Snipaste_2019-09-14_17-40-30.png](https://raw.githubusercontent.com/stuarthua/PicGo/master/oh-my-openwrt/Snipaste_2019-09-14_17-40-30.png)
+![Snipaste_2019-09-14_19-27-32.png](https://raw.githubusercontent.com/stuarthua/PicGo/master/oh-my-openwrt/Snipaste_2019-09-14_19-27-32.png)
 
 修改版源码见: 
 
