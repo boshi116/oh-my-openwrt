@@ -166,6 +166,7 @@ make package/luci-app-usb-printer/compile V=s
 make package/luci-app-autoreboot/compile V=s
 make package/vlmcsd/compile V=s
 make package/luci-app-vlmcsd/compile V=s
+make package/luci-app-xlnetacc/compile V=s
 ```
 
 在 `~/sdk-ipks/x86` 目录查看生成的软件包，将其上传至路由器
@@ -193,7 +194,7 @@ SSH 连接路由器
 opkg remove luci-i18n-usb-printer-zh-cn luci-i18n-autoreboot-zh-cn luci-i18n-vlmcsd-zh-cn
 
 ## 移除第三方程序
-opkg remove luci-app-ramfree luci-app-fileassistant luci-app-arpbind luci-app-control-webrestriction luci-app-control-timewol luci-app-control-weburl luci-app-control-mia luci-app-usb-printer luci-app-autoreboot luci-app-vlmcsd vlmcsd
+opkg remove luci-app-ramfree luci-app-fileassistant luci-app-arpbind luci-app-control-webrestriction luci-app-control-timewol luci-app-control-weburl luci-app-control-mia luci-app-usb-printer luci-app-autoreboot luci-app-vlmcsd vlmcsd luci-app-xlnetacc
 ```
 
 ## 小米路由器青春版
