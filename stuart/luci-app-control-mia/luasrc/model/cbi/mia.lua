@@ -2,7 +2,7 @@ local o = require "luci.sys"
 local a, t, e
 a = Map("mia", translate("上网时间管理"), translate("上网时间段控制系统。"))
 a.template = "mia/index"
-t = a:section(TypedSection, "basic", translate("Running Status"))
+t = a:section(TypedSection, "basic", translate("运行状态"))
 t.anonymous = true
 e = t:option(DummyValue, "mia_status", translate("当前状态"))
 e.template = "mia/mia"
