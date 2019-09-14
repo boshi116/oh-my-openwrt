@@ -155,18 +155,18 @@ touch make_by_stuart.sh
 #!/usr/bin/env bash
 #make package/helloworld/compile V=s
 #make package/luci-app-stuart/compile V=s
-make package/luci-app-ramfree/compile V=s
-make package/luci-app-fileassistant/compile V=s
-make package/luci-app-arpbind/compile V=s
-make package/luci-app-control-webrestriction/compile V=s
-make package/luci-app-control-timewol/compile V=s
-make package/luci-app-control-weburl/compile V=s
-make package/luci-app-control-mia/compile V=s
-make package/luci-app-usb-printer/compile V=s
-make package/luci-app-autoreboot/compile V=s
+make package/luci-app-stuart-ramfree/compile V=s
+make package/luci-app-stuart-fileassistant/compile V=s
+make package/luci-app-stuart-arpbind/compile V=s
+make package/luci-app-stuart-webrestriction/compile V=s
+make package/luci-app-stuart-timewol/compile V=s
+make package/luci-app-stuart-weburl/compile V=s
+make package/luci-app-stuart-mia/compile V=s
+make package/luci-app-stuart-usb-printer/compile V=s
+make package/luci-app-stuart-autoreboot/compile V=s
 make package/vlmcsd/compile V=s
-make package/luci-app-vlmcsd/compile V=s
-make package/luci-app-xlnetacc/compile V=s
+make package/luci-app-stuart-vlmcsd/compile V=s
+make package/luci-app-stuart-xlnetacc/compile V=s
 ```
 
 在 `~/sdk-ipks/x86` 目录查看生成的软件包，将其上传至路由器

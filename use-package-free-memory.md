@@ -10,7 +10,7 @@ nav_order: 3
 
 最终效果预览：
 
-![Snipaste_2019-09-13_20-53-52.png](https://raw.githubusercontent.com/stuarthua/PicGo/master/oh-my-openwrt/Snipaste_2019-09-13_20-53-52.png)
+![Snipaste_2019-09-14_23-25-18.png](https://raw.githubusercontent.com/stuarthua/PicGo/master/oh-my-openwrt/Snipaste_2019-09-14_23-25-18.png)
 
 ## 获取软件包源码
 
@@ -40,9 +40,9 @@ stuart
 
 修改后效果预览：
 
-![Snipaste_2019-09-13_20-53-52.png](https://raw.githubusercontent.com/stuarthua/PicGo/master/oh-my-openwrt/Snipaste_2019-09-13_20-53-52.png)
+![Snipaste_2019-09-14_23-25-18.png](https://raw.githubusercontent.com/stuarthua/PicGo/master/oh-my-openwrt/Snipaste_2019-09-14_23-25-18.png)
 
-修改版源码见: [stuart/luci-app-ramfree](https://github.com/stuarthua/oh-my-openwrt/tree/master/stuart/luci-app-ramfree)
+修改版源码见: [stuart/luci-app-stuart-ramfree](https://github.com/stuarthua/oh-my-openwrt/tree/master/stuart/luci-app-stuart-ramfree)
 
 ## 使用 SDK 编译软件包
 
