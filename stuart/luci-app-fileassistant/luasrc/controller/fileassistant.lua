@@ -93,13 +93,16 @@ function fileassistant_install()
     if isdir == "1" then
         success = false  
     elseif ext == "ipk" then
-        os.execute('chmod 755 "'..filepath..'"')
-        luci.sys.exec('opkg --force-depends install"'..filepath..'"')
-        success = true
+        success = installIPK(filepath)
     else
         success = false
     end
     list_response(nixio.fs.dirname(filepath), success)
+end
+
+function installIPK(filepath)
+    luci.sys.exec('opkg --force-depends install "'..filepath..'"')
+    return true;
 end
 
 function fileassistant_upload()
