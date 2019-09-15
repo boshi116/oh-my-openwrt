@@ -13,7 +13,7 @@ nav_order: 2
 | Package | 软件名 | 描述 |
 | ---- | ---- | ---- |
 | luci-app-accesscontrol | 访问时间控制 |  |
-| luci-app-adbyby-plus | 广告屏蔽大师Plus | [http://www.adbyby.com/](http://www.adbyby.com/) </br> [kysdm/adbyby](https://github.com/kysdm/adbyby) |
+| luci-app-adbyby-plus | 广告屏蔽大师Plus | [http://www.adbyby.com/](http://www.adbyby.com/) <br> [kysdm/adbyby](https://github.com/kysdm/adbyby) |
 | luci-app-amule | aMule | 开源免费的 P2P 文件共享软件 |
 | luci-app-arpbind | IP/MAC 绑定 |  |
 | luci-app-autoreboot | 定时重启 |  |
@@ -28,8 +28,8 @@ nav_order: 2
 | luci-app-ipsec-vpnd | IPSec VPN 服务器 |  |
 | luci-app-kodexplorer | 可道云 |  |
 | luci-app-mwan3helper | MWAN3 分流助手 |  |
-| luci-app-n2n_v2 | N2N内网穿透 |  |
-| luci-app-nft-qos | QOS流控 Nftables版 | 已弃 |
+| luci-app-n2n_v2 | N2N 内网穿透 |  |
+| luci-app-nft-qos | QOS 流控 Nftables版 | 已弃 |
 | luci-app-openvpn-server | OpenVPN Server |  |
 | luci-app-pppoe-relay | PPPoE NAT穿透 |  |
 | luci-app-pptp-server | PPTP VPN |  |
@@ -39,7 +39,7 @@ nav_order: 2
 | luci-app-sfe | Turbo ACC 网络加速 (开启 Fast Path 转发加速) | [恩山 - Turbo ACC 加速引擎技术，多重加速你的上网体验](https://www.right.com.cn/forum/thread-341935-1-1.html) |
 | luci-app-ssr-plus | SSR Plus |  |
 | luci-app-ssrserver-python | Shadowsocks Server (Python) |  |
-| luci-app-syncdial | 多拨虚拟网卡(原 macvlan) |  |
+| luci-app-syncdial | 多拨虚拟网卡 (原 macvlan) |  |
 | luci-app-ttyd | 网页终端命令行 |  |
 | luci-app-unblockmusic | 解锁网易云灰色歌曲 |  |
 | luci-app-usb-printer | USB Printer 打印服务器 |  |
