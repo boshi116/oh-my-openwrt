@@ -8,7 +8,7 @@ nav_order: 14
 
 最终效果预览：
 
-![Snipaste_2019-09-15_03-06-08.png](https://raw.githubusercontent.com/stuarthua/PicGo/master/oh-my-openwrt/Snipaste_2019-09-15_03-06-08.png)
+![Snipaste_2019-09-15_12-55-09.png](https://raw.githubusercontent.com/stuarthua/PicGo/master/oh-my-openwrt/Snipaste_2019-09-15_12-55-09.png)
 
 修改版源码见: 
 

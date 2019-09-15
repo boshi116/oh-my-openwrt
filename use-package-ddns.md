@@ -1,10 +1,10 @@
 ---
-title: 使用软件包 - 动态 DDNS
+title: 使用官方软件包 - 动态 DDNS
 parent: 使用软件包
 nav_order: 16
 ---
 
-# 使用软件包 - 动态 DDNS
+# 使用官方软件包 - 动态 DDNS
 
 从官方软件仓库中搜素安装
 

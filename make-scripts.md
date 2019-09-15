@@ -196,7 +196,7 @@ SSH 连接路由器
 opkg remove luci-i18n-stuart-autoreboot-zh-cn luci-i18n-stuart-usb-printer-zh-cn luci-i18n-stuart-vlmcsd-zh-cn luci-i18n-stuart-adbyby-plus-zh-cn
 
 ## 移除第三方程序
-opkg remove luci-app-stuart-ramfree luci-app-stuart-fileassistant luci-app-stuart-arpbind luci-app-stuart-usb-printer luci-app-stuart-autoreboot vlmcsd luci-app-stuart-vlmcsd luci-app-stuart-xlnetacc luci-app-stuart-timewol luci-app-stuart-mia luci-app-stuart-webrestriction luci-app-stuart-weburl luci-app-stuart-adbyby-plus adbyby luci-app-stuart-adbyby-plus
+opkg remove luci-app-stuart-ramfree luci-app-stuart-fileassistant luci-app-stuart-arpbind luci-app-stuart-usb-printer luci-app-stuart-autoreboot luci-app-stuart-vlmcsd vlmcsd luci-app-stuart-xlnetacc luci-app-stuart-timewol luci-app-stuart-mia luci-app-stuart-webrestriction luci-app-stuart-weburl luci-app-stuart-adbyby-plus adbyby
 ```
 
 ## 小米路由器青春版
