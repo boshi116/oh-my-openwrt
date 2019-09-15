@@ -33,13 +33,15 @@ nav_order: 14
 
 ```
 Configuring kmod-nfnetlink.
-Configuring coreutils.
 Configuring libgmp.
 Configuring libnettle.
 Configuring kmod-ipt-ipset.
 Configuring libipset.
+
+Configuring coreutils.
 Configuring ipset.
 Configuring coreutils-nohup.
+Configuring dnsmasq-full.
 
 Configuring adbyby.
 Configuring luci-app-stuart-adbyby-plus.
