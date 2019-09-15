@@ -1,9 +1,8 @@
 module("luci.controller.adbyby", package.seeall)
 
 function index()
-	if not nixio.fs.access("/etc/config/adbyby") then
-		return
-	end
+	if not nixio.fs.access("/etc/config/adbyby") then return end
+	
 	entry({"admin", "stuart"}, firstchild(), "Stuart", 89).dependent = false
 	entry({"admin", "stuart", "adbyby"}, cbi("adbyby"), _("ADBYBY Plus +"), 300).dependent = true
 	entry({"admin", "stuart", "adbyby", "status"}, call("act_status")).leaf=true
