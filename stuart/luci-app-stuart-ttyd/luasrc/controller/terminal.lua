@@ -6,5 +6,5 @@ function index()
 	end
 	
 	entry({"admin", "stuart"}, firstchild(), "Stuart", 89).dependent = false
-	entry({"admin", "stuart", "terminal"}, template("terminal"), _("TTYD Terminal"), 200).leaf = true
+	entry({"admin", "stuart", "terminal"}, template("terminal"), _("TTYD Terminal"), 10).leaf = true
 end
