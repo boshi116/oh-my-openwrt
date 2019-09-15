@@ -169,6 +169,7 @@ make package/luci-app-stuart-webrestriction/compile V=s
 make package/luci-app-stuart-weburl/compile V=s
 make package/adbyby/compile V=s
 make package/luci-app-stuart-adbyby-plus/compile V=s
+make package/luci-app-stuart-ttyd/compile V=s
 ```
 
 在 `~/sdk-ipks/x86` 目录查看生成的软件包，将其上传至路由器
@@ -193,10 +194,10 @@ SSH 连接路由器
 
 ```bash
 ## 移除第三方程序语言包
-opkg remove luci-i18n-stuart-autoreboot-zh-cn luci-i18n-stuart-usb-printer-zh-cn luci-i18n-stuart-vlmcsd-zh-cn luci-i18n-stuart-adbyby-plus-zh-cn
+opkg remove luci-i18n-stuart-autoreboot-zh-cn luci-i18n-stuart-usb-printer-zh-cn luci-i18n-stuart-vlmcsd-zh-cn luci-i18n-stuart-adbyby-plus-zh-cn luci-i18n-stuart-ttyd-zh-cn
 
 ## 移除第三方程序
-opkg remove luci-app-stuart-ramfree luci-app-stuart-fileassistant luci-app-stuart-arpbind luci-app-stuart-usb-printer luci-app-stuart-autoreboot luci-app-stuart-vlmcsd vlmcsd luci-app-stuart-xlnetacc luci-app-stuart-timewol luci-app-stuart-mia luci-app-stuart-webrestriction luci-app-stuart-weburl luci-app-stuart-adbyby-plus adbyby
+opkg remove luci-app-stuart-ramfree luci-app-stuart-fileassistant luci-app-stuart-arpbind luci-app-stuart-usb-printer luci-app-stuart-autoreboot luci-app-stuart-vlmcsd vlmcsd luci-app-stuart-xlnetacc luci-app-stuart-timewol luci-app-stuart-mia luci-app-stuart-webrestriction luci-app-stuart-weburl luci-app-stuart-adbyby-plus adbyby luci-app-stuart-ttyd
 ```
 
 ## 小米路由器青春版
