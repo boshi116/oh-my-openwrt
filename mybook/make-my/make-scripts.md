@@ -130,13 +130,13 @@ make package/luci-app-weburl/compile V=s
 make package/adbyby/compile V=s
 make package/luci-app-adbyby-plus/compile V=s
 make package/luci-app-ttyd/compile V=s
-#make package/shadowsocks/compile V=s
-#make package/luci-app-shadowsocks/compile V=s
-make package/shadowsocks-libev/compile V=s
-make package/kcptun/compile V=s
-make package/v2ray/compile V=s
-make package/pdnsd-alt/compile V=s
-make package/luci-app-ssr-plus/compile V=s
+make package/shadowsocks/compile V=s
+make package/luci-app-shadowsocks/compile V=s
+make package/shadowsocksr-libev/compile V=s
+# make package/kcptun/compile V=s
+# make package/v2ray/compile V=s
+# make package/pdnsd-alt/compile V=s
+# make package/luci-app-ssr-plus/compile V=s
 ```
 
 在 `~/sdk-ipks/x86` 目录查看生成的软件包，将其上传至路由器
