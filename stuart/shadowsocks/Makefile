@@ -127,4 +127,4 @@ define Package/shadowsocks-libev-server/install
 endef
 
 $(eval $(call BuildPackage,shadowsocks-libev))
-$(eval $(call BuildPackage,shadowsocks-libev-server))
+# $(eval $(call BuildPackage,shadowsocks-libev-server))
