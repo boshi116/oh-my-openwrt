@@ -6,7 +6,9 @@
 
 ![Snipaste_2019-09-19_23-50-11.png](https://raw.githubusercontent.com/stuarthua/PicGo/master/oh-my-openwrt/Snipaste_2019-09-19_23-50-11.png)
 
-移植自 [shadowsocks/openwrt-shadowsocks](https://github.com/shadowsocks/openwrt-shadowsocks)
+移植自 shadowsocks 社区 - [https://github.com/shadowsocks/](https://github.com/shadowsocks/)
+
+* [shadowsocks/openwrt-shadowsocks](https://github.com/shadowsocks/openwrt-shadowsocks)
 
 修改说明：
 
