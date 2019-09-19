@@ -1,4 +1,4 @@
-# 使用软件包 - IP/MAC 绑定
+# 移植软件包 - IP/MAC 绑定
 
 最终效果预览：
 
@@ -6,7 +6,11 @@
 
 修改版源码见: 
 
-* [stuart/luci-app-stuart-arpbind](https://github.com/stuarthua/oh-my-openwrt/tree/master/stuart/luci-app-stuart-arpbind)
+* [stuart/luci-app-arpbind](https://github.com/stuarthua/oh-my-openwrt/tree/master/stuart/luci-app-arpbind)
+
+修改说明：
+
+* 修改 LuCI 菜单目录
 
 ## 说明
 
