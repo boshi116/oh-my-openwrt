@@ -5,7 +5,7 @@ function index()
 		return
 	end
 	entry({"admin", "custom"}, firstchild(), "我的", 89).dependent = false
-	entry({"admin", "custom", "xlnetacc"}, firstchild(), _("XLNetAcc"), 500).dependent = true
+	entry({"admin", "custom", "xlnetacc"}, firstchild(), _("XLNetAcc"), 200).dependent = true
 	entry({"admin", "custom", "xlnetacc", "general"}, cbi("xlnetacc"), _("Settings"), 1)
 	entry({"admin", "custom", "xlnetacc", "log"}, template("xlnetacc/logview"), _("Log"), 2)
 	entry({"admin", "custom", "xlnetacc", "status"}, call("action_status"))
