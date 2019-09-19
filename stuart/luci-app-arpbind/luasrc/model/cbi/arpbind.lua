@@ -1,8 +1,10 @@
+
+
 local sys = require "luci.sys"
 local ifaces = sys.net:devices()
 
 m = Map("arpbind", translate("IP/MAC Binding"),
-        translatef("ARP 协议是用于实现网络地址到物理地址转换的协议。在这里，你可以设置静态ARP绑定规则。"))
+        translatef("ARP is used to convert a network address (e.g. an IPv4 address) to a physical address such as a MAC address.Here you can add some static ARP binding rules."))
 
 s = m:section(TypedSection, "arpbind", translate("Rules"))
 s.template = "cbi/tblsection"
@@ -18,7 +20,7 @@ luci.ip.neighbors({ family = 4 }, function(entry)
        end
 end)
 
-a = s:option(Value, "macaddr", translate("MAC 地址"))
+a = s:option(Value, "macaddr", translate("MAC Address"))
 a.datatype = "macaddr"
 a.optional = false
 luci.ip.neighbors({family = 4}, function(neighbor)
