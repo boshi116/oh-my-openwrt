@@ -11,6 +11,10 @@
 * [stuart/luci-app-vlmcsd](https://github.com/stuarthua/oh-my-openwrt/tree/master/stuart/luci-app-vlmcsd)
 * [stuart/vlmcsd](https://github.com/stuarthua/oh-my-openwrt/tree/master/stuart/vlmcsd)
 
+修改说明：
+
+* 修改 LuCI 菜单目录
+
 ## 说明
 
 移植自 
