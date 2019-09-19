@@ -6,8 +6,12 @@
 
 修改版源码见: 
 
-* [stuart/luci-app-stuart-adbyby-plus](https://github.com/stuarthua/oh-my-openwrt/tree/master/stuart/luci-app-stuart-adbyby-plus)
+* [stuart/luci-app-adbyby-plus](https://github.com/stuarthua/oh-my-openwrt/tree/master/stuart/luci-app-adbyby-plus)
 * [stuart/adbyby](https://github.com/stuarthua/oh-my-openwrt/tree/master/stuart/adbyby)
+
+修改说明：
+
+* 修改 LuCI 菜单目录
 
 ## 说明
 
