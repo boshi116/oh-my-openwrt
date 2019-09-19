@@ -1,8 +1,6 @@
----
-title: README
-nav_order: 1
-permalink: /
----
+## oh-my-openwrt
+
+自己使用的 OpenWrt 固件，使用官方最新稳定版本 18.06.4，添加了一些自定义软件包
 
 ## 我的硬件
 
@@ -29,7 +27,7 @@ permalink: /
 ### 修改版
 
 * KoolShare 论坛修改版镜像 [koolshare Lede X64 Nuc](http://firmware.koolshare.cn/LEDE_X64_fw867/)
-* 恩山论坛 Lean 修改版镜像 [https://www.right.com.cn/forum/thread-304009-1-1.html](https://www.right.com.cn/forum/thread-304009-1-1.html)、[coolsnowwolf/lede](https://github.com/coolsnowwolf/lede)
+* 恩山无线论坛 Lean 修改版镜像 [https://www.right.com.cn/forum/thread-304009-1-1.html](https://www.right.com.cn/forum/thread-304009-1-1.html)、[coolsnowwolf/lede](https://github.com/coolsnowwolf/lede)
 
 ### 说明
 

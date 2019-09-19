@@ -1,0 +1,73 @@
+{
+  "title": "Oh My Openwrt",
+  "description": "my using openwrt experiences",
+  "author": "Stuart Hua",
+  "language": "zh-hans",
+  "gitbook": "3.2.3",
+  "links": {
+    "sidebar": {
+        "Blog": "https://blog.stuarthua.com/"
+    }
+  },
+  "output": null,
+  "plugins": [
+    "-sharing",
+    "-highlight",
+    "prism",
+    "prism-themes",
+    "-lunr",
+    "-search",
+    "search-pro",
+    "expandable-chapters",
+    "copy-code-button",
+    "advanced-emoji",
+    "splitter",
+    "edit-link",
+    "page-footer-ex",
+    "sectionx",
+    "todo",
+    "github",
+    "rss",
+    "anchor-navigation-ex",
+    "ace"
+  ],
+  "pluginsConfig": {
+    "theme-default": {
+      "showLevel": false
+    },
+    "prism": {
+      "css": [
+          "prism-themes/themes/prism-base16-ateliersulphurpool.light.css"
+      ]
+    },
+    "page-footer-ex": {
+      "copyright": "Copyright &copy stuarthua.com 2019",
+      "markdown": false,
+      "update_label": "<i>该文件修订时间：</i>",
+      "update_format": "YYYY-MM-DD HH:mm:ss"
+    },
+    "sectionx": {
+      "tag": "b"
+    },
+    "github": {
+      "url": "https://github.com/stuarthua/oh-my-openwrt"
+    },
+    "edit-link": {
+      "base": "https://github.com/stuarthua/oh-my-openwrt/edit/master",
+      "label": "edit"
+    },
+    "rss": {
+      "title": "Oh The Way",
+      "description": "some experiences about gfw",
+      "author": "Stuart Hua",
+      "feed_url": "https://stuarthua.github.io/oh-my-openwrt/rss",
+      "site_url": "https://stuarthua.github.io/oh-my-openwrt/",
+      "managingEditor": "stuarthua.cn@gmail.com",
+      "webMaster": "stuarthua.cn@gmail.com"
+    },
+    "anchor-navigation-ex": {
+      "showLevel": false,
+      "associatedWithSummary": false
+    }
+  }
+}
