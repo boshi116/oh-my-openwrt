@@ -6,6 +6,7 @@
     - [在 Mac 虚拟机 VMware 上使用官方 OpenWrt](mybook/first-use/use-openwrt-on-vmware-with-mac.md)
     - [小米路由器青春版使用官方 OpenWrt](mybook/first-use/use-official-openwrt-on-xiaomi-nano.md)
     - [使用 OpenWrt 软件源](mybook/first-use/use-software-source.md)
+    - [安装软件（在线/离线）](mybook/first-use/use-package.md)
 - [使用恩山论坛 Lean 修改版 OpenWrt](mybook/use-lean/use-lean-openwrt.md)
     - [编译恩山论坛 Lean 修改版 OpenWrt](mybook/use-lean/make-lean-openwrt.md)
     - [使用恩山论坛 Lean 修改版 OpenWrt 软件包](mybook/use-lean/use-lean-openwrt-package.md)

@@ -4,7 +4,7 @@
 
 ## 准备
 
-* Ubuntu 14.04 LTS - 参考上文 [在 Mac 上使用 VMware 安装 Ubuntu 14.04 LTS](https://stuarthua.github.io/oh-my-openwrt/mac-vmware-install-ubuntu.html)
+* Ubuntu 14.04 LTS - 参考上文 [在 Mac 上使用 VMware 安装 Ubuntu 14.04 LTS](https://stuarthua.github.io/oh-my-openwrt/mybook/first-use/use-openwrt-on-vmware-with-mac.html)
 
 ## 下载源码
 

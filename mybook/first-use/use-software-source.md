@@ -94,4 +94,4 @@ src/gz openwrtio http://dl.openwrt.io/vendors/youku/ramips/packages
 
 * [stuarthua/oh-my-openwrt](https://github.com/stuarthua/oh-my-openwrt/)
 
-如需自定义，请参考下节 [编译自己的 OpenWrt 固件及软件包](https://stuarthua.github.io/oh-my-openwrt/make-my-openwrt.html)
+如需自定义，请参考下节 [编译自己的 OpenWrt 固件及软件包](https://stuarthua.github.io/oh-my-openwrt/mybook/make-my/make-my-openwrt.html)

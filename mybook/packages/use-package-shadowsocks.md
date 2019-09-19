@@ -12,7 +12,7 @@
 修改说明: 
 
 * 修改 LuCI 菜单目录
-* 只使用 shadowsocks-libev 客户端版本
+* 只编译 shadowsocks-libev 客户端版本
 
 ## 说明
 
@@ -21,4 +21,4 @@
 * [shadowsocks/openwrt-shadowsocks](https://github.com/shadowsocks/openwrt-shadowsocks)
 * [shadowsocks/luci-app-shadowsocks](https://github.com/shadowsocks/luci-app-shadowsocks)
 
-依赖详见 github
+依赖详见 shadowsocks 社区 github

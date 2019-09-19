@@ -13,8 +13,8 @@ OpenWrt 官方也推荐使用 SDK 方式编译 ipk，而不是使用源码，这
 
 ## 准备
 
-* 阅读：[在 Mac 上使用 VMware 安装 Ubuntu 14.04 LTS](https://stuarthua.github.io/oh-my-openwrt/mac-vmware-install-ubuntu.html)
-* 阅读：[小米路由器青春版使用官方 OpenWrt](https://stuarthua.github.io/oh-my-openwrt/use-official-openwrt-on-xiaomi-nano.html)
+* 阅读：[在 Mac 上使用 VMware 安装 Ubuntu 14.04 LTS](https://stuarthua.github.io/oh-my-openwrt/mybook/first-use/mac-vmware-install-ubuntu.html)
+* 阅读：[小米路由器青春版使用官方 OpenWrt](https://stuarthua.github.io/oh-my-openwrt/mybook/first-use/use-official-openwrt-on-xiaomi-nano.html)
 * 硬件：小米路由器青春版
 
 ## 下载 SDK

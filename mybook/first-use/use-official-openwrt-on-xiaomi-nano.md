@@ -1,6 +1,6 @@
 # 小米路由器青春版使用官方 OpenWrt
 
-承接上文 [在 Mac 虚拟机 VMware 上使用官方 OpenWrt](https://stuarthua.github.io/oh-my-openwrt/use-openwrt-on-vmware-with-mac.html)，对 OpenWrt 基本熟悉后，尝试在实体机上刷入系统，体验 OpenWrt。
+承接上文 [在 Mac 虚拟机 VMware 上使用官方 OpenWrt](https://stuarthua.github.io/oh-my-openwrt/mybook/first-use/use-openwrt-on-vmware-with-mac.html)，对 OpenWrt 基本熟悉后，尝试在实体机上刷入系统，体验 OpenWrt。
 
 小米路由器青春版基于 OpenWRT 改版，因此有一定的自定义空间，可以尝试刷机。
 

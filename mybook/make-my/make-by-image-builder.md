@@ -11,8 +11,8 @@ Image Builder 是 Openwrt 官方提供的用来快捷生成所需固件的工具
 
 ## 准备
 
-* 阅读：[在 Mac 上使用 VMware 安装 Ubuntu 14.04 LTS](https://stuarthua.github.io/oh-my-openwrt/mac-vmware-install-ubuntu.html)
-* 阅读：[小米路由器青春版使用官方 OpenWrt](https://stuarthua.github.io/oh-my-openwrt/use-official-openwrt-on-xiaomi-nano.html)
+* 阅读：[在 Mac 上使用 VMware 安装 Ubuntu 14.04 LTS](https://stuarthua.github.io/oh-my-openwrt/mybook/first-use/mac-vmware-install-ubuntu.html)
+* 阅读：[小米路由器青春版使用官方 OpenWrt](https://stuarthua.github.io/oh-my-openwrt/mybook/first-use/use-official-openwrt-on-xiaomi-nano.html)
 * 硬件：小米路由器青春版
 
 ## 下载 Image Builder
@@ -301,7 +301,7 @@ etc
 
 除了安全性，第三方软件包是否适合自己的硬件也是衡量标准之一。我们需要知道第三方软件包依赖了那些程序、是否支持我们的硬件，通常，这可以在开源仓库的 README 文件中找到指引。
 
-阅读: [使用 SDK 编译特定软件包](https://stuarthua.github.io/oh-my-openwrt/make-by-sdk.html) 
+阅读: [使用 SDK 编译特定软件包](https://stuarthua.github.io/oh-my-openwrt/mybook/make-my/make-by-sdk.html) 
 
 接下来，我们来看一个文件 `openwrt-imagebuilder-xiaomi/repositories.conf`, 这对我们接下来的工作有所启发
 
