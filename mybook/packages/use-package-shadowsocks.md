@@ -12,6 +12,7 @@
 修改说明: 
 
 * 修改 LuCI 菜单目录
+* 只编译 luci-app-shadowsocks (含 ipset)
 * 只编译 shadowsocks-libev 客户端版本
 
 ## 说明

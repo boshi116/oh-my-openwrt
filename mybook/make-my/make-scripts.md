@@ -34,40 +34,6 @@ mkdir -p /home/stuart/sdk-ipks
 ln -s /home/stuart/openwrt-sdk-x86/bin/packages/x86_64/stuart /home/stuart/sdk-ipks/x86
 ```
 
-### Image Builder
-
-终端开启翻墙 - `startss`
-
-* 准备
-
-```bash
-cd ~ && git clone https://github.com/stuarthua/oh-my-openwrt oh-my-openwrt-devices && git checkout -b devices origin/devices
-```
-
-更新
-
-```bash
-cd ~/oh-my-openwrt-devices && git pull
-```
-
-* 生成固件
-
-进入 `~/openwrt-imagebuilder-x86`
-
-```bash
-cd ~/openwrt-imagebuilder-x86
-```
-
-执行编译
-
-```bash
-make image PROFILE=Generic \
-PACKAGES="base-files busybox dnsmasq dropbear e2fsprogs firewall fstools fwtool ip6tables iptables jshn jsonfilter kernel kmod-button-hotplug kmod-e1000 kmod-e1000e kmod-hwmon-core kmod-i2c-algo-bit kmod-i2c-core kmod-igb kmod-input-core kmod-ip6tables kmod-ipt-conntrack kmod-ipt-core kmod-ipt-nat kmod-ipt-offload kmod-lib-crc-ccitt kmod-mii kmod-nf-conntrack kmod-nf-conntrack6 kmod-nf-flow kmod-nf-ipt kmod-nf-ipt6 kmod-nf-nat kmod-nf-reject kmod-nf-reject6 kmod-ppp kmod-pppoe kmod-pppox kmod-pps kmod-ptp kmod-r8169 kmod-slhc libblkid libblobmsg-json libc libcomerr libext2fs libf2fs libgcc libip4tc libip6tc libiwinfo libiwinfo-lua libjson-c libjson-script liblua liblucihttp liblucihttp-lua libnl-tiny libpthread librt libsmartcols libss libubox libubus libubus-lua libuci libuclient libuuid libxtables logd lua luci luci-app-firewall luci-base luci-lib-ip luci-lib-jsonc luci-lib-nixio luci-mod-admin-full luci-proto-ipv6 luci-proto-ppp luci-theme-bootstrap mkf2fs mtd netifd odhcp6c odhcpd-ipv6only openwrt-keyring opkg partx-utils ppp ppp-mod-pppoe procd r8169-firmware rpcd rpcd-mod-rrdns ubox ubus ubusd uci uclient-fetch uhttpd usign luci-i18n-base-zh-cn" \
-FILES=~/oh-my-openwrt-devices/devices/x86
-```
-
-在 `~/image-bins/x86` 目录查看生成的固件
-
 ### SDK
 
 终端开启翻墙 - `startss`
@@ -190,11 +156,45 @@ SSH 连接路由器
 
 ```bash
 ## 移除第三方程序语言包
-opkg remove luci-i18n-stuart-autoreboot-zh-cn luci-i18n-stuart-usb-printer-zh-cn luci-i18n-stuart-vlmcsd-zh-cn luci-i18n-stuart-adbyby-plus-zh-cn luci-i18n-stuart-ttyd-zh-cn luci-i18n-stuart-shadowsocks-zh-cn
+opkg remove luci-i18n-autoreboot-zh-cn luci-i18n-usb-printer-zh-cn luci-i18n-vlmcsd-zh-cn luci-i18n-adbyby-plus-zh-cn luci-i18n-ttyd-zh-cn luci-i18n-shadowsocks-zh-cn
 
 ## 移除第三方程序
-opkg remove luci-app-stuart-ramfree luci-app-stuart-fileassistant luci-app-stuart-arpbind luci-app-stuart-usb-printer luci-app-stuart-autoreboot luci-app-stuart-vlmcsd vlmcsd luci-app-stuart-xlnetacc luci-app-stuart-timewol luci-app-stuart-mia luci-app-stuart-webrestriction luci-app-stuart-weburl luci-app-stuart-adbyby-plus adbyby luci-app-stuart-ttyd luci-app-stuart-shadowsocks shadowsocks
+opkg remove luci-app-ramfree luci-app-fileassistant luci-app-arpbind luci-app-usb-printer luci-app-autoreboot luci-app-vlmcsd vlmcsd luci-app-xlnetacc luci-app-timewol luci-app-mia luci-app-webrestriction luci-app-weburl luci-app-adbyby-plus adbyby luci-app-ttyd luci-app-shadowsocks shadowsocks
 ```
+
+### Image Builder
+
+终端开启翻墙 - `startss`
+
+* 准备
+
+```bash
+cd ~ && git clone https://github.com/stuarthua/oh-my-openwrt oh-my-openwrt-devices && git checkout -b devices origin/devices
+```
+
+更新
+
+```bash
+cd ~/oh-my-openwrt-devices && git pull
+```
+
+* 生成固件
+
+进入 `~/openwrt-imagebuilder-x86`
+
+```bash
+cd ~/openwrt-imagebuilder-x86
+```
+
+执行编译
+
+```bash
+make image PROFILE=Generic \
+PACKAGES="base-files busybox dnsmasq dropbear e2fsprogs firewall fstools fwtool ip6tables iptables jshn jsonfilter kernel kmod-button-hotplug kmod-e1000 kmod-e1000e kmod-hwmon-core kmod-i2c-algo-bit kmod-i2c-core kmod-igb kmod-input-core kmod-ip6tables kmod-ipt-conntrack kmod-ipt-core kmod-ipt-nat kmod-ipt-offload kmod-lib-crc-ccitt kmod-mii kmod-nf-conntrack kmod-nf-conntrack6 kmod-nf-flow kmod-nf-ipt kmod-nf-ipt6 kmod-nf-nat kmod-nf-reject kmod-nf-reject6 kmod-ppp kmod-pppoe kmod-pppox kmod-pps kmod-ptp kmod-r8169 kmod-slhc libblkid libblobmsg-json libc libcomerr libext2fs libf2fs libgcc libip4tc libip6tc libiwinfo libiwinfo-lua libjson-c libjson-script liblua liblucihttp liblucihttp-lua libnl-tiny libpthread librt libsmartcols libss libubox libubus libubus-lua libuci libuclient libuuid libxtables logd lua luci luci-app-firewall luci-base luci-lib-ip luci-lib-jsonc luci-lib-nixio luci-mod-admin-full luci-proto-ipv6 luci-proto-ppp luci-theme-bootstrap mkf2fs mtd netifd odhcp6c odhcpd-ipv6only openwrt-keyring opkg partx-utils ppp ppp-mod-pppoe procd r8169-firmware rpcd rpcd-mod-rrdns ubox ubus ubusd uci uclient-fetch uhttpd usign luci-i18n-base-zh-cn" \
+FILES=~/oh-my-openwrt-devices/devices/x86
+```
+
+在 `~/image-bins/x86` 目录查看生成的固件
 
 ## 小米路由器青春版
 
