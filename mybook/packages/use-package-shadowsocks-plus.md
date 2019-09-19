@@ -1,5 +1,7 @@
 # 移植软件包 - 科学上网增强版
 
+来自 Lean 的科学上网增强版，支持 shadowsocksr, v2ray, shadowsocks, kcptun. 但 shadowsocksr 版本目前已经不再维护，故而不是很推荐使用所谓的三合一版。
+
 最终效果预览：
 
 ![Snipaste_2019-09-20_01-07-59.png](https://raw.githubusercontent.com/stuarthua/PicGo/master/oh-my-openwrt/Snipaste_2019-09-20_01-07-59.png)
