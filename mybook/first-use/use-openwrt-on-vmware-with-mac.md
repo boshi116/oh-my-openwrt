@@ -196,7 +196,7 @@ $ uci commit && /etc/init.d/network restart
 
 <details>
   <summary class="btn">点击展开详情</summary>
-  <pre class="highlight mt1">
+  <pre class="highlight">
   <code>$ root@OpenWrt:~# opkg update
 Downloading http://downloads.openwrt.org/releases/18.06.4/targets/x86/64/packages/Packages.gz
 Updated list of available packages in /var/opkg-lists/openwrt_core
