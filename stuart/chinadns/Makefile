@@ -31,7 +31,7 @@ PKG_BUILD_PARALLEL:=1
 
 include $(INCLUDE_DIR)/package.mk
 
-define Package/$(PKG_NAME)
+define Package/$(PKG_NAME)/Default
 	SECTION:=net
 	CATEGORY:=Network
 	TITLE:=Protect yourself against DNS poisoning in China.
@@ -57,4 +57,4 @@ define Package/$(PKG_NAME)/install
 	$(INSTALL_BIN) $(PKG_BUILD_DIR)/src/chinadns $(1)/usr/bin
 endef
 
-$(eval $(call BuildPackage, $(PKG_NAME)))
+$(eval $(call BuildPackage,chinadns))
