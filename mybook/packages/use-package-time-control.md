@@ -4,7 +4,11 @@
 
 ![Snipaste_2019-09-15_00-34-12.png](https://raw.githubusercontent.com/stuarthua/PicGo/master/oh-my-openwrt/Snipaste_2019-09-15_00-34-12.png)
 
-修改版源码见: [stuart/luci-app-stuart-mia](https://github.com/stuarthua/oh-my-openwrt/tree/master/stuart/luci-app-stuart-mia)
+修改版源码见: [stuart/luci-app-mia](https://github.com/stuarthua/oh-my-openwrt/tree/master/stuart/luci-app-mia)
+
+修改说明：
+
+* 修改 LuCI 菜单目录
 
 ## 说明
 
