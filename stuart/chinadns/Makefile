@@ -31,7 +31,7 @@ PKG_BUILD_PARALLEL:=1
 
 include $(INCLUDE_DIR)/package.mk
 
-define Package/$(PKG_NAME)/Default
+define Package/$(PKG_NAME)
 	SECTION:=net
 	CATEGORY:=Network
 	TITLE:=Protect yourself against DNS poisoning in China.
