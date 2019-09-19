@@ -8,7 +8,7 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_NAME:=chinadns
+PKG_NAME:=ChinaDNS
 PKG_VERSION:=1.3.3
 PKG_RELEASE:=1
 
@@ -31,23 +31,23 @@ PKG_BUILD_PARALLEL:=1
 
 include $(INCLUDE_DIR)/package.mk
 
-define Package/$(PKG_NAME)
+define Package/ChinaDNS
 	SECTION:=net
 	CATEGORY:=Network
 	TITLE:=Protect yourself against DNS poisoning in China.
 	URL:=https://github.com/shadowsocks/ChinaDNS
 endef
 
-define Package/$(PKG_NAME)/description
+define Package/ChinaDNS/description
 Protect yourself against DNS poisoning in China.
 endef
 
-define Package/$(PKG_NAME)/conffiles
+define Package/ChinaDNS/conffiles
 /etc/config/chinadns
 /etc/chinadns_chnroute.txt
 endef
 
-define Package/$(PKG_NAME)/install
+define Package/ChinaDNS/install
 	$(INSTALL_DIR) $(1)/etc/init.d
 	$(INSTALL_BIN) ./files/chinadns.init $(1)/etc/init.d/chinadns
 	$(INSTALL_CONF) $(PKG_BUILD_DIR)/chnroute.txt $(1)/etc/chinadns_chnroute.txt
@@ -57,4 +57,4 @@ define Package/$(PKG_NAME)/install
 	$(INSTALL_BIN) $(PKG_BUILD_DIR)/src/chinadns $(1)/usr/bin
 endef
 
-$(eval $(call BuildPackage,chinadns))
+$(eval $(call BuildPackage,ChinaDNS))
