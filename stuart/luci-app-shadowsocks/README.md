@@ -19,6 +19,5 @@
 
 * 搭配 shadowsocks 使用
 * 使用 gfwlist 模式，参考 [Wiki - GfwList Support](https://github.com/shadowsocks/luci-app-shadowsocks/wiki/GfwList-Support)
-* 每次更新 gfwlist 都需要重新生成 dnsmasq 配置文件，比较繁琐，推荐使用 [luci-app-ssr-plus](https://github.com/stuarthua/oh-my-openwrt/tree/master/stuart/luci-app-ssr-plus)
 
 更多描述，详见: [移植软件包 - 科学上网](https://stuarthua.github.io/oh-my-openwrt/mybook/packages/use-package-shadowsocks.html)

@@ -15,6 +15,7 @@
 修改说明：
 
 * 修改 gfwlist 下载地址为自定义 gfwlist
+* 安装后，执行 `echo 0xDEADBEEF> / etc / config / google_fu_mode` 在 LuCI 界面中才可显示
 
 使用说明：
 
