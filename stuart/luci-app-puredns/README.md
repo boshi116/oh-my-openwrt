@@ -2,9 +2,13 @@
 
 > 防 DNS 污染。搭配 chinadns, dns-forwarder 使用
 
-效果预览：
+luci-app-chinadns 效果预览：
 
-![Snipaste_2019-09-19_23-50-11.png](https://raw.githubusercontent.com/stuarthua/PicGo/master/oh-my-openwrt/Snipaste_2019-09-19_23-50-11.png)
+![Snipaste_2019-09-20_06-40-59.png](https://raw.githubusercontent.com/stuarthua/PicGo/master/tmp/Snipaste_2019-09-20_06-40-59.png)
+
+luci-app-dns-forwarder 效果预览：
+
+![Snipaste_2019-09-20_06-40-42.png](https://raw.githubusercontent.com/stuarthua/PicGo/master/tmp/Snipaste_2019-09-20_06-40-42.png)
 
 移植自 [aa65535/openwrt-dist-luci](https://github.com/aa65535/openwrt-dist-luci)
 
