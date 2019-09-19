@@ -8,7 +8,7 @@
 
 修改版源码见: 
 
-* [stuart/luci-app-stuart-vlmcsd](https://github.com/stuarthua/oh-my-openwrt/tree/master/stuart/luci-app-stuart-vlmcsd)
+* [stuart/luci-app-vlmcsd](https://github.com/stuarthua/oh-my-openwrt/tree/master/stuart/luci-app-vlmcsd)
 * [stuart/vlmcsd](https://github.com/stuarthua/oh-my-openwrt/tree/master/stuart/vlmcsd)
 
 ## 说明
@@ -37,4 +37,3 @@ luci-app-vlmcsd 依赖 vlmcsd, 而 vlmcsd 是一个第三方程序，编译它�
 ## 使用
 
 参考 [在 VPS 中利用 vlmcsd 搭建 KMS 激活服务器](https://imeiji.github.io/2018/02/08/%E5%88%A9%E7%94%A8vlmcsd%E6%90%AD%E5%BB%BAKMS%E6%BF%80%E6%B4%BB%E6%9C%8D%E5%8A%A1%E5%99%A8/)
-
