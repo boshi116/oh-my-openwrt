@@ -35,3 +35,6 @@
     - [移植软件包 - 迅雷快鸟](mybook/packages/use-package-xunlei.md)
     - [移植软件包 - 广告屏蔽大师 Plus +](mybook/packages/use-package-adbyby.md)
     - [移植软件包 - 科学上网](mybook/packages/use-package-shadowsocks.md)
+- [小结](mybook/summary/README.md)
+    - [x86 软路由](mybook/summary/x86.md)
+    - [小米路由器青春版](mybook/summary/xiaomi.md)
