@@ -135,6 +135,7 @@ make package/luci-app-ttyd/compile V=s
 make package/shadowsocks-libev/compile V=s
 make package/kcptun/compile V=s
 make package/v2ray/compile V=s
+make package/pdnsd-alt/compile V=s
 make package/luci-app-ssr-plus/compile V=s
 ```
 

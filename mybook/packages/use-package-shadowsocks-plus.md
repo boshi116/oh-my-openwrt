@@ -8,6 +8,7 @@
 
 * [stuart/v2ray](https://github.com/stuarthua/oh-my-openwrt/tree/master/stuart/v2ray)
 * [stuart/kcptun](https://github.com/stuarthua/oh-my-openwrt/tree/master/stuart/kcptun)
+* [stuart/pdnsd-alt](https://github.com/stuarthua/oh-my-openwrt/tree/master/stuart/pdnsd-alt)
 * [stuart/shadowsocks-libev](https://github.com/stuarthua/oh-my-openwrt/tree/master/stuart/shadowsocks-libev)
 * [stuart/luci-app-ssr-plus](https://github.com/stuarthua/oh-my-openwrt/tree/master/stuart/luci-app-ssr-plus)
 
@@ -26,5 +27,6 @@
 
 * [lean/v2ray](https://github.com/coolsnowwolf/lede/tree/master/package/lean/v2ray)
 * [lean/kcptun](https://github.com/coolsnowwolf/lede/tree/master/package/lean/kcptun)
+* [lean/pdnsd-alt](https://github.com/coolsnowwolf/lede/tree/master/package/lean/pdnsd-alt)
 * [lean/shadowsocks-libev](https://github.com/coolsnowwolf/lede/tree/master/package/lean/shadowsocks-libev)
 * [lean/luci-app-ssr-plus](https://github.com/coolsnowwolf/lede/tree/master/package/lean/luci-app-ssr-plus)
