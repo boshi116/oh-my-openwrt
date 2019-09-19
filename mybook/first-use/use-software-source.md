@@ -8,7 +8,7 @@
 
 LuCI ---> 系统 ---> 软件包 ---> 配置
 
-添加 `# ` 前缀忽略 `发行版软件源`，在 `自定义软件源` 中填入 [清华镜像源](https://mirrors.ustc.edu.cn/help/lede.html) 的地址：
+添加 `# ` 前缀忽略 `发行版软件源`，在 `自定义软件源` 中填入 [科技大镜像源](https://mirrors.ustc.edu.cn/help/lede.html) 的地址：
 
 ```
 src/gz openwrt_core http://mirrors.ustc.edu.cn/lede/releases/18.06.4/targets/x86/64/packages
@@ -19,11 +19,33 @@ src/gz openwrt_routing http://mirrors.ustc.edu.cn/lede/releases/18.06.4/packages
 src/gz openwrt_telephony http://mirrors.ustc.edu.cn/lede/releases/18.06.4/packages/x86_64/telephony
 ```
 
-也可以使用 `openwrt.proxy.ustclug.org` 替代 `mirrors.ustc.edu.cn/lede`, 均是镜像网址 (注意是否使用 https 取决于 OpenWrt 是否已经安装 ssl 相关软件包)。
+也可以使用其高速镜像源 `openwrt.proxy.ustclug.org` 的地址：
+
+```
+src/gz openwrt_core http://openwrt.proxy.ustclug.org/releases/18.06.4/targets/x86/64/packages
+src/gz openwrt_base http://openwrt.proxy.ustclug.org/releases/18.06.4/packages/x86_64/base
+src/gz openwrt_luci http://openwrt.proxy.ustclug.org/releases/18.06.4/packages/x86_64/luci
+src/gz openwrt_packages http://openwrt.proxy.ustclug.org/releases/18.06.4/packages/x86_64/packages
+src/gz openwrt_routing http://openwrt.proxy.ustclug.org/releases/18.06.4/packages/x86_64/routing
+src/gz openwrt_telephony http://openwrt.proxy.ustclug.org/releases/18.06.4/packages/x86_64/telephony
+```
+
+> 注意是否使用 https 取决于 OpenWrt 是否已经安装 ssl/tls, ca 证书 等相关软件包
 
 效果预览：
 
 ![](https://raw.githubusercontent.com/stuarthua/PicGo/master/oh-my-openwrt/Snipaste_2019-09-08_15-54-49.png)
+
+官方源：
+
+```
+src/gz openwrt_core http://downloads.openwrt.org/releases/18.06.4/targets/x86/64/packages
+src/gz openwrt_base http://downloads.openwrt.org/releases/18.06.4/packages/x86_64/base
+src/gz openwrt_luci http://downloads.openwrt.org/releases/18.06.4/packages/x86_64/luci
+src/gz openwrt_packages http://downloads.openwrt.org/releases/18.06.4/packages/x86_64/packages
+src/gz openwrt_routing http://downloads.openwrt.org/releases/18.06.4/packages/x86_64/routing
+src/gz openwrt_telephony http://downloads.openwrt.org/releases/18.06.4/packages/x86_64/telephony
+```
 
 ## 自定义软件源
 
