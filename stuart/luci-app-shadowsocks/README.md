@@ -11,5 +11,6 @@
 修改说明：
 
 * 修改 LuCI 菜单目录
+* 只编译 luci-app-shadowsocks (含 ipset)
 
 更多描述，详见: [移植软件包 - 上网时间控制](https://stuarthua.github.io/oh-my-openwrt/mybook/packages/use-package-time-control.html)
