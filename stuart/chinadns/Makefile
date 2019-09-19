@@ -8,7 +8,7 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_NAME:=ChinaDNS
+PKG_NAME:=chinadns
 PKG_VERSION:=1.3.3
 PKG_RELEASE:=1
 

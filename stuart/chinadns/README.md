@@ -8,4 +8,8 @@
 
 移植自 [aa65535/openwrt-chinadns](https://github.com/aa65535/chinadns)
 
+修改说明：
+
+* 修改 PKG_NAME
+
 更多描述，详见: [移植软件包 - 科学上网](https://stuarthua.github.io/oh-my-openwrt/mybook/packages/use-package-shadowsocks.html)
