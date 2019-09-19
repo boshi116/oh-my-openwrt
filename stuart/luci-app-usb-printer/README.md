@@ -1,6 +1,6 @@
-# luci-app-shadowsocks
+# luci-app-mia
 
-> Shadowsocks 社区提供的 LuCI 界面，搭配 shadowsocks-libev 使用
+> 上网时间控制
 
 效果预览：
 
