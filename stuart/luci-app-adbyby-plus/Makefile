@@ -6,12 +6,12 @@
 include $(TOPDIR)/rules.mk
 
 LUCI_TITLE:=LuCI support for Adbyby
-LUCI_PKGARCH:=all
 LUCI_DEPENDS:=+adbyby +wget +ipset +coreutils +coreutils-nohup +dnsmasq-full
+LUCI_PKGARCH:=all
+PKG_NAME:=luci-app-adbyby-plus
 PKG_VERSION:=1.0
 PKG_RELEASE:=1
 
 include ../luci_my.mk
 
 # call BuildPackage - OpenWrt buildroot signature
-
