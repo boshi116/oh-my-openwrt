@@ -11,13 +11,17 @@ LuCI ---> 系统 ---> 软件包 ---> 配置
 添加 `# ` 前缀忽略 `发行版软件源`，在 `自定义软件源` 中填入 [清华镜像源](https://mirrors.ustc.edu.cn/help/lede.html) 的地址：
 
 ```
-src/gz openwrt_core https://mirrors.ustc.edu.cn/lede/releases/18.06.4/targets/x86/64/packages
-src/gz openwrt_base https://mirrors.ustc.edu.cn/lede/releases/18.06.4/packages/x86_64/base
-src/gz openwrt_luci https://mirrors.ustc.edu.cn/lede/releases/18.06.4/packages/x86_64/luci
-src/gz openwrt_packages https://mirrors.ustc.edu.cn/lede/releases/18.06.4/packages/x86_64/packages
-src/gz openwrt_routing https://mirrors.ustc.edu.cn/lede/releases/18.06.4/packages/x86_64/routing
-src/gz openwrt_telephony https://mirrors.ustc.edu.cn/lede//releases/18.06.4/packages/x86_64/telephony
+src/gz openwrt_core http://mirrors.ustc.edu.cn/lede/releases/18.06.4/targets/x86/64/packages
+src/gz openwrt_base http://mirrors.ustc.edu.cn/lede/releases/18.06.4/packages/x86_64/base
+src/gz openwrt_luci http://mirrors.ustc.edu.cn/lede/releases/18.06.4/packages/x86_64/luci
+src/gz openwrt_packages http://mirrors.ustc.edu.cn/lede/releases/18.06.4/packages/x86_64/packages
+src/gz openwrt_routing http://mirrors.ustc.edu.cn/lede/releases/18.06.4/packages/x86_64/routing
+src/gz openwrt_telephony http://mirrors.ustc.edu.cn/lede/releases/18.06.4/packages/x86_64/telephony
 ```
+
+也可以使用 `openwrt.proxy.ustclug.org` 替代 `mirrors.ustc.edu.cn/lede`, 均是镜像网址 (注意是否使用 https 取决于 OpenWrt 是否已经安装 ssl 相关软件包)。
+
+效果预览：
 
 ![](https://raw.githubusercontent.com/stuarthua/PicGo/master/oh-my-openwrt/Snipaste_2019-09-08_15-54-49.png)
 

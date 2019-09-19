@@ -1,6 +1,6 @@
 # 移植软件包 - 科学上网
 
-简单来说，仅使用 shadowsocks 
+
 
 最终效果预览：
 
@@ -9,7 +9,13 @@
 修改版源码见: 
 
 * [stuart/shadowsocks](https://github.com/stuarthua/oh-my-openwrt/tree/master/stuart/shadowsocks)
-* [stuart/luci-app-stuart-shadowsocks](https://github.com/stuarthua/oh-my-openwrt/tree/master/stuart/luci-app-stuart-shadowsocks)
+* [stuart/luci-app-shadowsocks](https://github.com/stuarthua/oh-my-openwrt/tree/master/stuart/luci-app-shadowsocks)
+
+修改说明: 
+
+* 修改 LuCI 菜单目录
+* 只编译客户端版本 shadowsocks-libev
+* 
 
 ## 说明
 
