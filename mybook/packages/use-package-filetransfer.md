@@ -31,6 +31,11 @@ stuart
 
 修改版源码见: [stuart/luci-app-stuart-fileassistant](https://github.com/stuarthua/oh-my-openwrt/tree/master/stuart/luci-app-stuart-fileassistant)
 
+修改说明：
+
+* 修改 LuCI 菜单目录
+* 增加安装 ipk 功能
+
 ## 使用 SDK 编译软件包
 
 参考: [使用 SDK 编译特定软件包](https://stuarthua.github.io/oh-my-openwrt/make-by-sdk.html)

@@ -4,7 +4,11 @@
 
 ![Snipaste_2019-09-14_23-52-11.png](https://raw.githubusercontent.com/stuarthua/PicGo/master/oh-my-openwrt/Snipaste_2019-09-14_23-52-11.png)
 
-修改版源码见: [stuart/luci-app-stuart-autoreboot](https://github.com/stuarthua/oh-my-openwrt/tree/master/stuart/luci-app-stuart-autoreboot)
+修改版源码见: [stuart/luci-app-autoreboot](https://github.com/stuarthua/oh-my-openwrt/tree/master/stuart/luci-app-autoreboot)
+
+修改说明：
+
+* 修改 LuCI 菜单目录
 
 ## 说明
 
