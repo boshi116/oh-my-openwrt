@@ -42,5 +42,7 @@ Configuring coreutils-nohup.
 Configuring dnsmasq-full.
 
 Configuring adbyby.
-Configuring luci-app-stuart-adbyby-plus.
+Configuring luci-app-adbyby-plus.
 ```
+
+论坛原帖: [恩山 - Adbyby Plus+ 去广告](https://www.right.com.cn/forum/thread-252976-1-1.html)
