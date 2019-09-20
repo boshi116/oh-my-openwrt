@@ -9,5 +9,5 @@ function index()
 		return
 	end
 	entry({"admin", "custom"}, firstchild(), "我的", 89).dependent = false
-	entry({"admin", "custom", "chinadns"}, cbi("chinadns"), _("ChinaDNS"), 470).dependent = true
+	entry({"admin", "custom", "chinadns"}, cbi("chinadns"), _("ChinaDNS"), 401).dependent = true
 end

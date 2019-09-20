@@ -10,5 +10,5 @@ function index()
 	end
 
 	entry({"admin", "custom"}, firstchild(), "我的", 89).dependent = false
-	entry({"admin", "custom", "dns-forwarder"}, cbi("dns-forwarder"), _("DNS-Forwarder"), 460).dependent = true
+	entry({"admin", "custom", "dns-forwarder"}, cbi("dns-forwarder"), _("DNS-Forwarder"), 402).dependent = true
 end
