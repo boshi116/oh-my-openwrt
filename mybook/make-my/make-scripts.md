@@ -164,7 +164,7 @@ SSH 连接路由器
 
 ```bash
 ## 移除第三方程序语言包
-opkg remove luci-i18n-arpbind-zh-cn luci-i18n-autoreboot-zh-cn luci-i18n-usb-printer-zh-cn luci-i18n-vlmcsd-zh-cn luci-i18n-adbyby-plus-zh-cn luci-i18n-ttyd-zh-cn luci-i18n-shadowsocks-zh-cn
+opkg remove luci-i18n-arpbind-zh-cn luci-i18n-autoreboot-zh-cn luci-i18n-usb-printer-zh-cn luci-i18n-vlmcsd-zh-cn luci-i18n-adbyby-plus-zh-cn luci-i18n-ttyd-zh-cn
 
 ## 移除第三方程序
 opkg remove luci-app-ramfree luci-app-fileassistant luci-app-arpbind luci-app-usb-printer luci-app-autoreboot luci-app-vlmcsd vlmcsd luci-app-xlnetacc luci-app-timewol luci-app-mia luci-app-webrestriction luci-app-weburl luci-app-adbyby-plus adbyby luci-app-ttyd luci-app-shadowsocks shadowsocks luci-app-chinadns luci-app-dns-forwarder ChinaDNS dns-forwarder
