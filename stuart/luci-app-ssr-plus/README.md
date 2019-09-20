@@ -1,6 +1,6 @@
 # luci-app-ssr-plus
 
-> 可使用 gfwlist 模式的增强版科学上网插件，搭配 shadowsocksr-libev, pdnsd-alt 使用。也可搭配 kcptun、v2ray。使用的是 shadowsocksr，只更新到 2.5.6，已经停止更新，更推荐使用原生 shadowsocks
+> 可使用 gfwlist 模式的增强版科学上网插件，搭配 shadowsocksr-libev, pdnsd-alt 使用。也可搭配 kcptun、v2ray。使用的是 shadowsocksr，只更新到 2.5.6，且已经停止更新，更推荐使用原生 shadowsocks
 
 效果预览：
 
