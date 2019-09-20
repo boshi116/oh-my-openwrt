@@ -30,7 +30,7 @@ src/gz openwrt_routing http://openwrt.proxy.ustclug.org/releases/18.06.4/package
 src/gz openwrt_telephony http://openwrt.proxy.ustclug.org/releases/18.06.4/packages/x86_64/telephony
 ```
 
-> 注意是否使用 https 取决于 OpenWrt 是否已经安装 ssl/tls, ca 证书 等相关软件包
+> 注意: 是否使用 https 取决于 OpenWrt 是否已经安装 `libustream-ssl/tls-*` (libustream-cyassl, libustream-mbedtls, libustream-openssl 三选其一), `ca-certificates` 软件包
 
 效果预览：
 
