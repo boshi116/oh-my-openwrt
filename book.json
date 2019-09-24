@@ -11,6 +11,7 @@
   },
   "output": null,
   "plugins": [
+    "theme-comscore",
     "-sharing",
     "-highlight",
     "prism",
@@ -18,18 +19,18 @@
     "-lunr",
     "-search",
     "search-pro",
-    "expandable-chapters",
-    "copy-code-button",
+    "sitemap-general",
+    "expandable-chapters-small",
     "advanced-emoji",
     "splitter",
-    "edit-link",
     "page-footer-ex",
     "sectionx",
+    "callouts",
     "todo",
     "github",
     "rss",
     "anchor-navigation-ex",
-    "ace"
+    "ga"
   ],
   "pluginsConfig": {
     "theme-default": {
@@ -52,13 +53,12 @@
     "github": {
       "url": "https://github.com/stuarthua/oh-my-openwrt"
     },
-    "edit-link": {
-      "base": "https://github.com/stuarthua/oh-my-openwrt/edit/master",
-      "label": "edit"
+    "sitemap-general": {
+      "prefix": "https://stuarthua.github.io/oh-my-openwrt/"
     },
     "rss": {
-      "title": "Oh The Way",
-      "description": "some experiences about gfw",
+      "title": "Oh My Openwrt",
+      "description": "my using openwrt experiences",
       "author": "Stuart Hua",
       "feed_url": "https://stuarthua.github.io/oh-my-openwrt/rss",
       "site_url": "https://stuarthua.github.io/oh-my-openwrt/",
@@ -68,6 +68,12 @@
     "anchor-navigation-ex": {
       "showLevel": false,
       "associatedWithSummary": false
+    },
+    "callouts":{
+      "showTypeInHeader": false
+    },
+    "ga": {
+      "token": "UA-55082727-8"
     }
   }
 }
