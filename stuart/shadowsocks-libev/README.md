@@ -10,10 +10,4 @@
 
 * [shadowsocks/openwrt-shadowsocks](https://github.com/shadowsocks/openwrt-shadowsocks)
 
-修改说明：
-
-* 修改 LuCI 菜单目录
-* 只编译客户端版本 shadowsocks-libev
-* 
-
 更多描述，详见: [移植软件包 - 科学上网](https://stuarthua.github.io/oh-my-openwrt/mybook/packages/use-package-shadowsocks.html)
