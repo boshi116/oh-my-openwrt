@@ -52,45 +52,45 @@ define Package/shadowsocks-libev
 		+!SHADOWSOCKS_WITH_MBEDTLS:libmbedtls
 endef
 
-Package/shadowsocks-libev-server = $(Package/shadowsocks-libev)
+# Package/shadowsocks-libev-server = $(Package/shadowsocks-libev)
 
-define Package/shadowsocks-libev-server/config
-menu "Shadowsocks-libev Compile Configuration"
-	depends on PACKAGE_shadowsocks-libev || PACKAGE_shadowsocks-libev-server
-	config SHADOWSOCKS_STATIC_LINK
-		bool "enable static link libraries."
-		default n
+# define Package/shadowsocks-libev-server/config
+# menu "Shadowsocks-libev Compile Configuration"
+# 	depends on PACKAGE_shadowsocks-libev || PACKAGE_shadowsocks-libev-server
+# 	config SHADOWSOCKS_STATIC_LINK
+# 		bool "enable static link libraries."
+# 		default n
 
-		menu "Select libraries"
-			depends on SHADOWSOCKS_STATIC_LINK
-			config SHADOWSOCKS_WITH_EV
-				bool "static link libev."
-				default y
+# 		menu "Select libraries"
+# 			depends on SHADOWSOCKS_STATIC_LINK
+# 			config SHADOWSOCKS_WITH_EV
+# 				bool "static link libev."
+# 				default y
 
-			config SHADOWSOCKS_WITH_PCRE
-				bool "static link libpcre."
-				default y
+# 			config SHADOWSOCKS_WITH_PCRE
+# 				bool "static link libpcre."
+# 				default y
 
-			config SHADOWSOCKS_WITH_CARES
-				bool "static link libcares."
-				default y
+# 			config SHADOWSOCKS_WITH_CARES
+# 				bool "static link libcares."
+# 				default y
 
-			config SHADOWSOCKS_WITH_SODIUM
-				bool "static link libsodium."
-				default y
+# 			config SHADOWSOCKS_WITH_SODIUM
+# 				bool "static link libsodium."
+# 				default y
 
-			config SHADOWSOCKS_WITH_MBEDTLS
-				bool "static link libmbedtls."
-				default y
-		endmenu
-endmenu
-endef
+# 			config SHADOWSOCKS_WITH_MBEDTLS
+# 				bool "static link libmbedtls."
+# 				default y
+# 		endmenu
+# endmenu
+# endef
 
 define Package/shadowsocks-libev/description
 Shadowsocks-libev is a lightweight secured socks5 proxy for embedded devices and low end boxes.
 endef
 
-Package/shadowsocks-libev-server/description = $(Package/shadowsocks-libev/description)
+# Package/shadowsocks-libev-server/description = $(Package/shadowsocks-libev/description)
 
 CONFIGURE_ARGS += \
 	--disable-ssp \
@@ -121,10 +121,10 @@ define Package/shadowsocks-libev/install
 	$(INSTALL_BIN) $(PKG_BUILD_DIR)/src/ss-{local,redir,tunnel} $(1)/usr/bin
 endef
 
-define Package/shadowsocks-libev-server/install
-	$(INSTALL_DIR) $(1)/usr/bin
-	$(INSTALL_BIN) $(PKG_BUILD_DIR)/src/ss-server $(1)/usr/bin
-endef
+# define Package/shadowsocks-libev-server/install
+# 	$(INSTALL_DIR) $(1)/usr/bin
+# 	$(INSTALL_BIN) $(PKG_BUILD_DIR)/src/ss-server $(1)/usr/bin
+# endef
 
 $(eval $(call BuildPackage,shadowsocks-libev))
 # $(eval $(call BuildPackage,shadowsocks-libev-server))
