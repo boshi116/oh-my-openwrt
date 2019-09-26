@@ -6,6 +6,8 @@
 
 原帖地址：[更新IPK全平台适用 适用于最新版luci-app-sqm的SQM QoS中文汉化包 添加源码地址](https://www.right.com.cn/forum/thread-211176-1-1.html)
 
+## 移植说明
+
 github 地址：
 
 * [DragonOneY/luci-i18n-sqm](https://github.com/DragonOneY/luci-i18n-sqm)
