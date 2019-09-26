@@ -30,11 +30,6 @@ LuCI 及其依赖
     * `adblock` - Adblock
 * `luci-app-sqm` - 智能队列管理 SQM Qos，智能解决网络延迟和阻塞
     * `sqm-scripts` - SQM 依赖的脚本
-* `luci-app-uhttpd` - uHTTPd 服务器
-    * `luci-i18n-uhttpd-zh-cn` - 软件包 `luci-app-uhttpd` 的中文语言包
-* `luci-ssl-openssl` - for ssl
-* `ca-bundle` - for ssl
-* `ca-certificates` - for ssl
 * `curl` - 下载工具
 * `wget` - 下载工具
 * `vsftpd` - for sftp
@@ -48,19 +43,17 @@ LuCI 及其依赖
 * `luci-app-fileassistant` - 文件助手，支持上传文件、安装 IPK 软件包
 * `luci-app-arpbind` - IP/Mac 绑定
     * `luci-i18n-arpbind-zh-cn` - 软件包 `luci-app-arpbind` 的中文语言包
-* `luci-app-usb-printer` - USB 打印服务器
-    * `luci-i18n-usb-printer-zh-cn` - 软件包 `luci-app-usb-printer` 的中文语言包
 * `luci-app-autoreboot` - 定时重启
     * `luci-i18n-autoreboot-zh-cn` - 软件包 `luci-app-autoreboot` 的中文语言包
 * `luci-app-vlmcsd` - KMS 服务器，用于激活 Windows 及 Office
     * `vlmcsd` - KMS Server
-* `luci-i18n-sqm` - 软件包 `luci-app-sqm` 的中文语言包
 * `luci-app-shadowsocks` - LuCI for Shadowsocks
     * `shadowsocks-libev` - shadowsocks-libev
 * `luci-app-chinadns` - LuCI for ChinaDNS
     * `ChinaDNS` - ChinaDNS
 * `luci-app-dns-forwarder` - LuCI for DNS Forwarder
     * `dns-forwarder` - DNS Forwarder
+* ~~`luci-i18n-sqm` - 软件包 `luci-app-sqm` 的中文语言包~~
 
 ## 搭建环境
 
@@ -72,45 +65,47 @@ Ubuntu 14.04 LTS (运行在虚拟机 VMware 上， IP: 192.168.128.140， 终端
 ssh stuart@192.168.128.140
 ```
 
-新建脚本 `set.sh`
+新建脚本 `set-xiaomi.sh`
 
 ```bash
-touch set.sh
+touch set-xiaomi.sh
 ```
 
-编辑脚本 `set.sh`
+编辑脚本 `set-xiaomi.sh`
 
 ```bash
 #!/usr/bin/env bash
 cd ~
 
 # image builder
-wget https://downloads.openwrt.org/releases/18.06.4/targets/x86/64/openwrt-imagebuilder-18.06.4-x86-64.Linux-x86_64.tar.xz
-tar -xvf openwrt-imagebuilder-18.06.4-x86-64.Linux-x86_64.tar.xz
-mv openwrt-imagebuilder-18.06.4-x86-64.Linux-x86_64 openwrt-imagebuilder-x86
-rm -rf openwrt-imagebuilder-18.06.4-x86-64.Linux-x86_64.tar.xz
+wget http://downloads.openwrt.org/releases/18.06.4/targets/ramips/mt76x8/openwrt-imagebuilder-18.06.4-ramips-mt76x8.Linux-x86_64.tar.xz
+tar -xvf openwrt-imagebuilder-18.06.4-ramips-mt76x8.Linux-x86_64.tar.xz
+mv openwrt-imagebuilder-18.06.4-ramips-mt76x8.Linux-x86_64 openwrt-imagebuilder-xiaomi
+rm -rf openwrt-imagebuilder-18.06.4-ramips-mt76x8.Linux-x86_64.tar.xz
 
 # sdk
-wget https://downloads.openwrt.org/releases/18.06.4/targets/x86/64/openwrt-sdk-18.06.4-x86-64_gcc-7.3.0_musl.Linux-x86_64.tar.xz
-tar -xvf openwrt-sdk-18.06.4-x86-64_gcc-7.3.0_musl.Linux-x86_64.tar.xz
-mv openwrt-sdk-18.06.4-x86-64_gcc-7.3.0_musl.Linux-x86_64 openwrt-sdk-x86
-rm -rf openwrt-sdk-18.06.4-x86-64_gcc-7.3.0_musl.Linux-x86_64.tar.xz
+wget https://downloads.openwrt.org/releases/18.06.4/targets/ramips/mt76x8/openwrt-sdk-18.06.4-ramips-mt76x8_gcc-7.3.0_musl.Linux-x86_64.tar.xz
+tar -xvf openwrt-sdk-18.06.4-ramips-mt76x8_gcc-7.3.0_musl.Linux-x86_64.tar.xz
+mv openwrt-sdk-18.06.4-ramips-mt76x8_gcc-7.3.0_musl.Linux-x86_64 openwrt-sdk-xiaomi
+rm -rf openwrt-sdk-18.06.4-ramips-mt76x8_gcc-7.3.0_musl.Linux-x86_64.tar.xz
 
 # ln image builder
-mkdir -p /home/stuart/openwrt-imagebuilder-x86/bin/targets/x86/64
+mkdir -p /home/stuart/openwrt-imagebuilder-xiaomi/bin/targets/ramips/mt76x8
 mkdir -p /home/stuart/image-bins
-ln -s /home/stuart/openwrt-imagebuilder-x86/bin/targets/x86/64 /home/stuart/image-bins/x86
+rm /home/stuart/image-bins/xiaomi
+ln -s /home/stuart/openwrt-imagebuilder-xiaomi/bin/targets/ramips/mt76x8 /home/stuart/image-bins/xiaomi
 # ln sdk
-mkdir -p /home/stuart/openwrt-sdk-x86/bin/packages/x86_64/stuart
+mkdir -p /home/stuart/openwrt-sdk-xiaomi/bin/packages/mipsel_24kc/stuart
 mkdir -p /home/stuart/sdk-ipks
-ln -s /home/stuart/openwrt-sdk-x86/bin/packages/x86_64/stuart /home/stuart/sdk-ipks/x86
+rm /home/stuart/sdk-ipks/xiaomi
+ln -s /home/stuart/openwrt-sdk-xiaomi/bin/packages/mipsel_24kc/stuart /home/stuart/sdk-ipks/xiaomi
 ```
 
-终端开启翻墙 - `startss`, 执行脚本 `set.sh`, 进行环境部署
+终端开启翻墙 - `startss`, 执行脚本 `set-xiaomi.sh`, 进行环境部署
 
 ```bash
 startss
-bash set.sh
+bash set-xiaomi.sh
 ```
 
 至此，在 `/home/stuart` 用户目录下，存在 `image-bins` 和 `sdk-ipks` 两个目录，用来存放编译后的固件和 `.ipk` 软件包文件
@@ -125,10 +120,10 @@ bash set.sh
 cd ~ && git clone https://github.com/stuarthua/oh-my-openwrt
 ```
 
-编辑 `~/openwrt-sdk-x86/feeds.conf.default` 文件，添加个人源码路径
+编辑 `~/openwrt-sdk-xiaomi/feeds.conf.default` 文件，添加个人源码路径
 
 ```
-vi ~/openwrt-sdk-x86/feeds.conf.default
+vi ~/openwrt-sdk-xiaomi/feeds.conf.default
 
 # 添加
 src-link stuart /home/stuart/oh-my-openwrt/stuart
@@ -139,7 +134,7 @@ src-link stuart /home/stuart/oh-my-openwrt/stuart
 更新 SDK 中的 feeds 并安装
 
 ```bash
-cd ~/openwrt-sdk-x86 && ./scripts/feeds update -a && ./scripts/feeds install -a
+cd ~/openwrt-sdk-xiaomi && ./scripts/feeds update -a && ./scripts/feeds install -a
 ```
 
 ### 编译
@@ -151,11 +146,11 @@ cd ~/openwrt-sdk-x86 && ./scripts/feeds update -a && ./scripts/feeds install -a
 
 # update
 cd ~/oh-my-openwrt && git pull origin master
-cd ~/openwrt-sdk-x86 && ./scripts/feeds update stuart && ./scripts/feeds install -a -p stuart
+cd ~/openwrt-sdk-xiaomi && ./scripts/feeds update stuart && ./scripts/feeds install -a -p stuart
 
 # clean
-rm -rf /home/stuart/openwrt-sdk-x86/bin/packages/x86_64/stuart
-mkdir -p /home/stuart/openwrt-sdk-x86/bin/packages/x86_64/stuart
+rm -rf /home/stuart/openwrt-sdk-xiaomi/bin/packages/mipsel_24kc/stuart
+mkdir -p /home/stuart/openwrt-sdk-xiaomi/bin/packages/mipsel_24kc/stuart
 
 # make
 # make package/helloworld/compile V=s
@@ -185,20 +180,21 @@ mkdir -p /home/stuart/openwrt-sdk-x86/bin/packages/x86_64/stuart
 # make package/pdnsd-alt/compile V=s
 # make package/luci-app-ssr-plus/compile V=s
 
+# USB 打印服务器
+# make package/luci-app-usb-printer/compile V=s
+
 # 释放内存
 make package/luci-app-ramfree/compile V=s
 # 文件助手
 make package/luci-app-fileassistant/compile V=s
 # IP/Mac 绑定
 make package/luci-app-arpbind/compile V=s
-# USB 打印服务器
-make package/luci-app-usb-printer/compile V=s
 # 定时重启
 make package/luci-app-autoreboot/compile V=s
 # KMS 自动激活（用于激活大客户版 Windows 及 Office）
 make package/vlmcsd/compile V=s
 make package/luci-app-vlmcsd/compile V=s
-# SQM
+# SQM 中文语言包
 make package/luci-i18n-sqm/compile V=s
 ```
 
@@ -208,7 +204,7 @@ make package/luci-i18n-sqm/compile V=s
 bash make-ipks.sh
 ```
 
-在 `~/sdk-ipks/x86` 目录查看生成的 `.ipk` 软件包文件
+在 `~/sdk-ipks/xiaomi` 目录查看生成的 `.ipk` 软件包文件
 
 ## 使用 Image Builder 组装固件
 
@@ -229,25 +225,26 @@ cd ~ && git clone https://github.com/stuarthua/oh-my-openwrt oh-my-openwrt-devic
 
 # update
 cd ~/oh-my-openwrt-devices && git pull origin devices
-cd ~/openwrt-imagebuilder-x86
+cd ~/openwrt-imagebuilder-xiaomi
 
 # clean
-rm -rf /home/stuart/openwrt-imagebuilder-x86/bin/targets/x86/64
-mkdir -p /home/stuart/openwrt-imagebuilder-x86/bin/targets/x86/64
-rm -rf ~/openwrt-imagebuilder-x86/packages/stuart
+rm -rf /home/stuart/openwrt-imagebuilder-xiaomi/bin/targets/ramips/mt76x8
+mkdir -p /home/stuart/openwrt-imagebuilder-xiaomi/bin/targets/ramips/mt76x8
+rm -rf ~/openwrt-imagebuilder-xiaomi/packages/stuart
 
 # add ipks from stuart
-cp -r ~/openwrt-sdk-x86/bin/packages/x86_64/stuart ~/openwrt-imagebuilder-x86/packages
+cp -r ~/openwrt-sdk-xiaomi/bin/packages/mipsel_24kc/stuart ~/openwrt-imagebuilder-xiaomi/packages
 # add ipks from shadowsocks (@aa65535)
-cp -r ~/oh-my-openwrt-devices/packages/x86/*.ipk ~/openwrt-imagebuilder-x86/packages/stuart
+cp -r ~/oh-my-openwrt-devices/packages/all/*.ipk ~/openwrt-imagebuilder-xiaomi/packages/stuart
+cp -r ~/oh-my-openwrt-devices/packages/xiaomi/*.ipk ~/openwrt-imagebuilder-xiaomi/packages/stuart
 
 # make
-ORG_ORIGIN_PKGS="base-files busybox dnsmasq dropbear e2fsprogs firewall fstools fwtool ip6tables iptables jshn jsonfilter kernel kmod-button-hotplug kmod-e1000 kmod-e1000e kmod-hwmon-core kmod-i2c-algo-bit kmod-i2c-core kmod-igb kmod-input-core kmod-ip6tables kmod-ipt-conntrack kmod-ipt-core kmod-ipt-nat kmod-ipt-offload kmod-lib-crc-ccitt kmod-mii kmod-nf-conntrack kmod-nf-conntrack6 kmod-nf-flow kmod-nf-ipt kmod-nf-ipt6 kmod-nf-nat kmod-nf-reject kmod-nf-reject6 kmod-ppp kmod-pppoe kmod-pppox kmod-pps kmod-ptp kmod-r8169 kmod-slhc libblkid libblobmsg-json libc libcomerr libext2fs libf2fs libgcc libip4tc libip6tc libiwinfo libiwinfo-lua libjson-c libjson-script liblua liblucihttp liblucihttp-lua libnl-tiny libpthread librt libsmartcols libss libubox libubus libubus-lua libuci libuclient libuuid libxtables logd lua luci luci-app-firewall luci-base luci-lib-ip luci-lib-jsonc luci-lib-nixio luci-mod-admin-full luci-proto-ipv6 luci-proto-ppp luci-theme-bootstrap mkf2fs mtd netifd odhcp6c odhcpd-ipv6only openwrt-keyring opkg partx-utils ppp ppp-mod-pppoe procd r8169-firmware rpcd rpcd-mod-rrdns ubox ubus ubusd uci uclient-fetch uhttpd usign"
-CUSTOM_ORG_PKGS="luci-i18n-base-zh-cn luci-i18n-firewall-zh-cn luci-app-ddns luci-i18n-ddns-zh-cn luci-app-adblock luci-i18n-adblock-zh-cn luci-app-sqm luci-app-uhttpd luci-i18n-uhttpd-zh-cn luci-ssl-openssl ca-bundle ca-certificates curl wget vsftpd openssh-sftp-server"
-CUSTOM_PKGS="luci-app-ramfree luci-app-fileassistant luci-app-arpbind luci-i18n-arpbind-zh-cn luci-app-usb-printer luci-i18n-usb-printer-zh-cn luci-app-autoreboot luci-i18n-autoreboot-zh-cn vlmcsd luci-app-vlmcsd luci-i18n-vlmcsd-zh-cn luci-i18n-sqm shadowsocks-libev luci-app-shadowsocks ChinaDNS luci-app-chinadns dns-forwarder luci-app-dns-forwarder"
+ORG_ORIGIN_PKGS="base-files busybox dnsmasq dropbear firewall fstools fwtool hostapd-common ip6tables iptables iw iwinfo jshn jsonfilter kernel kmod-cfg80211 kmod-gpio-button-hotplug kmod-ip6tables kmod-ipt-conntrack kmod-ipt-core kmod-ipt-nat kmod-ipt-offload kmod-leds-gpio kmod-lib-crc-ccitt kmod-mac80211 kmod-mt76 kmod-mt76-core kmod-mt7603 kmod-mt76x02-common kmod-mt76x2 kmod-mt76x2-common kmod-nf-conntrack kmod-nf-conntrack6 kmod-nf-flow kmod-nf-ipt kmod-nf-ipt6 kmod-nf-nat kmod-nf-reject kmod-nf-reject6 kmod-nls-base kmod-ppp kmod-pppoe kmod-pppox kmod-slhc libblobmsg-json libc libgcc libip4tc libip6tc libiwinfo libiwinfo-lua libjson-c libjson-script liblua liblucihttp liblucihttp-lua libnl-tiny libpthread libubox libubus libubus-lua libuci libuclient libxtables logd lua luci luci-app-firewall luci-base luci-lib-ip luci-lib-jsonc luci-lib-nixio luci-mod-admin-full luci-proto-ipv6 luci-proto-ppp luci-theme-bootstrap mtd netifd odhcp6c odhcpd-ipv6only openwrt-keyring opkg ppp ppp-mod-pppoe procd rpcd rpcd-mod-rrdns swconfig ubox ubus ubusd uci uclient-fetch uhttpd usign wireless-regdb wpad-mini"
+CUSTOM_ORG_PKGS="luci-i18n-base-zh-cn -kmod-usb-core -kmod-usb2 -kmod-usb-ohci -kmod-usb-ledtrig-usbport luci-i18n-firewall-zh-cn luci-app-ddns luci-i18n-ddns-zh-cn luci-app-adblock luci-i18n-adblock-zh-cn luci-app-sqm curl wget vsftpd openssh-sftp-server"
+CUSTOM_PKGS="luci-app-ramfree luci-app-fileassistant luci-app-arpbind luci-i18n-arpbind-zh-cn luci-app-autoreboot luci-i18n-autoreboot-zh-cn vlmcsd luci-app-vlmcsd luci-i18n-vlmcsd-zh-cn shadowsocks-libev luci-app-shadowsocks ChinaDNS luci-app-chinadns dns-forwarder luci-app-dns-forwarder"
 IMAGE_PKGS="$ORG_ORIGIN_PKGS $CUSTOM_ORG_PKGS $CUSTOM_PKGS"
 
-make image PROFILE=Generic PACKAGES="$IMAGE_PKGS" FILES=~/oh-my-openwrt-devices/devices/x86
+make image PROFILE=miwifi-nano PACKAGES="$IMAGE_PKGS" FILES=~/oh-my-openwrt-devices/devices/xiaomi
 
 echo "编译结束"
 ```
@@ -258,16 +255,22 @@ echo "编译结束"
 bash make-image.sh
 ```
 
-在 `~/image-bins/x86` 目录查看生成的固件
+在 `~/image-bins/xiaomi` 目录查看生成的固件
 
 ### 提示
 
-OpenWrt 18.06.4 官方固件中默认安装的包有
+OpenWrt 18.06.4 `小米路由器 NANO` 官方固件中默认安装的包有
 
 ```bash
 $ echo `opkg list_installed | awk '{ print $1 }'`
 
-base-files busybox dnsmasq dropbear e2fsprogs firewall fstools fwtool ip6tables iptables jshn jsonfilter kernel kmod-button-hotplug kmod-e1000 kmod-e1000e kmod-hwmon-core kmod-i2c-algo-bit kmod-i2c-core kmod-igb kmod-input-core kmod-ip6tables kmod-ipt-conntrack kmod-ipt-core kmod-ipt-nat kmod-ipt-offload kmod-lib-crc-ccitt kmod-mii kmod-nf-conntrack kmod-nf-conntrack6 kmod-nf-flow kmod-nf-ipt kmod-nf-ipt6 kmod-nf-nat kmod-nf-reject kmod-nf-reject6 kmod-ppp kmod-pppoe kmod-pppox kmod-pps kmod-ptp kmod-r8169 kmod-slhc libblkid libblobmsg-json libc libcomerr libext2fs libf2fs libgcc libip4tc libip6tc libiwinfo libiwinfo-lua libjson-c libjson-script liblua liblucihttp liblucihttp-lua libnl-tiny libpthread librt libsmartcols libss libubox libubus libubus-lua libuci libuclient libuuid libxtables logd lua luci luci-app-firewall luci-base luci-lib-ip luci-lib-jsonc luci-lib-nixio luci-mod-admin-full luci-proto-ipv6 luci-proto-ppp luci-theme-bootstrap mkf2fs mtd netifd odhcp6c odhcpd-ipv6only openwrt-keyring opkg partx-utils ppp ppp-mod-pppoe procd r8169-firmware rpcd rpcd-mod-rrdns ubox ubus ubusd uci uclient-fetch uhttpd usign
+base-files busybox dnsmasq dropbear firewall fstools fwtool hostapd-common ip6tables iptables iw iwinfo jshn jsonfilter kernel kmod-cfg80211 kmod-gpio-button-hotplug kmod-ip6tables kmod-ipt-conntrack kmod-ipt-core kmod-ipt-nat kmod-ipt-offload kmod-leds-gpio kmod-lib-crc-ccitt kmod-mac80211 kmod-mt76 kmod-mt76-core kmod-mt7603 kmod-mt76x02-common kmod-mt76x2 kmod-mt76x2-common kmod-nf-conntrack kmod-nf-conntrack6 kmod-nf-flow kmod-nf-ipt kmod-nf-ipt6 kmod-nf-nat kmod-nf-reject kmod-nf-reject6 kmod-nls-base kmod-ppp kmod-pppoe kmod-pppox kmod-slhc kmod-usb-core kmod-usb-ehci kmod-usb-ledtrig-usbport kmod-usb-ohci kmod-usb2 libblobmsg-json libc libgcc libip4tc libip6tc libiwinfo libiwinfo-lua libjson-c libjson-script liblua liblucihttp liblucihttp-lua libnl-tiny libpthread libubox libubus libubus-lua libuci libuclient libxtables logd lua luci luci-app-firewall luci-base luci-lib-ip luci-lib-jsonc luci-lib-nixio luci-mod-admin-full luci-proto-ipv6 luci-proto-ppp luci-theme-bootstrap mtd netifd odhcp6c odhcpd-ipv6only openwrt-keyring opkg ppp ppp-mod-pppoe procd rpcd rpcd-mod-rrdns swconfig ubox ubus ubusd uci uclient-fetch uhttpd usign wireless-regdb wpad-mini
+```
+
+小米路由器青春版于 NANO 配置一样，只是去掉了 USB，故而可以省却 USB 相关的包
+
+```
+-kmod-usb-core -kmod-usb2 -kmod-usb-ohci -kmod-usb-ledtrig-usbport
 ```
 
 ## 安装固件
