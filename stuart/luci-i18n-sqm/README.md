@@ -14,3 +14,5 @@ github 地址：
 * [monokoo/luci-i18n-sqm](https://github.com/monokoo/luci-i18n-sqm)
 
 monokoo 的项目 Fork 自 DragonOneY，添加了一些汉化内容。
+
+更新至 1.2.4 （之前版本是 1.1.3）
