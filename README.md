@@ -31,7 +31,7 @@ checkout devices
 
 ```bash
 $ git clone https://github.com/stuarthua/oh-my-openwrt
-$ git checkout -b devices origin/devices 
+$ git checkout -b devices origin/devices
 ```
 
 Use Image Builder to gen your image or just install it on your devices.
