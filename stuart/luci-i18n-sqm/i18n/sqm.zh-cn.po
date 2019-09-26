@@ -166,9 +166,9 @@ msgstr "没有错误检查。请谨慎使用！"
 msgid "Advanced option string to pass to the egress queueing disciplines"
 msgstr "传递到出站队列规则的高级选项字符串"
 
-#: usr/lib/lua/luci/model/cbi/sqm.lua:201
-msgid "Which link layer to account for"
-msgstr "对哪个链路层生效"
+#: usr/lib/lua/luci/model/cbi/sqm.lua:211
+msgid "Which link layer to account for:"
+msgstr "对哪个链路层生效: "
 
 #: usr/lib/lua/luci/model/cbi/sqm.lua:207
 msgid "Per Packet Overhead (byte)"
