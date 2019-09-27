@@ -150,7 +150,7 @@ msgstr "每个数据包开销："
 
 #: usr/lib/lua/luci/model/cbi/sqm.lua:226
 msgid "Show Advanced Linklayer Options, (only needed if MTU > 1500). Advanced options will only be used as long as this box is checked."
-msgstr "显示高级链路选项（仅在 MTU > 1500 时需要）。高级配置仅在选中时才会被应用"
+msgstr "显示高级链路选项（仅在 MTU > 1500 时需要）。高级配置仅在选中时才被应用"
 
 #: usr/lib/lua/luci/model/cbi/sqm.lua:231
 msgid "Maximal Size for size and rate calculations, tcMTU (byte); needs to be >= interface MTU + overhead:"
