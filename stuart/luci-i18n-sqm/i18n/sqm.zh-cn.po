@@ -94,7 +94,7 @@ msgstr "队列脚本设置"
 
 #: usr/lib/lua/luci/model/cbi/sqm.lua:139
 msgid "Show and Use Advanced Configuration. Advanced options will only be used as long as this box is checked."
-msgstr "选中该复选框显示高级配置。高级配置仅在选中时才会被应用"
+msgstr "选中该复选框显示高级配置。高级配置仅在选中时才被应用"
 
 #: usr/lib/lua/luci/model/cbi/sqm.lua:143
 msgid "Squash DSCP on inbound packets (ingress):"
@@ -114,7 +114,7 @@ msgstr "出站数据包的显式拥塞通知（ECN）状态"
 
 #: usr/lib/lua/luci/model/cbi/sqm.lua:171
 msgid "Show and Use Dangerous Configuration. Dangerous options will only be used as long as this box is checked."
-msgstr "选中该复选框显示危险配置。危险配置仅在选中时才会被应用"
+msgstr "选中该复选框显示危险配置。危险配置仅在选中时才被应用"
 
 #: usr/lib/lua/luci/model/cbi/sqm.lua:176
 msgid "Hard limit on ingress queues; leave empty for default."
