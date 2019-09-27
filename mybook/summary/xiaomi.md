@@ -37,6 +37,10 @@ LuCI 及其依赖
 * `wget` - 下载工具
 * `vsftpd` - for sftp
 * `openssh-sftp-server` - for sftp
+* `ipset` - for shadowsocks gfwlist
+* `iptables-mod-nat-extra` - for shadowsocks gfwlist
+* `dnsmasq-full` - for shadowsocks gfwlist, 与 `dnsmasq` 相冲突，需要忽略 `dnsmasq`
+
 
 ### 第三方软件包
 
@@ -243,7 +247,7 @@ cp -r ~/oh-my-openwrt-devices/packages/xiaomi/*.ipk ~/openwrt-imagebuilder-xiaom
 
 # make
 ORG_ORIGIN_PKGS="base-files busybox dnsmasq dropbear firewall fstools fwtool hostapd-common ip6tables iptables iw iwinfo jshn jsonfilter kernel kmod-cfg80211 kmod-gpio-button-hotplug kmod-ip6tables kmod-ipt-conntrack kmod-ipt-core kmod-ipt-nat kmod-ipt-offload kmod-leds-gpio kmod-lib-crc-ccitt kmod-mac80211 kmod-mt76 kmod-mt76-core kmod-mt7603 kmod-mt76x02-common kmod-mt76x2 kmod-mt76x2-common kmod-nf-conntrack kmod-nf-conntrack6 kmod-nf-flow kmod-nf-ipt kmod-nf-ipt6 kmod-nf-nat kmod-nf-reject kmod-nf-reject6 kmod-nls-base kmod-ppp kmod-pppoe kmod-pppox kmod-slhc libblobmsg-json libc libgcc libip4tc libip6tc libiwinfo libiwinfo-lua libjson-c libjson-script liblua liblucihttp liblucihttp-lua libnl-tiny libpthread libubox libubus libubus-lua libuci libuclient libxtables logd lua luci luci-app-firewall luci-base luci-lib-ip luci-lib-jsonc luci-lib-nixio luci-mod-admin-full luci-proto-ipv6 luci-proto-ppp luci-theme-bootstrap mtd netifd odhcp6c odhcpd-ipv6only openwrt-keyring opkg ppp ppp-mod-pppoe procd rpcd rpcd-mod-rrdns swconfig ubox ubus ubusd uci uclient-fetch uhttpd usign wireless-regdb wpad-mini"
-CUSTOM_ORG_PKGS="luci-i18n-base-zh-cn -kmod-usb-core -kmod-usb2 -kmod-usb-ohci -kmod-usb-ledtrig-usbport luci-i18n-firewall-zh-cn luci-app-ddns luci-i18n-ddns-zh-cn luci-app-adblock luci-i18n-adblock-zh-cn luci-app-sqm libustream-openssl ca-bundle ca-certificates curl wget vsftpd openssh-sftp-server"
+CUSTOM_ORG_PKGS="luci-i18n-base-zh-cn -kmod-usb-core -kmod-usb2 -kmod-usb-ohci -kmod-usb-ledtrig-usbport luci-i18n-firewall-zh-cn luci-app-ddns luci-i18n-ddns-zh-cn luci-app-adblock luci-i18n-adblock-zh-cn luci-app-sqm libustream-openssl ca-bundle ca-certificates curl wget vsftpd openssh-sftp-server ipset iptables-mod-nat-extra -dnsmasq dnsmasq-full"
 CUSTOM_PKGS="luci-app-ramfree luci-app-fileassistant luci-app-arpbind luci-i18n-arpbind-zh-cn luci-app-autoreboot luci-i18n-autoreboot-zh-cn vlmcsd luci-app-vlmcsd luci-i18n-vlmcsd-zh-cn shadowsocks-libev luci-app-shadowsocks ChinaDNS luci-app-chinadns dns-forwarder luci-app-dns-forwarder"
 IMAGE_PKGS="$ORG_ORIGIN_PKGS $CUSTOM_ORG_PKGS $CUSTOM_PKGS"
 
