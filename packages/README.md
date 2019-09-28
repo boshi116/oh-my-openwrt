@@ -20,11 +20,13 @@ stuart
 * `luci-app-ramfree_1.0-1_all.ipk`
 * `luci-app-usb-printer_1.0-1_all.ipk`
 * `luci-app-vlmcsd_1.0-1_all.ipk`
+* `luci-app-ttyd_1.0-1_all.ipk`
 * `luci-i18n-arpbind-zh-cn_1.0-1_all.ipk`
 * `luci-i18n-autoreboot-zh-cn_1.0-1_all.ipk`
 * `luci-i18n-sqm_1.2.4-1_all.ipk`
 * `luci-i18n-usb-printer-zh-cn_1.0-1_all.ipk`
 * `luci-i18n-vlmcsd-zh-cn_1.0-1_all.ipk`
+* `luci-i18n-ttyd-zh-cn_1.0-1_all.ipk`
 
 ```
 luci-app-chinadns
@@ -42,6 +44,8 @@ luci-i18n-usb-printer-zh-cn
 luci-app-vlmcsd
 luci-i18n-vlmcsd-zh-cn
 luci-i18n-sqm
+luci-app-ttyd
+luci-i18n-ttyd-zh-cn
 ```
 
 ## x86
