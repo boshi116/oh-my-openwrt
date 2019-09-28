@@ -30,6 +30,7 @@
 * `/etc/config/shadowsocks` Shadowsocks 配置
 * `/etc/config/firewall` 防火墙配置
 * `/etc/firewall.user` 防火墙规则
+* `/etc/init.d/shadowsocks` Shadowsocks 启动脚本修改，增加 iptables 转发 gfwlist 流量
 * `/etc/rc.local` 启动脚本，初次启动时，更新 Chnroute 和 GFWList dnsmasq_gfwlist_ipset.conf
 * `/etc/crontabs/root` 计划任务，每天更新 Chnroute 和 GFWList dnsmasq_gfwlist_ipset.conf
 * `/root/update_chnroute_dnsmasqconf_list.sh` Chnroute 和 GFWList dnsmasq_gfwlist_ipset.conf 的更新脚本

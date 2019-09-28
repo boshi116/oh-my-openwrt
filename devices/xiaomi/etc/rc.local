@@ -5,6 +5,8 @@
 if [ ! -d /etc/init.d/shadowsocks ]; then
     if [ ! -x /etc/init.d/shadowsocks ]; then
         chmod +x /etc/init.d/shadowsocks
+        /etc/init.d/shadowsocks start
+        /etc/init.d/shadowsocks enable
     fi
 fi
 
