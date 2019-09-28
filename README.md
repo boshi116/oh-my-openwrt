@@ -2,42 +2,6 @@
 
 ---
 
-Using OpenWrt Experience
-
-Reading: [gh-pages](https://stuarthua.github.io/oh-my-openwrt/)
-
-## Usage
-
-### Make Image or Packages
-
-Edit `feeds.conf.default`, add below line
-
-```
-src-git stuart https://github.com/stuarthua/oh-my-openwrt
-```
-
-Execute
-
-```bash
-$ ./scripts/feeds update -a
-$ ./scripts/feeds install -a
-```
-
-Make and Enjoy.
-
-### Use My IPK Files
-
-checkout devices
-
-```bash
-$ git clone https://github.com/stuarthua/oh-my-openwrt
-$ git checkout -b devices origin/devices
-```
-
-Use Image Builder to gen your image or just install it on your devices.
-
-## Thanks
-
-* [openwrt/openwrt](https://github.com/openwrt/openwrt)
-* [coolsnowwolf/lede](https://github.com/coolsnowwolf/lede)
-* [Lienol/openwrt-package](https://github.com/Lienol/openwrt-package)
+* `firmware` - 存放设备固件及配置备份文件
+* `devices` - 存放 Image Builder 生成固件时，保留配置的文件，作用于 `FILES` 参数
+* `package` - 存放第三方软件包 ipk（Image Builder 生成固件时，使用的第三方软件包 ipk，作用于 `PACKAGES` 参数）
