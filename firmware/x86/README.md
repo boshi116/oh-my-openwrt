@@ -55,6 +55,7 @@ OpenWrt 18.06.4 官方固件 - `openwrt-18.06.4-x86-64-combined-squashfs.img.gz`
     * `iptables-mod-nat-extra` - for shadowsocks gfwlist
     * `dnsmasq-full` - for shadowsocks gfwlist, 与 `dnsmasq` 相冲突，需要忽略 `dnsmasq`
     * `iptables-mod-tproxy` - for shadowsocks UDP-Relay
+    * `ttyd` - 网页命令行终端
 * 第三方软件包
     * `luci-app-ramfree` - 释放内存
     * `luci-app-fileassistant` - 文件助手，支持上传文件、安装 IPK 软件包
@@ -66,6 +67,8 @@ OpenWrt 18.06.4 官方固件 - `openwrt-18.06.4-x86-64-combined-squashfs.img.gz`
         * `luci-i18n-autoreboot-zh-cn` - 软件包 `luci-app-autoreboot` 的中文语言包
     * `luci-app-vlmcsd` - KMS 服务器，用于激活 Windows 及 Office
         * `vlmcsd` - KMS Server
+    * `luci-app-ttyd` - LuCI for ttyd
+        * `luci-i18n-ttyd-zh-cn` - 软件包 `luci-app-ttyd` 的中文语言包
     * `luci-app-shadowsocks` - LuCI for Shadowsocks
         * `shadowsocks-libev` - shadowsocks-libev
     * `luci-app-chinadns` - LuCI for ChinaDNS
