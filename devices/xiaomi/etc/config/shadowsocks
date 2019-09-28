@@ -5,7 +5,7 @@ config general
 config transparent_proxy
 	option local_port '1234'
 	option mtu '1492'
-	list main_server 'cfg054a8f'
+	list main_server 'nil'
 	option udp_relay_server 'same'
 
 config socks5_proxy
