@@ -41,6 +41,7 @@ LuCI 及其依赖
 * `iptables-mod-nat-extra` - for shadowsocks gfwlist
 * `dnsmasq-full` - for shadowsocks gfwlist, 与 `dnsmasq` 相冲突，需要忽略 `dnsmasq`
 * `iptables-mod-tproxy` - for shadowsocks UDP-Relay
+* `ttyd` - 网页命令行终端
 
 ### 第三方软件包
 
@@ -54,6 +55,8 @@ LuCI 及其依赖
     * `luci-i18n-autoreboot-zh-cn` - 软件包 `luci-app-autoreboot` 的中文语言包
 * `luci-app-vlmcsd` - KMS 服务器，用于激活 Windows 及 Office
     * `vlmcsd` - KMS Server
+* `luci-app-ttyd` - LuCI for ttyd
+    * `luci-i18n-ttyd-zh-cn` - 软件包 `luci-app-ttyd` 的中文语言包
 * `luci-app-shadowsocks` - LuCI for Shadowsocks
     * `shadowsocks-libev` - shadowsocks-libev
 * `luci-app-chinadns` - LuCI for ChinaDNS
@@ -173,8 +176,6 @@ mkdir -p /home/stuart/openwrt-sdk-xiaomi/bin/packages/mipsel_24kc/stuart
 # make package/luci-app-webrestriction/compile V=s
 # 网址过滤
 # make package/luci-app-weburl/compile V=s
-# 网页终端命令行
-# make package/luci-app-ttyd/compile V=s
 
 # adbyby 去广告
 # make package/adbyby/compile V=s
@@ -203,6 +204,8 @@ make package/vlmcsd/compile V=s
 make package/luci-app-vlmcsd/compile V=s
 # SQM 中文语言包
 make package/luci-i18n-sqm/compile V=s
+# 网页终端命令行
+make package/luci-app-ttyd/compile V=s
 ```
 
 执行编译脚本 `make-ipks.sh`
@@ -247,8 +250,8 @@ cp -r ~/oh-my-openwrt-devices/packages/xiaomi/openwrt-dist/*.ipk ~/openwrt-image
 
 # make
 ORG_ORIGIN_PKGS="base-files busybox dnsmasq dropbear firewall fstools fwtool hostapd-common ip6tables iptables iw iwinfo jshn jsonfilter kernel kmod-cfg80211 kmod-gpio-button-hotplug kmod-ip6tables kmod-ipt-conntrack kmod-ipt-core kmod-ipt-nat kmod-ipt-offload kmod-leds-gpio kmod-lib-crc-ccitt kmod-mac80211 kmod-mt76 kmod-mt76-core kmod-mt7603 kmod-mt76x02-common kmod-mt76x2 kmod-mt76x2-common kmod-nf-conntrack kmod-nf-conntrack6 kmod-nf-flow kmod-nf-ipt kmod-nf-ipt6 kmod-nf-nat kmod-nf-reject kmod-nf-reject6 kmod-nls-base kmod-ppp kmod-pppoe kmod-pppox kmod-slhc libblobmsg-json libc libgcc libip4tc libip6tc libiwinfo libiwinfo-lua libjson-c libjson-script liblua liblucihttp liblucihttp-lua libnl-tiny libpthread libubox libubus libubus-lua libuci libuclient libxtables logd lua luci luci-app-firewall luci-base luci-lib-ip luci-lib-jsonc luci-lib-nixio luci-mod-admin-full luci-proto-ipv6 luci-proto-ppp luci-theme-bootstrap mtd netifd odhcp6c odhcpd-ipv6only openwrt-keyring opkg ppp ppp-mod-pppoe procd rpcd rpcd-mod-rrdns swconfig ubox ubus ubusd uci uclient-fetch uhttpd usign wireless-regdb wpad-mini"
-CUSTOM_ORG_PKGS="luci-i18n-base-zh-cn -kmod-usb-core -kmod-usb2 -kmod-usb-ohci -kmod-usb-ledtrig-usbport luci-i18n-firewall-zh-cn luci-app-ddns luci-i18n-ddns-zh-cn luci-app-adblock luci-i18n-adblock-zh-cn luci-app-sqm libustream-openssl ca-bundle ca-certificates curl wget vsftpd openssh-sftp-server ipset iptables-mod-nat-extra -dnsmasq dnsmasq-full iptables-mod-tproxy"
-CUSTOM_PKGS="luci-app-ramfree luci-app-fileassistant luci-app-arpbind luci-i18n-arpbind-zh-cn luci-app-autoreboot luci-i18n-autoreboot-zh-cn vlmcsd luci-app-vlmcsd luci-i18n-vlmcsd-zh-cn shadowsocks-libev luci-app-shadowsocks ChinaDNS luci-app-chinadns dns-forwarder luci-app-dns-forwarder"
+CUSTOM_ORG_PKGS="luci-i18n-base-zh-cn -kmod-usb-core -kmod-usb2 -kmod-usb-ohci -kmod-usb-ledtrig-usbport luci-i18n-firewall-zh-cn luci-app-ddns luci-i18n-ddns-zh-cn luci-app-adblock luci-i18n-adblock-zh-cn luci-app-sqm libustream-openssl ca-bundle ca-certificates curl wget vsftpd openssh-sftp-server ipset iptables-mod-nat-extra -dnsmasq dnsmasq-full iptables-mod-tproxy ttyd"
+CUSTOM_PKGS="luci-app-ramfree luci-app-fileassistant luci-app-arpbind luci-i18n-arpbind-zh-cn luci-app-autoreboot luci-i18n-autoreboot-zh-cn vlmcsd luci-app-vlmcsd luci-i18n-vlmcsd-zh-cn luci-app-ttyd luci-i18n-ttyd-zh-cn shadowsocks-libev luci-app-shadowsocks ChinaDNS luci-app-chinadns dns-forwarder luci-app-dns-forwarder"
 IMAGE_PKGS="$ORG_ORIGIN_PKGS $CUSTOM_ORG_PKGS $CUSTOM_PKGS"
 
 make image PROFILE=miwifi-nano PACKAGES="$IMAGE_PKGS" FILES=~/oh-my-openwrt-devices/devices/xiaomi
