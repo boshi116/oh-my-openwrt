@@ -8,3 +8,4 @@
 ipset create gfwlist hash:ip
 ipset add gfwlist 8.8.8.8
 ipset add gfwlist 8.8.4.4
+iptables -t nat -I SS_SPEC_WAN_AC 1 -m set --match-set gfwlist dst -j SS_SPEC_WAN_FW

@@ -121,9 +121,6 @@ config rule
 	option proto 'udp'
 	option target 'ACCEPT'
 
-config include
-	option path '/etc/firewall.user'
-
 config rule 'kms'
 	option name 'kms'
 	option target 'ACCEPT'
@@ -136,3 +133,5 @@ config include 'shadowsocks'
 	option path '/var/etc/shadowsocks.include'
 	option reload '1'
 
+config include
+	option path '/etc/firewall.user'
