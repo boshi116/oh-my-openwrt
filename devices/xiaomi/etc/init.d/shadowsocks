@@ -128,12 +128,6 @@ start_rules() {
 rules() {
 	pidof ss-redir >/dev/null || return 0
 	start_rules || /usr/bin/ss-rules -f
-    
-    # add by stuart for gfwlist mode
-    ipset create gfwlist hash:ip
-    ipset add gfwlist 8.8.8.8
-    ipset add gfwlist 8.8.4.4
-    iptables -t nat -I SS_SPEC_WAN_AC 1 -m set --match-set gfwlist dst -j SS_SPEC_WAN_FW
 }
 
 start_redir() {
@@ -197,7 +191,7 @@ ss_tunnel() {
 start() {
 	pidof ss-redir ss-local ss-tunnel >/dev/null && return 0
 	mkdir -p /var/run /var/etc
-	ss_redir && rules
+	ss_redir && rules && start_gfwlist
 	ss_local
 	ss_tunnel
 }
@@ -219,4 +213,19 @@ stop() {
 		kill_all $(sort -u /var/run/ss-plugin)
 		rm -f /var/run/ss-plugin
 	fi
+    stop_gfwlist
+}
+
+# add by stuart for gfwlist mode
+start_gfwlist() {
+    ipset create gfwlist hash:ip
+    ipset add gfwlist 8.8.8.8
+    ipset add gfwlist 8.8.4.4
+    iptables -t nat -I SS_SPEC_WAN_AC 1 -m set --match-set gfwlist dst -j SS_SPEC_WAN_FW
+}
+
+# add by stuart for gfwlist mode
+stop_gfwlist() {
+    ipset flush gfwlist
+    ipset destroy gfwlist
 }
