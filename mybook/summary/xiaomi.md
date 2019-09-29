@@ -285,4 +285,4 @@ base-files busybox dnsmasq dropbear firewall fstools fwtool hostapd-common ip6ta
 
 ## 安装固件
 
-
+参考 - [小米路由器青春版使用官方 OpenWrt](https://stuarthua.github.io/oh-my-openwrt/mybook/first-use/use-official-openwrt-on-xiaomi-nano.html)
