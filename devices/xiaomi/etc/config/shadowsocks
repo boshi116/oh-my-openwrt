@@ -20,7 +20,7 @@ config port_forward
 	option mtu '1492'
 
 config servers
-	option no_delay '0'
+	option no_delay '1'
 	option timeout '60'
 	option encrypt_method 'chacha20-ietf-poly1305'
 	option alias 'sample'
