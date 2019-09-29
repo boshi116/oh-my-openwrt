@@ -69,6 +69,9 @@ OpenWrt 18.06.4 官方固件 - `openwrt-18.06.4-x86-64-combined-squashfs.img.gz`
         * `vlmcsd` - KMS Server
     * `luci-app-ttyd` - LuCI for ttyd
         * `luci-i18n-ttyd-zh-cn` - 软件包 `luci-app-ttyd` 的中文语言包
+    * `luci-app-adbyby-plus` - LuCI for adbyby plus
+        * `adbyby` - adbyby
+        * `luci-i18n-adbyby-plus-zh-cn` - 软件包 `luci-app-adbyby-plus` 的中文语言包
     * `luci-app-shadowsocks` - LuCI for Shadowsocks
         * `shadowsocks-libev` - shadowsocks-libev
     * `luci-app-chinadns` - LuCI for ChinaDNS
