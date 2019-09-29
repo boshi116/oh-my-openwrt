@@ -2,6 +2,8 @@
 
 适用于 `小米路由器青春版` 的固件及配置备份文件
 
+刷写固件参考 - [小米路由器青春版使用官方 OpenWrt](https://stuarthua.github.io/oh-my-openwrt/mybook/first-use/use-official-openwrt-on-xiaomi-nano.html)
+
 ## 官方固件
 
 * `openwrt-18.06.4-ramips-mt76x8-miwifi-nano-squashfs-sysupgrade.bin`
@@ -32,6 +34,7 @@ OpenWrt 18.06.4 官方固件 - `openwrt-18.06.4-ramips-mt76x8-miwifi-nano-squash
 * 默认开启 WIFI
 * 国内时区、NTP
 * 国内软件源
+* Shadowsocks + GFWList 自动翻墙
 * 官方软件包
     * `luci-i18n-base-zh-cn` - LuCI 中文语言包
     * `luci-app-firewall` - 防火墙
