@@ -21,12 +21,14 @@ stuart
 * `luci-app-usb-printer_1.0-1_all.ipk`
 * `luci-app-vlmcsd_1.0-1_all.ipk`
 * `luci-app-ttyd_1.0-1_all.ipk`
+* `luci-app-adbyby-plus_1.0-1_all.ipk`
 * `luci-i18n-arpbind-zh-cn_1.0-1_all.ipk`
 * `luci-i18n-autoreboot-zh-cn_1.0-1_all.ipk`
 * `luci-i18n-sqm_1.2.4-1_all.ipk`
 * `luci-i18n-usb-printer-zh-cn_1.0-1_all.ipk`
 * `luci-i18n-vlmcsd-zh-cn_1.0-1_all.ipk`
 * `luci-i18n-ttyd-zh-cn_1.0-1_all.ipk`
+* `luci-i18n-adbyby-plus-zh-cn_1.0-1_all.ipk`
 
 ```
 luci-app-chinadns
@@ -46,6 +48,9 @@ luci-i18n-vlmcsd-zh-cn
 luci-i18n-sqm
 luci-app-ttyd
 luci-i18n-ttyd-zh-cn
+luci-app-adbyby-plus
+luci-i18n-adbyby-plus-zh-cn
+
 ```
 
 ## x86
@@ -64,6 +69,7 @@ openwrt-dist
 stuart
 
 * `vlmcsd_svn1112-1_x86_64.ipk`
+* `adbyby_1.0-1_x86_64.ipk`
 
 ```
 ChinaDNS
@@ -74,6 +80,7 @@ simple-obfs
 simple-obfs-server
 
 vlmcsd
+adbyby
 ```
 
 ## 小米路由器青春版
