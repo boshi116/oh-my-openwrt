@@ -8,7 +8,7 @@
 
 * Mac
 * VMware Fusion 11
-* 阅读: [在 Mac 上使用 VMware 安装 Ubuntu 14.04 LTS](https://stuarthua.github.io/oh-my-openwrt/mybook/first-use/mac-vmware-install-ubuntu.html)
+* 阅读: [在 Mac 上使用 VMware 安装 Ubuntu 14.04 LTS](../../other/mac-vmware-install-ubuntu.md)
 
 ## 下载 OpenWrt 镜像
 
@@ -280,7 +280,7 @@ LuCI ---> 系统 ---> 系统 ---> 时间同步
 
 LuCI ---> 系统 ---> 软件包 ---> 配置
 
-添加 `# ` 前缀忽略 `发行版软件源`，在 `自定义软件源` 中填入 [清华镜像源](https://mirrors.ustc.edu.cn/help/lede.html) 的地址：
+添加 `# ` 前缀忽略 `发行版软件源`，在 `自定义软件源` 中填入 [中科大镜像源](https://mirrors.ustc.edu.cn/help/lede.html) 的地址：
 
 ```
 # add your custom package feeds here

@@ -12,6 +12,8 @@
 
 ## 安装 Ubuntu 14.04 LTS
 
+<!--sec data-title="使用 VMware 安装 Ubuntu 14.04 LTS" data-id="section0" data-show=true data-collapse=true ces-->
+
 打开 VMware Fusion，新建虚拟机，导入 `ubuntu-14.04.6-server-amd64.iso`
 
 ![](https://raw.githubusercontent.com/stuarthua/PicGo/master/oh-my-openwrt/Snipaste_2019-09-11_11-18-08.png)
@@ -109,6 +111,8 @@
 ![](https://raw.githubusercontent.com/stuarthua/PicGo/master/oh-my-openwrt/Snipaste_2019-09-10_22-26-36.png)
 
 ![](https://raw.githubusercontent.com/stuarthua/PicGo/master/oh-my-openwrt/Snipaste_2019-09-10_22-27-38.png)
+
+<!--endsec-->
 
 ## 一些常用设置
 

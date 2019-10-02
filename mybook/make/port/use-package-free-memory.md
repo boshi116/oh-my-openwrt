@@ -26,7 +26,7 @@ stuart
 
 ## 定制软件包
 
-阅读: [使用软件包 (示例) - 自定义 Luci 菜单](https://stuarthua.github.io/oh-my-openwrt/mybook/packages/use-package-stuart.html)
+阅读: [软件包 (示例) - 自定义 Luci 菜单](../../use/use-packages/use-package-stuart.md)
 
 比较建议的做法是，定制软件包时，将所有的软件包 LuCI 可视化操作统一归置到 自定义菜单中，方便后续拓展。
 
@@ -44,7 +44,7 @@ stuart
 
 ## 使用 SDK 编译软件包
 
-参考: [使用 SDK 编译特定软件包](https://stuarthua.github.io/oh-my-openwrt/mybook/make-my/make-by-sdk.html)
+参考: [使用 SDK 编译特定软件包](../make-by-sdk.md)
 
 Mac 上使用 SSH 连接 Ubuntu
 
@@ -83,7 +83,7 @@ x86
 
 ## 安装及使用
 
-参考: [使用软件包 (示例) - HelloWorld](https://stuarthua.github.io/oh-my-openwrt/mybook/packages/use-package-helloworld.html)
+参考: [软件包 (示例) - HelloWorld](../../use/use-packages/use-package-helloworld.md)
 
 原生 OpenWrt 固件默认没有开启 sftp 服务，需要我们手动安装并开启
 

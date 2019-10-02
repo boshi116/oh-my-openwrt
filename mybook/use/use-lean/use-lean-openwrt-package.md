@@ -45,8 +45,8 @@
 | luci-app-xlnetacc | 迅雷快鸟 |  |
 | luci-app-zerotier | ZeroTier 内网穿透 |  |
 | luci-proto-bonding | 网络支持链路聚合 802.3ad |  |
-| luci-theme-argon | argon 主题 |  |
-| luci-theme-netgear | netgear 主题 |  |
+| luci-theme-argon | argon 主题 | LuCI |
+| luci-theme-netgear | netgear 主题 | LuCI |
 
 * 第三方
 
@@ -84,7 +84,7 @@
 | intel-microcode | Intel x86 CPU 微指令 | https://openwrt.org/packages/pkgdata/intel-microcode |
 | amd64-microcode | AMD64 CPU 微指令 | https://openwrt.org/packages/pkgdata/amd64-microcode |
 | alsa-utils | ALSA（高级Linux声音架构）工具 | https://openwrt.org/packages/pkgdata/alsa-utils |
-| shadowsocks-libev-ss-redir v2ray shadowsocksr-libev-server shadowsocksr-libev-ssr-local | 科学上网 |  |
+| shadowsocks-libev-ss-redir v2ray shadowsocksr-libev-server shadowsocksr-libev-ssr-local | 科学上网 | 三合一版 |
 
 * 内核
 

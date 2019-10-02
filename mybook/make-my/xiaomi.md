@@ -1,4 +1,4 @@
-# 小米路由器青春版
+# 定制适用于 小米路由器青春版 硬件的 OpenWrt
 
 在虚拟机上使用了一段时间 OpenWrt ，基本熟悉后，根据个人需求，确定好所需的软件包，开始着手定制个人使用的 OpenWrt 固件（在官方固件 `OpenWrt 18.06.4` 基础上）。
 
@@ -10,7 +10,7 @@
 ## 准备
 
 * 一台 Mac
-* Ubuntu 14.04 LTS（运行在 VMware ）- 阅读：[在 Mac 上使用 VMware 安装 Ubuntu 14.04 LTS](https://stuarthua.github.io/oh-my-openwrt/mybook/first-use/mac-vmware-install-ubuntu.html))
+* Ubuntu 14.04 LTS（运行在 VMware ）- 阅读：[在 Mac 上使用 VMware 安装 Ubuntu 14.04 LTS](../other/mac-vmware-install-ubuntu.md)
 * 一台 小米路由器青春版
 
 ## 确定所需软件包
@@ -285,4 +285,4 @@ base-files busybox dnsmasq dropbear firewall fstools fwtool hostapd-common ip6ta
 
 ## 安装固件
 
-参考 - [小米路由器青春版使用官方 OpenWrt](https://stuarthua.github.io/oh-my-openwrt/mybook/first-use/use-official-openwrt-on-xiaomi-nano.html)
+参考 - [小米路由器青春版使用官方 OpenWrt](../use/first-use/use-official-openwrt-on-xiaomi-nano.md)

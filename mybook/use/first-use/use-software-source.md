@@ -1,14 +1,14 @@
-# 使用 OpenWrt 软件源
+# 关于 OpenWrt 软件源
 
 一般而言，通用的软件包都可以在官方源中找到并安装，这一点十分方便，但一些特定的软件包在官方源中并不能找到，这就需要添加自定义软件源使用第三方软件，或者自行编译适合自己硬件的软件包。
 
 ## 官方软件源
 
-官方 `发行版软件源` 在系统升级后，有可能更改，且国内访问的速度不佳，可以考虑使用 `清华的镜像源` 进行替换，建议置于 `自定义软件源`，跟随系统升级。
+官方 `发行版软件源` 在系统升级后，有可能更改，且国内访问的速度不佳，可以考虑使用 `中科大镜像源` 进行替换，建议置于 `自定义软件源`，跟随系统升级。
 
 LuCI ---> 系统 ---> 软件包 ---> 配置
 
-添加 `# ` 前缀忽略 `发行版软件源`，在 `自定义软件源` 中填入 [科技大镜像源](https://mirrors.ustc.edu.cn/help/lede.html) 的地址：
+添加 `# ` 前缀忽略 `发行版软件源`，在 `自定义软件源` 中填入 [中科大镜像源](https://mirrors.ustc.edu.cn/help/lede.html) 的地址：
 
 ```
 src/gz openwrt_core http://mirrors.ustc.edu.cn/lede/releases/18.06.4/targets/x86/64/packages
@@ -86,6 +86,43 @@ openwrt.io 源：
 src/gz openwrtio http://dl.openwrt.io/vendors/youku/ramips/packages
 ```
 
+[aa65535](https://github.com/aa65535) 的个人软件源（for shadowsocks）- [OpenWrt-dist](http://openwrt-dist.sourceforge.net)
+
+```
+# 添加私有软件源公钥
+wget http://openwrt-dist.sourceforge.net/openwrt-dist.pub
+opkg-key add openwrt-dist.pub
+
+# 获取路由器架构 (小米路由器青春版)
+opkg print-architecture | awk '{print $2}'
+
+all
+noarch
+mipsel_24kc
+
+# 设置自定义软件源地址
+vi /etc/opkg/customfeeds.conf
+
+src/gz openwrt_dist http://openwrt-dist.sourceforge.net/packages/base/mipsel_24kc
+src/gz openwrt_dist_luci http://openwrt-dist.sourceforge.net/packages/luci
+
+# shadowsocks
+opkg update
+opkg install shadowsocks-libev
+opkg install luci-app-shadowsocks
+## shadowsocks UDP-Relay (UDP 转发)
+opkg install iptables-mod-tproxy
+## 混淆插件（可选）
+# opkg install simple-obfs
+
+# ChinaDNS
+opkg install ChinaDNS
+opkg install luci-app-chinadns
+# DNS-Forwarder
+opkg install dns-forwarder
+opkg install luci-app-dns-forwarder
+```
+
 > **注意：** 不推荐使用不信任的第三方提供的软件包，更多情况下，还是推荐自行编译软件包
 
 ## 个人常用软件包
@@ -94,4 +131,4 @@ src/gz openwrtio http://dl.openwrt.io/vendors/youku/ramips/packages
 
 * [stuarthua/oh-my-openwrt](https://github.com/stuarthua/oh-my-openwrt/)
 
-如需自定义，请参考下节 [编译自己的 OpenWrt 固件及软件包](https://stuarthua.github.io/oh-my-openwrt/mybook/make-my/make-my-openwrt.html)
+如需自定义，请参考下节 [编译 OpenWrt 固件及软件包](../../make/make-openwrt.md)

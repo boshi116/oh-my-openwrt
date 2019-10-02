@@ -6,7 +6,7 @@
 
 ## 准备
 
-阅读：[在 Mac 上使用 VMware 安装 Ubuntu 14.04 LTS](https://stuarthua.github.io/oh-my-openwrt/mybook/first-use/mac-vmware-install-ubuntu.html)
+阅读: [在 Mac 上使用 VMware 安装 Ubuntu 14.04 LTS](../../other/mac-vmware-install-ubuntu.md)
 
 * Mac
 * VMware Fusion 11

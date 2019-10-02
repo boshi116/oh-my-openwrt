@@ -25,7 +25,7 @@ opkg install helloworld.ipk
 
 * 使用 LuCI 安装
 
-如果 LuCI 有安装 `文件助手` 的话，可直接在 LuCI 中安装，详见 [移植软件包 - 文件助手](https://stuarthua.github.io/oh-my-openwrt/mybook/packages/use-package-filetransfer.html)
+如果 LuCI 有安装 `文件助手` 的话，可直接在 LuCI 中安装，详见 [移植软件包 - 文件助手](../../make/port/use-package-filetransfer.md)
 
 ### 在线安装
 

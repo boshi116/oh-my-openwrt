@@ -1,4 +1,4 @@
-# 编译自己的 OpenWrt 固件及软件包
+# 编译 OpenWrt 固件及软件包
 
 编译 OpenWrt 有多种方式：
 
