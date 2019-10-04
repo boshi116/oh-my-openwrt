@@ -47,7 +47,9 @@
 - [适用于小米路由器青春版的 OpenWrt](mybook/make-my/xiaomi.md)
     * [使用说明](mybook/make-my/use-xiaomi.md)
 - [使用软件包](mybook/make-my/packages/use-package.md)
-   
+    - [使用软件包 Adblock](mybook/make-my/packages/use-package-adblock.md)
+    - [使用软件包 DDNS](mybook/make-my/packages/use-package-ddns.md)
+    - [使用软件包 uHTTPd](mybook/make-my/packages/use-package-uhttpd.md)
 
 ## 常见问题及附录
 
