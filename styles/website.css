@@ -1,0 +1,30 @@
+/* remove gitbook link */
+.gitbook-link {
+    display: none !important;
+}
+
+/* Todo */
+input[type=checkbox]{
+    margin-left: -2em;
+}
+
+/* Prism */
+pre[class*="language-"] {
+    border: none;
+    background-color: #f7f7f7;
+    font-size: 1em;
+    line-height: 1.2em;
+}
+
+/* Ace */
+.aceCode {
+    font-size: 14px !important;
+}
+
+/* Versions-Select */
+.versions-select select {
+    height: 2em;
+    line-height: 2em;
+    border-radius: 4px;
+    background: #efefef;
+}

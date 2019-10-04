@@ -1,0 +1,1578 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>使用恩山论坛 Lean 修改版 OpenWrt 软件包 · Oh My Openwrt</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="Stuart Hua">
+        
+        
+    
+    <link rel="stylesheet" href="../../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-prism/prism-base16-ateliersulphurpool.light.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-advanced-emoji/emoji-website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-page-footer-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-sectionx/sectionx.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-callouts/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-theme-comscore/test.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../../../styles/website.css">
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../use-koolshare/use-koolshare-openwrt.html" />
+    
+    
+    <link rel="prev" href="make-lean-openwrt.html" />
+    
+
+    <link href="https://stuarthua.github.io/oh-my-openwrt/rss" title="Oh My Openwrt" rel="alternate" type="application/rss+xml" />
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="https://blog.stuarthua.com/" target="_blank" class="custom-link">Blog</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../../">
+            
+                <a href="../../../">
+            
+                    
+                    简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    使用 OpenWrt
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../first-use/">
+            
+                <a href="../first-use/">
+            
+                    
+                    初次使用
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.1" data-path="../first-use/use-openwrt-on-vmware-with-mac.html">
+            
+                <a href="../first-use/use-openwrt-on-vmware-with-mac.html">
+            
+                    
+                    在 Mac 虚拟机 VMware 上使用官方 OpenWrt
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.2" data-path="../first-use/use-official-openwrt-on-xiaomi-nano.html">
+            
+                <a href="../first-use/use-official-openwrt-on-xiaomi-nano.html">
+            
+                    
+                    小米路由器青春版使用官方 OpenWrt
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.3" data-path="../first-use/use-software-source.html">
+            
+                <a href="../first-use/use-software-source.html">
+            
+                    
+                    关于 OpenWrt 软件源
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../use-packages/">
+            
+                <a href="../use-packages/">
+            
+                    
+                    使用软件包
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.2.1" data-path="../use-packages/use-package-helloworld.html">
+            
+                <a href="../use-packages/use-package-helloworld.html">
+            
+                    
+                    软件包 (示例) - HelloWorld
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.2" data-path="../use-packages/use-package-stuart.html">
+            
+                <a href="../use-packages/use-package-stuart.html">
+            
+                    
+                    软件包 (示例) - 自定义 LuCI 菜单
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.3" data-path="../use-packages/use-package-upnp.html">
+            
+                <a href="../use-packages/use-package-upnp.html">
+            
+                    
+                    使用官方软件包 - 通用即插即用 UPNP
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.4" data-path="../use-packages/use-package-ddns.html">
+            
+                <a href="../use-packages/use-package-ddns.html">
+            
+                    
+                    使用官方软件包 - 动态 DDNS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.5" data-path="../use-packages/use-package-shadowsocks.html">
+            
+                <a href="../use-packages/use-package-shadowsocks.html">
+            
+                    
+                    使用第三方软件包 - 科学上网
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="use-lean-openwrt.html">
+            
+                <a href="use-lean-openwrt.html">
+            
+                    
+                    使用恩山论坛 Lean 修改版 OpenWrt
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.3.1" data-path="make-lean-openwrt.html">
+            
+                <a href="make-lean-openwrt.html">
+            
+                    
+                    编译恩山论坛 Lean 修改版 OpenWrt
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.3.2" data-path="use-lean-openwrt-package.html">
+            
+                <a href="use-lean-openwrt-package.html">
+            
+                    
+                    使用恩山论坛 Lean 修改版 OpenWrt 软件包
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../use-koolshare/use-koolshare-openwrt.html">
+            
+                <a href="../use-koolshare/use-koolshare-openwrt.html">
+            
+                    
+                    使用 KoolShare 修改版 OpenWrt
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../../make/">
+            
+                <a href="../../make/">
+            
+                    
+                    编译 OpenWrt
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../../make/make-openwrt.html">
+            
+                <a href="../../make/make-openwrt.html">
+            
+                    
+                    编译 OpenWrt 固件及软件包
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../../make/make-by-source.html">
+            
+                <a href="../../make/make-by-source.html">
+            
+                    
+                    使用源码编译固件及软件包
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../../make/make-by-sdk.html">
+            
+                <a href="../../make/make-by-sdk.html">
+            
+                    
+                    使用 SDK 编译特定软件包
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../../make/make-by-image-builder.html">
+            
+                <a href="../../make/make-by-image-builder.html">
+            
+                    
+                    使用 Image Builder 组装镜像固件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../../make/my-make-scripts.html">
+            
+                <a href="../../make/my-make-scripts.html">
+            
+                    
+                    编译时一些个人使用的脚本
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="../../make/port/port-package.html">
+            
+                <a href="../../make/port/port-package.html">
+            
+                    
+                    移植软件包
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.6.1" data-path="../../make/port/use-package-free-memory.html">
+            
+                <a href="../../make/port/use-package-free-memory.html">
+            
+                    
+                    移植软件包 - 释放内存
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6.2" data-path="../../make/port/use-package-filetransfer.html">
+            
+                <a href="../../make/port/use-package-filetransfer.html">
+            
+                    
+                    移植软件包 - 文件助手
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6.3" data-path="../../make/port/use-package-arpbind.html">
+            
+                <a href="../../make/port/use-package-arpbind.html">
+            
+                    
+                    移植软件包 - IP/MAC 绑定
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6.4" data-path="../../make/port/use-package-auto-reboot.html">
+            
+                <a href="../../make/port/use-package-auto-reboot.html">
+            
+                    
+                    移植软件包 - 定时重启
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6.5" data-path="../../make/port/use-package-time-control.html">
+            
+                <a href="../../make/port/use-package-time-control.html">
+            
+                    
+                    移植软件包 - 上网时间控制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6.6" data-path="../../make/port/use-package-visit-control.html">
+            
+                <a href="../../make/port/use-package-visit-control.html">
+            
+                    
+                    移植软件包 - 访问控制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6.7" data-path="../../make/port/use-package-timewol.html">
+            
+                <a href="../../make/port/use-package-timewol.html">
+            
+                    
+                    移植软件包 - 定时唤醒
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6.8" data-path="../../make/port/use-package-weburl.html">
+            
+                <a href="../../make/port/use-package-weburl.html">
+            
+                    
+                    移植软件包 - 网址过滤
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6.9" data-path="../../make/port/use-package-usb-printer.html">
+            
+                <a href="../../make/port/use-package-usb-printer.html">
+            
+                    
+                    移植软件包 - USB 打印服务器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6.10" data-path="../../make/port/use-package-kms.html">
+            
+                <a href="../../make/port/use-package-kms.html">
+            
+                    
+                    移植软件包 - KMS 自动激活程序
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6.11" data-path="../../make/port/use-package-ttyd.html">
+            
+                <a href="../../make/port/use-package-ttyd.html">
+            
+                    
+                    移植软件包 - 网页终端命令行
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6.12" data-path="../../make/port/use-package-xunlei.html">
+            
+                <a href="../../make/port/use-package-xunlei.html">
+            
+                    
+                    移植软件包 - 迅雷快鸟
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6.13" data-path="../../make/port/use-package-adbyby.html">
+            
+                <a href="../../make/port/use-package-adbyby.html">
+            
+                    
+                    移植软件包 - 广告屏蔽大师 Plus +
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6.14" data-path="../../make/port/use-package-shadowsocks-plus.html">
+            
+                <a href="../../make/port/use-package-shadowsocks-plus.html">
+            
+                    
+                    移植软件包 - 科学上网增强版
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6.15" data-path="../../make/port/use-package-aliddns.html">
+            
+                <a href="../../make/port/use-package-aliddns.html">
+            
+                    
+                    移植软件包 - 阿里云 DDNS
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">定制</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../../make-my/">
+            
+                <a href="../../make-my/">
+            
+                    
+                    定制个人 OpenWrt
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../../make-my/x86.html">
+            
+                <a href="../../make-my/x86.html">
+            
+                    
+                    适用于 x86 硬件的 OpenWrt
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.2.1" data-path="../../make-my/use-x86.html">
+            
+                <a href="../../make-my/use-x86.html">
+            
+                    
+                    使用说明
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="../../make-my/xiaomi.html">
+            
+                <a href="../../make-my/xiaomi.html">
+            
+                    
+                    适用于小米路由器青春版的 OpenWrt
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.3.1" data-path="../../make-my/use-xiaomi.html">
+            
+                <a href="../../make-my/use-xiaomi.html">
+            
+                    
+                    使用说明
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="../../make-my/packages/use-package.html">
+            
+                <a href="../../make-my/packages/use-package.html">
+            
+                    
+                    使用软件包
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.4.1" data-path="../../make-my/packages/use-package-adblock.html">
+            
+                <a href="../../make-my/packages/use-package-adblock.html">
+            
+                    
+                    使用软件包 Adblock
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.2" data-path="../../make-my/packages/use-package-ddns.html">
+            
+                <a href="../../make-my/packages/use-package-ddns.html">
+            
+                    
+                    使用软件包 DDNS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.3" data-path="../../make-my/packages/use-package-uhttpd.html">
+            
+                <a href="../../make-my/packages/use-package-uhttpd.html">
+            
+                    
+                    使用软件包 uHTTPd
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">常见问题及附录</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="../../other/qa.html">
+            
+                <a href="../../other/qa.html">
+            
+                    
+                    常见问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="../../other/appendix.html">
+            
+                <a href="../../other/appendix.html">
+            
+                    
+                    附录
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.2.1" data-path="../../other/mac-vmware-install-ubuntu.html">
+            
+                <a href="../../other/mac-vmware-install-ubuntu.html">
+            
+                    
+                    在 Mac 上使用 VMware 安装 Ubuntu 14.04 LTS
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../../.." >使用恩山论坛 Lean 修改版 OpenWrt 软件包</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#&#x4F7F;&#x7528;&#x6069;&#x5C71;&#x8BBA;&#x575B;-lean-&#x4FEE;&#x6539;&#x7248;-openwrt-&#x8F6F;&#x4EF6;&#x5305;"><b></b>&#x4F7F;&#x7528;&#x6069;&#x5C71;&#x8BBA;&#x575B; Lean &#x4FEE;&#x6539;&#x7248; OpenWrt &#x8F6F;&#x4EF6;&#x5305;</a></li><ul><li><span class="title-icon "></span><a href="#&#x8F6F;&#x4EF6;&#x5305;"><b></b>&#x8F6F;&#x4EF6;&#x5305;</a></li></ul></ul></div><a href="#&#x4F7F;&#x7528;&#x6069;&#x5C71;&#x8BBA;&#x575B;-lean-&#x4FEE;&#x6539;&#x7248;-openwrt-&#x8F6F;&#x4EF6;&#x5305;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="&#x4F7F;&#x7528;&#x6069;&#x5C71;&#x8BBA;&#x575B;-lean-&#x4FEE;&#x6539;&#x7248;-openwrt-&#x8F6F;&#x4EF6;&#x5305;"><a name="&#x4F7F;&#x7528;&#x6069;&#x5C71;&#x8BBA;&#x575B;-lean-&#x4FEE;&#x6539;&#x7248;-openwrt-&#x8F6F;&#x4EF6;&#x5305;" class="anchor-navigation-ex-anchor" href="#&#x4F7F;&#x7528;&#x6069;&#x5C71;&#x8BBA;&#x575B;-lean-&#x4FEE;&#x6539;&#x7248;-openwrt-&#x8F6F;&#x4EF6;&#x5305;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4F7F;&#x7528;&#x6069;&#x5C71;&#x8BBA;&#x575B; Lean &#x4FEE;&#x6539;&#x7248; OpenWrt &#x8F6F;&#x4EF6;&#x5305;</h1>
+<p>&#x4EE5;&#x4E0B;&#x5217;&#x51FA;&#x6069;&#x5C71;&#x8BBA;&#x575B; Lean &#x4FEE;&#x6539;&#x7248; <a href="../../../GLOSSARY.html#openwrt" class="glossary-term" title="OpenWrt &#x662F;&#x9002;&#x5408;&#x4E8E;&#x5D4C;&#x5165;&#x5F0F;&#x8BBE;&#x5907;&#x7684;&#x4E00;&#x4E2A; Linux &#x53D1;&#x884C;&#x7248;&#x3002;&#x76F8;&#x5BF9;&#x539F;&#x5382;&#x56FA;&#x4EF6;&#x800C;&#x8A00;&#xFF0C;OpenWrt &#x4E0D;&#x662F;&#x4E00;&#x4E2A;&#x5355;&#x4E00;&#x3001;&#x9759;&#x6001;&#x7684;&#x56FA;&#x4EF6;&#xFF0C;&#x800C;&#x662F;&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x4E2A;&#x53EF;&#x6DFB;&#x52A0;&#x8F6F;&#x4EF6;&#x5305;&#x7684;&#x53EF;&#x5199;&#x7684;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x3002;&#x8FD9;&#x4F7F;&#x7528;&#x6237;&#x53EF;&#x4EE5;&#x81EA;&#x7531;&#x7684;&#x9009;&#x62E9;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x548C;&#x914D;&#x7F6E;&#xFF0C;&#x800C;&#x4E0D;&#x5FC5;&#x53D7;&#x8BBE;&#x5907;&#x63D0;&#x4F9B;&#x5546;&#x7684;&#x9650;&#x5236;&#xFF0C;&#x5E76;&#x4E14;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x4E00;&#x4E9B;&#x9002;&#x5408;&#x67D0;&#x65B9;&#x9762;&#x5E94;&#x7528;&#x7684;&#x8F6F;&#x4EF6;&#x5305;&#x6765;&#x5B9A;&#x5236;&#x4F60;&#x7684;&#x8BBE;&#x5907;">OpenWrt</a> &#x7684;&#x4E00;&#x4E9B;&#x8F6F;&#x4EF6;&#x5305;&#xFF0C;&#x66F4;&#x591A;&#x8BE6;&#x60C5;&#x53EF;&#x89C1; <a href="https://www.right.com.cn/forum/thread-344825-1-1.html" target="_blank">&#x6069;&#x5C71;&#x8BBA;&#x575B;: OpenWrt &#x7F16;&#x8BD1; LuCI -&gt; Applications &#x6DFB;&#x52A0;&#x63D2;&#x4EF6;&#x5E94;&#x7528;&#x8BF4;&#x660E;</a></p>
+<h2 id="&#x8F6F;&#x4EF6;&#x5305;"><a name="&#x8F6F;&#x4EF6;&#x5305;" class="anchor-navigation-ex-anchor" href="#&#x8F6F;&#x4EF6;&#x5305;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x8F6F;&#x4EF6;&#x5305;</h2>
+<table>
+<thead>
+<tr>
+<th>Package</th>
+<th>&#x8F6F;&#x4EF6;&#x540D;</th>
+<th>&#x63CF;&#x8FF0;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>luci-app-accesscontrol</td>
+<td>&#x8BBF;&#x95EE;&#x65F6;&#x95F4;&#x63A7;&#x5236;</td>
+<td></td>
+</tr>
+<tr>
+<td>luci-app-adbyby-plus</td>
+<td>&#x5E7F;&#x544A;&#x5C4F;&#x853D;&#x5927;&#x5E08;Plus</td>
+<td><a href="http://www.adbyby.com/" target="_blank">http://www.adbyby.com/</a> <br> <a href="https://github.com/kysdm/adbyby" target="_blank">kysdm/adbyby</a></td>
+</tr>
+<tr>
+<td>luci-app-amule</td>
+<td>aMule</td>
+<td>&#x5F00;&#x6E90;&#x514D;&#x8D39;&#x7684; P2P &#x6587;&#x4EF6;&#x5171;&#x4EAB;&#x8F6F;&#x4EF6;</td>
+</tr>
+<tr>
+<td>luci-app-arpbind</td>
+<td>IP/MAC &#x7ED1;&#x5B9A;</td>
+<td></td>
+</tr>
+<tr>
+<td>luci-app-autoreboot</td>
+<td>&#x5B9A;&#x65F6;&#x91CD;&#x542F;</td>
+<td></td>
+</tr>
+<tr>
+<td>luci-app-dnsforwarder</td>
+<td>DNSForwarder &#x9632; DNS &#x6C61;&#x67D3;</td>
+<td></td>
+</tr>
+<tr>
+<td>luci-app-dnspod</td>
+<td>DNSPod</td>
+<td></td>
+</tr>
+<tr>
+<td>luci-app-familycloud</td>
+<td>&#x5BB6;&#x5EAD;&#x4E91;&#x76D8;</td>
+<td></td>
+</tr>
+<tr>
+<td>luci-app-filetransfer</td>
+<td>&#x6587;&#x4EF6;&#x4F20;&#x8F93;</td>
+<td></td>
+</tr>
+<tr>
+<td>luci-app-flowoffload</td>
+<td>Turbo ACC  FLOW&#x8F6C;&#x53D1;&#x52A0;&#x901F; (&#x96C6;&#x6210;&#x5728; sfe)</td>
+<td></td>
+</tr>
+<tr>
+<td>luci-app-frpc</td>
+<td>&#x5185;&#x7F51;&#x7A7F;&#x900F; Frp</td>
+<td></td>
+</tr>
+<tr>
+<td>luci-app-guest-wifi</td>
+<td>&#x8BBF;&#x5BA2;&#x7F51;&#x7EDC;</td>
+<td></td>
+</tr>
+<tr>
+<td>luci-app-haproxy-tcp</td>
+<td>TCP &#x8D1F;&#x8F7D;&#x5747;&#x8861;</td>
+<td></td>
+</tr>
+<tr>
+<td>luci-app-ipsec-vpnd</td>
+<td>IPSec VPN &#x670D;&#x52A1;&#x5668;</td>
+<td></td>
+</tr>
+<tr>
+<td>luci-app-kodexplorer</td>
+<td>&#x53EF;&#x9053;&#x4E91;</td>
+<td></td>
+</tr>
+<tr>
+<td>luci-app-mwan3helper</td>
+<td>MWAN3 &#x5206;&#x6D41;&#x52A9;&#x624B;</td>
+<td></td>
+</tr>
+<tr>
+<td>luci-app-n2n_v2</td>
+<td>N2N &#x5185;&#x7F51;&#x7A7F;&#x900F;</td>
+<td></td>
+</tr>
+<tr>
+<td>luci-app-nft-qos</td>
+<td>QOS &#x6D41;&#x63A7; Nftables&#x7248;</td>
+<td>&#x5DF2;&#x5F03;</td>
+</tr>
+<tr>
+<td>luci-app-openvpn-server</td>
+<td>OpenVPN Server</td>
+<td></td>
+</tr>
+<tr>
+<td>luci-app-pppoe-relay</td>
+<td>PPPoE NAT&#x7A7F;&#x900F;</td>
+<td></td>
+</tr>
+<tr>
+<td>luci-app-pptp-server</td>
+<td>PPTP VPN</td>
+<td></td>
+</tr>
+<tr>
+<td>luci-app-qbittorrent</td>
+<td>BT &#x4E0B;&#x8F7D;&#x5DE5;&#x5177;</td>
+<td></td>
+</tr>
+<tr>
+<td>luci-app-ramfree</td>
+<td>&#x91CA;&#x653E;&#x5185;&#x5B58;</td>
+<td></td>
+</tr>
+<tr>
+<td>luci-app-samba4</td>
+<td>Samba &#x6587;&#x4EF6;&#x670D;&#x52A1;&#x5668;</td>
+<td></td>
+</tr>
+<tr>
+<td>luci-app-sfe</td>
+<td>Turbo ACC &#x7F51;&#x7EDC;&#x52A0;&#x901F; (&#x5F00;&#x542F; Fast Path &#x8F6C;&#x53D1;&#x52A0;&#x901F;)</td>
+<td><a href="https://www.right.com.cn/forum/thread-341935-1-1.html" target="_blank">&#x6069;&#x5C71; - Turbo ACC &#x52A0;&#x901F;&#x5F15;&#x64CE;&#x6280;&#x672F;&#xFF0C;&#x591A;&#x91CD;&#x52A0;&#x901F;&#x4F60;&#x7684;&#x4E0A;&#x7F51;&#x4F53;&#x9A8C;</a></td>
+</tr>
+<tr>
+<td>luci-app-ssr-plus</td>
+<td>SSR Plus</td>
+<td></td>
+</tr>
+<tr>
+<td>luci-app-ssrserver-python</td>
+<td>Shadowsocks Server (Python)</td>
+<td></td>
+</tr>
+<tr>
+<td>luci-app-syncdial</td>
+<td>&#x591A;&#x62E8;&#x865A;&#x62DF;&#x7F51;&#x5361; (&#x539F; macvlan)</td>
+<td></td>
+</tr>
+<tr>
+<td>luci-app-ttyd</td>
+<td>&#x7F51;&#x9875;&#x7EC8;&#x7AEF;&#x547D;&#x4EE4;&#x884C;</td>
+<td></td>
+</tr>
+<tr>
+<td>luci-app-unblockmusic</td>
+<td>&#x89E3;&#x9501;&#x7F51;&#x6613;&#x4E91;&#x7070;&#x8272;&#x6B4C;&#x66F2;</td>
+<td></td>
+</tr>
+<tr>
+<td>luci-app-usb-printer</td>
+<td>USB Printer &#x6253;&#x5370;&#x670D;&#x52A1;&#x5668;</td>
+<td></td>
+</tr>
+<tr>
+<td>luci-app-v2ray-server</td>
+<td>V2ray Server</td>
+<td></td>
+</tr>
+<tr>
+<td>luci-app-vlmcsd</td>
+<td>KMS &#x670D;&#x52A1;&#x5668;</td>
+<td></td>
+</tr>
+<tr>
+<td>luci-app-vsftpd</td>
+<td>FTP &#x670D;&#x52A1;&#x5668;</td>
+<td></td>
+</tr>
+<tr>
+<td>luci-app-webadmin</td>
+<td>Web &#x7BA1;&#x7406;&#x9875;&#x9762;&#x8BBE;&#x7F6E;</td>
+<td></td>
+</tr>
+<tr>
+<td>luci-app-wrtbwmon</td>
+<td>&#x5B9E;&#x65F6;&#x6D41;&#x91CF;&#x76D1;&#x6D4B;</td>
+<td></td>
+</tr>
+<tr>
+<td>luci-app-xlnetacc</td>
+<td>&#x8FC5;&#x96F7;&#x5FEB;&#x9E1F;</td>
+<td></td>
+</tr>
+<tr>
+<td>luci-app-zerotier</td>
+<td>ZeroTier &#x5185;&#x7F51;&#x7A7F;&#x900F;</td>
+<td></td>
+</tr>
+<tr>
+<td>luci-proto-bonding</td>
+<td>&#x7F51;&#x7EDC;&#x652F;&#x6301;&#x94FE;&#x8DEF;&#x805A;&#x5408; 802.3ad</td>
+<td></td>
+</tr>
+<tr>
+<td>luci-theme-argon</td>
+<td>argon &#x4E3B;&#x9898;</td>
+<td>LuCI</td>
+</tr>
+<tr>
+<td>luci-theme-netgear</td>
+<td>netgear &#x4E3B;&#x9898;</td>
+<td>LuCI</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>&#x7B2C;&#x4E09;&#x65B9;</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Package</th>
+<th>&#x63CF;&#x8FF0;</th>
+<th>&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>block-mount</td>
+<td>&#x542F;&#x52A8;&#x65F6; USB &#x81EA;&#x52A8;&#x6302;&#x8F7D;</td>
+<td></td>
+</tr>
+<tr>
+<td>coremark</td>
+<td>&#x6D4B;&#x8BD5;&#x5904;&#x7406;&#x5668;&#x6838;&#x5FC3;&#x6027;&#x80FD;</td>
+<td></td>
+</tr>
+<tr>
+<td>wget</td>
+<td>Linux &#x547D;&#x4EE4;&#xFF1A;&#x4E0B;&#x8F7D;</td>
+<td></td>
+</tr>
+<tr>
+<td>libustream-openssl</td>
+<td>SSL &#x652F;&#x6301;</td>
+<td></td>
+</tr>
+<tr>
+<td>ca-certificates</td>
+<td>SSL &#x8BC1;&#x4E66;&#x9881;&#x53D1;&#x673A;&#x6784;</td>
+<td></td>
+</tr>
+<tr>
+<td>default-settings</td>
+<td>&#x9ED8;&#x8BA4;&#x8BBE;&#x7F6E;</td>
+<td></td>
+</tr>
+<tr>
+<td>fdisk</td>
+<td>Linux &#x547D;&#x4EE4;&#xFF1A;&#x78C1;&#x76D8;&#x5206;&#x533A;</td>
+<td></td>
+</tr>
+<tr>
+<td>lsblk</td>
+<td>Linux &#x547D;&#x4EE4;&#xFF1A;&#x5217;&#x51FA;&#x6240;&#x6709;&#x53EF;&#x7528;&#x5757;&#x8BBE;&#x5907;&#x7684;&#x4FE1;&#x606F;</td>
+<td></td>
+</tr>
+<tr>
+<td>mdadm</td>
+<td>Linux &#x547D;&#x4EE4;&#xFF1A;&#x7BA1;&#x7406;&#x548C;&#x76D1;&#x89C6;&#x8F6F;&#x4EF6;RAID&#x8BBE;&#x5907;</td>
+<td></td>
+</tr>
+<tr>
+<td>automount</td>
+<td>&#x81EA;&#x52A8;&#x6302;&#x8F7D;&#x670D;&#x52A1;</td>
+<td></td>
+</tr>
+<tr>
+<td>autosamba</td>
+<td>&#x81EA;&#x52A8;&#x6302;&#x8F7D; samba</td>
+<td></td>
+</tr>
+<tr>
+<td>dnsmasq</td>
+<td>&#x63D0;&#x4F9B; DNS &#x7F13;&#x5B58;&#x548C; DHCP &#x670D;&#x52A1;</td>
+<td></td>
+</tr>
+<tr>
+<td>dnsmasq-full</td>
+<td>&#x652F;&#x6301; ipset &#x7684; dnsmasq&#xFF0C;&#x9002;&#x5408;&#x56FD;&#x5185;</td>
+<td><a href="https://www.ixsh.com/tag/dnsmasq-full/" target="_blank">https://www.ixsh.com/tag/dnsmasq-full/</a></td>
+</tr>
+<tr>
+<td>iptables</td>
+<td>IPv4 &#x9632;&#x706B;&#x5899;</td>
+<td></td>
+</tr>
+<tr>
+<td>ip6tables</td>
+<td>IPv6 &#x9632;&#x706B;&#x5899;</td>
+<td></td>
+</tr>
+<tr>
+<td>ppp&#x3001;ppp-mod-pppoe</td>
+<td>pppoe &#x62E8;&#x53F7;</td>
+<td></td>
+</tr>
+<tr>
+<td>odhcp6c</td>
+<td>DHCPv6 &#x5BA2;&#x6237;&#x7AEF;</td>
+<td><a href="https://openwrt.org/docs/techref/odhcp6c" target="_blank">https://openwrt.org/docs/techref/odhcp6c</a></td>
+</tr>
+<tr>
+<td>odhcpd-ipv6only</td>
+<td>&#x4E3A;IP&#x914D;&#x7F6E;&#x5BA2;&#x6237;&#x7AEF;&#x548C;&#x4E0B;&#x6E38;&#x8DEF;&#x7531;&#x5668;&#x63D0;&#x4F9B;IP&#x670D;&#x52A1;&#x548C;&#x4E2D;&#x7EE7;&#x670D;&#x52A1;</td>
+<td><a href="https://openwrt.org/packages/pkgdata/odhcpd-ipv6only" target="_blank">https://openwrt.org/packages/pkgdata/odhcpd-ipv6only</a></td>
+</tr>
+<tr>
+<td>partx-utils</td>
+<td>Linux &#x5DE5;&#x5177;&#xFF1A;&#x78C1;&#x76D8;&#x7BA1;&#x7406;</td>
+<td></td>
+</tr>
+<tr>
+<td>mkf2fs</td>
+<td>Linux &#x5DE5;&#x5177;&#xFF1A;&#x78C1;&#x76D8;&#x683C;&#x5F0F;&#x5316;</td>
+<td></td>
+</tr>
+<tr>
+<td>e2fsprogs</td>
+<td>Linux &#x5DE5;&#x5177;&#xFF1A;&#x7EF4;&#x62A4; ext2&#xFF0C;ext3 &#x548C; ext4 &#x6587;&#x4EF6;&#x7CFB;&#x7EDF;</td>
+<td></td>
+</tr>
+<tr>
+<td>wpad</td>
+<td>&#x8BA9;&#x6D4F;&#x89C8;&#x5668;&#x81EA;&#x52A8;&#x53D1;&#x73B0;&#x4EE3;&#x7406;&#x670D;&#x52A1;&#x5668;</td>
+<td><a href="https://www.ibm.com/developerworks/cn/linux/1309_quwei_wpad/index.html" target="_blank">https://www.ibm.com/developerworks/cn/linux/1309_quwei_wpad/index.html</a></td>
+</tr>
+<tr>
+<td>htop</td>
+<td>Linux &#x547D;&#x4EE4;&#xFF1A;&#x67E5;&#x770B;&#x8FDB;&#x7A0B;&#x53CA;&#x5176;&#x547D;&#x4EE4;</td>
+<td><a href="https://openwrt.org/packages/pkgdata/htop" target="_blank">https://openwrt.org/packages/pkgdata/htop</a></td>
+</tr>
+<tr>
+<td>lm-sensors</td>
+<td>&#x8BFB;&#x53D6;&#x786C;&#x4EF6;&#x4F20;&#x611F;&#x5668;&#x6570;&#x636E;</td>
+<td><a href="https://openwrt.org/packages/pkgdata/lm-sensors" target="_blank">https://openwrt.org/packages/pkgdata/lm-sensors</a></td>
+</tr>
+<tr>
+<td>autocore automount autosamba</td>
+<td>Lean &#x81EA;&#x5B9A;&#x4E49;&#x7A0B;&#x5E8F;</td>
+<td></td>
+</tr>
+<tr>
+<td>ath10k-firmware-qca988x</td>
+<td>&#x9002;&#x7528;&#x4E8E;QCA988x&#x5668;&#x4EF6;&#x7684;ath10k&#x56FA;&#x4EF6;</td>
+<td><a href="https://openwrt.org/packages/pkgdata/ath10k-firmware-qca988x-ct" target="_blank">https://openwrt.org/packages/pkgdata/ath10k-firmware-qca988x-ct</a></td>
+</tr>
+<tr>
+<td>ath10k-firmware-qca9888</td>
+<td>&#x9002;&#x7528;&#x4E8E;QCA9888&#x5668;&#x4EF6;&#x7684;ath10k&#x56FA;&#x4EF6;</td>
+<td><a href="https://openwrt.org/packages/pkgdata/ath10k-firmware-qca9888" target="_blank">https://openwrt.org/packages/pkgdata/ath10k-firmware-qca9888</a></td>
+</tr>
+<tr>
+<td>ath10k-firmware-qca9984</td>
+<td>&#x9002;&#x7528;&#x4E8E;QCA9884&#x5668;&#x4EF6;&#x7684;ath10k&#x56FA;&#x4EF6;</td>
+<td><a href="https://openwrt.org/packages/pkgdata/ath10k-firmware-qca9984" target="_blank">https://openwrt.org/packages/pkgdata/ath10k-firmware-qca9984</a></td>
+</tr>
+<tr>
+<td>brcmfmac-firmware-43602a1-pcie</td>
+<td>Broadcom 43602a1 FullMAC PCIe&#x56FA;&#x4EF6;</td>
+<td><a href="https://openwrt.org/packages/pkgdata/brcmfmac-firmware-43602a1-pcie" target="_blank">https://openwrt.org/packages/pkgdata/brcmfmac-firmware-43602a1-pcie</a></td>
+</tr>
+<tr>
+<td>intel-microcode</td>
+<td>Intel x86 CPU &#x5FAE;&#x6307;&#x4EE4;</td>
+<td><a href="https://openwrt.org/packages/pkgdata/intel-microcode" target="_blank">https://openwrt.org/packages/pkgdata/intel-microcode</a></td>
+</tr>
+<tr>
+<td>amd64-microcode</td>
+<td>AMD64 CPU &#x5FAE;&#x6307;&#x4EE4;</td>
+<td><a href="https://openwrt.org/packages/pkgdata/amd64-microcode" target="_blank">https://openwrt.org/packages/pkgdata/amd64-microcode</a></td>
+</tr>
+<tr>
+<td>alsa-utils</td>
+<td>ALSA&#xFF08;&#x9AD8;&#x7EA7;Linux&#x58F0;&#x97F3;&#x67B6;&#x6784;&#xFF09;&#x5DE5;&#x5177;</td>
+<td><a href="https://openwrt.org/packages/pkgdata/alsa-utils" target="_blank">https://openwrt.org/packages/pkgdata/alsa-utils</a></td>
+</tr>
+<tr>
+<td>shadowsocks-libev-ss-redir v2ray shadowsocksr-libev-server shadowsocksr-libev-ssr-local</td>
+<td>&#x79D1;&#x5B66;&#x4E0A;&#x7F51;</td>
+<td>&#x4E09;&#x5408;&#x4E00;&#x7248;</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>&#x5185;&#x6838;</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Package</th>
+<th>&#x63CF;&#x8FF0;</th>
+<th>&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>kmod-nf-nathelper</td>
+<td>NAT &#x4EE5;&#x53CA;&#x9632;&#x706B;&#x5899;&#xFF0C;&#x5305;&#x542B; FTP</td>
+<td><a href="https://openwrt.org/packages/pkgdata/kmod-nf-nathelper" target="_blank">https://openwrt.org/packages/pkgdata/kmod-nf-nathelper</a></td>
+</tr>
+<tr>
+<td>kmod-nf-nathelper-extra</td>
+<td>NAT &#x4EE5;&#x53CA;&#x9632;&#x706B;&#x5899;&#x62D3;&#x5C55;&#xFF0C;&#x5305;&#x542B; PPTP&#x3001;&#x5E7F;&#x64AD;&#x7B49;</td>
+<td><a href="https://openwrt.org/packages/pkgdata/kmod-nf-nathelper-extra" target="_blank">https://openwrt.org/packages/pkgdata/kmod-nf-nathelper-extra</a></td>
+</tr>
+<tr>
+<td>kmod-ipt-raw</td>
+<td>IPv4 &#x539F;&#x59CB;&#x8868;&#x652F;&#x6301;</td>
+<td><a href="https://openwrt.org/packages/pkgdata/kmod-ipt-raw" target="_blank">https://openwrt.org/packages/pkgdata/kmod-ipt-raw</a></td>
+</tr>
+<tr>
+<td>kmod-ipt-raw6</td>
+<td>IPv6 &#x539F;&#x59CB;&#x8868;&#x652F;&#x6301;</td>
+<td><a href="https://openwrt.org/packages/pkgdata/kmod-ipt-raw6" target="_blank">https://openwrt.org/packages/pkgdata/kmod-ipt-raw6</a></td>
+</tr>
+<tr>
+<td>kmod-tcp-bbr</td>
+<td>tcp bbr &#x52A0;&#x901F;</td>
+<td>&#x5B98;&#x7F51;&#x6700;&#x65B0;&#x7248;&#x67E5;&#x8BE2;&#x6CA1;&#x6709;&#xFF0C;&#x4F46;&#x5728;&#x4E00;&#x4E9B;&#x5176;&#x4ED6;&#x7248;&#x672C;&#x5206;&#x652F;&#x4E0A;&#x5B58;&#x5728;</td>
+</tr>
+<tr>
+<td>kmod-ipt-offload</td>
+<td>NAT &#x52A0;&#x901F;</td>
+<td><a href="https://openwrt.org/packages/pkgdata/kmod-ipt-offload" target="_blank">https://openwrt.org/packages/pkgdata/kmod-ipt-offload</a></td>
+</tr>
+<tr>
+<td>kmod-usb-hid</td>
+<td>&#x5185;&#x6838;&#x652F;&#x6301; USB HID &#x8BBE;&#x5907;&#xFF0C;&#x5982;&#x952E;&#x76D8;&#x548C;&#x9F20;&#x6807;</td>
+<td><a href="https://openwrt.org/packages/pkgdata/kmod-usb-hid" target="_blank">https://openwrt.org/packages/pkgdata/kmod-usb-hid</a></td>
+</tr>
+<tr>
+<td>kmod-ath5k</td>
+<td>&#x9AD8;&#x901A; Atheros 5xxx &#x82AF;&#x7247;&#x7EC4;&#x7684;&#x65E0;&#x7EBF;&#x9002;&#x914D;&#x5668;&#x652F;&#x6301;</td>
+<td><a href="https://openwrt.org/packages/pkgdata/kmod-ath5k" target="_blank">https://openwrt.org/packages/pkgdata/kmod-ath5k</a></td>
+</tr>
+<tr>
+<td>kmod-ath9k</td>
+<td>&#x9AD8;&#x901A; Atheros IEEE 802.11n AR5008&#x548C;AR9001 &#x7CFB;&#x5217;&#x82AF;&#x7247;&#x7EC4;&#x7684;&#x65E0;&#x7EBF;&#x9002;&#x914D;&#x5668;&#x652F;&#x6301;</td>
+<td><a href="https://openwrt.org/packages/pkgdata/kmod-ath9k" target="_blank">https://openwrt.org/packages/pkgdata/kmod-ath9k</a></td>
+</tr>
+<tr>
+<td>kmod-ath9k-htc</td>
+<td>&#x9AD8;&#x901A; Atheros USB AR9271 &#x548C; AR7010 &#x7CFB;&#x5217;&#x82AF;&#x7247;&#x7EC4;&#x7684;&#x65E0;&#x7EBF;&#x9002;&#x914D;&#x5668;&#x652F;&#x6301;</td>
+<td><a href="https://openwrt.org/packages/pkgdata/kmod-ath9k-htc" target="_blank">https://openwrt.org/packages/pkgdata/kmod-ath9k-htc</a></td>
+</tr>
+<tr>
+<td>kmod-ath10k</td>
+<td>&#x9AD8;&#x901A; Atheros IEEE 802.11ac &#x7CFB;&#x5217;&#x82AF;&#x7247;&#x7EC4;&#x7684;&#x65E0;&#x7EBF;&#x9002;&#x914D;&#x5668;&#x7684;&#x652F;&#x6301;&#xFF0C;&#x76EE;&#x524D;&#x4EC5;&#x652F;&#x6301; PCI</td>
+<td><a href="https://openwrt.org/packages/pkgdata/kmod-ath10k" target="_blank">https://openwrt.org/packages/pkgdata/kmod-ath10k</a></td>
+</tr>
+<tr>
+<td>kmod-rt2800-usb</td>
+<td>RT2x00 &#x5361;&#x7684; Ralink &#x9A71;&#x52A8;&#x7A0B;&#x5E8F;&#xFF08;RT2870 USB&#xFF09;</td>
+<td><a href="https://openwrt.org/packages/pkgdata/kmod-rt2800-usb" target="_blank">https://openwrt.org/packages/pkgdata/kmod-rt2800-usb</a></td>
+</tr>
+<tr>
+<td>kmod-e1000e</td>
+<td>&#x7528;&#x4E8E;&#x82F1;&#x7279;&#x5C14;&#xFF08;R&#xFF09;PRO / 1000 PCIe &#x4EE5;&#x592A;&#x7F51;&#x9002;&#x914D;&#x5668;&#x7684;&#x5185;&#x6838;&#x6A21;&#x5757;</td>
+<td><a href="https://openwrt.org/packages/pkgdata/kmod-e1000e" target="_blank">https://openwrt.org/packages/pkgdata/kmod-e1000e</a></td>
+</tr>
+<tr>
+<td>kmod-igb</td>
+<td>&#x7528;&#x4E8E;&#x82F1;&#x7279;&#x5C14;&#xFF08;R&#xFF09;82575/82576 PCI-Express &#x5343;&#x5146;&#x4EE5;&#x592A;&#x7F51;&#x9002;&#x914D;&#x5668;&#x7684;&#x5185;&#x6838;&#x6A21;&#x5757;</td>
+<td><a href="https://openwrt.org/packages/pkgdata/kmod-igb" target="_blank">https://openwrt.org/packages/pkgdata/kmod-igb</a></td>
+</tr>
+<tr>
+<td>kmod-igbvf</td>
+<td>&#x7528;&#x4E8E;&#x82F1;&#x7279;&#x5C14;&#xFF08;R&#xFF09;82576 &#x865A;&#x62DF;&#x529F;&#x80FD;&#x4EE5;&#x592A;&#x7F51;&#x9002;&#x914D;&#x5668;&#x7684;&#x5185;&#x6838;&#x6A21;&#x5757;</td>
+<td><a href="https://openwrt.org/packages/pkgdata/kmod-igbvf" target="_blank">https://openwrt.org/packages/pkgdata/kmod-igbvf</a></td>
+</tr>
+<tr>
+<td>kmod-ixgbe</td>
+<td>&#x7528;&#x4E8E;&#x82F1;&#x7279;&#x5C14;&#xFF08;R&#xFF09;82598/82599 PCI-Express 10&#x5343;&#x5146;&#x4F4D;&#x4EE5;&#x592A;&#x7F51;&#x9002;&#x914D;&#x5668;&#x7684;&#x5185;&#x6838;&#x6A21;&#x5757;</td>
+<td><a href="https://openwrt.org/packages/pkgdata/kmod-ixgbe" target="_blank">https://openwrt.org/packages/pkgdata/kmod-ixgbe</a></td>
+</tr>
+<tr>
+<td>kmod-pcnet32</td>
+<td>AMD PCnet32 &#x4EE5;&#x592A;&#x7F51;&#x9002;&#x914D;&#x5668;&#x7684;&#x5185;&#x6838;&#x6A21;&#x5757;</td>
+<td><a href="https://openwrt.org/packages/pkgdata/kmod-pcnet32" target="_blank">https://openwrt.org/packages/pkgdata/kmod-pcnet32</a></td>
+</tr>
+<tr>
+<td>kmod-tulip</td>
+<td>Tulip&#x7CFB;&#x5217;&#x7F51;&#x5361;&#x7684;&#x5185;&#x6838;&#x6A21;&#x5757;&#xFF0C; &#x5305;&#x62EC;DECchip Tulip&#xFF0C;DIGITAL EtherWORKS&#xFF0C;Winbond W89c840&#xFF0C; Davicom DM910x / DM980x&#x548C;ULi M526x&#x63A7;&#x5236;&#x5668;&#x652F;&#x6301;</td>
+<td><a href="https://openwrt.org/packages/pkgdata/kmod-tulip" target="_blank">https://openwrt.org/packages/pkgdata/kmod-tulip</a></td>
+</tr>
+<tr>
+<td>kmod-vmxnet3</td>
+<td>&#x9002;&#x7528;&#x4E8E;VMware VMXNET3&#x4EE5;&#x592A;&#x7F51;&#x9002;&#x914D;&#x5668;&#x7684;&#x5185;&#x6838;&#x6A21;&#x5757;</td>
+<td><a href="https://openwrt.org/packages/pkgdata/kmod-vmxnet3" target="_blank">https://openwrt.org/packages/pkgdata/kmod-vmxnet3</a></td>
+</tr>
+<tr>
+<td>kmod-i40e kmod-i40evf</td>
+<td>Intel i40e i40evf &#x9A71;&#x52A8;&#x7A0B;&#x5E8F;</td>
+<td>&#x5B98;&#x65B9;&#x6CA1;&#x6709;&#x6536;&#x5F55;&#xFF0C;Lean &#x4ED3;&#x5E93;&#x4E2D;&#x6709;&#x6536;&#x5F55;</td>
+</tr>
+<tr>
+<td>kmod-ac97</td>
+<td>ac97 &#x63A7;&#x5236;&#x5668;</td>
+<td><a href="https://openwrt.org/packages/pkgdata/kmod-ac97" target="_blank">https://openwrt.org/packages/pkgdata/kmod-ac97</a></td>
+</tr>
+<tr>
+<td>kmod-sound-hda-core</td>
+<td>&#x7528;&#x4E8E;HD Audio&#x58F0;&#x97F3;&#x652F;&#x6301;&#x7684;&#x5185;&#x6838;&#x6A21;&#x5757;</td>
+<td><a href="https://openwrt.org/packages/pkgdata/kmod-sound-hda-core" target="_blank">https://openwrt.org/packages/pkgdata/kmod-sound-hda-core</a></td>
+</tr>
+<tr>
+<td>kmod-sound-hda-codec-realtek</td>
+<td>&#x7528;&#x4E8E;Intel HDA Realtek&#x7F16;&#x89E3;&#x7801;&#x5668;&#x652F;&#x6301;&#x7684;&#x5185;&#x6838;&#x6A21;&#x5757;</td>
+<td><a href="https://openwrt.org/packages/pkgdata/kmod-sound-hda-codec-realtek" target="_blank">https://openwrt.org/packages/pkgdata/kmod-sound-hda-codec-realtek</a></td>
+</tr>
+<tr>
+<td>kmod-sound-hda-codec-via</td>
+<td>&#x7528;&#x4E8E;HD Audio VIA&#x7F16;&#x89E3;&#x7801;&#x5668;&#x652F;&#x6301;&#x7684;&#x5185;&#x6838;&#x6A21;&#x5757;</td>
+<td><a href="https://openwrt.org/packages/pkgdata/kmod-sound-hda-codec-via" target="_blank">https://openwrt.org/packages/pkgdata/kmod-sound-hda-codec-via</a></td>
+</tr>
+<tr>
+<td>kmod-sound-via82xx</td>
+<td>&#x652F;&#x6301;&#x4E3B;&#x677F;&#x4E0A;&#x96C6;&#x6210;&#x7684;AC97&#x58F0;&#x97F3;&#x8BBE;&#x5907; &#x4F7F;&#x7528;&#x5A01;&#x76DB;&#x82AF;&#x7247;&#x7EC4;</td>
+<td><a href="https://openwrt.org/packages/pkgdata/kmod-sound-via82xx" target="_blank">https://openwrt.org/packages/pkgdata/kmod-sound-via82xx</a></td>
+</tr>
+<tr>
+<td>kmod-usb-audio</td>
+<td>&#x5185;&#x6838;&#x652F;&#x6301;USB&#x97F3;&#x9891;&#x8BBE;&#x5907;</td>
+<td><a href="https://openwrt.org/packages/pkgdata/kmod-usb-audio" target="_blank">https://openwrt.org/packages/pkgdata/kmod-usb-audio</a></td>
+</tr>
+<tr>
+<td>kmod-usb-net</td>
+<td>&#x7528;&#x4E8E;USB&#x8F6C;&#x4EE5;&#x592A;&#x7F51;&#x8F6C;&#x6362;&#x5668;&#x7684;&#x5185;&#x6838;&#x6A21;&#x5757;</td>
+<td><a href="https://openwrt.org/packages/pkgdata/kmod-usb-net" target="_blank">https://openwrt.org/packages/pkgdata/kmod-usb-net</a></td>
+</tr>
+<tr>
+<td>kmod-usb-net-asix</td>
+<td>&#x7528;&#x4E8E;USB&#x8F6C;&#x4EE5;&#x592A;&#x7F51;Asix&#x8F6C;&#x6362;&#x5668;&#x7684;&#x5185;&#x6838;&#x6A21;&#x5757;</td>
+<td><a href="https://openwrt.org/packages/pkgdata/kmod-usb-net-asix" target="_blank">https://openwrt.org/packages/pkgdata/kmod-usb-net-asix</a></td>
+</tr>
+<tr>
+<td>kmod-usb-net-asix-ax88179</td>
+<td>&#x7528;&#x4E8E;USB&#x8F6C;&#x4EE5;&#x592A;&#x7F51;ASIX AX88179&#x7684;USB 3.0 / 2.0&#x5185;&#x6838;&#x6A21;&#x5757; &#x5343;&#x5146;&#x4EE5;&#x592A;&#x7F51;&#x9002;&#x914D;&#x5668;</td>
+<td><a href="https://openwrt.org/packages/pkgdata/kmod-usb-net-asix-ax88179" target="_blank">https://openwrt.org/packages/pkgdata/kmod-usb-net-asix-ax88179</a></td>
+</tr>
+<tr>
+<td>kmod-usb-net-rtl8150</td>
+<td>&#x7528;&#x4E8E;USB&#x5230;&#x4EE5;&#x592A;&#x7F51;&#x7684;Realtek 8150&#x8F6C;&#x6362;&#x5668;&#x7684;&#x5185;&#x6838;&#x6A21;&#x5757;</td>
+<td><a href="https://openwrt.org/packages/pkgdata/kmod-usb-net-rtl8150" target="_blank">https://openwrt.org/packages/pkgdata/kmod-usb-net-rtl8150</a></td>
+</tr>
+<tr>
+<td>kmod-usb-net-rtl8152</td>
+<td>&#x7528;&#x4E8E;USB&#x5230;&#x4EE5;&#x592A;&#x7F51;&#x7684;&#x5185;&#x6838;&#x6A21;&#x5757;Realtek 8152 USB2.0 / 3.0&#x8F6C;&#x6362;&#x5668;</td>
+<td><a href="https://openwrt.org/packages/pkgdata/kmod-usb-net-rtl8152" target="_blank">https://openwrt.org/packages/pkgdata/kmod-usb-net-rtl8152</a></td>
+</tr>
+</tbody>
+</table>
+<p>&#x5173;&#x4E8E;&#x5185;&#x6838;&#x8F6F;&#x4EF6;&#x5305;&#x7684;&#x66F4;&#x591A;&#x4FE1;&#x606F;&#x53EF;&#x5728;&#x5B98;&#x7F51;&#x4E2D;&#x67E5;&#x5230;&#xFF1A;<a href="https://openwrt.org/packages/table/start" target="_blank">https://openwrt.org/packages/table/start</a></p>
+<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> Copyright &#xA9; stuarthua.com 2019 </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> <i>&#x8BE5;&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;</i> 2019-10-04 21:07:40 </span> </footer>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="make-lean-openwrt.html" class="navigation navigation-prev " aria-label="Previous page: 编译恩山论坛 Lean 修改版 OpenWrt">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../use-koolshare/use-koolshare-openwrt.html" class="navigation navigation-next " aria-label="Next page: 使用 KoolShare 修改版 OpenWrt">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"使用恩山论坛 Lean 修改版 OpenWrt 软件包","level":"1.2.3.2","depth":3,"next":{"title":"使用 KoolShare 修改版 OpenWrt","level":"1.2.4","depth":2,"path":"mybook/use/use-koolshare/use-koolshare-openwrt.md","ref":"mybook/use/use-koolshare/use-koolshare-openwrt.md","articles":[]},"previous":{"title":"编译恩山论坛 Lean 修改版 OpenWrt","level":"1.2.3.1","depth":3,"path":"mybook/use/use-lean/make-lean-openwrt.md","ref":"mybook/use/use-lean/make-lean-openwrt.md","articles":[]},"dir":"ltr"},"config":{"plugins":["theme-comscore","-sharing","-highlight","prism","prism-themes","-lunr","-search","search-pro","sitemap-general","expandable-chapters-small","advanced-emoji","splitter","page-footer-ex","sectionx","callouts","todo","github","rss","anchor-navigation-ex","ga"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"css":["prism-themes/themes/prism-base16-ateliersulphurpool.light.css"]},"callouts":{"showTypeInHeader":false},"github":{"url":"https://github.com/stuarthua/oh-my-openwrt"},"todo":{},"page-footer-ex":{"copyright":"Copyright &copy stuarthua.com 2019","markdown":false,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"<i>该文件修订时间：</i>"},"splitter":{},"search-pro":{},"sitemap-general":{"prefix":"https://stuarthua.github.io/oh-my-openwrt/"},"fontsettings":{"theme":"white","family":"sans","size":2},"rss":{"categories":[],"title":"Oh My Openwrt","description":"my using openwrt experiences","author":"Stuart Hua","feed_url":"https://stuarthua.github.io/oh-my-openwrt/rss","site_url":"https://stuarthua.github.io/oh-my-openwrt/","managingEditor":"stuarthua.cn@gmail.com","webMaster":"stuarthua.cn@gmail.com"},"sectionx":{"tag":"b"},"anchor-navigation-ex":{"associatedWithSummary":false,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"theme-comscore":{},"prism-themes":{},"expandable-chapters-small":{},"ga":{"configuration":"auto","token":"UA-55082727-8"},"advanced-emoji":{"embedEmojis":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Stuart Hua","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Oh My Openwrt","language":"zh-hans","links":{"sidebar":{"Blog":"https://blog.stuarthua.com/"}},"gitbook":"3.2.3","description":"my using openwrt experiences"},"file":{"path":"mybook/use/use-lean/use-lean-openwrt-package.md","mtime":"2019-10-04T21:07:40.375Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-10-04T21:08:41.242Z"},"basePath":"../../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../../gitbook/gitbook.js"></script>
+    <script src="../../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-sectionx/sectionx.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-rss/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-ga/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-theme-comscore/test.js"></script>
+        
+    
+
+    </body>
+</html>
+

@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title><![CDATA[Oh My Openwrt]]></title>
+        <description><![CDATA[my using openwrt experiences]]></description>
+        <link>https://stuarthua.github.io/oh-my-openwrt/</link>
+        <generator>RSS for Node</generator>
+        <lastBuildDate>Fri, 04 Oct 2019 21:08:54 GMT</lastBuildDate>
+        <atom:link href="https://stuarthua.github.io/oh-my-openwrt/rss" rel="self" type="application/rss+xml"/>
+        <author><![CDATA[Stuart Hua]]></author>
+        <managingEditor><![CDATA[stuarthua.cn@gmail.com]]></managingEditor>
+        <webMaster><![CDATA[stuarthua.cn@gmail.com]]></webMaster>
+        <item>
+            <title><![CDATA[oh-my-openwrt]]></title>
+            <description><![CDATA[本书主要介绍个人使用的 OpenWrt 固件。基于官方最新稳定版本 18.06.4，添加了一些自定义软件包以满足个人需求。]]></description>
+            <link>https://stuarthua.github.io/oh-my-openwrt/</link>
+            <guid isPermaLink="true">https://stuarthua.github.io/oh-my-openwrt/</guid>
+            <dc:creator><![CDATA[Stuart Hua]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[No title]]></title>
+            <description><![CDATA[第一次接触 OpenWrt 是从 KoolShare 论坛的 lede 开始，契机也是源于科学上网的需求。由于对一些软件包的配置及功能有很多疑惑，慢慢开始追根溯源，了解 OpenWrt。]]></description>
+            <link>https://stuarthua.github.io/oh-my-openwrt/mybook/use/README.html</link>
+            <guid isPermaLink="true">https://stuarthua.github.io/oh-my-openwrt/mybook/use/README.html</guid>
+            <dc:creator><![CDATA[Stuart Hua]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[初次使用官方 OpenWrt]]></title>
+            <description><![CDATA[镜像下载说明：https://openwrt.org/zh/downloads]]></description>
+            <link>https://stuarthua.github.io/oh-my-openwrt/mybook/use/first-use/README.html</link>
+            <guid isPermaLink="true">https://stuarthua.github.io/oh-my-openwrt/mybook/use/first-use/README.html</guid>
+            <dc:creator><![CDATA[Stuart Hua]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[在 Mac 虚拟机 VMware 上使用官方 OpenWrt]]></title>
+            <description><![CDATA[初次接触 OpenWrt，推荐使用虚拟机安装使用一段时间，待基本熟悉系统后，再考虑在相应硬件中刷入固件。毕竟，不熟悉 OpenWrt 的情况下，频繁的刷写硬件十分考验人的耐心。]]></description>
+            <link>https://stuarthua.github.io/oh-my-openwrt/mybook/use/first-use/use-openwrt-on-vmware-with-mac.html</link>
+            <guid isPermaLink="true">https://stuarthua.github.io/oh-my-openwrt/mybook/use/first-use/use-openwrt-on-vmware-with-mac.html</guid>
+            <dc:creator><![CDATA[Stuart Hua]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[小米路由器青春版使用官方 OpenWrt]]></title>
+            <description><![CDATA[承接上文 在 Mac 虚拟机 VMware 上使用官方 OpenWrt，对 OpenWrt 基本熟悉后，尝试在实体机上刷入系统，体验 OpenWrt。]]></description>
+            <link>https://stuarthua.github.io/oh-my-openwrt/mybook/use/first-use/use-official-openwrt-on-xiaomi-nano.html</link>
+            <guid isPermaLink="true">https://stuarthua.github.io/oh-my-openwrt/mybook/use/first-use/use-official-openwrt-on-xiaomi-nano.html</guid>
+            <dc:creator><![CDATA[Stuart Hua]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[关于 OpenWrt 软件源]]></title>
+            <description><![CDATA[一般而言，通用的软件包都可以在官方源中找到并安装，这一点十分方便，但一些特定的软件包在官方源中并不能找到，这就需要添加自定义软件源使用第三方软件，或者自行编译适合自己硬件的软件包。]]></description>
+            <link>https://stuarthua.github.io/oh-my-openwrt/mybook/use/first-use/use-software-source.html</link>
+            <guid isPermaLink="true">https://stuarthua.github.io/oh-my-openwrt/mybook/use/first-use/use-software-source.html</guid>
+            <dc:creator><![CDATA[Stuart Hua]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[安装软件（在线/离线)]]></title>
+            <description><![CDATA[简单介绍 OpenWrt 的软件安装方式，分为在线安装和离线安装两种方式]]></description>
+            <link>https://stuarthua.github.io/oh-my-openwrt/mybook/use/use-packages/README.html</link>
+            <guid isPermaLink="true">https://stuarthua.github.io/oh-my-openwrt/mybook/use/use-packages/README.html</guid>
+            <dc:creator><![CDATA[Stuart Hua]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[使用软件包 (示例) - HelloWorld]]></title>
+            <description><![CDATA[原生 OpenWrt 固件默认没有开启 sftp 服务，需要我们手动安装并开启]]></description>
+            <link>https://stuarthua.github.io/oh-my-openwrt/mybook/use/use-packages/use-package-helloworld.html</link>
+            <guid isPermaLink="true">https://stuarthua.github.io/oh-my-openwrt/mybook/use/use-packages/use-package-helloworld.html</guid>
+            <dc:creator><![CDATA[Stuart Hua]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[使用软件包 (示例) - 自定义 LuCI 菜单]]></title>
+            <description><![CDATA[使用 OpenWrt, 不可避免的会想要安装一些第三方软件包，对于编译自己的软件包，比较推荐的做法是统一归置到 LuCI 可视化界面的菜单中，方便后续拓展]]></description>
+            <link>https://stuarthua.github.io/oh-my-openwrt/mybook/use/use-packages/use-package-stuart.html</link>
+            <guid isPermaLink="true">https://stuarthua.github.io/oh-my-openwrt/mybook/use/use-packages/use-package-stuart.html</guid>
+            <dc:creator><![CDATA[Stuart Hua]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[使用官方软件包 - 通用即插即用 UPNP]]></title>
+            <description><![CDATA[从官方软件仓库中搜素安装]]></description>
+            <link>https://stuarthua.github.io/oh-my-openwrt/mybook/use/use-packages/use-package-upnp.html</link>
+            <guid isPermaLink="true">https://stuarthua.github.io/oh-my-openwrt/mybook/use/use-packages/use-package-upnp.html</guid>
+            <dc:creator><![CDATA[Stuart Hua]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[使用官方软件包 - 动态 DDNS]]></title>
+            <description><![CDATA[从官方软件仓库中搜素安装]]></description>
+            <link>https://stuarthua.github.io/oh-my-openwrt/mybook/use/use-packages/use-package-ddns.html</link>
+            <guid isPermaLink="true">https://stuarthua.github.io/oh-my-openwrt/mybook/use/use-packages/use-package-ddns.html</guid>
+            <dc:creator><![CDATA[Stuart Hua]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[使用软件包 - 科学上网]]></title>
+            <link>https://stuarthua.github.io/oh-my-openwrt/mybook/use/use-packages/use-package-shadowsocks.html</link>
+            <guid isPermaLink="true">https://stuarthua.github.io/oh-my-openwrt/mybook/use/use-packages/use-package-shadowsocks.html</guid>
+            <dc:creator><![CDATA[Stuart Hua]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[使用恩山论坛 Lean 修改版 OpenWrt]]></title>
+            <description><![CDATA[Lean 的修改版 OpenWrt 不提供镜像下载，只提供源码，需要手动编译]]></description>
+            <link>https://stuarthua.github.io/oh-my-openwrt/mybook/use/use-lean/use-lean-openwrt.html</link>
+            <guid isPermaLink="true">https://stuarthua.github.io/oh-my-openwrt/mybook/use/use-lean/use-lean-openwrt.html</guid>
+            <dc:creator><![CDATA[Stuart Hua]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[使用恩山论坛 Lean 修改版 OpenWrt]]></title>
+            <description><![CDATA[以下记录使用 lean 源码编译 x86 平台的 OpenWrt 固件的过程，仅供参考]]></description>
+            <link>https://stuarthua.github.io/oh-my-openwrt/mybook/use/use-lean/make-lean-openwrt.html</link>
+            <guid isPermaLink="true">https://stuarthua.github.io/oh-my-openwrt/mybook/use/use-lean/make-lean-openwrt.html</guid>
+            <dc:creator><![CDATA[Stuart Hua]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[使用恩山论坛 Lean 修改版 OpenWrt 软件包]]></title>
+            <description><![CDATA[以下列出恩山论坛 Lean 修改版 OpenWrt 的一些软件包，更多详情可见 恩山论坛: OpenWrt 编译 LuCI -> Applications 添加插件应用说明]]></description>
+            <link>https://stuarthua.github.io/oh-my-openwrt/mybook/use/use-lean/use-lean-openwrt-package.html</link>
+            <guid isPermaLink="true">https://stuarthua.github.io/oh-my-openwrt/mybook/use/use-lean/use-lean-openwrt-package.html</guid>
+            <dc:creator><![CDATA[Stuart Hua]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[使用 KoolShare 修改版 OpenWrt]]></title>
+            <link>https://stuarthua.github.io/oh-my-openwrt/mybook/use/use-koolshare/use-koolshare-openwrt.html</link>
+            <guid isPermaLink="true">https://stuarthua.github.io/oh-my-openwrt/mybook/use/use-koolshare/use-koolshare-openwrt.html</guid>
+            <dc:creator><![CDATA[Stuart Hua]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[No title]]></title>
+            <description><![CDATA[Lean 修改版 OpenWrt 自定义了很多内容，为的是适配绝大多数硬件。希望使用适合自己硬件的 OpenWrt，可以考虑使用官方 OpenWrt 镜像或源码进行定制 OpenWrt 固件的编译。]]></description>
+            <link>https://stuarthua.github.io/oh-my-openwrt/mybook/make/README.html</link>
+            <guid isPermaLink="true">https://stuarthua.github.io/oh-my-openwrt/mybook/make/README.html</guid>
+            <dc:creator><![CDATA[Stuart Hua]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[编译 OpenWrt 固件及软件包]]></title>
+            <description><![CDATA[编译 OpenWrt 有多种方式：]]></description>
+            <link>https://stuarthua.github.io/oh-my-openwrt/mybook/make/make-openwrt.html</link>
+            <guid isPermaLink="true">https://stuarthua.github.io/oh-my-openwrt/mybook/make/make-openwrt.html</guid>
+            <dc:creator><![CDATA[Stuart Hua]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[使用源码编译固件及软件包]]></title>
+            <description><![CDATA[使用源码编译，可以设置生成 image builder 和 sdk，也可以编译完整镜像，或者单独编译 ipk，这是适合范围最广的编译方式，即便这有些耗时。]]></description>
+            <link>https://stuarthua.github.io/oh-my-openwrt/mybook/make/make-by-source.html</link>
+            <guid isPermaLink="true">https://stuarthua.github.io/oh-my-openwrt/mybook/make/make-by-source.html</guid>
+            <dc:creator><![CDATA[Stuart Hua]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[使用 SDK 编译特定软件包]]></title>
+            <description><![CDATA[不同于 Image Builder 生成完整固件，使用 SDK 方式编译，可以帮助我们编译特定软件包，生成 ipk 文件，在适合的设备上进行离线/在线安装。]]></description>
+            <link>https://stuarthua.github.io/oh-my-openwrt/mybook/make/make-by-sdk.html</link>
+            <guid isPermaLink="true">https://stuarthua.github.io/oh-my-openwrt/mybook/make/make-by-sdk.html</guid>
+            <dc:creator><![CDATA[Stuart Hua]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[使用 Image Builder 组装固件镜像]]></title>
+            <description><![CDATA[Image Builder 是 Openwrt 官方提供的用来快捷生成所需固件的工具包，这个工具包已经包含并配置好了所有编译需要的程序，一条命令即可生成所需的固件，并且可以通过修改 Makefile 和一些配置文件来生成自定义的固件，是相对简洁易用的方式。]]></description>
+            <link>https://stuarthua.github.io/oh-my-openwrt/mybook/make/make-by-image-builder.html</link>
+            <guid isPermaLink="true">https://stuarthua.github.io/oh-my-openwrt/mybook/make/make-by-image-builder.html</guid>
+            <dc:creator><![CDATA[Stuart Hua]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[编译时一些个人使用的脚本]]></title>
+            <description><![CDATA[OpenWrt 18.06.4]]></description>
+            <link>https://stuarthua.github.io/oh-my-openwrt/mybook/make/my-make-scripts.html</link>
+            <guid isPermaLink="true">https://stuarthua.github.io/oh-my-openwrt/mybook/make/my-make-scripts.html</guid>
+            <dc:creator><![CDATA[Stuart Hua]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[移植软件包]]></title>
+            <description><![CDATA[介绍一些个人常用软件包的移植及其使用]]></description>
+            <link>https://stuarthua.github.io/oh-my-openwrt/mybook/make/port/port-package.html</link>
+            <guid isPermaLink="true">https://stuarthua.github.io/oh-my-openwrt/mybook/make/port/port-package.html</guid>
+            <dc:creator><![CDATA[Stuart Hua]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[移植软件包 - 释放内存]]></title>
+            <description><![CDATA[以 释放内存 为例，以下记录移植 Lean OpenWrt 软件包的过程，仅供参考]]></description>
+            <link>https://stuarthua.github.io/oh-my-openwrt/mybook/make/port/use-package-free-memory.html</link>
+            <guid isPermaLink="true">https://stuarthua.github.io/oh-my-openwrt/mybook/make/port/use-package-free-memory.html</guid>
+            <dc:creator><![CDATA[Stuart Hua]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[移植软件包 - 文件助手]]></title>
+            <description><![CDATA[使用 OpenWrt 时，离线安装 ipk 是一项不可或缺的功能]]></description>
+            <link>https://stuarthua.github.io/oh-my-openwrt/mybook/make/port/use-package-filetransfer.html</link>
+            <guid isPermaLink="true">https://stuarthua.github.io/oh-my-openwrt/mybook/make/port/use-package-filetransfer.html</guid>
+            <dc:creator><![CDATA[Stuart Hua]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[移植软件包 - IP/MAC 绑定]]></title>
+            <description><![CDATA[最终效果预览：]]></description>
+            <link>https://stuarthua.github.io/oh-my-openwrt/mybook/make/port/use-package-arpbind.html</link>
+            <guid isPermaLink="true">https://stuarthua.github.io/oh-my-openwrt/mybook/make/port/use-package-arpbind.html</guid>
+            <dc:creator><![CDATA[Stuart Hua]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[移植软件包 - 定时重启]]></title>
+            <description><![CDATA[最终效果预览：]]></description>
+            <link>https://stuarthua.github.io/oh-my-openwrt/mybook/make/port/use-package-auto-reboot.html</link>
+            <guid isPermaLink="true">https://stuarthua.github.io/oh-my-openwrt/mybook/make/port/use-package-auto-reboot.html</guid>
+            <dc:creator><![CDATA[Stuart Hua]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[移植软件包 - 上网时间控制]]></title>
+            <description><![CDATA[最终效果预览：]]></description>
+            <link>https://stuarthua.github.io/oh-my-openwrt/mybook/make/port/use-package-time-control.html</link>
+            <guid isPermaLink="true">https://stuarthua.github.io/oh-my-openwrt/mybook/make/port/use-package-time-control.html</guid>
+            <dc:creator><![CDATA[Stuart Hua]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[移植软件包 - 访问控制]]></title>
+            <description><![CDATA[最终效果预览：]]></description>
+            <link>https://stuarthua.github.io/oh-my-openwrt/mybook/make/port/use-package-visit-control.html</link>
+            <guid isPermaLink="true">https://stuarthua.github.io/oh-my-openwrt/mybook/make/port/use-package-visit-control.html</guid>
+            <dc:creator><![CDATA[Stuart Hua]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[移植软件包 - 定时唤醒]]></title>
+            <description><![CDATA[最终效果预览：]]></description>
+            <link>https://stuarthua.github.io/oh-my-openwrt/mybook/make/port/use-package-timewol.html</link>
+            <guid isPermaLink="true">https://stuarthua.github.io/oh-my-openwrt/mybook/make/port/use-package-timewol.html</guid>
+            <dc:creator><![CDATA[Stuart Hua]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[移植软件包 - 网址过滤]]></title>
+            <description><![CDATA[最终效果预览：]]></description>
+            <link>https://stuarthua.github.io/oh-my-openwrt/mybook/make/port/use-package-weburl.html</link>
+            <guid isPermaLink="true">https://stuarthua.github.io/oh-my-openwrt/mybook/make/port/use-package-weburl.html</guid>
+            <dc:creator><![CDATA[Stuart Hua]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[移植软件包 - USB 打印服务器]]></title>
+            <description><![CDATA[最终效果预览：]]></description>
+            <link>https://stuarthua.github.io/oh-my-openwrt/mybook/make/port/use-package-usb-printer.html</link>
+            <guid isPermaLink="true">https://stuarthua.github.io/oh-my-openwrt/mybook/make/port/use-package-usb-printer.html</guid>
+            <dc:creator><![CDATA[Stuart Hua]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[移植软件包 - KMS 自动激活程序]]></title>
+            <description><![CDATA[用于激活大客户版 Windows 及 Office，最新支持至 Windows 10 1809, Windows Server 2019 and Office 2019 built-in]]></description>
+            <link>https://stuarthua.github.io/oh-my-openwrt/mybook/make/port/use-package-kms.html</link>
+            <guid isPermaLink="true">https://stuarthua.github.io/oh-my-openwrt/mybook/make/port/use-package-kms.html</guid>
+            <dc:creator><![CDATA[Stuart Hua]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[移植软件包 - 网页终端命令行]]></title>
+            <description><![CDATA[最终效果预览：]]></description>
+            <link>https://stuarthua.github.io/oh-my-openwrt/mybook/make/port/use-package-ttyd.html</link>
+            <guid isPermaLink="true">https://stuarthua.github.io/oh-my-openwrt/mybook/make/port/use-package-ttyd.html</guid>
+            <dc:creator><![CDATA[Stuart Hua]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[移植软件包 - 迅雷快鸟]]></title>
+            <description><![CDATA[官网 - 迅雷快鸟，是迅雷与中国电信、中国联通合作推出的一项上网加速服务，技术原理为大幅提高用户现有物理宽带带宽，提升上网速度。但有提速范围但限制，超过 200M 网速的宽带无法提速。]]></description>
+            <link>https://stuarthua.github.io/oh-my-openwrt/mybook/make/port/use-package-xunlei.html</link>
+            <guid isPermaLink="true">https://stuarthua.github.io/oh-my-openwrt/mybook/make/port/use-package-xunlei.html</guid>
+            <dc:creator><![CDATA[Stuart Hua]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[移植软件包 - 广告屏蔽大师 Plus +]]></title>
+            <description><![CDATA[最终效果预览：]]></description>
+            <link>https://stuarthua.github.io/oh-my-openwrt/mybook/make/port/use-package-adbyby.html</link>
+            <guid isPermaLink="true">https://stuarthua.github.io/oh-my-openwrt/mybook/make/port/use-package-adbyby.html</guid>
+            <dc:creator><![CDATA[Stuart Hua]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[移植软件包 - 科学上网增强版]]></title>
+            <description><![CDATA[来自 Lean 的科学上网增强版，支持 shadowsocksr, v2ray, shadowsocks, kcptun. 但 shadowsocksr 版本目前已经不再维护，故而不是很推荐使用所谓的三合一版。]]></description>
+            <link>https://stuarthua.github.io/oh-my-openwrt/mybook/make/port/use-package-shadowsocks-plus.html</link>
+            <guid isPermaLink="true">https://stuarthua.github.io/oh-my-openwrt/mybook/make/port/use-package-shadowsocks-plus.html</guid>
+            <dc:creator><![CDATA[Stuart Hua]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[移植软件包 - 阿里云 DDNS]]></title>
+            <link>https://stuarthua.github.io/oh-my-openwrt/mybook/make/port/use-package-aliddns.html</link>
+            <guid isPermaLink="true">https://stuarthua.github.io/oh-my-openwrt/mybook/make/port/use-package-aliddns.html</guid>
+            <dc:creator><![CDATA[Stuart Hua]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[定制个人 OpenWrt]]></title>
+            <description><![CDATA[比较推荐的做法是，先使用一段时间 OpenWrt 及其软件包，确认哪些软件包和设置是自己需要的，哪些软件包是临时使用且会随时更新的，然后有针对性地制作适合自己的固件。]]></description>
+            <link>https://stuarthua.github.io/oh-my-openwrt/mybook/make-my/README.html</link>
+            <guid isPermaLink="true">https://stuarthua.github.io/oh-my-openwrt/mybook/make-my/README.html</guid>
+            <dc:creator><![CDATA[Stuart Hua]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[定制适用于 x86 硬件的 OpenWrt]]></title>
+            <description><![CDATA[在虚拟机上使用了一段时间 OpenWrt ，基本熟悉后，根据个人需求，确定好所需的软件包，开始着手定制个人使用的 OpenWrt 固件（在官方固件 OpenWrt 18.06.4 基础上）。]]></description>
+            <link>https://stuarthua.github.io/oh-my-openwrt/mybook/make-my/x86.html</link>
+            <guid isPermaLink="true">https://stuarthua.github.io/oh-my-openwrt/mybook/make-my/x86.html</guid>
+            <dc:creator><![CDATA[Stuart Hua]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[使用 x86 固件]]></title>
+            <description><![CDATA[以下介绍如何使用个人定制版 x86 固件]]></description>
+            <link>https://stuarthua.github.io/oh-my-openwrt/mybook/make-my/use-x86.html</link>
+            <guid isPermaLink="true">https://stuarthua.github.io/oh-my-openwrt/mybook/make-my/use-x86.html</guid>
+            <dc:creator><![CDATA[Stuart Hua]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[定制适用于 小米路由器青春版 硬件的 OpenWrt]]></title>
+            <description><![CDATA[在虚拟机上使用了一段时间 OpenWrt ，基本熟悉后，根据个人需求，确定好所需的软件包，开始着手定制个人使用的 OpenWrt 固件（在官方固件 OpenWrt 18.06.4 基础上）。]]></description>
+            <link>https://stuarthua.github.io/oh-my-openwrt/mybook/make-my/xiaomi.html</link>
+            <guid isPermaLink="true">https://stuarthua.github.io/oh-my-openwrt/mybook/make-my/xiaomi.html</guid>
+            <dc:creator><![CDATA[Stuart Hua]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[使用小米路由器青春版固件]]></title>
+            <link>https://stuarthua.github.io/oh-my-openwrt/mybook/make-my/use-xiaomi.html</link>
+            <guid isPermaLink="true">https://stuarthua.github.io/oh-my-openwrt/mybook/make-my/use-xiaomi.html</guid>
+            <dc:creator><![CDATA[Stuart Hua]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[使用软件包]]></title>
+            <description><![CDATA[本章介绍一些个人常用的软件包及其简单使用]]></description>
+            <link>https://stuarthua.github.io/oh-my-openwrt/mybook/make-my/packages/use-package.html</link>
+            <guid isPermaLink="true">https://stuarthua.github.io/oh-my-openwrt/mybook/make-my/packages/use-package.html</guid>
+            <dc:creator><![CDATA[Stuart Hua]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[使用软件包 Adblock]]></title>
+            <description><![CDATA[Adblock 去广告]]></description>
+            <link>https://stuarthua.github.io/oh-my-openwrt/mybook/make-my/packages/use-package-adblock.html</link>
+            <guid isPermaLink="true">https://stuarthua.github.io/oh-my-openwrt/mybook/make-my/packages/use-package-adblock.html</guid>
+            <dc:creator><![CDATA[Stuart Hua]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[使用软件包 DDNS]]></title>
+            <description><![CDATA[动态 DDNS。用于有公网 IP 的情况下，进行远程访问 OpenWrt 路由器，需要光猫桥接。以使用阿里云 DDNS 为例]]></description>
+            <link>https://stuarthua.github.io/oh-my-openwrt/mybook/make-my/packages/use-package-ddns.html</link>
+            <guid isPermaLink="true">https://stuarthua.github.io/oh-my-openwrt/mybook/make-my/packages/use-package-ddns.html</guid>
+            <dc:creator><![CDATA[Stuart Hua]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[使用软件包 uHTTPd]]></title>
+            <description><![CDATA[uHTTPd, 一个轻量级单线程 HTTP(S) 服务器。用于在 LuCI 界面中设置 Https]]></description>
+            <link>https://stuarthua.github.io/oh-my-openwrt/mybook/make-my/packages/use-package-uhttpd.html</link>
+            <guid isPermaLink="true">https://stuarthua.github.io/oh-my-openwrt/mybook/make-my/packages/use-package-uhttpd.html</guid>
+            <dc:creator><![CDATA[Stuart Hua]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[常见问题]]></title>
+            <link>https://stuarthua.github.io/oh-my-openwrt/mybook/other/qa.html</link>
+            <guid isPermaLink="true">https://stuarthua.github.io/oh-my-openwrt/mybook/other/qa.html</guid>
+            <dc:creator><![CDATA[Stuart Hua]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[附录]]></title>
+            <description><![CDATA[USB 转以太网口驱动：]]></description>
+            <link>https://stuarthua.github.io/oh-my-openwrt/mybook/other/appendix.html</link>
+            <guid isPermaLink="true">https://stuarthua.github.io/oh-my-openwrt/mybook/other/appendix.html</guid>
+            <dc:creator><![CDATA[Stuart Hua]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[在 Mac 上使用 VMware 安装 Ubuntu 14.04 LTS]]></title>
+            <description><![CDATA[严格意义上讲，编译 OpenWrt 或其软件包使用 Ubuntu 14.04 或者 16.04 甚至更高的版本都可。虽然 Ubuntu 14.04 已于 2019 年 4 月 30 日结束技术支持，但使用其他版本在编译过程中有可能会提示缺少一些特定的库，这很令人烦恼，故而推荐使用 Ubuntu 14.04 LTS 对 OpenWrt 及其软件包进行编译。]]></description>
+            <link>https://stuarthua.github.io/oh-my-openwrt/mybook/other/mac-vmware-install-ubuntu.html</link>
+            <guid isPermaLink="true">https://stuarthua.github.io/oh-my-openwrt/mybook/other/mac-vmware-install-ubuntu.html</guid>
+            <dc:creator><![CDATA[Stuart Hua]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[No title]]></title>
+            <description><![CDATA[分散式版本控制软件]]></description>
+            <link>https://stuarthua.github.io/oh-my-openwrt/GLOSSARY.html</link>
+            <guid isPermaLink="true">https://stuarthua.github.io/oh-my-openwrt/GLOSSARY.html</guid>
+            <dc:creator><![CDATA[Stuart Hua]]></dc:creator>
+        </item>
+    </channel>
+</rss>
