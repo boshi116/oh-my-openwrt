@@ -29,6 +29,7 @@ stuart
 * `luci-i18n-vlmcsd-zh-cn_1.0-1_all.ipk`
 * `luci-i18n-ttyd-zh-cn_1.0-1_all.ipk`
 * `luci-i18n-adbyby-plus-zh-cn_1.0-1_all.ipk`
+* `ddns-scripts_aliyun_1.0.0-1_all.ipk`
 
 ```
 luci-app-chinadns
@@ -50,7 +51,7 @@ luci-app-ttyd
 luci-i18n-ttyd-zh-cn
 luci-app-adbyby-plus
 luci-i18n-adbyby-plus-zh-cn
-
+ddns-scripts_aliyun
 ```
 
 ## x86
