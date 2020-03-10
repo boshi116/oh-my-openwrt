@@ -123,12 +123,14 @@ install_dep
 
 # set config
 if [ `grep -c "src-link stuart $root_path/oh-my-openwrt/stuart" $sdk_path/feeds.conf.default` -eq 0 ]; then
+    echo "ipks-build config..."
     echo "src-link stuart $root_path/oh-my-openwrt/stuart">>$sdk_path/feeds.conf.default
     echo -e "$INFO ipks-build config done!"
 fi
 
 # gen key
 if [ ! -e $root_path/openwrt-stuart.key ]; then
+    echo "openwrt-stuart.key gen..."
     cd $sdk_path
     staging_dir/host/bin/usign -G -p $root_path/openwrt-stuart.pub -s $root_path/openwrt-stuart.key
     echo -e "$INFO openwrt-stuart.key gen done!"
@@ -165,6 +167,9 @@ do_build_ipks(){
     # clean dir
     rm -rf $ipk_path/stuart
     mkdir -p $ipk_path/stuart
+
+    # copy config
+    cp -f $root_path/oh-my-openwrt/devices/$project/sdk.config .config
     
     # start build
     # make package/helloworld/compile V=s
@@ -218,24 +223,22 @@ do_build_ipks(){
 do_index_ipks(){
     echo -e "$INFO gen ipks index begin..."
 
-    export PATH="$sdk_path/staging_dir/host/bin:$PATH"
-
     # cd $ipk_path/packages
-    # scripts/ipkg-make-index.sh . 2>/dev/null > Packages.manifest
+    # $sdk_path/scripts/ipkg-make-index.sh . 2>/dev/null > Packages.manifest
     # grep -vE '^(Maintainer|LicenseFiles|Source|Require)' Packages.manifest > Packages
     # gzip -9nc Packages > Packages.gz
-    # usign -S -m Packages -s $root_path/openwrt-stuart.key
+    # $sdk_path/staging_dir/host/bin/usign -S -m Packages -s $root_path/openwrt-stuart.key
 
     cd $ipk_path/stuart
-    scripts/ipkg-make-index.sh . 2>/dev/null > Packages.manifest
+    $sdk_path/scripts/ipkg-make-index.sh . 2>/dev/null > Packages.manifest
     grep -vE '^(Maintainer|LicenseFiles|Source|Require)' Packages.manifest > Packages
     gzip -9nc Packages > Packages.gz
-    usign -S -m Packages -s $root_path/openwrt-stuart.key
+    $sdk_path/staging_dir/host/bin/usign -S -m Packages -s $root_path/openwrt-stuart.key
     echo -e "$INFO gen ipks index done!"
 }
 
 do_build_ipk_things(){
-    # do_build_ipks
+    do_build_ipks
     do_index_ipks
 }
 
@@ -272,9 +275,18 @@ do_build_bin(){
     # make
     org_original_pkgs="base-files busybox dnsmasq dropbear firewall fstools fwtool hostapd-common ip6tables iptables iw iwinfo jshn jsonfilter kernel kmod-cfg80211 kmod-gpio-button-hotplug kmod-ip6tables kmod-ipt-conntrack kmod-ipt-core kmod-ipt-nat kmod-ipt-offload kmod-leds-gpio kmod-lib-crc-ccitt kmod-mac80211 kmod-mt76 kmod-mt76-core kmod-mt7603 kmod-mt76x02-common kmod-mt76x2 kmod-mt76x2-common kmod-nf-conntrack kmod-nf-conntrack6 kmod-nf-flow kmod-nf-ipt kmod-nf-ipt6 kmod-nf-nat kmod-nf-reject kmod-nf-reject6 kmod-nls-base kmod-ppp kmod-pppoe kmod-pppox kmod-slhc libblobmsg-json libc libgcc libip4tc libip6tc libiwinfo libiwinfo-lua libjson-c libjson-script liblua liblucihttp liblucihttp-lua libnl-tiny libpthread libubox libubus libubus-lua libuci libuclient libxtables logd lua luci luci-app-firewall luci-base luci-lib-ip luci-lib-jsonc luci-lib-nixio luci-mod-admin-full luci-proto-ipv6 luci-proto-ppp luci-theme-bootstrap mtd netifd odhcp6c odhcpd-ipv6only openwrt-keyring opkg ppp ppp-mod-pppoe procd rpcd rpcd-mod-rrdns swconfig ubox ubus ubusd uci uclient-fetch uhttpd usign wireless-regdb wpad-mini"
     org_custom_pkgs="luci-i18n-base-zh-cn -kmod-usb-core -kmod-usb2 -kmod-usb-ohci -kmod-usb-ledtrig-usbport luci-i18n-firewall-zh-cn luci-app-ddns luci-i18n-ddns-zh-cn luci-app-adblock luci-i18n-adblock-zh-cn luci-app-sqm libustream-openssl ca-bundle ca-certificates curl wget vsftpd openssh-sftp-server ipset iptables-mod-nat-extra -dnsmasq dnsmasq-full iptables-mod-tproxy ttyd"
-    stuart_custom_pkgs="luci-app-ramfree luci-app-fileassistant luci-app-arpbind luci-i18n-arpbind-zh-cn luci-app-autoreboot luci-i18n-autoreboot-zh-cn vlmcsd luci-app-vlmcsd luci-i18n-vlmcsd-zh-cn luci-app-ttyd luci-i18n-ttyd-zh-cn shadowsocks-libev luci-app-shadowsocks ChinaDNS luci-app-chinadns dns-forwarder luci-app-dns-forwarder"
-    image_pkgs="$org_original_pkgs $org_custom_pkgs $stuart_custom_pkgs"
-    files_path="$root_path/oh-my-openwrt/FILES/$project/factory"
+    ## factory
+    stuart_factory_pkgs="luci-app-ramfree luci-app-fileassistant luci-app-arpbind luci-i18n-arpbind-zh-cn luci-app-autoreboot luci-i18n-autoreboot-zh-cn vlmcsd luci-app-vlmcsd luci-i18n-vlmcsd-zh-cn luci-app-ttyd luci-i18n-ttyd-zh-cn"
+    ## sysupgrade
+    stuart_sysupgrade_pkgs="$stuart_factory_pkgs shadowsocks-libev luci-app-shadowsocks ChinaDNS luci-app-chinadns dns-forwarder luci-app-dns-forwarder"
+    
+    if [ $build_type == "factory" ]; then
+        image_pkgs="$org_original_pkgs $org_custom_pkgs $stuart_factory_pkgs"
+        files_path="$root_path/oh-my-openwrt/devices/$project/factory"
+    else
+        image_pkgs="$org_original_pkgs $org_custom_pkgs $stuart_sysupgrade_pkgs"
+        files_path="$root_path/oh-my-openwrt/devices/$project/sysupgrade"
+    fi
 
     make image PROFILE=$device_profile PACKAGES="${image_pkgs}" FILES=$files_path
 
@@ -288,14 +300,16 @@ do_build_bin_things(){
 build_bin(){
     while true; do
         echo -n -e "$INPUT"
-        read -s -p "确认要编译固件吗 (y/n) ?" yn
+        read -s -p "请选择固件类型 (1/2/0) ?" yn
         echo
         case $yn in
-            [Yy]* | "" ) do_build_bin_things; break;;
-            [Nn]* ) break;;
-            * ) echo "输入 y 或 n 以确认";;
+            1 ) build_type="factory"; do_build_bin_things; break;;
+            2 ) build_type="sysupgrade"; do_build_bin_things; break;;
+            0  | "") break;;
+            * ) echo "输入 1(出厂固件), 2(升级固件) 或 0(取消) 以确认";;
         esac
     done
 }
 
+build_type="factory"
 build_bin
