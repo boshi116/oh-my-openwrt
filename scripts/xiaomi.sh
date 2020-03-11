@@ -319,7 +319,7 @@ do_build_bin(){
 build_bin(){
     while true; do
         echo -n -e "$INPUT"
-        read -s -p "请选择固件类型 (1/2/0) ?" yn
+        read -s -p "请选择固件类型 ( 0/1/2 | 0 取消, 1 出厂固件, 2 升级固件 )" yn
         echo
         case $yn in
             1 ) build_type="factory"; do_build_bin; break;;
