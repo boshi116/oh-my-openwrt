@@ -23,16 +23,10 @@ config device 'lan_dev'
 config interface 'wan'
 	option ifname 'eth0.2'
 	option proto 'dhcp'
-	option peerdns '0'
-	option dns '127.0.0.1'
 
 config device 'wan_dev'
 	option name 'eth0.2'
 	option macaddr 'f0:b4:29:29:c4:89'
-
-config interface 'wan6'
-	option ifname 'eth0.2'
-	option proto 'dhcpv6'
 
 config switch
 	option name 'switch0'
