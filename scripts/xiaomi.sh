@@ -17,6 +17,7 @@ device_profile="miwifi-nano"
 cpu_arch="mipsel_24kc"
 imagebuilder_url="http://downloads.openwrt.org/releases/$version/targets/ramips/mt76x8/openwrt-imagebuilder-$version-ramips-mt76x8.Linux-x86_64.tar.xz"
 sdk_url="https://downloads.openwrt.org/releases/$version/targets/ramips/mt76x8/openwrt-sdk-$version-ramips-mt76x8_gcc-7.3.0_musl.Linux-x86_64.tar.xz"
+bin_ext=".bin"
 
 # path
 root_path=`pwd`
@@ -25,6 +26,9 @@ sdk_path="$project_path/sdk"
 ipk_path="$sdk_path/bin/packages/mipsel_24kc"
 imagebuilder_path="$project_path/imagebuilder"
 bin_path="$imagebuilder_path/bin/targets/ramips/mt76x8"
+artifact_root_path="$root_path/$version"
+artifact_bin_path="$artifact_root_path/targets/$project"
+artifact_ipk_path="$artifact_root_path/packages"
 
 ######################## setting env ########################
 if [ ! -d $project ]; then
@@ -56,21 +60,27 @@ else
 fi
 
 # artifact dir
-## ln image bins
+## dir bins
 if [ ! -d $bin_path ]; then
     mkdir -p $bin_path
 fi
-if [ ! -L $project_path/bins ]; then
+if [ ! -L $root_path/bins ]; then
     ln -s $bin_path $project_path/bins
+fi
+if [ ! -d $artifact_bin_path ]; then
+    mkdir -p $artifact_bin_path
 fi
 ## dir ipks
 if [ ! -d $ipk_path/stuart ]; then
     mkdir -p $ipk_path/stuart
 fi
-if [ ! -d $project_path/ipks ]; then
-    mkdir -p $project_path/ipks
-    mkdir -p $project_path/ipks/luci
-    mkdir -p $project_path/ipks/base/$project
+if [ ! -L $root_path/ipks ]; then
+    ln -s $ipk_path $project_path/ipks
+fi
+if [ ! -d $artifact_ipk_path ]; then
+    mkdir -p $artifact_ipk_path
+    mkdir -p $artifact_ipk_path/luci
+    mkdir -p $artifact_ipk_path/base/$project
 fi
 echo -e "$INFO artifact dir set done!"
 
@@ -253,11 +263,11 @@ do_index_ipks(){
     export PATH="$sdk_path/staging_dir/host/bin:$PATH"
 
     cd $ipk_path/stuart
-    cp -f luci-*_all.ipk $project_path/ipks/luci
-    cp -f *_$cpu_arch.ipk $project_path/ipks/base/$project
+    cp -f luci-*_all.ipk $artifact_ipk_path/luci
+    cp -f *_$cpu_arch.ipk $artifact_ipk_path/base/$project
 
-    gen_index "$project_path/ipks/luci"
-    gen_index "$project_path/ipks/base/$project"
+    gen_index "$artifact_ipk_path/luci"
+    gen_index "$artifact_ipk_path/base/$project"
     
     echo -e "$INFO gen ipks index done!"
 }
@@ -316,14 +326,43 @@ do_build_bin(){
     echo -e "$INFO build $build_type bin done!"
 }
 
+migrate_bin(){
+    cd $bin_path
+    cp -f openwrt-${version}*${bin_ext} $artifact_bin_path/stuart-openwrt-$version-$project-$build_type${bin_ext}
+    cat > $artifact_bin_path/README.md << "EOF"
+## README
+
+说明: 
+
+* `ext4` 结尾的固件指 rootfs 工作区存储格式为 ext4
+* `squashfs` 结尾的固件类似 win 的 ghost 版本，使用中如发生配置错误，可恢复出厂默认设置
+    * `squashfs-factory` 结尾的固件指出厂固件
+    * `squashfs-sysupgrade` 结尾的固件指升级固件
+* `jffs2` 结尾的固件可以自行修改 rootfs 的配置文件，不需要重新刷固件
+* `initramfs-kernel` 结尾的固件一般用于没有 flash 闪存驱动的设备，系统运行于内存中，重启后所有设置都将丢失，不常用
+
+固件:
+
+* OpenWrt 官方固件
+* Stuart-Openwrt 出厂固件(中文化、本地设置等)
+* Stuart-Openwrt 升级固件(出厂固件基础上增加更多功能性软件包)
+
+EOF
+}
+
+do_build_bin_things(){
+    do_build_bin
+    migrate_bin
+}
+
 build_bin(){
     while true; do
         echo -n -e "$INPUT"
         read -s -p "请选择固件类型 ( 0/1/2 | 0 取消, 1 出厂固件, 2 升级固件 )" yn
         echo
         case $yn in
-            1 ) build_type="factory"; do_build_bin; break;;
-            2 ) build_type="sysupgrade"; do_build_bin; break;;
+            1 ) build_type="factory"; do_build_bin_things; break;;
+            2 ) build_type="sysupgrade"; do_build_bin_things; break;;
             0  | "") echo -e "$INFO end!"; break;;
             * ) echo "输入 1(出厂固件), 2(升级固件) 或 0(取消) 以确认";;
         esac
