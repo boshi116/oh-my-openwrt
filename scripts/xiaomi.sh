@@ -14,6 +14,7 @@ set -e
 project="xiaomi"
 version="18.06.8"
 device_profile="miwifi-nano"
+cpu_arch="mipsel_24kc"
 imagebuilder_url="http://downloads.openwrt.org/releases/$version/targets/ramips/mt76x8/openwrt-imagebuilder-$version-ramips-mt76x8.Linux-x86_64.tar.xz"
 sdk_url="https://downloads.openwrt.org/releases/$version/targets/ramips/mt76x8/openwrt-sdk-$version-ramips-mt76x8_gcc-7.3.0_musl.Linux-x86_64.tar.xz"
 
@@ -54,22 +55,24 @@ else
     echo -e "$INFO sdk set done."
 fi
 
-# dir-link
-## ln image builder
+# artifact dir
+## ln image bins
 if [ ! -d $bin_path ]; then
     mkdir -p $bin_path
 fi
-if [ ! -L $project_path/image-bins ]; then
-    ln -s $bin_path $project_path/image-bins
+if [ ! -L $project_path/bins ]; then
+    ln -s $bin_path $project_path/bins
 fi
-## ln sdk
+## dir ipks
 if [ ! -d $ipk_path/stuart ]; then
     mkdir -p $ipk_path/stuart
 fi
-if [ ! -L $project_path/sdk-ipks ]; then
-    ln -s $ipk_path/stuart $project_path/sdk-ipks
+if [ ! -d $project_path/ipks ]; then
+    mkdir -p $project_path/ipks
+    mkdir -p $project_path/ipks/luci
+    mkdir -p $project_path/ipks/base/$project
 fi
-echo -e "$INFO dir-link set done!"
+echo -e "$INFO artifact dir set done!"
 
 ######################## download app code from stuart rep ########################
 do_update_code(){
@@ -81,7 +84,7 @@ do_update_code(){
 update_code(){
     while true; do
         echo -n -e "$INPUT"
-        read -s -p "确认要更新 Stuart 软件包仓库代码吗 (y/n) ?" yn
+        read -s -p "是否更新 Stuart 软件包仓库代码 (y/n) ?" yn
         echo
         case $yn in
             [Yy]* ) do_update_code; break;;
@@ -110,7 +113,7 @@ do_install_dep(){
 install_dep(){
     while true; do
         echo -n -e "$INPUT"
-        read -s -p "确认要安装/更新软件包编译依赖吗 (y/n) ?" yn
+        read -s -p "是否 安装/更新 软件包编译依赖 (y/n) ?" yn
         echo
         case $yn in
             [Yy]* ) do_install_dep; break;;
@@ -131,8 +134,7 @@ fi
 # gen key
 if [ ! -e $root_path/openwrt-stuart.key ]; then
     echo "openwrt-stuart.key gen..."
-    cd $sdk_path
-    staging_dir/host/bin/usign -G -p $root_path/openwrt-stuart.pub -s $root_path/openwrt-stuart.key
+    $sdk_path/staging_dir/host/bin/usign -G -p $root_path/openwrt-stuart.pub -s $root_path/openwrt-stuart.key
     echo -e "$INFO openwrt-stuart.key gen done!"
 fi
 
@@ -147,7 +149,7 @@ do_update_feeds(){
 update_feeds(){
     while true; do
         echo -n -e "$INPUT"
-        read -s -p "确认要安装/更新 feeds 吗 (y/n) ?" yn
+        read -s -p "是否 安装/更新 feeds (y/n) ?" yn
         echo
         case $yn in
             [Yy]* ) do_update_feeds; break;;
@@ -219,37 +221,14 @@ do_build_ipks(){
     echo -e "$INFO build ipks done!"
 }
 
-# @https://notes.iopush.net/how-to-setup-an-openwrt-repo/
-do_index_ipks(){
-    echo -e "$INFO gen ipks index begin..."
-
-    # cd $ipk_path/packages
-    # $sdk_path/scripts/ipkg-make-index.sh . 2>/dev/null > Packages.manifest
-    # grep -vE '^(Maintainer|LicenseFiles|Source|Require)' Packages.manifest > Packages
-    # gzip -9nc Packages > Packages.gz
-    # $sdk_path/staging_dir/host/bin/usign -S -m Packages -s $root_path/openwrt-stuart.key
-
-    cd $ipk_path/stuart
-    $sdk_path/scripts/ipkg-make-index.sh . 2>/dev/null > Packages.manifest
-    grep -vE '^(Maintainer|LicenseFiles|Source|Require)' Packages.manifest > Packages
-    gzip -9nc Packages > Packages.gz
-    $sdk_path/staging_dir/host/bin/usign -S -m Packages -s $root_path/openwrt-stuart.key
-    echo -e "$INFO gen ipks index done!"
-}
-
-do_build_ipk_things(){
-    do_build_ipks
-    do_index_ipks
-}
-
 build_ipks(){
     while true; do
         echo -n -e "$INPUT"
-        read -s -p "确认要编译 Stuart 软件包吗 (y/n) ?" yn
+        read -s -p "是否编译 Stuart 软件包 (y/n) ?" yn
         echo
         case $yn in
-            [Yy]* | "" ) do_build_ipk_things; break;;
-            [Nn]* ) break;;
+            [Yy]* ) do_build_ipks; break;;
+            [Nn]* | "" ) break;;
             * ) echo "输入 y 或 n 以确认";;
         esac
     done
@@ -257,10 +236,54 @@ build_ipks(){
 
 build_ipks
 
+# index ipks
+# @https://notes.iopush.net/how-to-setup-an-openwrt-repo/
+gen_index(){
+    tmp_dir=$1
+    cd $tmp_dir
+    rm -f Packages*
+    $sdk_path/scripts/ipkg-make-index.sh . 2>/dev/null > Packages.manifest
+    grep -vE '^(Maintainer|LicenseFiles|Source|Require)' Packages.manifest > Packages
+    gzip -9nc Packages > Packages.gz
+    $sdk_path/staging_dir/host/bin/usign -S -m Packages -s $root_path/openwrt-stuart.key
+}
+do_index_ipks(){
+    echo "gen ipks index begin..."
+
+    export PATH="$sdk_path/staging_dir/host/bin:$PATH"
+
+    cd $ipk_path/stuart
+    cp -f luci-*_all.ipk $project_path/ipks/luci
+    cp -f *_$cpu_arch.ipk $project_path/ipks/base/$project
+
+    gen_index "$project_path/ipks/luci"
+    gen_index "$project_path/ipks/base/$project"
+    
+    echo -e "$INFO gen ipks index done!"
+}
+
+index_ipks(){
+    while true; do
+        echo -n -e "$INPUT"
+        read -s -p "是否为 Stuart 软件包生成索引 (y/n) ?" yn
+        echo
+        case $yn in
+            [Yy]* ) do_index_ipks; break;;
+            [Nn]* | "" ) break;;
+            * ) echo "输入 y 或 n 以确认";;
+        esac
+    done
+}
+
+result=`ls $ipk_path/stuart`
+if [ -n "$result" ]; then
+    index_ipks
+fi
+
 # build img
 
 do_build_bin(){
-    echo "build bin begin..."
+    echo "build $build_type bin begin..."
 
     cd $imagebuilder_path
 
@@ -290,11 +313,7 @@ do_build_bin(){
 
     make image PROFILE=$device_profile PACKAGES="${image_pkgs}" FILES=$files_path
 
-    echo -e "$INFO build bin done!"
-}
-
-do_build_bin_things(){
-    do_build_bin
+    echo -e "$INFO build $build_type bin done!"
 }
 
 build_bin(){
@@ -303,13 +322,16 @@ build_bin(){
         read -s -p "请选择固件类型 (1/2/0) ?" yn
         echo
         case $yn in
-            1 ) build_type="factory"; do_build_bin_things; break;;
-            2 ) build_type="sysupgrade"; do_build_bin_things; break;;
-            0  | "") break;;
+            1 ) build_type="factory"; do_build_bin; break;;
+            2 ) build_type="sysupgrade"; do_build_bin; break;;
+            0  | "") echo -e "$INFO end!"; break;;
             * ) echo "输入 1(出厂固件), 2(升级固件) 或 0(取消) 以确认";;
         esac
     done
 }
 
-build_type="factory"
-build_bin
+result=`ls $ipk_path/stuart`
+if [ -n "$result" ]; then
+    build_type="factory"
+    build_bin
+fi
