@@ -296,7 +296,7 @@ do_build_bin(){
     archive_bin
 }
 
-build_bin(){
+choose_build_type(){
     while true; do
         echo -n -e "$INPUT"
         read -s -p "请选择固件类型 ( 0/1/2 | 0 取消, 1 出厂固件, 2 升级固件 )" yn
@@ -306,6 +306,19 @@ build_bin(){
             2 ) build_type="sysupgrade"; do_build_bin; break;;
             0  | "") echo -e "$INFO End!"; break;;
             * ) echo "输入 1(出厂固件), 2(升级固件) 或 0(取消) 以确认";;
+        esac
+    done
+}
+
+build_bin(){
+    while true; do
+        echo -n -e "$INPUT"
+        read -s -p "是否编译 Stuart 固件 (y/n) ?" yn
+        echo
+        case $yn in
+            [Yy]* ) choose_build_type; break;;
+            [Nn]* | "" ) break;;
+            * ) echo "输入 y 或 n 以确认";;
         esac
     done
 }
