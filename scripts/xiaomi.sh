@@ -110,7 +110,6 @@ pre_artifacts_dir
 do_update_code(){
     echo "update code..."
     cd $code_path
-    echo $code_path
     git pull 1>/dev/null 2>&1
     git checkout master 1>/dev/null 2>&1
     rm -rf devices_config
@@ -165,7 +164,7 @@ do_update_feeds(){
 update_feeds(){
     while true; do
         echo -n -e "$INPUT"
-        read -s -p "是否 安装/更新 feeds (y/n) ?" yn
+        read -p "是否 安装/更新 feeds (y/n) ?" yn
         echo
         case $yn in
             [Yy]* ) do_update_feeds; break;;
@@ -250,7 +249,7 @@ do_build_ipks(){
 build_ipks(){
     while true; do
         echo -n -e "$INPUT"
-        read -s -p "是否编译 Stuart 软件包 (y/n) ?" yn
+        read -p "是否编译 Stuart 软件包 (y/n) ?" yn
         echo
         case $yn in
             [Yy]* ) do_build_ipks; break;;
@@ -325,7 +324,7 @@ do_build_bin(){
 choose_build_type(){
     while true; do
         echo -n -e "$INPUT"
-        read -s -p "请选择固件类型 ( 0/1/2 | 0 取消, 1 出厂固件, 2 升级固件 )" yn
+        read -p "请选择固件类型 ( 0/1/2 | 0 取消, 1 出厂固件, 2 升级固件 )" yn
         echo
         case $yn in
             1 ) build_type="factory"; do_build_bin; break;;
@@ -339,7 +338,7 @@ choose_build_type(){
 build_bin(){
     while true; do
         echo -n -e "$INPUT"
-        read -s -p "是否编译 Stuart 固件 (y/n) ?" yn
+        read -p "是否编译 Stuart 固件 (y/n) ?" yn
         echo
         case $yn in
             [Yy]* ) choose_build_type; break;;

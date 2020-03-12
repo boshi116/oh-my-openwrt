@@ -36,7 +36,7 @@ gen_device_desc(){
 }
 while true; do
     echo -n -e "$INPUT"
-    read -s -p "请选择路由器设备 ( 0/1/2/3 | 0 取消, 1 小米路由器青春版, 2 Newifi3, 3 软路由 )" yn
+    read -p "请选择路由器设备 ( 0/1/2/3 | 0 取消, 1 小米路由器青春版, 2 Newifi3, 3 软路由 )" yn
     echo
     case $yn in
         1 ) device_type=1; gen_device_desc; break;;
@@ -93,7 +93,7 @@ do_update_code(){
 update_code(){
     while true; do
         echo -n -e "$INPUT"
-        read -s -p "是否更新 lean openwrt 仓库代码 (y/n) ?" yn
+        read -p "是否更新 lean openwrt 仓库代码 (y/n) ?" yn
         echo
         case $yn in
             [Yy]* ) do_update_code; break;;
@@ -124,7 +124,7 @@ do_install_dep(){
 install_dep(){
     while true; do
         echo -n -e "$INPUT"
-        read -s -p "是否 安装/更新 软件包编译依赖 (y/n) ?" yn
+        read -p "是否 安装/更新 软件包编译依赖 (y/n) ?" yn
         echo
         case $yn in
             [Yy]* ) do_install_dep; break;;
@@ -145,7 +145,7 @@ do_update_feeds(){
 update_feeds(){
     while true; do
         echo -n -e "$INPUT"
-        read -s -p "是否 安装/更新 feeds (y/n) ?" yn
+        read -p "是否 安装/更新 feeds (y/n) ?" yn
         echo
         case $yn in
             [Yy]* ) do_update_feeds; break;;
@@ -183,7 +183,7 @@ do_build_openwrt(){
 build_openwrt(){
     while true; do
         echo -n -e "$INPUT"
-        read -s -p "是否开始编译 lean openwrt 固件 (y/n) ?" yn
+        read -p "是否开始编译 lean openwrt 固件 (y/n) ?" yn
         echo
         case $yn in
             [Yy]* ) do_build_openwrt; break;;
@@ -222,7 +222,7 @@ do_build_ssr_ipk(){
 build_ssr_ipk(){
     while true; do
         echo -n -e "$INPUT"
-        read -s -p "是否开始编译 SSR 软件包 (y/n) ?" yn
+        read -p "是否开始编译 SSR 软件包 (y/n) ?" yn
         echo
         case $yn in
             [Yy]* ) do_build_ssr_ipk; break;;

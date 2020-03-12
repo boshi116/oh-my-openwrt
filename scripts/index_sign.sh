@@ -18,6 +18,10 @@ device_type=3
 # 1 lean, 2 18.06.8, 3 19.07.2
 index_type=1
 
+pre_project(){
+
+}
+
 gen_device_desc(){
     if [ $device_type -eq 1 ]; then
         device_desc="xiaomi"
@@ -87,7 +91,7 @@ fi
 
 while true; do
     echo -n -e "$INPUT"
-    read -s -p "请选择路由器设备 ( 0/1/2/3 | 0 取消, 1 小米路由器青春版, 2 Newifi3, 3 软路由 )" yn
+    read -p "请选择路由器设备 ( 0/1/2/3 | 0 取消, 1 小米路由器青春版, 2 Newifi3, 3 软路由 )" yn
     echo
     case $yn in
         1 ) device_type=1; gen_device_desc; break;;
@@ -101,7 +105,7 @@ done
 
 while true; do
     echo -n -e "$INPUT"
-    read -s -p "请选择需要索引的目录 ( 0/1/2/3 | 0 取消, 1 lean, 2 18.06.8, 3 19.07.2 )" yn
+    read -p "请选择需要索引的目录 ( 0/1/2/3 | 0 取消, 1 lean, 2 18.06.8, 3 19.07.2 )" yn
     echo
     case $yn in
         1 ) index_type=1; dir_index_ipk; break;;
