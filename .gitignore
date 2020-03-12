@@ -1,4 +1,5 @@
-zzz_test/
-zzz_test2/
-*_test*
-*~
+# files
+.DS_Store
+
+# dirs
+build_openwrt/

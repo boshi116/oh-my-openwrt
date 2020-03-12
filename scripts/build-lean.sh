@@ -75,6 +75,12 @@ fi
 if [ ! -d $artifact_ipk_path ]; then
     mkdir -p $artifact_ipk_path
 fi
+if [ ! -d $artifact_ipk_path/luci ]; then
+    mkdir -p $artifact_ipk_path/luci
+fi
+if [ ! -d $artifact_ipk_path/base ]; then
+    mkdir -p $artifact_ipk_path/base
+fi
 echo -e "$INFO artifact dir set done!"
 
 ######################## download app code from lean openwrt rep ########################
@@ -191,15 +197,15 @@ build_openwrt
 ######################## build ipks ########################
 archive_ssr_ipk(){
     cd $ipk_path/base
-    cp -f luci-app-ssr-plus*_all.ipk $artifact_ipk_path/luci
+    cp -f luci-app-ssr-plus*_all.ipk $artifact_ipk_path/luci/
     # dependency
-    cp -f shadowsocksr-libev-alt*.ipk $artifact_ipk_path/base/$project
-    cp -f ipt2socks*.ipk $artifact_ipk_path/base/$project
-    cp -f microsocks*.ipk $artifact_ipk_path/base/$project
-    cp -f pdnsd-alt*.ipk $artifact_ipk_path/base/$project
-    cp -f simple-obfs*.ipk $artifact_ipk_path/base/$project
-    cp -f v2ray*.ipk $artifact_ipk_path/base/$project
-    cp -f trojan*.ipk $artifact_ipk_path/base/$project
+    cp -f shadowsocksr-libev-alt*$device_ipk_desc.ipk $artifact_ipk_path/base/
+    cp -f ipt2socks*$device_ipk_desc.ipk $artifact_ipk_path/base/
+    cp -f microsocks*$device_ipk_desc.ipk $artifact_ipk_path/base/
+    cp -f pdnsd-alt*$device_ipk_desc.ipk $artifact_ipk_path/base/
+    cp -f simple-obfs*$device_ipk_desc.ipk $artifact_ipk_path/base/
+    cp -f v2ray*$device_ipk_desc.ipk $artifact_ipk_path/base/
+    cp -f trojan*$device_ipk_desc.ipk $artifact_ipk_path/base/
 }
 
 do_build_ssr_ipk(){
