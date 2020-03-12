@@ -118,20 +118,23 @@ do_update_code(){
     git pull 1>/dev/null 2>&1
     echo -e "$INFO code update done!"
 }
+dp_clone_code(){
+    echo "clone code..."
+    cd $root_path
+    rm -rf $code_path
+    git clone https://github.com/stuarthua/oh-my-openwrt stuart-openwrt
+    cd stuart-openwrt
+    cp -r devices devices_config
+    git checkout -b develop origin/develop
+    echo -e "$INFO code clone done!"
+}
 clone_or_update_code(){
     if [ ! -d $code_path ]; then
         mkdir -p $code_path
     fi
     result=`ls $code_path`
     if [ -z "$result" ]; then
-        echo "clone code..."
-        cd $root_path
-        rm -rf $code_path
-        git clone https://github.com/stuarthua/oh-my-openwrt stuart-openwrt
-        cd stuart-openwrt
-        cp -r devices devices_config
-        git checkout -b develop origin/develop
-        echo -e "$INFO code clone done!"
+        dp_clone_code
     else
         do_update_code
     fi
