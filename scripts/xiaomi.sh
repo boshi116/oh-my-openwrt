@@ -111,23 +111,12 @@ do_update_code(){
     echo "update code..."
     cd $code_path
     git pull 1>/dev/null 2>&1
-    git checkout master
+    git checkout master 1>/dev/null 2>&1
     rm -rf devices_config
     cp -r devices devices_config
-    git checkout develop
+    git checkout develop 1>/dev/null 2>&1
+    git pull 1>/dev/null 2>&1
     echo -e "$INFO code update done!"
-}
-update_code(){
-    while true; do
-        echo -n -e "$INPUT"
-        read -s -p "是否更新 Stuart 软件包仓库代码 (y/n) ?" yn
-        echo
-        case $yn in
-            [Yy]* ) do_update_code; break;;
-            [Nn]* | "" ) break;;
-            * ) echo "输入 y 或 n 以确认";;
-        esac
-    done
 }
 clone_or_update_code(){
     if [ ! -d $code_path ]; then
@@ -135,21 +124,23 @@ clone_or_update_code(){
     fi
     result=`ls $code_path`
     if [ -z "$result" ]; then
+        echo "clone code..."
         cd $root_path
         rm -rf $code_path
         git clone https://github.com/stuarthua/oh-my-openwrt stuart-openwrt
-        cp -r stuart-openwrt/devices/* stuart-openwrt/devices_config
+        cd stuart-openwrt
+        cp -r devices devices_config
         git checkout -b develop origin/develop
-        echo -e "$INFO code download done!"
+        echo -e "$INFO code clone done!"
     else
-        update_code
+        do_update_code
     fi
 }
 clone_or_update_code
 
 ######################## build config ########################
 build_config(){
-    # import stuart code
+    # import stuart code to sdk
     if [ `grep -c "src-link stuart $code_path/stuart" $sdk_path/feeds.conf.default` -eq 0 ]; then
         echo "ipks-build config..."
         echo "src-link stuart $code_path/stuart">>$sdk_path/feeds.conf.default
@@ -199,7 +190,7 @@ do_build_ipks(){
     mkdir -p $ipk_path/stuart
 
     # copy config
-    cp -f $code_path/devices/$device/sdk.config .config
+    cp -f $code_path/devices_config/$device/sdk.config .config
     
     # start build
     # make package/helloworld/compile V=s
@@ -314,10 +305,10 @@ do_build_bin(){
     
     if [ $build_type == "factory" ]; then
         image_pkgs="$org_original_pkgs $org_custom_pkgs $stuart_factory_pkgs"
-        files_path="$code_path/devices/$device/factory"
+        files_path="$code_path/devices_config/$device/factory"
     else
         image_pkgs="$org_original_pkgs $org_custom_pkgs $stuart_sysupgrade_pkgs"
-        files_path="$code_path/devices/$device/sysupgrade"
+        files_path="$code_path/devices_config/$device/sysupgrade"
     fi
 
     make image PROFILE=$device_profile PACKAGES="${image_pkgs}" FILES=$files_path
