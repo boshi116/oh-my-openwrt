@@ -56,6 +56,7 @@ cd build_openwrt
 # path
 root_path=`pwd`
 project_path="$root_path/$project"
+stuart_path="$root_path/stuart-openwrt"
 ipk_path="$code_path/bin/packages/$device_ipk_desc"
 bin_path="$code_path/bin/targets/$device_bin_desc"
 artifact_root_path="$root_path/artifacts/lean"
@@ -155,10 +156,37 @@ archive_bin(){
     cd $bin_path
     cp -f openwrt-*-squashfs-sysupgrade.bin $artifact_bin_path
 }
+choose_config(){
+    cd $code_path
+    if [ ! -d $stuart_path/devices_config ]; then
+        make menuconfig
+        return
+    fi
+    if [ $device_type -eq 1 ]; then
+        cp -f $stuart_path/devices_config/lean/xiaomi.config .config
+    elif [ $device_type -eq 2 ]; then
+        cp -f $stuart_path/devices_config/lean/newifi3.config .config
+    elif [ $device_type -eq 3 ]; then
+        cp -f $stuart_path/devices_config/lean/x86_64.config .config
+    else
+        echo -e "$INFO Not Found MenuConfig File .config!"
+        exit
+    fi
+    while true; do
+        echo -n -e "$INPUT"
+        read -p "是否需要修改编译配置 (y/n) ?" yn
+        echo
+        case $yn in
+            [Yy]* ) make menuconfig; break;;
+            [Nn]* | "" ) break;;
+            * ) echo "输入 y 或 n 以确认";;
+        esac
+    done
+}
 do_build_openwrt(){
     echo "build begin..."
     cd $code_path
-    make menuconfig
+    choose_config
     make download
     make V=s
     echo -e "$INFO build done!"
@@ -197,7 +225,7 @@ archive_ssr_ipk(){
 do_build_ssr_ipk(){
     echo "build ssr begin..."
     cd $code_path
-    make menuconfig
+    # make menuconfig
     make target/linux/compile V=s
     make package/lean/luci-app-ssr-plus/compile V=s
     echo -e "$INFO build ssr done!"
