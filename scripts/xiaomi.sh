@@ -221,64 +221,60 @@ archive_ipks(){
 }
 do_build_ipks(){
     echo "build ipks begin..."
-    
+
     cd $sdk_path
-    
+
     # clean dir
     rm -rf $ipk_path/stuart
     mkdir -p $ipk_path/stuart
-    
+
     ################# start build for detail ######################
-    
-    # make package/luci-app-stuart/compile V=s
 
-    # 迅雷快鸟
-    # make package/luci-app-xlnetacc/compile V=s
-    # 定时唤醒
-    # make package/luci-app-timewol/compile V=s
-    # 上网时间控制
-    # make package/luci-app-mia/compile V=s
-    # 访问控制
-    # make package/luci-app-webrestriction/compile V=s
-    # 网址过滤
-    # make package/luci-app-weburl/compile V=s
-
-    # adbyby 去广告
-    # make package/adbyby/compile V=s
-    # make package/luci-app-adbyby-plus/compile V=s
-
-    # ssr plus
-    # make package/shadowsocksr-libev/compile V=s
-    # make package/kcptun/compile V=s
-    # make package/v2ray/compile V=s
-    # make package/pdnsd-alt/compile V=s
-    # make package/luci-app-ssr-plus/compile V=s
-
-    # USB 打印服务器
-    # make package/luci-app-usb-printer/compile V=s
-
-    #@@@@@@@@@@ 常用软件 @@@@@@@@@@@
-
-    # # 释放内存
-    # make package/luci-app-ramfree/compile V=s
-    # # 文件助手
-    # make package/luci-app-fileassistant/compile V=s
-    # # IP/Mac 绑定
-    # make package/luci-app-arpbind/compile V=s
-    # # 定时重启
-    # make package/luci-app-autoreboot/compile V=s
-    # # KMS 自动激活（用于激活 Windows 及 Office）
-    # make package/vlmcsd/compile V=s
-    # make package/luci-app-vlmcsd/compile V=s
-    # # SQM 中文语言包
-    # make package/luci-i18n-sqm/compile V=s
-    # # 网页终端命令行
-    # make package/luci-app-ttyd/compile V=s
+    make package/adbyby/compile V=s                                  # adbyby 去广告
+    make package/ddns-scripts_aliyun/compile V=s                     # aliyun ddns
+    make package/ipt2socks/compile V=s                               # ipt2socks
+    make package/luci-app-adbyby-plus/compile V=s                    # luci adbyby 去广告
+    make package/luci-app-arpbind/compile V=s                        # luci 静态 ARP 绑定
+    make package/luci-app-autoreboot/compile V=s                     # luci 定时重启
+    make package/luci-app-fileassistant/compile V=s                  # luci 文件助手
+    make package/luci-app-flowoffload/compile V=s                    # luci Turbo ACC 网络加速
+    make package/luci-app-ipsec-vpnd/compile V=s                     # luci IPSec VPN
+    make package/luci-app-mia/compile V=s                            # luci 上网时间控制
+    make package/luci-app-ramfree/compile V=s                        # luci 释放内存
+    make package/luci-app-ssr-plus/compile V=s                       # luci ssr plus
+    make package/luci-app-stuart/compile V=s                         # luci Example，无用
+    make package/luci-app-timewol/compile V=s                        # luci 定时唤醒
+    make package/luci-app-ttyd/compile V=s                           # luci 网页终端
+    # make package/luci-app-usb-printer/compile V=s                    # luci USB 打印服务器
+    make package/luci-app-vlmcsd/compile V=s                         # luci KMS 服务器
+    make package/luci-app-webadmin/compile V=s                       # luci Web 管理
+    make package/luci-app-webrestriction/compile V=s                 # luci 访问控制
+    make package/luci-app-weburl/compile V=s                         # luci 网址过滤
+    make package/luci-app-xlnetacc/compile V=s                       # luci 迅雷快鸟
+    make package/luci-i18n-adbyby-plus-zh-cn/compile V=s             # 语言包
+    make package/luci-i18n-arpbind-zh-cn/compile V=s                 # 语言包
+    make package/luci-i18n-autoreboot-zh-cn/compile V=s              # 语言包
+    make package/luci-i18n-flowoffload-zh-cn/compile V=s             # 语言包
+    make package/luci-i18n-ipsec-vpnd-zh-cn/compile V=s              # 语言包
+    make package/luci-i18n-sqm/compile V=s                           # 语言包
+    make package/luci-i18n-ttyd-zh-cn/compile V=s                    # 语言包
+    make package/luci-i18n-usb-printer-zh-cn/compile V=s             # 语言包
+    make package/luci-i18n-vlmcsd-zh-cn/compile V=s                  # 语言包
+    make package/luci-i18n-webadmin-zh-cn/compile V=s                # 语言包
+    make package/microsocks/compile V=s                              # ssr plus 的依赖
+    make package/pdnsd-alt/compile V=s                               # ssr plus 的依赖
+    make package/shadowsocksr-libev/compile V=s                      # ssr plus 的依赖
+    make package/shadowsocksr-libev-alt/compile V=s                  # ssr plus 的依赖
+    make package/shadowsocksr-libev-server/compile V=s               # ssr plus 的依赖
+    make package/shadowsocksr-libev-ssr-local/compile V=s            # ssr plus 的依赖
+    make package/simple-obfs/compile V=s                             # ssr plus 的依赖
+    make package/simple-obfs-server/compile V=s                      # ssr plus 的依赖
+    make package/trojan/compile V=s                                  # ssr plus 的依赖
+    make package/v2ray/compile V=s                                   # ssr plus 的依赖
+    make package/v2ray-plugin/compile V=s                            # ssr plus 的依赖
+    make package/vlmcsd/compile V=s                                  # KMS 服务器
 
     ################# end build for detail ######################
-
-    # 编译所有包
-    make
 
     echo -e "$INFO build ipks done!"
 
@@ -308,7 +304,7 @@ archive_bin(){
     cat > $artifact_bin_path/README.md << "EOF"
 ## README
 
-说明: 
+说明:
 
 * `ext4` 结尾的固件指 rootfs 工作区存储格式为 ext4
 * `squashfs` 结尾的固件类似 win 的 ghost 版本，使用中如发生配置错误，可恢复出厂默认设置
@@ -345,7 +341,7 @@ do_build_bin(){
     stuart_factory_pkgs="luci-app-ramfree luci-app-fileassistant luci-app-arpbind luci-i18n-arpbind-zh-cn luci-app-autoreboot luci-i18n-autoreboot-zh-cn vlmcsd luci-app-vlmcsd luci-i18n-vlmcsd-zh-cn luci-app-ttyd luci-i18n-ttyd-zh-cn"
     ## sysupgrade
     stuart_sysupgrade_pkgs="$stuart_factory_pkgs shadowsocks-libev luci-app-shadowsocks ChinaDNS luci-app-chinadns dns-forwarder luci-app-dns-forwarder"
-    
+
     if [ $build_type == "factory" ]; then
         image_pkgs="$org_original_pkgs $org_custom_pkgs $stuart_factory_pkgs"
         files_path="$code_path/devices_config/$device/factory"
