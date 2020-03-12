@@ -19,6 +19,11 @@ imagebuilder_url="http://downloads.openwrt.org/releases/$version/targets/ramips/
 sdk_url="https://downloads.openwrt.org/releases/$version/targets/ramips/mt76x8/openwrt-sdk-$version-ramips-mt76x8_gcc-7.3.0_musl.Linux-x86_64.tar.xz"
 bin_ext=".bin"
 
+# prepare
+cd ..
+mkdir -p build_openwrt
+cd build_openwrt
+
 # path
 root_path=`pwd`
 project_path="$root_path/$project"
@@ -26,7 +31,7 @@ sdk_path="$project_path/sdk"
 ipk_path="$sdk_path/bin/packages/mipsel_24kc"
 imagebuilder_path="$project_path/imagebuilder"
 bin_path="$imagebuilder_path/bin/targets/ramips/mt76x8"
-artifact_root_path="$root_path/$version"
+artifact_root_path="$root_path/artifacts/$version"
 artifact_bin_path="$artifact_root_path/targets/$project"
 artifact_ipk_path="$artifact_root_path/packages"
 
