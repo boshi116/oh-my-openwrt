@@ -30,7 +30,7 @@ gen_device_desc(){
         device_ipk_desc="x86_64"
         device_bin_desc="x86/x86_64"
     else
-        echo -e "$INFO end!"
+        echo -e "$INFO End!"
         exit
     fi
 }
@@ -42,7 +42,7 @@ while true; do
         1 ) device_type=1; gen_device_desc; break;;
         2 ) device_type=2; gen_device_desc; break;;
         3 ) device_type=3; gen_device_desc; break;;
-        0  | "") echo -e "$INFO end!"; exit;;
+        0  | "") echo -e "$INFO End!"; exit;;
         * ) echo "输入 1(小米), 2(Newifi3), 3(软路由) 或 0(取消) 以确认";;
     esac
 done

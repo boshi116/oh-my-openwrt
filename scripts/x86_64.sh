@@ -316,7 +316,7 @@ build_bin(){
         case $yn in
             1 ) build_type="factory"; do_build_bin; break;;
             2 ) build_type="sysupgrade"; do_build_bin; break;;
-            0  | "") echo -e "$INFO end!"; break;;
+            0  | "") echo -e "$INFO End!"; break;;
             * ) echo "输入 1(出厂固件), 2(升级固件) 或 0(取消) 以确认";;
         esac
     done

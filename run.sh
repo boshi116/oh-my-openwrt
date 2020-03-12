@@ -29,7 +29,7 @@ while true; do
         4 ) bash scripts/x86_64.sh; break;;
         9 ) bash scripts/dependency.sh; break;;
         0 ) bash scripts/index_sign.sh; exit;;
-        "") echo -e "$INFO end!"; exit;;
+        "") echo -e "$INFO End!"; exit;;
         * ) echo "输入 0-9 以确认";;
     esac
 done

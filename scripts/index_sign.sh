@@ -32,7 +32,7 @@ gen_device_desc(){
         device_ipk_desc="x86_64"
         device_bin_desc="x86/x86_64"
     else
-        echo -e "$INFO end!"
+        echo -e "$INFO End!"
         exit
     fi
 }
@@ -70,7 +70,7 @@ dir_index_ipk(){
     elif [ $device_type -eq 3 ]; then
         artifact_root_path="$root_path/19.07.2"
     else
-        echo -e "$INFO end!"
+        echo -e "$INFO End!"
         exit
     fi
 
@@ -93,7 +93,7 @@ while true; do
         1 ) device_type=1; gen_device_desc; break;;
         2 ) device_type=2; gen_device_desc; break;;
         3 ) device_type=3; gen_device_desc; break;;
-        0 ) echo -e "$INFO end!"; exit;;
+        0 ) echo -e "$INFO End!"; exit;;
         "" ) gen_device_desc; break;;
         * ) echo "输入 1(小米), 2(Newifi3), 3(软路由) 或 0(取消) 以确认";;
     esac
@@ -107,7 +107,7 @@ while true; do
         1 ) index_type=1; dir_index_ipk; break;;
         2 ) index_type=2; dir_index_ipk; break;;
         3 ) index_type=3; dir_index_ipk; break;;
-        0  | "") echo -e "$INFO end!"; exit;;
+        0  | "") echo -e "$INFO End!"; exit;;
         * ) echo "输入 1(lean), 2(18.06.8), 3(19.07.2) 或 0(取消) 以确认";;
     esac
 done
