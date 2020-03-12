@@ -8,12 +8,14 @@ ERROR="\033[31m *** Error: $NORM"
 WARNING="\033[33m * Warning: $NORM"
 
 # tips
-echo -e "$INFO Welcome to oh-my-openwrt!"
+echo -e "$INFO Welcome to Stuart's oh-my-openwrt!"
+echo
 echo "        1. 编译 lean openwrt"
 echo "        2. 编译 stuart openwrt for xiaomi"
 echo "        3. 编译 stuart openwrt for newifi3"
 echo "        4. 编译 stuart openwrt for x86_64"
 echo "        0. 索引 ipks 并签名"
+echo
 
 while true; do
     echo -n -e "$INPUT"
