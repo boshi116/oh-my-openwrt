@@ -27,7 +27,7 @@ do_update_omo(){
 
 while true; do
     echo -n -e "$INPUT"
-    read -s -p "请输入操作序号 (0-9): " yn
+    read -p "请输入操作序号 (0-9): " yn
     echo
     case $yn in
         1 ) bash scripts/lean.sh; break;;
