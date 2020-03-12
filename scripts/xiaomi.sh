@@ -257,27 +257,28 @@ do_build_ipks(){
     # USB 打印服务器
     # make package/luci-app-usb-printer/compile V=s
 
-    #@ 常用软件
-    # 释放内存
-    make package/luci-app-ramfree/compile V=s
-    # 文件助手
-    make package/luci-app-fileassistant/compile V=s
-    # IP/Mac 绑定
-    make package/luci-app-arpbind/compile V=s
-    # 定时重启
-    make package/luci-app-autoreboot/compile V=s
-    # KMS 自动激活（用于激活 Windows 及 Office）
-    make package/vlmcsd/compile V=s
-    make package/luci-app-vlmcsd/compile V=s
-    # SQM 中文语言包
-    make package/luci-i18n-sqm/compile V=s
-    # 网页终端命令行
-    make package/luci-app-ttyd/compile V=s
+    #@@@@@@@@@@ 常用软件 @@@@@@@@@@@
+
+    # # 释放内存
+    # make package/luci-app-ramfree/compile V=s
+    # # 文件助手
+    # make package/luci-app-fileassistant/compile V=s
+    # # IP/Mac 绑定
+    # make package/luci-app-arpbind/compile V=s
+    # # 定时重启
+    # make package/luci-app-autoreboot/compile V=s
+    # # KMS 自动激活（用于激活 Windows 及 Office）
+    # make package/vlmcsd/compile V=s
+    # make package/luci-app-vlmcsd/compile V=s
+    # # SQM 中文语言包
+    # make package/luci-i18n-sqm/compile V=s
+    # # 网页终端命令行
+    # make package/luci-app-ttyd/compile V=s
 
     ################# end build for detail ######################
 
     # 编译所有包
-    # make
+    make
 
     echo -e "$INFO build ipks done!"
 
