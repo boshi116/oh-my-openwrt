@@ -14,9 +14,16 @@ echo "        1. 编译 lean openwrt"
 echo "        2. 编译 stuart openwrt for xiaomi"
 echo "        3. 编译 stuart openwrt for newifi3"
 echo "        4. 编译 stuart openwrt for x86_64"
+echo "        8. 索引 ipks 并签名 (此过程无需翻墙!)"
 echo "        9. 下载安装编译依赖 (此过程无需翻墙!)"
-echo "        0. 索引 ipks 并签名 (此过程无需翻墙!)"
+echo "        0. 更新 oh-my-openwrt"
 echo
+
+do_update_omo(){
+    echo "update oh-my-openwrt..."
+    git pull origin master:master 1>/dev/null 2>&1
+    echo -e "$INFO oh-my-openwrt update done!"
+}
 
 while true; do
     echo -n -e "$INPUT"
@@ -27,8 +34,9 @@ while true; do
         2 ) bash scripts/xiaomi.sh; break;;
         3 ) bash scripts/newifi3.sh; break;;
         4 ) bash scripts/x86_64.sh; break;;
+        8 ) bash scripts/index_sign.sh; exit;;
         9 ) bash scripts/dependency.sh; break;;
-        0 ) bash scripts/index_sign.sh; exit;;
+        0 ) do_update_omo; exit;;
         "") echo -e "$INFO End!"; exit;;
         * ) echo "输入 0-9 以确认";;
     esac

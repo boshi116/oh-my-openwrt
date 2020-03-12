@@ -110,7 +110,11 @@ pre_artifacts_dir
 do_update_code(){
     echo "update code..."
     cd $code_path
-    git pull origin develop:develop 1>/dev/null 2>&1
+    git pull 1>/dev/null 2>&1
+    git checkout master
+    rm -rf devices_config
+    cp -r devices devices_config
+    git checkout develop
     echo -e "$INFO code update done!"
 }
 update_code(){
@@ -134,6 +138,7 @@ clone_or_update_code(){
         cd $root_path
         rm -rf $code_path
         git clone https://github.com/stuarthua/oh-my-openwrt stuart-openwrt
+        cp -r stuart-openwrt/devices/* stuart-openwrt/devices_config
         git checkout -b develop origin/develop
         echo -e "$INFO code download done!"
     else
@@ -150,8 +155,6 @@ build_config(){
         echo "src-link stuart $code_path/stuart">>$sdk_path/feeds.conf.default
         echo -e "$INFO ipks-build config done!"
     fi
-    # copy stuart devices config back
-    cd $root_path
 }
 build_config
 
