@@ -35,6 +35,29 @@ artifact_root_path="$root_path/artifacts/$version"
 artifact_bin_path="$artifact_root_path/targets/$project"
 artifact_ipk_path="$artifact_root_path/packages"
 
+######################## build dependency ########################
+# install build dependency
+## for missing ncurses(libncurses.so or ncurses.h), 'unzip', Python 2.x, openssl, make
+do_install_dep(){
+    echo "install build dependency begin..."
+    sudo apt update
+    sudo apt install -y libncurses5-dev unzip python libssl-dev build-essential
+    echo -e "$INFO install build dependency done!"
+}
+install_dep(){
+    while true; do
+        echo -n -e "$INPUT"
+        read -s -p "是否 安装/更新 编译依赖 (y/n) ?" yn
+        echo
+        case $yn in
+            [Yy]* ) do_install_dep; break;;
+            [Nn]* | "" ) break;;
+            * ) echo "输入 y 或 n 以确认";;
+        esac
+    done
+}
+install_dep
+
 ######################## setting env ########################
 if [ ! -d $project ]; then
     mkdir -p $project
@@ -117,29 +140,7 @@ else
     update_code
 fi
 
-######################## build ipks ########################
-# install ipks build dependency
-## for missing ncurses(libncurses.so or ncurses.h), 'unzip', Python 2.x, openssl, make
-do_install_dep(){
-    echo "install ipks build dependency begin..."
-    sudo apt update
-    sudo apt install -y libncurses5-dev unzip python libssl-dev build-essential
-    echo -e "$INFO install ipks build dependency done!"
-}
-install_dep(){
-    while true; do
-        echo -n -e "$INPUT"
-        read -s -p "是否 安装/更新 软件包编译依赖 (y/n) ?" yn
-        echo
-        case $yn in
-            [Yy]* ) do_install_dep; break;;
-            [Nn]* | "" ) break;;
-            * ) echo "输入 y 或 n 以确认";;
-        esac
-    done
-}
-install_dep
-
+######################## build dependency ########################
 # set config
 if [ `grep -c "src-link stuart $root_path/oh-my-openwrt/stuart" $sdk_path/feeds.conf.default` -eq 0 ]; then
     echo "ipks-build config..."
