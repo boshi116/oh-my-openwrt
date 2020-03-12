@@ -111,12 +111,12 @@ do_update_code(){
     echo "update code..."
     cd $code_path
     echo $code_path
-    git pull 1>/dev/null 2>&1
+    git pull 1>/dev/null 2>&1
     git checkout master 1>/dev/null 2>&1
     rm -rf devices_config
     cp -r devices devices_config
     git checkout develop 1>/dev/null 2>&1
-    git pull 1>/dev/null 2>&1
+    git pull 1>/dev/null 2>&1
     echo -e "$INFO code update done!"
 }
 dp_clone_code(){
