@@ -70,7 +70,7 @@ do_update_feeds(){
 }
 update_feeds(){
     cd $code_path
-    if [ ! -d staging_dir/host/bin  ]; then
+    if [ -d staging_dir/host/bin  ]; then
         result=`ls staging_dir/host/bin`
         if [ -z "$result" ]; then
             do_update_feeds
@@ -82,7 +82,7 @@ update_feeds(){
     fi
     while true; do
         echo -n -e "$INPUT"
-        read -p "是否 安装/更新 feeds (y/n) ?" yn
+        read -p "是否 安装/更新 feeds (y/n) ? " yn
         echo
         case $yn in
             [Yy]* ) do_update_feeds; break;;
@@ -163,7 +163,7 @@ fi
 
 while true; do
     echo -n -e "$INPUT"
-    read -p "请选择路由器设备 ( 0/1/2/3 | 0 取消, 1 小米路由器青春版, 2 Newifi3, 3 软路由 )" yn
+    read -p "请选择路由器设备 ( 0/1/2/3 | 0 取消, 1 小米路由器青春版, 2 Newifi3, 3 软路由 ) : " yn
     echo
     case $yn in
         1 ) device_type=1; gen_device_desc; break;;
@@ -177,7 +177,7 @@ done
 
 while true; do
     echo -n -e "$INPUT"
-    read -p "请选择需要索引的目录 ( 0/1/2/3 | 0 取消, 1 lean, 2 18.06.8, 3 19.07.2 )" yn
+    read -p "请选择需要索引的目录 ( 0/1/2/3 | 0 取消, 1 lean, 2 18.06.8, 3 19.07.2 ) : " yn
     echo
     case $yn in
         1 ) index_type=1; dir_index_ipk; break;;
