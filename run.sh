@@ -33,3 +33,5 @@ while true; do
         * ) echo "输入 0-9 以确认";;
     esac
 done
+
+echo
