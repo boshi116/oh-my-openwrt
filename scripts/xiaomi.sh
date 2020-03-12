@@ -110,6 +110,7 @@ pre_artifacts_dir
 do_update_code(){
     echo "update code..."
     cd $code_path
+    echo $code_path
     git pull 1>/dev/null 2>&1
     git checkout master 1>/dev/null 2>&1
     rm -rf devices_config
