@@ -1,4 +1,0 @@
-这个 cake 列队规则使用 HTB 作为过滤器，使用 fq_codel 作为叶列队规则。
-这个 cake 规则将不同的文件分为不同的 “层次” 优先级。
-该脚本需要将该 cake 选为列队规则。
-请参阅：http://www.bufferbloat.net/projects/codel/wiki/Cake 获取更多信息

@@ -1,4 +1,0 @@
-这个 cake 列队规则使用 HTB 作为过滤器，使用 fq_codel 作为叶列队规则。
-它不会比这更简单，换句话说，它真的是“小菜一碟”。
-该脚本需要将 cake 选为列队规则。
-请参阅：http://www.bufferbloat.net/projects/codel/wiki/Cake 获取更多信息
