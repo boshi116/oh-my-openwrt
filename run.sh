@@ -22,7 +22,7 @@ echo
 do_update_omo(){
     echo "update oh-my-openwrt..."
     git checkout master 1>/dev/null 2>&1
-    git pull 1>/dev/null 2>&1
+    git pull
     echo -e "$INFO oh-my-openwrt update done!"
 }
 
