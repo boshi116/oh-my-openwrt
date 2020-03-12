@@ -129,6 +129,13 @@ index_ipk(){
     tmp_env=$PATH
     export PATH="$code_path/staging_dir/host/bin:$PATH"
 
+    if [ ! -d $1/luci ]; then
+        mkdir -p $1/luci
+    fi
+    if [ ! -d $1/base/$device ]; then
+        mkdir -p $1/base/$device
+    fi
+
     gen_index "$1/luci"
     gen_index "$1/base/$device"
 
