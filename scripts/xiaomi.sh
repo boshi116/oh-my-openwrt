@@ -228,8 +228,8 @@ do_build_ipks(){
     rm -rf $ipk_path/stuart
     mkdir -p $ipk_path/stuart
     
-    # start build
-    # make package/helloworld/compile V=s
+    ################# start build for detail ######################
+    
     # make package/luci-app-stuart/compile V=s
 
     # 迅雷快鸟
@@ -247,7 +247,7 @@ do_build_ipks(){
     # make package/adbyby/compile V=s
     # make package/luci-app-adbyby-plus/compile V=s
 
-    # lean 翻墙三合一
+    # ssr plus
     # make package/shadowsocksr-libev/compile V=s
     # make package/kcptun/compile V=s
     # make package/v2ray/compile V=s
@@ -257,6 +257,7 @@ do_build_ipks(){
     # USB 打印服务器
     # make package/luci-app-usb-printer/compile V=s
 
+    #@ 常用软件
     # 释放内存
     make package/luci-app-ramfree/compile V=s
     # 文件助手
@@ -265,13 +266,18 @@ do_build_ipks(){
     make package/luci-app-arpbind/compile V=s
     # 定时重启
     make package/luci-app-autoreboot/compile V=s
-    # KMS 自动激活（用于激活大客户版 Windows 及 Office）
+    # KMS 自动激活（用于激活 Windows 及 Office）
     make package/vlmcsd/compile V=s
     make package/luci-app-vlmcsd/compile V=s
     # SQM 中文语言包
     make package/luci-i18n-sqm/compile V=s
     # 网页终端命令行
     make package/luci-app-ttyd/compile V=s
+
+    ################# end build for detail ######################
+
+    # 编译所有包
+    # make
 
     echo -e "$INFO build ipks done!"
 
