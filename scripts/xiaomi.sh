@@ -304,7 +304,7 @@ choose_build_type(){
         case $yn in
             1 ) build_type="factory"; do_build_bin; break;;
             2 ) build_type="sysupgrade"; do_build_bin; break;;
-            0  | "") echo -e "$INFO End!"; break;;
+            0  | "") break;;
             * ) echo "输入 1(出厂固件), 2(升级固件) 或 0(取消) 以确认";;
         esac
     done
@@ -328,3 +328,5 @@ if [ -n "$result" ]; then
     build_type="factory"
     build_bin
 fi
+
+echo -e "$INFO End!"
