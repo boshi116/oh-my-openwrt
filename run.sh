@@ -14,7 +14,7 @@ echo "        1. 编译 lean openwrt"
 echo "        2. 编译 stuart openwrt for xiaomi"
 echo "        3. 编译 stuart openwrt for newifi3"
 echo "        4. 编译 stuart openwrt for x86_64"
-echo "        9. 下载安装编译依赖  (此过程无需翻墙!)"
+echo "        9. 下载安装编译依赖 (此过程无需翻墙!)"
 echo "        0. 索引 ipks 并签名 (此过程无需翻墙!)"
 echo
 
