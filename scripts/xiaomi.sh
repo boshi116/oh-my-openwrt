@@ -11,8 +11,8 @@ WARNING="\033[33m * Warning: $NORM"
 set -e
 
 # common
-project="xiaomi"
 version="18.06.8"
+device="xiaomi"
 device_profile="miwifi-nano"
 cpu_arch="mipsel_24kc"
 imagebuilder_url="http://downloads.openwrt.org/releases/$version/targets/ramips/mt76x8/openwrt-imagebuilder-$version-ramips-mt76x8.Linux-x86_64.tar.xz"
@@ -27,78 +27,90 @@ cd build_openwrt
 
 # path
 root_path=`pwd`
-project_path="$root_path/$project"
-sdk_path="$project_path/sdk"
+device_path="$root_path/$device"
+code_path="$root_path/stuart-openwrt"
+sdk_path="$device_path/sdk"
 ipk_path="$sdk_path/bin/packages/mipsel_24kc"
-imagebuilder_path="$project_path/imagebuilder"
+imagebuilder_path="$device_path/imagebuilder"
 bin_path="$imagebuilder_path/bin/targets/ramips/mt76x8"
 artifact_root_path="$root_path/artifacts/$version"
-artifact_bin_path="$artifact_root_path/targets/$project"
+artifact_bin_path="$artifact_root_path/targets/$device"
 artifact_ipk_path="$artifact_root_path/packages"
 
-######################## setting env ########################
-if [ ! -d $project ]; then
-    mkdir -p $project
+# prepare
+if [ ! -d $device ]; then
+    mkdir -p $device
 fi
-cd $project_path
+cd $device_path
+
+######################## set env ########################
 # image builder
-if [ -d imagebuilder ]; then
-    echo -e "$INFO imagebuilder already set done!"
-else
-    echo "download imagebuilder..."
-    wget -O imagebuilder.tar.xz -t 5 -T 60 $imagebuilder_url
-    echo "download imagebuilder done."
-    echo "extract imagebuilder..."
-    tar -xvf imagebuilder.tar.xz 1>/dev/null 2>&1
-    mv openwrt-imagebuilder-$version-* imagebuilder
-    rm -f imagebuilder.tar.xz
-    echo -e "$INFO imagebuilder set done."
-fi
+pre_imagebuilder(){
+    if [ -d imagebuilder ]; then
+        echo -e "$INFO imagebuilder already set done!"
+    else
+        echo "download imagebuilder..."
+        wget -O imagebuilder.tar.xz -t 5 -T 60 $imagebuilder_url
+        echo "download imagebuilder done."
+        echo "extract imagebuilder..."
+        tar -xvf imagebuilder.tar.xz 1>/dev/null 2>&1
+        mv openwrt-imagebuilder-$version-* imagebuilder
+        rm -f imagebuilder.tar.xz
+        echo -e "$INFO imagebuilder set done."
+    fi
+}
+pre_imagebuilder
 
 # sdk
-if [ -d sdk ]; then
-    echo -e "$INFO sdk already set done!"
-else
-    echo "download sdk..."
-    wget -O sdk.tar.xz -t 5 -T 60 $sdk_url
-    echo "download sdk done."
-    echo "extract sdk..."
-    tar -xvf sdk.tar.xz 1>/dev/null 2>&1
-    mv openwrt-sdk-$version-* sdk
-    rm -rf sdk.tar.xz
-    echo -e "$INFO sdk set done."
-fi
+pre_sdk(){
+    if [ -d sdk ]; then
+        echo -e "$INFO sdk already set done!"
+    else
+        echo "download sdk..."
+        wget -O sdk.tar.xz -t 5 -T 60 $sdk_url
+        echo "download sdk done."
+        echo "extract sdk..."
+        tar -xvf sdk.tar.xz 1>/dev/null 2>&1
+        mv openwrt-sdk-$version-* sdk
+        rm -rf sdk.tar.xz
+        echo -e "$INFO sdk set done."
+    fi
+}
+pre_sdk
 
 # artifact dir
-## dir bins
-if [ ! -d $bin_path ]; then
-    mkdir -p $bin_path
-fi
-if [ ! -L $project_path/bins ]; then
-    ln -s $bin_path $project_path/bins
-fi
-if [ ! -d $artifact_bin_path ]; then
-    mkdir -p $artifact_bin_path
-fi
-## dir ipks
-if [ ! -d $ipk_path/stuart ]; then
-    mkdir -p $ipk_path/stuart
-fi
-if [ ! -L $project_path/ipks ]; then
-    ln -s $ipk_path $project_path/ipks
-fi
-if [ ! -d $artifact_ipk_path ]; then
-    mkdir -p $artifact_ipk_path
-    mkdir -p $artifact_ipk_path/luci
-    mkdir -p $artifact_ipk_path/base/$project
-fi
-echo -e "$INFO artifact dir set done!"
+pre_artifacts_dir(){
+    ## dir bins
+    if [ ! -d $bin_path ]; then
+        mkdir -p $bin_path
+    fi
+    if [ ! -L $device_path/bins ]; then
+        ln -s $bin_path $device_path/bins
+    fi
+    if [ ! -d $artifact_bin_path ]; then
+        mkdir -p $artifact_bin_path
+    fi
+    ## dir ipks
+    if [ ! -d $ipk_path/stuart ]; then
+        mkdir -p $ipk_path/stuart
+    fi
+    if [ ! -L $device_path/ipks ]; then
+        ln -s $ipk_path $device_path/ipks
+    fi
+    if [ ! -d $artifact_ipk_path ]; then
+        mkdir -p $artifact_ipk_path
+        mkdir -p $artifact_ipk_path/luci
+        mkdir -p $artifact_ipk_path/base/$device
+    fi
+    echo -e "$INFO artifact dir set done!"
+}
+pre_artifacts_dir
 
-######################## download app code from stuart rep ########################
+######################## clone or update code from stuart rep ########################
 do_update_code(){
     echo "update code..."
-    cd $root_path/oh-my-openwrt
-    git pull origin master 1>/dev/null 2>&1
+    cd $code_path
+    git pull origin develop:develop 1>/dev/null 2>&1
     echo -e "$INFO code update done!"
 }
 update_code(){
@@ -113,14 +125,22 @@ update_code(){
         esac
     done
 }
-
-if [ ! -d $root_path/oh-my-openwrt ]; then
-    cd $root_path
-    git clone https://github.com/stuarthua/oh-my-openwrt
-    echo -e "$INFO code download done!"
-else
-    update_code
-fi
+clone_or_update_code(){
+    if [ ! -d $code_path ]; then
+        mkdir -p $code_path
+    fi
+    result=`ls $code_path`
+    if [ -z "$result" ]; then
+        cd $root_path
+        rm -rf $code_path
+        git clone https://github.com/stuarthua/oh-my-openwrt stuart-openwrt
+        git checkout -b develop origin/develop
+        echo -e "$INFO code download done!"
+    else
+        update_code
+    fi
+}
+clone_or_update_code
 
 ######################## build dependency ########################
 # set config
@@ -156,7 +176,7 @@ update_feeds
 archive_ipks(){
     cd $ipk_path/stuart
     cp -f luci-*_all.ipk $artifact_ipk_path/luci
-    cp -f *_$cpu_arch.ipk $artifact_ipk_path/base/$project
+    cp -f *_$cpu_arch.ipk $artifact_ipk_path/base/$device
 }
 do_build_ipks(){
     echo "build ipks begin..."
@@ -168,7 +188,7 @@ do_build_ipks(){
     mkdir -p $ipk_path/stuart
 
     # copy config
-    cp -f $root_path/oh-my-openwrt/devices/$project/sdk.config .config
+    cp -f $root_path/oh-my-openwrt/devices/$device/sdk.config .config
     
     # start build
     # make package/helloworld/compile V=s
@@ -239,7 +259,7 @@ build_ipks
 # build img
 archive_bin(){
     cd $bin_path
-    cp -f openwrt-${version}*${bin_ext} $artifact_bin_path/stuart-openwrt-$version-$project-$build_type${bin_ext}
+    cp -f openwrt-${version}*${bin_ext} $artifact_bin_path/stuart-openwrt-$version-$device-$build_type${bin_ext}
     cat > $artifact_bin_path/README.md << "EOF"
 ## README
 
@@ -283,10 +303,10 @@ do_build_bin(){
     
     if [ $build_type == "factory" ]; then
         image_pkgs="$org_original_pkgs $org_custom_pkgs $stuart_factory_pkgs"
-        files_path="$root_path/oh-my-openwrt/devices/$project/factory"
+        files_path="$root_path/oh-my-openwrt/devices/$device/factory"
     else
         image_pkgs="$org_original_pkgs $org_custom_pkgs $stuart_sysupgrade_pkgs"
-        files_path="$root_path/oh-my-openwrt/devices/$project/sysupgrade"
+        files_path="$root_path/oh-my-openwrt/devices/$device/sysupgrade"
     fi
 
     make image PROFILE=$device_profile PACKAGES="${image_pkgs}" FILES=$files_path
