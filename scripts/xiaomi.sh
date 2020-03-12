@@ -20,8 +20,9 @@ sdk_url="https://downloads.openwrt.org/releases/$version/targets/ramips/mt76x8/o
 bin_ext=".bin"
 
 # prepare
-cd ..
-mkdir -p build_openwrt
+if [ ! -d build_openwrt ]; then
+    mkdir -p build_openwrt
+fi
 cd build_openwrt
 
 # path

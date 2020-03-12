@@ -14,20 +14,22 @@ echo "        1. 编译 lean openwrt"
 echo "        2. 编译 stuart openwrt for xiaomi"
 echo "        3. 编译 stuart openwrt for newifi3"
 echo "        4. 编译 stuart openwrt for x86_64"
+echo "        9. 安装编译依赖"
 echo "        0. 索引 ipks 并签名"
 echo
 
 while true; do
     echo -n -e "$INPUT"
-    read -s -p "请输入操作序号 (0-4)" yn
+    read -s -p "请输入操作序号 (0-9): " yn
     echo
     case $yn in
-        1 ) bash scripts/build-lean.sh; break;;
+        1 ) bash scripts/lean.sh; break;;
         2 ) bash scripts/xiaomi.sh; break;;
         3 ) bash scripts/newifi3.sh; break;;
         4 ) bash scripts/x86_64.sh; break;;
-        0 ) bash scripts/index-ipks.sh; exit;;
+        9 ) bash scripts/dependency.sh; break;;
+        0 ) bash scripts/index_sign.sh; exit;;
         "") echo -e "$INFO end!"; exit;;
-        * ) echo "输入 0-4 以确认";;
+        * ) echo "输入 0-9 以确认";;
     esac
 done
