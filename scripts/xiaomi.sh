@@ -186,6 +186,31 @@ update_feeds(){
 }
 update_feeds
 
+######################## build config ########################
+default_config(){
+    cd $sdk_path
+    if [ ! -e .config ]; then
+        if [ -d $code_path/devices_config ]; then
+            cp -f $code_path/devices_config/$device/sdk.config .config
+        fi
+    fi
+}
+choose_config(){
+    cd $sdk_path
+    while true; do
+        echo -n -e "$INPUT"
+        read -p "是否需要修改编译配置 (y/n) ? " yn
+        echo
+        case $yn in
+            [Yy]* ) make menuconfig; break;;
+            [Nn]* | "" ) break;;
+            * ) echo "输入 y 或 n 以确认";;
+        esac
+    done
+}
+default_config
+choose_config
+
 ######################## build ########################
 
 # build ipks
@@ -202,9 +227,6 @@ do_build_ipks(){
     # clean dir
     rm -rf $ipk_path/stuart
     mkdir -p $ipk_path/stuart
-
-    # copy config
-    cp -f $code_path/devices_config/$device/sdk.config .config
     
     # start build
     # make package/helloworld/compile V=s
