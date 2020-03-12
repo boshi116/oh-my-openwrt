@@ -64,7 +64,7 @@ fi
 if [ ! -d $bin_path ]; then
     mkdir -p $bin_path
 fi
-if [ ! -L $root_path/bins ]; then
+if [ ! -L $project_path/bins ]; then
     ln -s $bin_path $project_path/bins
 fi
 if [ ! -d $artifact_bin_path ]; then
@@ -74,7 +74,7 @@ fi
 if [ ! -d $ipk_path/stuart ]; then
     mkdir -p $ipk_path/stuart
 fi
-if [ ! -L $root_path/ipks ]; then
+if [ ! -L $project_path/ipks ]; then
     ln -s $ipk_path $project_path/ipks
 fi
 if [ ! -d $artifact_ipk_path ]; then
@@ -114,10 +114,11 @@ fi
 
 ######################## build ipks ########################
 # install ipks build dependency
-## for missing ncurses(libncurses.so or ncurses.h), 'unzip', Python 2.x, openssl
+## for missing ncurses(libncurses.so or ncurses.h), 'unzip', Python 2.x, openssl, make
 do_install_dep(){
     echo "install ipks build dependency begin..."
-    sudo apt install libncurses5-dev unzip python libssl-dev -y
+    sudo apt update
+    sudo apt install -y libncurses5-dev unzip python libssl-dev build-essential
     echo -e "$INFO install ipks build dependency done!"
 }
 install_dep(){
@@ -139,13 +140,6 @@ if [ `grep -c "src-link stuart $root_path/oh-my-openwrt/stuart" $sdk_path/feeds.
     echo "ipks-build config..."
     echo "src-link stuart $root_path/oh-my-openwrt/stuart">>$sdk_path/feeds.conf.default
     echo -e "$INFO ipks-build config done!"
-fi
-
-# gen key
-if [ ! -e $root_path/openwrt-stuart.key ]; then
-    echo "openwrt-stuart.key gen..."
-    $sdk_path/staging_dir/host/bin/usign -G -p $root_path/openwrt-stuart.pub -s $root_path/openwrt-stuart.key
-    echo -e "$INFO openwrt-stuart.key gen done!"
 fi
 
 # feeds download
@@ -171,6 +165,11 @@ update_feeds(){
 update_feeds
 
 # build ipks
+archive_ipks(){
+    cd $ipk_path/stuart
+    cp -f luci-*_all.ipk $artifact_ipk_path/luci
+    cp -f *_$cpu_arch.ipk $artifact_ipk_path/base/$project
+}
 do_build_ipks(){
     echo "build ipks begin..."
     
@@ -229,6 +228,9 @@ do_build_ipks(){
     make package/luci-app-ttyd/compile V=s
 
     echo -e "$INFO build ipks done!"
+
+    # 归档 ipks
+    archive_ipks
 }
 
 build_ipks(){
@@ -246,52 +248,30 @@ build_ipks(){
 
 build_ipks
 
-# index ipks
-# @https://notes.iopush.net/how-to-setup-an-openwrt-repo/
-gen_index(){
-    tmp_dir=$1
-    cd $tmp_dir
-    rm -f Packages*
-    $sdk_path/scripts/ipkg-make-index.sh . 2>/dev/null > Packages.manifest
-    grep -vE '^(Maintainer|LicenseFiles|Source|Require)' Packages.manifest > Packages
-    gzip -9nc Packages > Packages.gz
-    $sdk_path/staging_dir/host/bin/usign -S -m Packages -s $root_path/openwrt-stuart.key
-}
-do_index_ipks(){
-    echo "gen ipks index begin..."
-
-    export PATH="$sdk_path/staging_dir/host/bin:$PATH"
-
-    cd $ipk_path/stuart
-    cp -f luci-*_all.ipk $artifact_ipk_path/luci
-    cp -f *_$cpu_arch.ipk $artifact_ipk_path/base/$project
-
-    gen_index "$artifact_ipk_path/luci"
-    gen_index "$artifact_ipk_path/base/$project"
-    
-    echo -e "$INFO gen ipks index done!"
-}
-
-index_ipks(){
-    while true; do
-        echo -n -e "$INPUT"
-        read -s -p "是否为 Stuart 软件包生成索引 (y/n) ?" yn
-        echo
-        case $yn in
-            [Yy]* ) do_index_ipks; break;;
-            [Nn]* | "" ) break;;
-            * ) echo "输入 y 或 n 以确认";;
-        esac
-    done
-}
-
-result=`ls $ipk_path/stuart`
-if [ -n "$result" ]; then
-    index_ipks
-fi
-
 # build img
+archive_bin(){
+    cd $bin_path
+    cp -f openwrt-${version}*${bin_ext} $artifact_bin_path/stuart-openwrt-$version-$project-$build_type${bin_ext}
+    cat > $artifact_bin_path/README.md << "EOF"
+## README
 
+说明: 
+
+* `ext4` 结尾的固件指 rootfs 工作区存储格式为 ext4
+* `squashfs` 结尾的固件类似 win 的 ghost 版本，使用中如发生配置错误，可恢复出厂默认设置
+    * `squashfs-factory` 结尾的固件指出厂固件
+    * `squashfs-sysupgrade` 结尾的固件指升级固件
+* `jffs2` 结尾的固件可以自行修改 rootfs 的配置文件，不需要重新刷固件
+* `initramfs-kernel` 结尾的固件一般用于没有 flash 闪存驱动的设备，系统运行于内存中，重启后所有设置都将丢失，不常用
+
+固件:
+
+* OpenWrt 官方固件
+* Stuart-Openwrt 出厂固件(中文化、本地设置等)
+* Stuart-Openwrt 升级固件(出厂固件基础上增加更多功能性软件包)
+
+EOF
+}
 do_build_bin(){
     echo "build $build_type bin begin..."
 
@@ -324,35 +304,8 @@ do_build_bin(){
     make image PROFILE=$device_profile PACKAGES="${image_pkgs}" FILES=$files_path
 
     echo -e "$INFO build $build_type bin done!"
-}
 
-migrate_bin(){
-    cd $bin_path
-    cp -f openwrt-${version}*${bin_ext} $artifact_bin_path/stuart-openwrt-$version-$project-$build_type${bin_ext}
-    cat > $artifact_bin_path/README.md << "EOF"
-## README
-
-说明: 
-
-* `ext4` 结尾的固件指 rootfs 工作区存储格式为 ext4
-* `squashfs` 结尾的固件类似 win 的 ghost 版本，使用中如发生配置错误，可恢复出厂默认设置
-    * `squashfs-factory` 结尾的固件指出厂固件
-    * `squashfs-sysupgrade` 结尾的固件指升级固件
-* `jffs2` 结尾的固件可以自行修改 rootfs 的配置文件，不需要重新刷固件
-* `initramfs-kernel` 结尾的固件一般用于没有 flash 闪存驱动的设备，系统运行于内存中，重启后所有设置都将丢失，不常用
-
-固件:
-
-* OpenWrt 官方固件
-* Stuart-Openwrt 出厂固件(中文化、本地设置等)
-* Stuart-Openwrt 升级固件(出厂固件基础上增加更多功能性软件包)
-
-EOF
-}
-
-do_build_bin_things(){
-    do_build_bin
-    migrate_bin
+    archive_bin
 }
 
 build_bin(){
@@ -361,8 +314,8 @@ build_bin(){
         read -s -p "请选择固件类型 ( 0/1/2 | 0 取消, 1 出厂固件, 2 升级固件 )" yn
         echo
         case $yn in
-            1 ) build_type="factory"; do_build_bin_things; break;;
-            2 ) build_type="sysupgrade"; do_build_bin_things; break;;
+            1 ) build_type="factory"; do_build_bin; break;;
+            2 ) build_type="sysupgrade"; do_build_bin; break;;
             0  | "") echo -e "$INFO end!"; break;;
             * ) echo "输入 1(出厂固件), 2(升级固件) 或 0(取消) 以确认";;
         esac

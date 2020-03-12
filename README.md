@@ -41,3 +41,4 @@ Use Image Builder to gen your image or just install it on your devices.
 * [openwrt/openwrt](https://github.com/openwrt/openwrt)
 * [coolsnowwolf/lede](https://github.com/coolsnowwolf/lede)
 * [Lienol/openwrt-package](https://github.com/Lienol/openwrt-package)
+* [https://github.com/esirplayground/lede](https://github.com/esirplayground/lede)
