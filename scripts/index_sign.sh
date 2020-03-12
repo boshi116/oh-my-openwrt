@@ -146,12 +146,13 @@ index_ipk(){
 }
 
 dir_index_ipk(){
+    artifact_path="$root_path/artifacts"
     if [ $device_type -eq 1 ]; then
-        artifact_root_path="$root_path/lean"
+        artifact_root_path="$artifact_path/lean"
     elif [ $device_type -eq 2 ]; then
-        artifact_root_path="$root_path/18.06.8"
+        artifact_root_path="$artifact_path/18.06.8"
     elif [ $device_type -eq 3 ]; then
-        artifact_root_path="$root_path/19.07.2"
+        artifact_root_path="$artifact_path/19.07.2"
     else
         echo -e "$INFO End!"
         exit
