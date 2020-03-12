@@ -67,7 +67,9 @@ cd $project_path
 if [ -d imagebuilder ]; then
     echo -e "$INFO imagebuilder already set done!"
 else
+    echo "download imagebuilder..."
     wget -O imagebuilder.tar.xz -t 5 -T 60 $imagebuilder_url
+    echo "download imagebuilder done."
     echo "extract imagebuilder..."
     tar -xvf imagebuilder.tar.xz 1>/dev/null 2>&1
     mv openwrt-imagebuilder-$version-* imagebuilder
@@ -79,7 +81,9 @@ fi
 if [ -d sdk ]; then
     echo -e "$INFO sdk already set done!"
 else
+    echo "download sdk..."
     wget -O sdk.tar.xz -t 5 -T 60 $sdk_url
+    echo "download sdk done."
     echo "extract sdk..."
     tar -xvf sdk.tar.xz 1>/dev/null 2>&1
     mv openwrt-sdk-$version-* sdk
