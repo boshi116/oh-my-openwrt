@@ -142,14 +142,20 @@ clone_or_update_code(){
 }
 clone_or_update_code
 
-######################## build dependency ########################
-# set config
-if [ `grep -c "src-link stuart $root_path/oh-my-openwrt/stuart" $sdk_path/feeds.conf.default` -eq 0 ]; then
-    echo "ipks-build config..."
-    echo "src-link stuart $root_path/oh-my-openwrt/stuart">>$sdk_path/feeds.conf.default
-    echo -e "$INFO ipks-build config done!"
-fi
+######################## build config ########################
+build_config(){
+    # import stuart code
+    if [ `grep -c "src-link stuart $code_path/stuart" $sdk_path/feeds.conf.default` -eq 0 ]; then
+        echo "ipks-build config..."
+        echo "src-link stuart $code_path/stuart">>$sdk_path/feeds.conf.default
+        echo -e "$INFO ipks-build config done!"
+    fi
+    # copy stuart devices config back
+    cd $root_path
+}
+build_config
 
+######################## feeds update and install ########################
 # feeds download
 do_update_feeds(){
     echo "download feeds begin..."
@@ -172,6 +178,8 @@ update_feeds(){
 }
 update_feeds
 
+######################## build ########################
+
 # build ipks
 archive_ipks(){
     cd $ipk_path/stuart
@@ -188,7 +196,7 @@ do_build_ipks(){
     mkdir -p $ipk_path/stuart
 
     # copy config
-    cp -f $root_path/oh-my-openwrt/devices/$device/sdk.config .config
+    cp -f $code_path/devices/$device/sdk.config .config
     
     # start build
     # make package/helloworld/compile V=s
@@ -303,10 +311,10 @@ do_build_bin(){
     
     if [ $build_type == "factory" ]; then
         image_pkgs="$org_original_pkgs $org_custom_pkgs $stuart_factory_pkgs"
-        files_path="$root_path/oh-my-openwrt/devices/$device/factory"
+        files_path="$code_path/devices/$device/factory"
     else
         image_pkgs="$org_original_pkgs $org_custom_pkgs $stuart_sysupgrade_pkgs"
-        files_path="$root_path/oh-my-openwrt/devices/$device/sysupgrade"
+        files_path="$code_path/devices/$device/sysupgrade"
     fi
 
     make image PROFILE=$device_profile PACKAGES="${image_pkgs}" FILES=$files_path
