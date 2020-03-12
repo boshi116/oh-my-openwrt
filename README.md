@@ -9,7 +9,7 @@ Reading: [gh-pages](https://stuarthua.github.io/oh-my-openwrt/)
 ```bash
 git clone https://github.com/stuarthua/oh-my-openwrt
 cd oh-my-openwrt
-./start.sh
+./run.sh
 ```
 
 ## Thanks

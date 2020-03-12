@@ -35,18 +35,4 @@ do_install_dep(){
     do_install_dep_lean
 }
 
-install_dep(){
-    while true; do
-        echo -n -e "$INPUT"
-        read -s -p "是否 安装/更新 编译依赖 (y/n) ?" yn
-        echo
-        case $yn in
-            [Yy]* ) do_install_dep; break;;
-            [Nn]* | "" ) exit;;
-            * ) echo "输入 y 或 n 以确认";;
-        esac
-    done
-}
-
-echo -e "$INFO 此过程无需翻墙!"
-install_dep
+do_install_dep
