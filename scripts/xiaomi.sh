@@ -162,6 +162,17 @@ do_update_feeds(){
     echo -e "$INFO download feeds done!"
 }
 update_feeds(){
+    cd $sdk_path
+    if [ ! -d staging_dir/host/bin  ]; then
+        result=`ls staging_dir/host/bin`
+        if [ -z "$result" ]; then
+            do_update_feeds
+            return
+        fi
+    else
+        do_update_feeds
+        return
+    fi
     while true; do
         echo -n -e "$INPUT"
         read -p "是否 安装/更新 feeds (y/n) ?" yn
