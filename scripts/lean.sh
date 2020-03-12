@@ -151,27 +151,23 @@ update_feeds(){
 }
 update_feeds
 
-######################## build openwrt ########################
-archive_bin(){
-    cd $bin_path
-    cp -f openwrt-*-squashfs-sysupgrade.bin $artifact_bin_path
+######################## build config ########################
+default_config(){
+    cd $code_path
+    if [ ! -e .config ]; then
+        if [ -d $stuart_path/devices_config ]; then
+            if [ $device_type -eq 1 ]; then
+                cp -f $stuart_path/devices_config/lean/xiaomi.config .config
+            elif [ $device_type -eq 2 ]; then
+                cp -f $stuart_path/devices_config/lean/newifi3.config .config
+            elif [ $device_type -eq 3 ]; then
+                cp -f $stuart_path/devices_config/lean/x86_64.config .config
+            fi
+        fi
+    fi
 }
 choose_config(){
     cd $code_path
-    if [ ! -d $stuart_path/devices_config ]; then
-        make menuconfig
-        return
-    fi
-    if [ $device_type -eq 1 ]; then
-        cp -f $stuart_path/devices_config/lean/xiaomi.config .config
-    elif [ $device_type -eq 2 ]; then
-        cp -f $stuart_path/devices_config/lean/newifi3.config .config
-    elif [ $device_type -eq 3 ]; then
-        cp -f $stuart_path/devices_config/lean/x86_64.config .config
-    else
-        echo -e "$INFO Not Found MenuConfig File .config!"
-        exit
-    fi
     while true; do
         echo -n -e "$INPUT"
         read -p "是否需要修改编译配置 (y/n) ?" yn
@@ -183,10 +179,17 @@ choose_config(){
         esac
     done
 }
+default_config
+choose_config
+
+######################## build openwrt ########################
+archive_bin(){
+    cd $bin_path
+    cp -f openwrt-*-squashfs-sysupgrade.bin $artifact_bin_path
+}
 do_build_openwrt(){
     echo "build begin..."
     cd $code_path
-    choose_config
     make download
     make V=s
     echo -e "$INFO build done!"
