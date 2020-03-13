@@ -249,6 +249,8 @@ do_build_ipks(){
     make package/luci-app-xlnetacc/compile V=s                       # luci 迅雷快鸟
     make package/luci-i18n-sqm/compile V=s                           # sqm 语言包
 
+    make package/luci-app-passwall/compile V=s                           # sqm 语言包
+
     ################# end build for detail ######################
 
     echo -e "$INFO build ipks done!"
