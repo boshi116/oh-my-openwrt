@@ -224,32 +224,32 @@ do_build_ipks(){
 
     cd $sdk_path
 
-    # # clean dir
-    # rm -rf $ipk_path/stuart
-    # mkdir -p $ipk_path/stuart
+    # clean dir
+    rm -rf $ipk_path/stuart
+    mkdir -p $ipk_path/stuart
 
-    # ################# start build for detail ######################
+    ################# start build for detail ######################
 
-    # make package/ddns-scripts_aliyun/compile V=s                     # aliyun ddns
-    # make package/vlmcsd/compile V=s                                  # KMS 服务器
-    # make package/luci-app-arpbind/compile V=s                        # luci 静态 ARP 绑定
-    # make package/luci-app-autoreboot/compile V=s                     # luci 定时重启
-    # make package/luci-app-fileassistant/compile V=s                  # luci 文件助手
-    # make package/luci-app-ipsec-vpnd/compile V=s                     # luci IPSec VPN
-    # make package/luci-app-mia/compile V=s                            # luci 上网时间控制
-    # make package/luci-app-ramfree/compile V=s                        # luci 释放内存
-    # make package/luci-app-stuart/compile V=s                         # luci Example，无用
-    # make package/luci-app-timewol/compile V=s                        # luci 定时唤醒
-    # make package/luci-app-ttyd/compile V=s                           # luci 网页终端
-    # # make package/luci-app-usb-printer/compile V=s                    # luci USB 打印服务器
-    # make package/luci-app-vlmcsd/compile V=s                         # luci KMS 服务器
+    make package/ddns-scripts_aliyun/compile V=s                     # aliyun ddns
+    make package/vlmcsd/compile V=s                                  # KMS 服务器
+    make package/luci-app-arpbind/compile V=s                        # luci 静态 ARP 绑定
+    make package/luci-app-autoreboot/compile V=s                     # luci 定时重启
+    make package/luci-app-fileassistant/compile V=s                  # luci 文件助手
+    make package/luci-app-ipsec-vpnd/compile V=s                     # luci IPSec VPN
+    make package/luci-app-mia/compile V=s                            # luci 上网时间控制
+    make package/luci-app-ramfree/compile V=s                        # luci 释放内存
+    make package/luci-app-stuart/compile V=s                         # luci Example，无用
+    make package/luci-app-timewol/compile V=s                        # luci 定时唤醒
+    make package/luci-app-ttyd/compile V=s                           # luci 网页终端
+    # make package/luci-app-usb-printer/compile V=s                    # luci USB 打印服务器
+    make package/luci-app-vlmcsd/compile V=s                         # luci KMS 服务器
     make package/luci-app-webadmin/compile V=s                       # luci Web 管理
-    # make package/luci-app-webrestriction/compile V=s                 # luci 访问控制
-    # make package/luci-app-weburl/compile V=s                         # luci 网址过滤
-    # make package/luci-app-xlnetacc/compile V=s                       # luci 迅雷快鸟
-    # make package/luci-i18n-sqm/compile V=s                           # sqm 语言包
+    make package/luci-app-webrestriction/compile V=s                 # luci 访问控制
+    make package/luci-app-weburl/compile V=s                         # luci 网址过滤
+    make package/luci-app-xlnetacc/compile V=s                       # luci 迅雷快鸟
+    make package/luci-i18n-sqm/compile V=s                           # sqm 语言包
 
-    # ################# end build for detail ######################
+    ################# end build for detail ######################
 
     echo -e "$INFO build ipks done!"
 
