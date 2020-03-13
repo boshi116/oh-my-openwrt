@@ -98,7 +98,7 @@ pre_artifacts_dir
 do_update_code(){
     echo "update code..."
     cd $code_path
-    git pull origin master 1>/dev/null 2>&1
+    git pull
     echo -e "$INFO code update done!"
 }
 do_clone_code(){
