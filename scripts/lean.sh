@@ -223,6 +223,27 @@ build_openwrt(){
 build_openwrt
 
 ######################## build ipks ########################
+do_build_linux(){
+    echo "build linux begin..."
+    cd $code_path
+    # make menuconfig
+    make target/linux/compile V=s
+    echo -e "$INFO build linux done!"
+}
+build_linux(){
+    while true; do
+        echo -n -e "$INPUT"
+        read -p "是否开始编译 Linux 内核 (y/n) ? " yn
+        echo
+        case $yn in
+            [Yy]* ) do_build_linux; break;;
+            [Nn]* | "" ) break;;
+            * ) echo "输入 y 或 n 以确认";;
+        esac
+    done
+}
+build_linux
+
 archive_ssr_ipk(){
     cd $ipk_path/base
     cp -f luci-app-ssr-plus*_all.ipk $artifact_ipk_path/luci/
@@ -240,7 +261,6 @@ do_build_ssr_ipk(){
     echo "build ssr begin..."
     cd $code_path
     # make menuconfig
-    make target/linux/compile V=s
     make package/lean/luci-app-ssr-plus/compile V=s
     echo -e "$INFO build ssr done!"
 
