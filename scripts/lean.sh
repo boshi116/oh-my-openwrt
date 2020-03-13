@@ -61,7 +61,7 @@ ipk_path="$code_path/bin/packages/$device_ipk_desc"
 bin_path="$code_path/bin/targets/$device_bin_desc"
 artifact_root_path="$root_path/artifacts/lean"
 artifact_bin_path="$artifact_root_path/targets/$device"
-artifact_ipk_path="$artifact_root_path/packages/$device"
+artifact_ipk_path="$artifact_root_path/packages"
 
 ######################## set env ########################
 # dir for project and artifact
@@ -89,6 +89,7 @@ pre_artifacts_dir(){
     fi
     if [ ! -d $artifact_ipk_path/base ]; then
         mkdir -p $artifact_ipk_path/base
+        mkdir -p $artifact_ipk_path/base/$device
     fi
     echo -e "$INFO artifact dir set done!"
 }
@@ -248,13 +249,13 @@ archive_ssr_ipk(){
     cd $ipk_path/base
     cp -f luci-app-ssr-plus*_all.ipk $artifact_ipk_path/luci/
     # dependency
-    cp -f shadowsocksr-libev-alt*$device_ipk_desc.ipk $artifact_ipk_path/base/
-    cp -f ipt2socks*$device_ipk_desc.ipk $artifact_ipk_path/base/
-    cp -f microsocks*$device_ipk_desc.ipk $artifact_ipk_path/base/
-    cp -f pdnsd-alt*$device_ipk_desc.ipk $artifact_ipk_path/base/
-    cp -f simple-obfs*$device_ipk_desc.ipk $artifact_ipk_path/base/
-    cp -f v2ray*$device_ipk_desc.ipk $artifact_ipk_path/base/
-    cp -f trojan*$device_ipk_desc.ipk $artifact_ipk_path/base/
+    cp -f shadowsocksr-libev-alt*$device_ipk_desc.ipk $artifact_ipk_path/base/$device/
+    cp -f ipt2socks*$device_ipk_desc.ipk $artifact_ipk_path/base/$device/
+    cp -f microsocks*$device_ipk_desc.ipk $artifact_ipk_path/base/$device/
+    cp -f pdnsd-alt*$device_ipk_desc.ipk $artifact_ipk_path/base/$device/
+    cp -f simple-obfs*$device_ipk_desc.ipk $artifact_ipk_path/base/$device/
+    cp -f v2ray*$device_ipk_desc.ipk $artifact_ipk_path/base/$device/
+    cp -f trojan*$device_ipk_desc.ipk $artifact_ipk_path/base/$device/
 }
 
 do_build_ssr_ipk(){
