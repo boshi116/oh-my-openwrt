@@ -116,7 +116,7 @@ gen_device_desc(){
 gen_index(){
     tmp_dir=$1
     cd $tmp_dir
-    echo "cur dir: $tmp_dir"
+    # echo "cur dir: $tmp_dir"
     rm -f Packages*
     $code_path/scripts/ipkg-make-index.sh . 2>/dev/null > Packages.manifest
     grep -vE '^(Maintainer|LicenseFiles|Source|Require)' Packages.manifest > Packages
