@@ -231,6 +231,7 @@ do_build_ipks(){
     ################# start build for detail ######################
 
     make package/ddns-scripts_aliyun/compile V=s                     # aliyun ddns
+    make package/vlmcsd/compile V=s                                  # KMS 服务器
     make package/luci-app-arpbind/compile V=s                        # luci 静态 ARP 绑定
     make package/luci-app-autoreboot/compile V=s                     # luci 定时重启
     make package/luci-app-fileassistant/compile V=s                  # luci 文件助手
@@ -246,15 +247,7 @@ do_build_ipks(){
     make package/luci-app-webrestriction/compile V=s                 # luci 访问控制
     make package/luci-app-weburl/compile V=s                         # luci 网址过滤
     make package/luci-app-xlnetacc/compile V=s                       # luci 迅雷快鸟
-    make package/luci-i18n-arpbind-zh-cn/compile V=s                 # 语言包
-    make package/luci-i18n-autoreboot-zh-cn/compile V=s              # 语言包
-    make package/luci-i18n-ipsec-vpnd-zh-cn/compile V=s              # 语言包
-    make package/luci-i18n-sqm/compile V=s                           # 语言包
-    make package/luci-i18n-ttyd-zh-cn/compile V=s                    # 语言包
-    # make package/luci-i18n-usb-printer-zh-cn/compile V=s             # 语言包
-    make package/luci-i18n-vlmcsd-zh-cn/compile V=s                  # 语言包
-    make package/luci-i18n-webadmin-zh-cn/compile V=s                # 语言包
-    make package/vlmcsd/compile V=s                                  # KMS 服务器
+    make package/luci-i18n-sqm/compile V=s                           # sqm 语言包
 
     ################# end build for detail ######################
 
