@@ -267,11 +267,11 @@ do_build_ipks(){
     make package/shadowsocksr-libev-alt/compile V=s                  # ssr plus 的依赖
     make package/shadowsocksr-libev-server/compile V=s               # ssr plus 的依赖
     make package/shadowsocksr-libev-ssr-local/compile V=s            # ssr plus 的依赖
-    make package/simple-obfs/compile V=s                             # ssr plus 的依赖
-    make package/simple-obfs-server/compile V=s                      # ssr plus 的依赖
+    # make package/simple-obfs/compile V=s                             # ssr plus 的依赖
+    # make package/simple-obfs-server/compile V=s                      # ssr plus 的依赖
     make package/trojan/compile V=s                                  # ssr plus 的依赖
     make package/v2ray/compile V=s                                   # ssr plus 的依赖
-    make package/v2ray-plugin/compile V=s                            # ssr plus 的依赖
+    # make package/v2ray-plugin/compile V=s                            # ssr plus 的依赖
     make package/vlmcsd/compile V=s                                  # KMS 服务器
 
     ################# end build for detail ######################
