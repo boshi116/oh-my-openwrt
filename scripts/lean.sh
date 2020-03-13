@@ -249,7 +249,7 @@ archive_ssr_ipk(){
     cd $ipk_path/base
     cp -f luci-app-ssr-plus*_all.ipk $artifact_ipk_path/luci/
     # dependency
-    cp -f shadowsocksr-libev-*$device_ipk_desc.ipk $artifact_ipk_path/base/$device/
+    sudo cp -f shadowsocksr-libev-*$device_ipk_desc.ipk $artifact_ipk_path/base/$device/
     cp -f libopenssl*$device_ipk_desc.ipk $artifact_ipk_path/base/$device/
     cp -f ipt2socks*$device_ipk_desc.ipk $artifact_ipk_path/base/$device/
     cp -f microsocks*$device_ipk_desc.ipk $artifact_ipk_path/base/$device/
