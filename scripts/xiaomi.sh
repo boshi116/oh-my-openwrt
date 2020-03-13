@@ -323,18 +323,13 @@ do_build_bin(){
 
 # ./scripts/feeds list -r stuart
 
-# adbyby                          	Powerful adblock module to block ad.
 # ddns-scripts_aliyun             	DDNS extension for AliYun.com
-# ipt2socks                       	Utility for converting iptables (REDIRECT/TPROXY) to SOCKS5
-# luci-app-adbyby-plus            	LuCI support for Adbyby
 # luci-app-arpbind                	LuCI support for ARP Binding
 # luci-app-autoreboot             	LuCI support for Scheduled Reboot
 # luci-app-fileassistant          	LuCI support for File Assistant
-# luci-app-flowoffload            	LuCI support for Flow Offload
 # luci-app-ipsec-vpnd             	LuCI support for IPSec VPN Server (IKEv1 with PSK and Xauth)
 # luci-app-mia                    	LuCI support for Mia From Koolshare
 # luci-app-ramfree                	LuCI support for RAM Free
-# luci-app-ssr-plus               	SS/SSR/V2Ray/Trojan LuCI interface
 # luci-app-stuart                 	LuCI support for Stuart (Example)
 # luci-app-timewol                	LuCI support for Timewol From Koolshare
 # luci-app-ttyd                   	LuCI support for ttyd
@@ -344,33 +339,20 @@ do_build_bin(){
 # luci-app-webrestriction         	LuCI support for Webrestriction From Koolshare
 # luci-app-weburl                 	LuCI support for Weburl From Koolshare
 # luci-app-xlnetacc               	LuCI Support for XLNetAcc
-# luci-i18n-adbyby-plus-zh-cn     	luci-app-adbyby-plus - zh-cn translation
 # luci-i18n-arpbind-zh-cn         	luci-app-arpbind - zh-cn translation
 # luci-i18n-autoreboot-zh-cn      	luci-app-autoreboot - zh-cn translation
-# luci-i18n-flowoffload-zh-cn     	luci-app-flowoffload - zh-cn translation
 # luci-i18n-ipsec-vpnd-zh-cn      	luci-app-ipsec-vpnd - zh-cn translation
 # luci-i18n-sqm                   	LuCI support for the sqm language package
 # luci-i18n-ttyd-zh-cn            	luci-app-ttyd - zh-cn translation
 # luci-i18n-usb-printer-zh-cn     	luci-app-usb-printer - zh-cn translation
 # luci-i18n-vlmcsd-zh-cn          	luci-app-vlmcsd - zh-cn translation
 # luci-i18n-webadmin-zh-cn        	luci-app-webadmin - zh-cn translation
-# microsocks                      	microsocks for OpenWRT
-# pdnsd-alt                       	Proxy DNS Server
-# shadowsocksr-libev              	Lightweight Secured Socks5 Proxy
-# shadowsocksr-libev-alt          	Lightweight Secured Socks5 Proxy
-# shadowsocksr-libev-server       	Lightweight Secured Socks5 Proxy
-# shadowsocksr-libev-ssr-local    	Lightweight Secured Socks5 Proxy
-# simple-obfs                     	Simple-obfs
-# simple-obfs-server              	Simple-obfs
-# trojan                          	An unidentifiable mechanism that helps you bypass GFW
-# v2ray                           	A platform for building proxies
-# v2ray-plugin                    	SIP003 plugin for shadowsocks, based on v2ray
 # vlmcsd                          	vlmcsd for OpenWRT
 
     ## factory
     stuart_factory_pkgs="luci-app-ramfree luci-app-fileassistant luci-app-arpbind luci-i18n-arpbind-zh-cn luci-app-autoreboot luci-i18n-autoreboot-zh-cn ttyd luci-app-ttyd luci-i18n-ttyd-zh-cn luci-app-webadmin luci-i18n-webadmin-zh-cn"
     ## sysupgrade
-    stuart_sysupgrade_pkgs="$stuart_factory_pkgs vlmcsd luci-app-vlmcsd luci-i18n-vlmcsd-zh-cn adbyby luci-app-adbyby-plus luci-i18n-adbyby-plus-zh-cn ipt2socks microsocks pdnsd-alt shadowsocksr-libev-alt shadowsocksr-libev-server shadowsocksr-libev-ssr-local v2ray trojan luci-app-ssr-plus luci-app-ipsec-vpnd luci-i18n-ipsec-vpnd-zh-cn"
+    stuart_sysupgrade_pkgs="$stuart_factory_pkgs vlmcsd luci-app-vlmcsd luci-i18n-vlmcsd-zh-cn luci-app-ipsec-vpnd luci-i18n-ipsec-vpnd-zh-cn sqm-scripts luci-app-sqm luci-i18n-sqm"
 
     if [ $build_type == "factory" ]; then
         image_pkgs="$org_original_pkgs $org_custom_pkgs $stuart_factory_pkgs"
