@@ -55,7 +55,7 @@ cd build_openwrt
 
 # path
 root_path=`pwd`
-project_path="$root_path/$project"
+code_path="$root_path/$project"
 stuart_path="$root_path/stuart-openwrt"
 ipk_path="$code_path/bin/packages/$device_ipk_desc"
 bin_path="$code_path/bin/targets/$device_bin_desc"
