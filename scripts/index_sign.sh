@@ -159,7 +159,7 @@ dir_index_ipk(){
         exit
     fi
 
-    artifact_ipk_path="$artifact_root_path/packages/$device"
+    artifact_ipk_path="$artifact_root_path/packages"
     index_ipk "$artifact_ipk_path"
 }
 
