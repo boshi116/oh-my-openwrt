@@ -306,8 +306,11 @@ do_build_bin(){
     mkdir -p $bin_path
     rm -rf $imagebuilder_path/packages/stuart
 
-    # add ipks from stuart
-    cp -r $ipk_path/stuart $imagebuilder_path/packages
+    # add ipks to imagebuilder
+    mkdir -p $imagebuilder_path/packages/stuart
+    cp -f $artifact_ipk_path/luci/* $imagebuilder_path/packages/stuart/
+    cp -f $artifact_ipk_path/base/$device/* $imagebuilder_path/packages/stuart/
+    # cp -r $ipk_path/stuart $imagebuilder_path/packages
 
     # make
     # echo $(opkg list_installed | awk '{ print $1 }')
